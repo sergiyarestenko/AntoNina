@@ -1,0 +1,113 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+
+.gt-footer {
+  background: url("../img/footer_bg.png") no-repeat center center;
+  background-size: cover;
+  color:@white;
+  font-size: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  &-copyright {
+    margin-top: 35px;
+  }
+  &-top {
+    flex-direction: row;
+    >div {
+      flex-direction: column;
+      padding: 0 15px;
+      width: 33%;
+      &:first-of-type{
+        padding-left: 0;
+      }
+      &:last-of-type{
+        padding-right: 0;
+      }
+      &.gt-footer-menu {
+        width: 17%;
+      }
+    }
+    p{
+      line-height: 22px;
+    }
+
+    ul{
+      height: 100%;
+      border: 1px solid red;
+      flex-direction: column;
+      li {
+        margin-bottom: 1.1em;
+
+      }
+    }
+
+
+
+  }
+
+  &-text{
+    a{
+      margin-top: 30px;
+      &:last-of-type{
+        margin-top: 20px;
+      }
+    }
+  }
+  &-subscribe {
+    form{
+      width: 100%;
+      height:40px;
+      position: relative;
+      input{
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 1px solid @white;
+        line-height: 40px;
+        padding-left: .5em;
+        padding-right: 50px;
+
+
+        &::-webkit-input-placeholder {
+          color: @white;
+        }
+        &::-moz-placeholder {
+          color: @white;
+        }
+        &:-ms-input-placeholder {
+          color: @white;
+        }
+        &:-moz-placeholder {
+          color: @white;
+        }
+
+
+      }
+      input[type = "submit"]{
+        display: none;
+      }
+      label {
+        position: absolute;
+        display: block;
+        width: 38px;
+        height: 38px;
+        background: @blue url("../img/arrow_right_white.svg") no-repeat 50% 50%;
+        background-size: 18px 18px;
+        right: 1px;
+        top: 1px;
+        .gt-transition();
+        &:hover{
+          background: @white url("../img/arrow_right_blue.svg") no-repeat 50% 50%;
+          background-size: 18px 18px;
+
+        }
+
+      }
+    }
+  }
+
+
+
+}

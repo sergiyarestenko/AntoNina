@@ -1,0 +1,224 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+.gt-button-block {
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &-wrapper {
+    background: @bg-grey;
+  }
+  a {
+    width: 11%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 165px;
+    margin-bottom: 35px;
+    position: relative;
+    color: @black;
+    font-weight: 500;
+    &:before {
+      content: '';
+      display: block;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      border: 1px solid @grey-border;
+      position: absolute;
+      top: -115px;
+      left: ~"calc(50% - 40px)";
+      .gt-transition();
+    }
+
+    &.gt-button-block-avia {
+      &:before {
+        background: transparent url("../img/avia_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/avia_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    &.gt-button-block-hotels {
+      &:before {
+        background: transparent url("../img/hotels_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/hotels_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    &.gt-button-block-carrent {
+      &:before {
+        background: transparent url("../img/carrent_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/carrent_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    &.gt-button-block-bus {
+      &:before {
+        background: transparent url("../img/bus_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/bus_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    &.gt-button-block-ship {
+      &:before {
+        background: transparent url("../img/ship_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/ship_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    &.gt-button-block-insurance {
+      &:before {
+        background: transparent url("../img/insurance_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/insurance_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    &.gt-button-block-hottour {
+      &:before {
+        background: transparent url("../img/hottour_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/hottour_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    &.gt-button-block-visas {
+      &:before {
+        background: transparent url("../img/visas_icon_blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/visas_icon_white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+
+    }
+  }
+
+    @media screen and (max-width:1230px){
+      .gt-button-block {
+        a{
+          margin-top: 155px;
+        }
+      }
+    }
+    @media screen and (max-width:1023px) {
+      .gt-button-block {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        a{
+          width:25%;
+          margin-top: 145px;
+          margin-bottom: 0;
+        }
+      }
+    }
+      @media screen and (max-width:767px){
+        .gt-button-block {
+          padding-top: 20px;
+          padding-bottom: 45px;
+        }
+      }
+      @media screen and (max-width:666px){
+        .gt-button-block {
+          padding-top:0;
+          padding-bottom: 40px;
+          a{
+            margin-top: 120px;
+            font-size: 14px;
+            &:before {
+              height: 64px;
+              width: 64px;
+              top: -85px;
+              left: ~"calc(50% - 32px)";
+              .gt-transition();
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width:479px){
+        .gt-button-block {
+          padding-top:0;
+          padding-bottom: 100px;
+          a{
+            color:transparent;
+            margin-top: 30px;
+            font-size: 1px;
+            &:nth-child(n+5){
+              margin-top: 90px;
+            }
+            &:before {
+              height: 64px;
+              width: 64px;
+              top: -0px;
+              left: ~"calc(50% - 32px)";
+              .gt-transition();
+            }
+          }
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+

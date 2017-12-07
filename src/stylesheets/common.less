@@ -1,0 +1,198 @@
+@import "palette";
+@import "variables";
+@import "mixin";
+html,
+body {
+  background: @body-bg;
+  box-sizing: border-box;
+  color: @grey-light;
+  font-family: @font-family-main;
+  font-weight: 300;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+
+
+}
+
+* {
+  box-sizing: border-box;
+  z-index: 1;
+}
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus{
+  text-decoration: none;
+  color:inherit;
+}
+
+div,
+header,
+footer,
+section,
+nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+form,
+a{
+  display: flex;
+
+}
+
+.gt-wrapper,footer {
+  flex-direction: column;
+  width: 100%;
+  max-width: 1920px;
+  margin:0 auto;
+}
+
+
+.gt-wrapper {
+
+  background: @body-bg;
+  z-index: 2;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+
+.container{
+  max-width: 1200px;
+  width: 100%;
+  flex-direction: column;
+  margin: 0 auto;
+  padding:0 15px;
+}
+.white-line {
+  height: 1px;
+  background: @white;
+}
+
+.gt-blue {
+  color: @blue;
+}
+.gt-black {
+  color: @black;
+}
+.gt-white {
+  color:@white;
+}
+.gt-img-holder {
+  position: relative;
+  background-position:center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  img{
+    height: 100%;
+    width: auto;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.gt-shadow-70 {
+  &:after {
+    background-image: linear-gradient(to top ,rgba(0,0,0,.7),rgba(0,0,0,0));
+    z-index: 10;
+  }
+}
+.gt-shadow-100 {
+  &:after {
+    background-image: linear-gradient(to top ,rgba(0,0,0,.7),rgba(0,0,0,0));
+    z-index: 10;
+  }
+}
+
+
+.gt-top {
+  flex-direction: column;
+  color: @white;
+  width: 100%;
+  &-inner {
+    padding:100px 85px 70px 85px;
+    background: url("../img/grid_pattern.png") repeat;
+    width: 600px;
+    flex-direction: column;
+    align-items: center;
+    >div{
+      flex-direction: column;
+      margin: auto;
+    }
+    .white-line {
+      width: 160px;
+      margin:30px 0;
+    }
+    &-lg {
+      font-size: 42px;
+      font-weight:700;
+    }
+    &-sm {
+      font-size: 24px;
+      font-weight:500;
+    }
+  }
+}
+
+.gt-a-news{
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: @blue;
+  }
+}
+
+
+.gt-margin {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.gt-margin + .gt-margin {
+  margin-top: 0;
+}
+
+input.gt-but-white{
+  display: none;
+}
+label.gt-but-white{
+  cursor: pointer;
+  height: 45px;
+  line-height: 45px;
+  display: flex;
+  color: @blue;
+  padding: 0 15px;
+  border: 1px solid @blue;
+  .gt-transition();
+  margin: auto;
+  &:hover{
+    background: @blue;
+    color: @white;
+    border: 1px solid @blue;
+  }
+
+
+}

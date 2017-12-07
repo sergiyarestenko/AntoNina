@@ -1,0 +1,92 @@
+.gt-footer {
+  background: url("../img/footer_bg.png") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  font-size: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.gt-footer-copyright {
+  margin-top: 35px;
+}
+.gt-footer-top {
+  flex-direction: row;
+}
+.gt-footer-top > div {
+  flex-direction: column;
+  padding: 0 15px;
+  width: 33%;
+}
+.gt-footer-top > div:first-of-type {
+  padding-left: 0;
+}
+.gt-footer-top > div:last-of-type {
+  padding-right: 0;
+}
+.gt-footer-top > div.gt-footer-menu {
+  width: 17%;
+}
+.gt-footer-top p {
+  line-height: 22px;
+}
+.gt-footer-top ul {
+  height: 100%;
+  border: 1px solid red;
+  flex-direction: column;
+}
+.gt-footer-top ul li {
+  margin-bottom: 1.1em;
+}
+.gt-footer-text a {
+  margin-top: 30px;
+}
+.gt-footer-text a:last-of-type {
+  margin-top: 20px;
+}
+.gt-footer-subscribe form {
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+.gt-footer-subscribe form input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #fff;
+  line-height: 40px;
+  padding-left: .5em;
+  padding-right: 50px;
+}
+.gt-footer-subscribe form input::-webkit-input-placeholder {
+  color: #fff;
+}
+.gt-footer-subscribe form input::-moz-placeholder {
+  color: #fff;
+}
+.gt-footer-subscribe form input:-ms-input-placeholder {
+  color: #fff;
+}
+.gt-footer-subscribe form input:-moz-placeholder {
+  color: #fff;
+}
+.gt-footer-subscribe form input[type="submit"] {
+  display: none;
+}
+.gt-footer-subscribe form label {
+  position: absolute;
+  display: block;
+  width: 38px;
+  height: 38px;
+  background: #0057FF url("../img/arrow_right_white.svg") no-repeat 50% 50%;
+  background-size: 18px 18px;
+  right: 1px;
+  top: 1px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.gt-footer-subscribe form label:hover {
+  background: #fff url("../img/arrow_right_blue.svg") no-repeat 50% 50%;
+  background-size: 18px 18px;
+}

@@ -1,0 +1,117 @@
+.gt-main-menu {
+  align-items: flex-end;
+  color: #fff;
+  flex-direction: row;
+  font-size: 20px;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  height: 70px;
+  position: relative;
+}
+.gt-main-menu-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: 100;
+}
+.gt-main-menu-wrapper.gt-main-menu-fixed {
+  background: rgba(0, 0, 0, 0.7);
+  padding-bottom: .5em;
+}
+.gt-main-menu .gt-logo {
+  display: flex;
+  height: 50px;
+}
+.gt-main-menu ul {
+  align-items: flex-end;
+}
+.gt-main-menu ul li {
+  padding: 0 15px;
+}
+.gt-main-menu ul li a {
+  display: flex;
+  position: relative;
+}
+.gt-main-menu ul li a:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background: #fff;
+  bottom: -5px;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.gt-main-menu ul li a:hover:after {
+  width: 100%;
+}
+.gt-main-menu ul li:first-child {
+  padding-left: 0;
+}
+.gt-main-menu ul li:last-child {
+  padding-right: 0;
+}
+.gt-main-menu ul span {
+  cursor: pointer;
+}
+body {
+  height: 100%;
+  overflow-y: hidden !important;
+}
+.gt-mobile-menu {
+  font-size: 20px;
+  color: #fff;
+  flex-direction: column;
+}
+.gt-mobile-menu.gt-open {
+  min-height: 100%;
+}
+.gt-mobile-menu-inner {
+  height: 85px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.gt-mobile-menu ul {
+  position: fixed;
+  top: 85px;
+  border: 1px solid red;
+  width: 100%;
+  flex-direction: column;
+  z-index: 99;
+  padding: 10px 32px 0 32px;
+  overflow-y: scroll ;
+}
+.gt-mobile-menu ul li {
+  width: 100%;
+  justify-content: left;
+  padding: 15px 0 20px;
+  border-bottom: 1px solid #fff;
+}
+@media screen and (max-width: 1199px) {
+  .gt-main-menu .gt-logo {
+    width: 150px;
+  }
+  .gt-main-menu ul li {
+    padding: 0 10px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .gt-main-menu-wrapper {
+    display: none;
+  }
+  .gt-mobile-menu {
+    display: flex;
+  }
+}

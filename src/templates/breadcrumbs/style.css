@@ -1,0 +1,29 @@
+.gt-breadcrumbs {
+  font-size: 20px;
+  height: 115px;
+  padding-top: 15px;
+  align-items: flex-start;
+}
+.gt-breadcrumbs ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.gt-breadcrumbs ul li a {
+  display: inline-flex;
+  padding-right: 1.2em;
+  position: relative;
+}
+.gt-breadcrumbs ul li a:after {
+  position: absolute;
+  cursor: default;
+  right: .25em;
+  bottom: .25em;
+  content: '';
+  height: .65em;
+  display: flex;
+  width: .65em;
+  background: url("../img/arrow_right_white.svg") no-repeat 50% 50%;
+}
+.gt-breadcrumbs ul li:last-child a:after {
+  display: none;
+}
