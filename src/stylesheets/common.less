@@ -8,7 +8,7 @@ body {
   color: @grey-light;
   font-family: @font-family-main;
   font-weight: 300;
-  z-index: 1;
+  //z-index: 1;
   position: relative;
   width: 100%;
   min-width: 320px;
@@ -62,6 +62,7 @@ a{
 
   background: @body-bg;
   z-index: 2;
+
 }
 
 footer {
@@ -122,12 +123,58 @@ footer {
     z-index: 10;
   }
 }
-
+.gt-up{
+  color: @white;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid @grey-border;
+  border-radius: 50%;
+  background:  @body-bg url("../img/arrow_top_blue.svg") no-repeat 50% 50%;
+  background-size: 50% auto;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  .gt-transition(background);
+  align-items: center;
+  justify-content: center;
+    span{
+      display: none;
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 500;
+      &:before{
+        position: absolute;
+        left: -40px;
+        top:-5px;
+        content: '';
+        background: @white url("../img/arrow_top_blue.svg") no-repeat 50% 45%;
+        background-size: 50% auto;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+  &.gt-visible{
+    cursor: pointer;
+    opacity: .5;
+    visibility: visible;
+    &:hover {
+      background: @blue url("../img/arrow_top_white.svg") no-repeat 50% 50%;
+      background-size: 50% auto;
+      border-color: @blue;
+      opacity: 1;
+    }
+  }
+}
 
 .gt-top {
   flex-direction: column;
   color: @white;
   width: 100%;
+ flex-wrap: wrap;
   &-inner {
     padding:100px 85px 70px 85px;
     background: url("../img/grid_pattern.png") repeat;
@@ -145,15 +192,17 @@ footer {
     &-lg {
       font-size: 42px;
       font-weight:700;
+      max-width: 430px;//for IE
     }
     &-sm {
       font-size: 24px;
       font-weight:500;
+      max-width: 430px;//for IE
     }
   }
 }
 
-.gt-a-news{
+.gt-a-news,.gt-a-video{
   position: relative;
   &:after {
     content: '';
@@ -167,6 +216,7 @@ footer {
 }
 
 
+
 .gt-margin {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -174,6 +224,17 @@ footer {
 .gt-margin + .gt-margin {
   margin-top: 0;
 }
+
+.gt-margin>.gt-margin{
+  &:first-child{
+    margin-top: 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+
 
 input.gt-but-white{
   display: none;

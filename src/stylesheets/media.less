@@ -1,3 +1,6 @@
+@import "palette";
+@import "variables";
+@import "mixin";
 @media screen and (max-width:1230px){
 
   .gt-top {
@@ -9,9 +12,11 @@
       }
       &-lg {
         font-size: 26px;
+        max-width: 290px//for IE
       }
       &-sm {
         font-size: 16px;
+        max-width: 290px//for IE
       }
     }
   }
@@ -20,16 +25,12 @@
   .container {
     padding:0 32px;
   }
-  //.gt-sm-order-1 {
-  //  order: 1;
-  //}
+
   .gt-sm-order-2 {
     order:2;
   }
 
-  //.gt-sm-order-3 {
-  //  order:3;
-  //}
+
   .gt-top {
     &-inner {
       padding: 130px 100px 70px 100px;
@@ -38,10 +39,34 @@
         margin:30px 0;
       }
       &-lg {
+        display: inline-flex;
         font-size: 42px;
+        //max-width: none;
+
       }
       &-sm {
         font-size: 24px;
+      }
+    }
+  }
+
+  .gt-up {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: @blue;
+    border:none;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: -1;
+    span{
+      display: flex;
+    }
+    &.gt-visible{
+      opacity: 1;
+      &:hover{
+        background: @blue;
       }
     }
   }
@@ -78,6 +103,9 @@
          font-size: 20px;
        }
      }
+   }
+   .gt-xs-order-2{
+      order:2;
    }
 }
 

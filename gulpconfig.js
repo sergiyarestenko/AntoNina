@@ -12,6 +12,7 @@ module.exports = {
         mainHtml: "./src/**.html",
         templateLess:"./src/templates/**/*.less",
         less:"./src/stylesheets/**.less",
+        mainLess:"./src/stylesheets/main.less",
         js: './src/js/**.js',
         img: './src/img/**/*.*'
     },

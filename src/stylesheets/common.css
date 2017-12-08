@@ -5,7 +5,6 @@ body {
   color: #6D6D6D;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  z-index: 1;
   position: relative;
   width: 100%;
   min-width: 320px;
@@ -104,10 +103,60 @@ footer {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
   z-index: 10;
 }
+.gt-up {
+  color: #fff;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #4d4d4d;
+  border-radius: 50%;
+  background: #fafafa url("../img/arrow_top_blue.svg") no-repeat 50% 50%;
+  background-size: 50% auto;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+.gt-up span {
+  display: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.gt-up span:before {
+  position: absolute;
+  left: -40px;
+  top: -5px;
+  content: '';
+  background: #fff url("../img/arrow_top_blue.svg") no-repeat 50% 45%;
+  background-size: 50% auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.gt-up.gt-visible {
+  cursor: pointer;
+  opacity: .5;
+  visibility: visible;
+}
+.gt-up.gt-visible:hover {
+  background: #0057FF url("../img/arrow_top_white.svg") no-repeat 50% 50%;
+  background-size: 50% auto;
+  border-color: #0057FF;
+  opacity: 1;
+}
 .gt-top {
   flex-direction: column;
   color: #fff;
   width: 100%;
+  flex-wrap: wrap;
 }
 .gt-top-inner {
   padding: 100px 85px 70px 85px;
@@ -127,15 +176,19 @@ footer {
 .gt-top-inner-lg {
   font-size: 42px;
   font-weight: 700;
+  max-width: 430px;
 }
 .gt-top-inner-sm {
   font-size: 24px;
   font-weight: 500;
+  max-width: 430px;
 }
-.gt-a-news {
+.gt-a-news,
+.gt-a-video {
   position: relative;
 }
-.gt-a-news:after {
+.gt-a-news:after,
+.gt-a-video:after {
   content: '';
   position: absolute;
   left: 0;
@@ -150,6 +203,12 @@ footer {
 }
 .gt-margin + .gt-margin {
   margin-top: 0;
+}
+.gt-margin > .gt-margin:first-child {
+  margin-top: 0;
+}
+.gt-margin > .gt-margin:last-child {
+  margin-bottom: 0;
 }
 input.gt-but-white {
   display: none;

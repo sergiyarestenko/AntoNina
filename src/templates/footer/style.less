@@ -18,7 +18,7 @@
     >div {
       flex-direction: column;
       padding: 0 15px;
-      width: 33%;
+      width: 32%;
       &:first-of-type{
         padding-left: 0;
       }
@@ -26,27 +26,21 @@
         padding-right: 0;
       }
       &.gt-footer-menu {
-        width: 17%;
+        width:18%;
       }
     }
     p{
       line-height: 22px;
     }
-
     ul{
       height: 100%;
-      border: 1px solid red;
       flex-direction: column;
       li {
         margin-bottom: 1.1em;
 
       }
     }
-
-
-
   }
-
   &-text{
     a{
       margin-top: 30px;
@@ -56,11 +50,14 @@
     }
   }
   &-subscribe {
+    position: relative;
     form{
       width: 100%;
       height:40px;
       position: relative;
+      margin: 20px 0 70px;
       input{
+        color: @white;
         width: 100%;
         height: 100%;
         background: transparent;
@@ -68,22 +65,7 @@
         line-height: 40px;
         padding-left: .5em;
         padding-right: 50px;
-
-
-        &::-webkit-input-placeholder {
-          color: @white;
-        }
-        &::-moz-placeholder {
-          color: @white;
-        }
-        &:-ms-input-placeholder {
-          color: @white;
-        }
-        &:-moz-placeholder {
-          color: @white;
-        }
-
-
+        .gt-placeholder(@white);
       }
       input[type = "submit"]{
         display: none;
@@ -98,16 +80,97 @@
         right: 1px;
         top: 1px;
         .gt-transition();
-        &:hover{
-          background: @white url("../img/arrow_right_blue.svg") no-repeat 50% 50%;
-          background-size: 18px 18px;
-
+          &:hover{
+            background: @white url("../img/arrow_right_blue.svg") no-repeat 50% 50%;
+            background-size: 18px 18px;
         }
-
       }
     }
   }
+  &-social-link{
+    font-size: 30px;
+    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 100%;
+    ul{
+      flex-direction: row;
+      li{
+        padding: 0 10px;
+        margin-bottom: .5em;
+        &:first-of-type{
+          padding-left: 0;
+        }
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
 
+@media screen and (max-width:1230px){
 
+}
+
+@media screen and (max-width:1023px){
+  .gt-footer {
+    font-size: 14px;
+    padding-bottom: 80px;
+    &-copyright {
+      text-align: center;
+    }
+    &-top{
+      >div {
+        width: 50%;
+        &.gt-footer-menu {
+          display: none;
+        }
+      }
+
+    }
+  }
+
+}
+
+@media screen and (max-width:767px){
+
+}
+
+@media screen and (max-width:666px){
+  .gt-footer {
+    &-top{
+      flex-wrap: wrap;
+      >div {
+        width: 100%;
+        &:first-of-type{
+          padding-left: 15px;
+        }
+        &:last-of-type{
+          padding-right: 15px;
+        }
+      }
+
+    }
+    &-subscribe {
+      form{
+        margin-bottom: 20px;
+      }
+
+    }
+    &-social-link{
+      position: static;
+      margin: 20px 0;
+    }
+  }
+
+}
+
+@media screen and (max-width:479px){
+
+}
+
+@media screen and (max-width:359px) {
 
 }

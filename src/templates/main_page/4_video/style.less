@@ -3,41 +3,128 @@
 @import "../../../stylesheets/mixin";
 
 
-.gt-video {
-  display: block;
-  height:500px;
-  width: 100%;
+.gt-video{
+  height: 500px;
   position: relative;
-  .tv {
-    //border: 1px solid darkblue;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
+  width: 100%;
+  overflow: hidden;
+  &-inner {
     width: 100%;
-    height: 100%;
+  }
+  &-img{
+    width: 100%;
+  }
+  &-text{
+    padding: 30px 25px;
+    color: @white;
+    width: 100%;
+    height: auto;
+    align-items: flex-end;
 
-    overflow: hidden;
-
-    .screen {
+    a{
+      max-width: 5em;
+    }
+    p{
+      font-size: 20px;
+      font-weight: 700;
+      padding-top: 10px;
+    }
+  }
+  &-switch{
+    &-wrapper{
       position: absolute;
-      top: 0;
+      top:0;
       right: 0;
       bottom: 0;
-      left: 0;
-      z-index: 1;
+      left:0;
+    }
+    position: absolute;
+    height: 74px;
+    width: 74px;
+    background:url("../img/video_play.svg") no-repeat 50% 50%;
+    background-size: contain;
+    cursor: pointer;
+    bottom:~"calc(50% - 37px)";
+    left:~"calc(50% - 37px)";
+    .gt-transition();
+    &.gt-video-on{
+      background:url("../img/video_pause.png") no-repeat 50% 50%;
+      background-size: contain;
+      height:50px;
+      width: 50px;
+      bottom:20px;
+      left:20px;
 
-      margin: auto;
-
-      opacity: 0;
-      .gt-transition(opacity);
-
-
-      &.active {
-        opacity: 1;
-      }
     }
   }
 
+  .gt-img-holder{
+    width: 100%;
+  }
+
 }
+
+.gt-video-foreground, iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.gt-video-foreground { height: 300%; top: -100%; }
+
+
+  @media screen and (max-width:1230px){
+    .gt-video{
+      height: 330px;
+    }
+  }
+
+  @media screen and (max-width:1023px){
+    .gt-video{
+      height: 250px;
+    }
+
+  }
+
+  @media screen and (max-width:767px){
+    .gt-video{
+      height: 213px;
+      &-switch{
+
+        height: 50px;
+        width: 50px;
+        bottom:~"calc(50% - 25px)";
+        left:~"calc(50% - 25px)";
+        &.gt-video-on{
+          height:35px;
+          width: 35px;
+          bottom:10px;
+          left:10px;
+
+        }
+      }
+    }
+
+  }
+
+  @media screen and (max-width:666px){
+    .gt-video{
+      height: 150px;
+    }
+
+  }
+
+  @media screen and (max-width:479px){
+    .gt-video{
+      height: 120px;
+    }
+
+  }
+
+  @media screen and (max-width:359px) {
+
+  }
+

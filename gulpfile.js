@@ -15,7 +15,7 @@ const   config = require('./gulpconfig.js'),
 
 
 gulp.task('css',function() {
-return gulp.src(config.paths.less)
+return gulp.src(config.paths.mainLess)
 	.pipe(less())
 	.on('error', function(err) {
 	const type = err.type || '';

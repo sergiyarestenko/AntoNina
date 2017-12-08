@@ -8,9 +8,11 @@
   }
   .gt-top-inner-lg {
     font-size: 26px;
+    max-width: 290px;
   }
   .gt-top-inner-sm {
     font-size: 16px;
+    max-width: 290px;
   }
 }
 @media screen and (max-width: 1023px) {
@@ -28,10 +30,31 @@
     margin: 30px 0;
   }
   .gt-top-inner-lg {
+    display: inline-flex;
     font-size: 42px;
   }
   .gt-top-inner-sm {
     font-size: 24px;
+  }
+  .gt-up {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #0057FF;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: -1;
+  }
+  .gt-up span {
+    display: flex;
+  }
+  .gt-up.gt-visible {
+    opacity: 1;
+  }
+  .gt-up.gt-visible:hover {
+    background: #0057FF;
   }
 }
 @media screen and (max-width: 767px) {
@@ -60,6 +83,9 @@
   }
   .gt-top-inner-sm {
     font-size: 20px;
+  }
+  .gt-xs-order-2 {
+    order: 2;
   }
 }
 @media screen and (max-width: 479px) {

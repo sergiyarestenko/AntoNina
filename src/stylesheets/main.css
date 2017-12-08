@@ -2651,7 +2651,6 @@ body {
   color: #6D6D6D;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  z-index: 1;
   position: relative;
   width: 100%;
   min-width: 320px;
@@ -2750,10 +2749,60 @@ footer {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
   z-index: 10;
 }
+.gt-up {
+  color: #fff;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #4d4d4d;
+  border-radius: 50%;
+  background: #fafafa url("../img/arrow_top_blue.svg") no-repeat 50% 50%;
+  background-size: 50% auto;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.5s ease-in-out;
+  -o-transition: background 0.5s ease-in-out;
+  transition: background 0.5s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+.gt-up span {
+  display: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.gt-up span:before {
+  position: absolute;
+  left: -40px;
+  top: -5px;
+  content: '';
+  background: #fff url("../img/arrow_top_blue.svg") no-repeat 50% 45%;
+  background-size: 50% auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.gt-up.gt-visible {
+  cursor: pointer;
+  opacity: .5;
+  visibility: visible;
+}
+.gt-up.gt-visible:hover {
+  background: #0057FF url("../img/arrow_top_white.svg") no-repeat 50% 50%;
+  background-size: 50% auto;
+  border-color: #0057FF;
+  opacity: 1;
+}
 .gt-top {
   flex-direction: column;
   color: #fff;
   width: 100%;
+  flex-wrap: wrap;
 }
 .gt-top-inner {
   padding: 100px 85px 70px 85px;
@@ -2773,15 +2822,19 @@ footer {
 .gt-top-inner-lg {
   font-size: 42px;
   font-weight: 700;
+  max-width: 430px;
 }
 .gt-top-inner-sm {
   font-size: 24px;
   font-weight: 500;
+  max-width: 430px;
 }
-.gt-a-news {
+.gt-a-news,
+.gt-a-video {
   position: relative;
 }
-.gt-a-news:after {
+.gt-a-news:after,
+.gt-a-video:after {
   content: '';
   position: absolute;
   left: 0;
@@ -2796,6 +2849,12 @@ footer {
 }
 .gt-margin + .gt-margin {
   margin-top: 0;
+}
+.gt-margin > .gt-margin:first-child {
+  margin-top: 0;
+}
+.gt-margin > .gt-margin:last-child {
+  margin-bottom: 0;
 }
 input.gt-but-white {
   display: none;
@@ -2829,9 +2888,11 @@ label.gt-but-white:hover {
   }
   .gt-top-inner-lg {
     font-size: 26px;
+    max-width: 290px;
   }
   .gt-top-inner-sm {
     font-size: 16px;
+    max-width: 290px;
   }
 }
 @media screen and (max-width: 1023px) {
@@ -2849,10 +2910,31 @@ label.gt-but-white:hover {
     margin: 30px 0;
   }
   .gt-top-inner-lg {
+    display: inline-flex;
     font-size: 42px;
   }
   .gt-top-inner-sm {
     font-size: 24px;
+  }
+  .gt-up {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #0057FF;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: -1;
+  }
+  .gt-up span {
+    display: flex;
+  }
+  .gt-up.gt-visible {
+    opacity: 1;
+  }
+  .gt-up.gt-visible:hover {
+    background: #0057FF;
   }
 }
 @media screen and (max-width: 767px) {
@@ -2881,6 +2963,9 @@ label.gt-but-white:hover {
   }
   .gt-top-inner-sm {
     font-size: 20px;
+  }
+  .gt-xs-order-2 {
+    order: 2;
   }
 }
 @media screen and (max-width: 479px) {
@@ -3155,7 +3240,7 @@ label.gt-but-white:hover {
 .gt-footer-top > div {
   flex-direction: column;
   padding: 0 15px;
-  width: 33%;
+  width: 32%;
 }
 .gt-footer-top > div:first-of-type {
   padding-left: 0;
@@ -3164,14 +3249,13 @@ label.gt-but-white:hover {
   padding-right: 0;
 }
 .gt-footer-top > div.gt-footer-menu {
-  width: 17%;
+  width: 18%;
 }
 .gt-footer-top p {
   line-height: 22px;
 }
 .gt-footer-top ul {
   height: 100%;
-  border: 1px solid red;
   flex-direction: column;
 }
 .gt-footer-top ul li {
@@ -3183,12 +3267,17 @@ label.gt-but-white:hover {
 .gt-footer-text a:last-of-type {
   margin-top: 20px;
 }
+.gt-footer-subscribe {
+  position: relative;
+}
 .gt-footer-subscribe form {
   width: 100%;
   height: 40px;
   position: relative;
+  margin: 20px 0 70px;
 }
 .gt-footer-subscribe form input {
+  color: #fff;
   width: 100%;
   height: 100%;
   background: transparent;
@@ -3199,15 +3288,23 @@ label.gt-but-white:hover {
 }
 .gt-footer-subscribe form input::-webkit-input-placeholder {
   color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input::-moz-placeholder {
   color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input:-ms-input-placeholder {
   color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input:-moz-placeholder {
   color: #fff;
+  opacity: 1;
+}
+.gt-footer-subscribe form input::placeholder {
+  color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input[type="submit"] {
   display: none;
@@ -3229,6 +3326,63 @@ label.gt-but-white:hover {
 .gt-footer-subscribe form label:hover {
   background: #fff url("../img/arrow_right_blue.svg") no-repeat 50% 50%;
   background-size: 18px 18px;
+}
+.gt-footer-social-link {
+  font-size: 30px;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 100%;
+}
+.gt-footer-social-link ul {
+  flex-direction: row;
+}
+.gt-footer-social-link ul li {
+  padding: 0 10px;
+  margin-bottom: .5em;
+}
+.gt-footer-social-link ul li:first-of-type {
+  padding-left: 0;
+}
+.gt-footer-social-link ul li:last-of-type {
+  padding-right: 0;
+}
+@media screen and (max-width: 1023px) {
+  .gt-footer {
+    font-size: 14px;
+    padding-bottom: 80px;
+  }
+  .gt-footer-copyright {
+    text-align: center;
+  }
+  .gt-footer-top > div {
+    width: 50%;
+  }
+  .gt-footer-top > div.gt-footer-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 666px) {
+  .gt-footer-top {
+    flex-wrap: wrap;
+  }
+  .gt-footer-top > div {
+    width: 100%;
+  }
+  .gt-footer-top > div:first-of-type {
+    padding-left: 15px;
+  }
+  .gt-footer-top > div:last-of-type {
+    padding-right: 15px;
+  }
+  .gt-footer-subscribe form {
+    margin-bottom: 20px;
+  }
+  .gt-footer-social-link {
+    position: static;
+    margin: 20px 0;
+  }
 }
 .gt-breadcrumbs {
   font-size: 20px;
@@ -4105,36 +4259,113 @@ label.gt-but-white:hover {
   }
 }
 .gt-video {
-  display: block;
   height: 500px;
-  width: 100%;
   position: relative;
-}
-.gt-video .tv {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
   width: 100%;
-  height: 100%;
   overflow: hidden;
 }
-.gt-video .tv .screen {
+.gt-video-inner {
+  width: 100%;
+}
+.gt-video-img {
+  width: 100%;
+}
+.gt-video-text {
+  padding: 30px 25px;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  align-items: flex-end;
+}
+.gt-video-text a {
+  max-width: 5em;
+}
+.gt-video-text p {
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+.gt-video-switch {
+  position: absolute;
+  height: 74px;
+  width: 74px;
+  background: url("../img/video_play.svg") no-repeat 50% 50%;
+  background-size: contain;
+  cursor: pointer;
+  bottom: calc(50% - 37px);
+  left: calc(50% - 37px);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.gt-video-switch-wrapper {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
-  margin: auto;
-  opacity: 0;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
-  -o-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
 }
-.gt-video .tv .screen.active {
-  opacity: 1;
+.gt-video-switch.gt-video-on {
+  background: url("../img/video_pause.png") no-repeat 50% 50%;
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  bottom: 20px;
+  left: 20px;
+}
+.gt-video .gt-img-holder {
+  width: 100%;
+}
+.gt-video-foreground,
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.gt-video-foreground {
+  height: 300%;
+  top: -100%;
+}
+@media screen and (max-width: 1230px) {
+  .gt-video {
+    height: 330px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .gt-video {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .gt-video {
+    height: 213px;
+  }
+  .gt-video-switch {
+    height: 50px;
+    width: 50px;
+    bottom: calc(50% - 25px);
+    left: calc(50% - 25px);
+  }
+  .gt-video-switch.gt-video-on {
+    height: 35px;
+    width: 35px;
+    bottom: 10px;
+    left: 10px;
+  }
+}
+@media screen and (max-width: 666px) {
+  .gt-video {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .gt-video {
+    height: 120px;
+  }
 }
 .gt-link-block {
   flex-direction: row;

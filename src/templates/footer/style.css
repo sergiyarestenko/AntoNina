@@ -15,7 +15,7 @@
 .gt-footer-top > div {
   flex-direction: column;
   padding: 0 15px;
-  width: 33%;
+  width: 32%;
 }
 .gt-footer-top > div:first-of-type {
   padding-left: 0;
@@ -24,14 +24,13 @@
   padding-right: 0;
 }
 .gt-footer-top > div.gt-footer-menu {
-  width: 17%;
+  width: 18%;
 }
 .gt-footer-top p {
   line-height: 22px;
 }
 .gt-footer-top ul {
   height: 100%;
-  border: 1px solid red;
   flex-direction: column;
 }
 .gt-footer-top ul li {
@@ -43,12 +42,17 @@
 .gt-footer-text a:last-of-type {
   margin-top: 20px;
 }
+.gt-footer-subscribe {
+  position: relative;
+}
 .gt-footer-subscribe form {
   width: 100%;
   height: 40px;
   position: relative;
+  margin: 20px 0 70px;
 }
 .gt-footer-subscribe form input {
+  color: #fff;
   width: 100%;
   height: 100%;
   background: transparent;
@@ -59,15 +63,23 @@
 }
 .gt-footer-subscribe form input::-webkit-input-placeholder {
   color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input::-moz-placeholder {
   color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input:-ms-input-placeholder {
   color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input:-moz-placeholder {
   color: #fff;
+  opacity: 1;
+}
+.gt-footer-subscribe form input::placeholder {
+  color: #fff;
+  opacity: 1;
 }
 .gt-footer-subscribe form input[type="submit"] {
   display: none;
@@ -89,4 +101,61 @@
 .gt-footer-subscribe form label:hover {
   background: #fff url("../img/arrow_right_blue.svg") no-repeat 50% 50%;
   background-size: 18px 18px;
+}
+.gt-footer-social-link {
+  font-size: 30px;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 100%;
+}
+.gt-footer-social-link ul {
+  flex-direction: row;
+}
+.gt-footer-social-link ul li {
+  padding: 0 10px;
+  margin-bottom: .5em;
+}
+.gt-footer-social-link ul li:first-of-type {
+  padding-left: 0;
+}
+.gt-footer-social-link ul li:last-of-type {
+  padding-right: 0;
+}
+@media screen and (max-width: 1023px) {
+  .gt-footer {
+    font-size: 14px;
+    padding-bottom: 80px;
+  }
+  .gt-footer-copyright {
+    text-align: center;
+  }
+  .gt-footer-top > div {
+    width: 50%;
+  }
+  .gt-footer-top > div.gt-footer-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 666px) {
+  .gt-footer-top {
+    flex-wrap: wrap;
+  }
+  .gt-footer-top > div {
+    width: 100%;
+  }
+  .gt-footer-top > div:first-of-type {
+    padding-left: 15px;
+  }
+  .gt-footer-top > div:last-of-type {
+    padding-right: 15px;
+  }
+  .gt-footer-subscribe form {
+    margin-bottom: 20px;
+  }
+  .gt-footer-social-link {
+    position: static;
+    margin: 20px 0;
+  }
 }
