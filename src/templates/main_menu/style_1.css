@@ -4,14 +4,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
-  padding-bottom: 6px;
+  z-index: 99;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-.gt-header.gt-header-scrolled {
+.gt-header.gt-header-scrolled .gt-header-top {
   background: rgba(0, 0, 0, 0.7);
 }
 .gt-header.gt-open {
@@ -36,7 +35,10 @@
 .gt-header-top {
   position: relative;
   width: 100%;
-  height: 70px;
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 80px;
+  padding-bottom: 10px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -46,10 +48,6 @@
   align-items: center;
   width: 185px;
   min-width: 150px;
-}
-.gt-header-logo a {
-  width: 100%;
-  height: 100%;
 }
 .gt-header-logo img {
   width: 100%;

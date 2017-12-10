@@ -2,1080 +2,981 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <title>Test</title>
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
-
+        <title>GoToTrip</title>
         <link rel="stylesheet" href="stylesheets/main.css">
-        <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&amp;subset=cyrillic" rel="stylesheet">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    </head>
 
+
+    </head>
     <body>
 
-    <header class="gt-header">
-        <div class="gt-header-mobile-menu">
-            <ul class="container">
-                <li><a href=".#">Страны мира</a></li>
-                <li><a href=".#">Путеводитель</a></li>
-                <li><a href=".#">Новости</a></li>
-                <li><a href=".#">Подборки</a></li>
-                <li><a href=".#">Видео</a></li>
-                <li><a href=".#">Публикации</a></li>
-                <li class ="gt-enter"><span>Вход</span></li>
-                <div class="gt-header-social-link">
+
+
+
+        <header class="gt-header">
+            <div class="gt-header-mobile-menu">
+                <ul class="container">
+                    <li><a href=".#">Страны мира</a></li>
+                    <li><a href=".#">Путеводитель</a></li>
+                    <li><a href=".#">Новости</a></li>
+                    <li><a href=".#">Подборки</a></li>
+                    <li><a href=".#">Видео</a></li>
+                    <li><a href=".#">Публикации</a></li>
+                    <li class ="gt-enter"><span>Вход</span></li>
+                    <div class="gt-header-social-link">
+                        <div class="container">
+                            <a href="https://www.facebook.com"  rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com" rel="nofollow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.youtube.com"  rel="nofollow" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </ul>
+        
+            </div>
+                <div class="gt-header-top">
                     <div class="container">
-                        <a href="https://www.facebook.com"  rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com" rel="nofollow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="https://www.youtube.com"  rel="nofollow" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    <div class="gt-search-holder">
+                        <span class="gt-search"></span>
                     </div>
-    
-    
+                    <div class="gt-header-logo">
+                        <a class = "gt-logo" href="/"><img src="./img/logo_white.svg" alt="GoToTrip"></a>
+                    </div>
+                    <div class="gt-header-switch-holder">
+                        <div id="gt-mobile-menu-switch" class="gt-header-switch">
+                            <span class="line line-1"></span>
+                            <span class="line line-2"></span>
+                            <span class="line line-3"></span>
+                        </div>
+                    </div>
+                    <div class="gt-header-menu">
+                            <ul>
+                                <li><a href=".#">Страны мира</a></li>
+                                <li><a href=".#">Путеводитель</a></li>
+                                <li><a href=".#">Новости</a></li>
+                                <li><a href=".#">Подборки</a></li>
+                                <li><a href=".#">Видео</a></li>
+                                <li><a href=".#">Публикации</a></li>
+                                <li class ="gt-enter"><span>Вход</span></li>
+                                <li><span class="gt-search"></span></li>
+                            </ul>
+        
+                    </div>
+        
                 </div>
-    
-    
-            </ul>
-    
-        </div>
-            <div class="gt-header-top">
+        
+        
+        
+            </div>
+        
+        
+        
+        
+        </header>
+        <div class="gt-wrapper" id = "gt-wrapper">
+            <div class="gt-top main-page-top">
                 <div class="container">
-                <div class="gt-search-holder">
-                    <span class="gt-search"></span>
-                </div>
-                <div class="gt-header-logo">
-                    <a class = "gt-logo" href="/"><img src="./img/logo_white.svg" alt="GoToTrip"></a>
-                </div>
-                <div class="gt-header-switch-holder">
-                    <div id="gt-mobile-menu-switch" class="gt-header-switch">
-                        <span class="line line-1"></span>
-                        <span class="line line-2"></span>
-                        <span class="line line-3"></span>
+                    <div class="gt-top-inner">
+                        <div>
+                            <h1 class="gt-top-inner-lg">Истинное назначение
+                                путешествия – это не
+                                место на карте, а новый
+                                взгляд на жизнь
+                            </h1>
+                            <div class="white-line"></div>
+                            <p  class="gt-top-inner-sm">Генри Миллер</p>
+                        </div>
                     </div>
                 </div>
-                <div class="gt-header-menu">
+            </div>
+            <div class="container action-menu-wrapper">
+                <div class="action-menu">
+                        <div class="action-menu-inner gt-events" id="gt-events">
+                            <div class="icon-holder">
+                                <span>1</span>
+                            </div>
+                            <div class="text-holder">
+                                <p>События</p>
+                                <p class="text-inner">Советуем узнать больше и увидеть </p>
+                            </div>
+                        </div>
+                        <div class="action-menu-inner gt-publications" id="gt-publications">
+                            <div class="icon-holder">
+                                <span>3</span>
+                            </div>
+                            <div class="text-holder">
+                                <p>Мои публикации</p>
+                                <p  class="text-inner">По Вашим публикациям есть новые комментарии</p>
+                            </div>
+                        </div>
+                        <div class="action-menu-inner gt-routes" id="gt-routes">
+                            <div class="icon-holder">
+                                <span>99</span>
+                            </div>
+                            <div class="text-holder">
+                                <p>Мои маршруты</p>
+                                <p  class="text-inner">У Вас пока нет созданных маршрутов</p>
+                            </div>
+                        </div>
+            
+                </div>
+            
+            </div>
+            <div class="gt-slider container">
+            
+                <div class="gt-slider-text">
+                    <p class="gt-blue">ПОДБОРКИ</p>
+                    <h2 class="gt-slider-header gt-black">Шедевры Антонио Гауди</h2>
+                    <p>Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.</p>
+                </div>
+                <div class="gt-slider-container">
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/gaudi_slider/sagrada-familya-25.png')"></div>
+                    </div>
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/gaudi_slider/guell-colony-cripta-01.png')"></div>
+                    </div>
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/gaudi_slider/escuelas-sf-01.png')"></div>
+                    </div>
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/gaudi_slider/casa-mila-01.png')"></div>
+                    </div>
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/gaudi_slider/casa-botines-02.png')"></div>
+                    </div>
+                </div>
+            </div>
+            <!--TODO white shadow doesn't work in .gt-img-holder css - :after - double-->
+
+
+
+            <div class="container gt-news">
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-big ">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_1.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-bottom">
+                                <div class="gt-news-text-link-header">
+                                    <a href=".#">Публикации</a>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <span>215</span>
+                                </div>
+                                <div class="gt-news-text-header">
+                                    <a href=".#">Заголовок статьи</a>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_2.png')">
+            
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">обрезаю на клиенте до 160 знаков, но лучше на беке резать. 0_Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_3.png')"></div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">1 Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-small gt-sm-order-2">
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+            
+                    </div>
+                    <div class="gt-news-big">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
+            
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-top">
+                                <div class="gt-news-text-date-header">
+                                    <p>28.11.2017</p>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <span>215</span>
+                                </div>
+                            </div>
+            
+            
+                            <div class="gt-news-text-bottom">
+                                <div class="gt-news-text-link-header">
+                                    <a class="gt-a-news" href=".#">Новости</a>
+            
+                                </div>
+                                <div class="gt-news-text-header">
+                                    <a href=".#">Заголовок статьи</a>
+                                </div>
+                            </div>
+            
+            
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small gt-sm-order-2">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">2Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gt-video  gt-margin" data-youtube = "W0LHTWG-UmQ">
+                <div class="gt-video-inner">
+                    <div class="gt-video-img">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/video_bg.png')"></div>
+                    </div>
+                </div>
+                <div class="gt-video-switch-wrapper">
+                    <div class="gt-video-text">
+                        <div class="container">
+                            <a href=".#" ><span class="gt-a-video">Видео</span></a>
+                            <p>Тестовое название видео</p>
+                        </div>
+                    </div>
+                    <span class="gt-video-switch"></span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="gt-link-block">
+                    <div class="gt-link-block-text">
+                        <h2>
+                            Париж
+                        </h2>
+                        <p>
+                            Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй
+                        </p>
+                        <a class = "gt-a-news" href=".#">ЧИТАТЬ ДАЛЬШЕ</a>
+            
+                    </div>
+            
+            
+            
+            
+            
+                    <div class="gt-link-block-img">
+            
+            
+                        <div class = "gt-img-holder" style="background-image: url('../img/link_block_img.png')">
+                        </div>
+            
+            
+                    </div>
+                </div>
+            </div>
+            <div class="container gt-news gt-margin">
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-small gt-news-small-image">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_1.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <a href=".#">Страна</a>
+                            <a href=".#">Заголовок</a>
+                        </div>
+                    </div>
+                    <div class="gt-news-small gt-news-small-image">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_2.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <a href=".#">Страна</a>
+                            <a href=".#">Второй заголовок</a>
+                        </div>
+                    </div>
+                    <div class="gt-news-small gt-news-small-image">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_3.png')"></div>
+                        <div class="gt-news-text">
+                            <a href=".#">Страна</a>
+                            <a href=".#">Третий очень длинный заголовок</a>
+                        </div>
+                    </div>
+                    <div class="gt-news-small gt-news-small-plane">
+                        <div class="gt-news-text gt-black">
+                            <div class="gt-news-text-inner">
+                                <h2>Популярные места</h2>
+                                <p>Nulla vitae dictum turpis. Cum sociis
+                                    natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus
+                                    mus. Ut dapibus turpis sed lorem
+                                    varius, id posuere.</p>
+                                <a href=".#"><span>Подробнее</span></a>
+                            </div>
+            
+                        </div>
+            
+                    </div>
+            
+            
+                </div>
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-small gt-sm-order-2">
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+            
+                    </div>
+            
+                    <div class="gt-news-big">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
+            
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-top">
+                                <div class="gt-news-text-date-header">
+                                    <p>28.11.2017</p>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <span>215</span>
+                                </div>
+                            </div>
+            
+            
+                            <div class="gt-news-text-bottom">
+                                <div class="gt-news-text-link-header">
+                                    <a class="gt-a-news" href=".#">Новости</a>
+            
+                                </div>
+                                <div class="gt-news-text-header">
+                                    <a href=".#">Заголовок статьи</a>
+                                </div>
+                            </div>
+            
+            
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small gt-sm-order-2">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">2Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gt-video  gt-margin" data-youtube = "COwlqqErDbY">
+                <div class="gt-video-inner">
+                    <div class="gt-video-img">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/video_bg.png')"></div>
+                    </div>
+                </div>
+                <div class="gt-video-switch-wrapper">
+                    <div class="gt-video-text">
+                        <div class="container">
+                            <a href=".#" ><span class="gt-a-video">Видео</span></a>
+                            <p>Тестовое название видео</p>
+                        </div>
+                    </div>
+                    <span class="gt-video-switch"></span>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="gt-slider container">
+                <div class="gt-slider-text">
+                    <p class="gt-blue">ПОДБОРКИ</p>
+                    <h2 class="gt-slider-header gt-black">Туристические направления Китая</h2>
+                    <p>Каждый регион Китая по-своему интересен и привлекателен для туриста. На кого-то производит впечатление уникальная древняя архитектура, кто-то восхищается культурными реликвиями музейных экспозиций, кому-то больше по душе завораживающие природные богатства.</p>
+                </div>
+                <div class="gt-slider-container">
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/china_slider/guilin-11.png')"></div>
+                    </div>
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/china_slider/sanya-09.png')"></div>
+                    </div>
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/china_slider/tibet-lhasa-01.png')"></div>
+                    </div>
+                    <div class="gt-slider-inner">
+                        <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/china_slider/yabuli-06.png')"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container gt-news">
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-big ">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_1.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-bottom">
+                                <div class="gt-news-text-link-header">
+                                    <a href=".#">Публикации</a>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <span>215</span>
+                                </div>
+                                <div class="gt-news-text-header">
+                                    <a href=".#">Заголовок статьи</a>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_2.png')">
+            
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">обрезаю на клиенте до 160 знаков, но лучше на беке резать. 0_Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_3.png')"></div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">1 Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-small gt-sm-order-2">
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+            
+                    </div>
+                    <div class="gt-news-big">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
+            
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-top">
+                                <div class="gt-news-text-date-header">
+                                    <p>28.11.2017</p>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <span>215</span>
+                                </div>
+                            </div>
+            
+            
+                            <div class="gt-news-text-bottom">
+                                <div class="gt-news-text-link-header">
+                                    <a class="gt-a-news" href=".#">Новости</a>
+            
+                                </div>
+                                <div class="gt-news-text-header">
+                                    <a href=".#">Заголовок статьи</a>
+                                </div>
+                            </div>
+            
+            
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small gt-sm-order-2">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">2Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//= templates/main_page/4_video/code.html-->
+            <div style="height: 30px"></div>
+            
+            
+            
+            
+            <div class="container">
+                <div class="gt-link-block">
+                    <div class="gt-link-block-text">
+                        <h2>
+                            Париж - второй такой же блок с длинным названием и длинным текстом
+                        </h2>
+                        <p>
+                            Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историйСтолица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
+                            может поведать миллионы любовных историй
+                        </p>
+                        <a class = "gt-a-news" href=".#">ЧИТАТЬ ДАЛЬШЕ</a>
+            
+                    </div>
+            
+            
+            
+            
+            
+                    <div class="gt-link-block-img">
+            
+            
+                        <div class = "gt-img-holder" style="background-image: url('../img/link_block_img.png')">
+                        </div>
+            
+            
+                    </div>
+                </div>
+            </div>
+            <div class="container gt-news gt-margin">
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-small gt-news-small-image">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_1.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <a href=".#">Страна</a>
+                            <a href=".#">Заголовок</a>
+                        </div>
+                    </div>
+                    <div class="gt-news-small gt-news-small-image">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_2.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <a href=".#">Страна</a>
+                            <a href=".#">Второй заголовок</a>
+                        </div>
+                    </div>
+                    <div class="gt-news-small gt-news-small-image">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_3.png')"></div>
+                        <div class="gt-news-text">
+                            <a href=".#">Страна</a>
+                            <a href=".#">Третий очень длинный заголовок</a>
+                        </div>
+                    </div>
+                    <div class="gt-news-small gt-news-small-plane">
+                        <div class="gt-news-text gt-black">
+                            <div class="gt-news-text-inner">
+                                <h2>Популярные места</h2>
+                                <p>Nulla vitae dictum turpis. Cum sociis
+                                    natoque penatibus et magnis dis
+                                    parturient montes, nascetur ridiculus
+                                    mus. Ut dapibus turpis sed lorem
+                                    varius, id posuere.</p>
+                                <a href=".#"><span>Подробнее</span></a>
+                            </div>
+            
+                        </div>
+            
+                    </div>
+            
+            
+                </div>
+                <div class="gt-news-inner gt-margin">
+                    <div class="gt-news-small gt-sm-order-2">
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+                        <a href=".#" class="gt-news-prew">
+                            <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
+            
+                            <div class="gt-news-prew-text">
+                                <p>Заголовок короткой статьи в три строки плюс дата</p>
+                                <p>28.07.2007</p>
+                            </div>
+                        </a>
+            
+                    </div>
+            
+                    <div class="gt-news-big">
+                        <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
+            
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-top">
+                                <div class="gt-news-text-date-header">
+                                    <p>28.11.2017</p>
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <span>215</span>
+                                </div>
+                            </div>
+            
+            
+                            <div class="gt-news-text-bottom">
+                                <div class="gt-news-text-link-header">
+                                    <a class="gt-a-news" href=".#">Новости</a>
+            
+                                </div>
+                                <div class="gt-news-text-header">
+                                    <a href=".#">Заголовок статьи</a>
+                                </div>
+                            </div>
+            
+            
+                        </div>
+            
+                    </div>
+                    <div class="gt-news-small gt-sm-order-2">
+                        <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
+                        </div>
+                        <div class="gt-news-text">
+                            <div class="gt-news-text-link-header">
+                                <a href=".#">Публикации</a>
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span>215</span>
+                            </div>
+                            <div class="gt-news-text-header">
+                                <a class="header" href=".#">
+                                    Заголовок статьи
+                                </a>
+                                <a class="text" href=".#">2Краткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+                                    Отлично подходит три строки но
+                                    лучше не рвать предложениеКраткое описание статьи. Пару строк.
+            
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="gt-read-more gt-margin">
+                    <input type="button" class="gt-but-white" id="gt-read-more-but">
+                    <label for="gt-read-more-but"  class="gt-but-white">Смотреть еще</label>
+                </div>
+            
+            </div>
+            <div class="gt-button-block-wrapper">
+                <div class="gt-button-block container">
+                    <a class="gt-button-block-avia" href=".#">Авиабилеты</a>
+                    <a class="gt-button-block-hotels" href=".#">Отели</a>
+                    <a class="gt-button-block-carrent" href=".#">Прокат авто</a>
+                    <a class="gt-button-block-bus" href=".#">Ж/д и автобусы</a>
+                    <a class="gt-button-block-ship" href=".#">Круизы</a>
+                    <a class="gt-button-block-hottour" href=".#">Горящие туры</a>
+                    <a class="gt-button-block-insurance" href=".#">Страхование</a>
+                    <a class="gt-button-block-visas" href=".#">Визы</a>
+                </div>
+            </div>
+        </div>
+        <footer class="gt-footer" id="gt-footer">
+            <div class="container">
+                <div class="gt-footer-top">
+                    <div class="gt-footer-text  gt-xs-order-2">
+                        <p>
+                            GoToTrip - это информационный сервис для
+                            путешественников, предоставляющий детальную
+                            информацию о достопримечательностях мира,
+                            а также позволяющий забронировать все
+                            необходимые сопутствующие услуги
+                        </p>
+                        <a href=".#">Условия и положения</a>
+                        <a href=".#">Политика конфиденциальности</a>
+            
+                    </div>
+                    <div class="gt-footer-menu">
                         <ul>
-                            <li><a href=".#">Страны мира</a></li>
-                            <li><a href=".#">Путеводитель</a></li>
-                            <li><a href=".#">Новости</a></li>
-                            <li><a href=".#">Подборки</a></li>
+                            <li><a href=".#">Европа</a></li>
+                            <li><a href=".#">Азия</a> </li>
+                            <li><a href=".#">Африка</a> </li>
+                            <li><a href=".#">Северная Америка</a> </li>
+                            <li><a href=".#">Южная Америка</a> </li>
+                            <li><a href=".#">Австралия и Океания</a> </li>
+                        </ul>
+                    </div>
+                    <div class="gt-footer-menu">
+                        <ul>
+                            <li><a href=".#">Чудеса света</a></li>
+                            <li><a href=".#">ТОП 100</a></li>
+                            <li><a href=".#">Лучшие подборки</a></li>
                             <li><a href=".#">Видео</a></li>
+                            <li><a href=".#">Новости</a></li>
                             <li><a href=".#">Публикации</a></li>
-                            <li class ="gt-enter"><span>Вход</span></li>
-                            <li><span class="gt-search"></span></li>
+            
                         </ul>
-    
+                    </div>
+                    <div class="gt-footer-subscribe">
+                        <p>Подписаться на новости</p>
+                        <form action="">
+                            <input type="text" id = "gt-footer-subscribe" placeholder="Введите свой email">
+                            <input type="submit" id="gt-footer-submit">
+                            <label for="gt-footer-submit"></label>
+                        </form>
+                        <div class="gt-footer-social-link">
+                            <ul>
+                                <li><a href="https://www.facebook.com"  rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com" rel="nofollow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li ><a href="https://www.youtube.com"  rel="nofollow" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            </ul>
+            
+                        </div>
+            
+            
+            
+                    </div>
+            
+            
                 </div>
-    
+                <div class="gt-footer-copyright">
+                <p>© 2015-2017 GoToTrip. Полное или частичное использование материалов разрешается только при условии наличия прямой гиперссылки на адрес сайта www.gototrip.com </p>
+                </div>
             </div>
-    
-    
-    
+        </footer>
+        <div id="gt-up" class="gt-up">
+            <span>Вверх</span>
         </div>
-    
-    
-    
-    
-    </header>
 
-
-
-            <div class="gt-wrapper" id = "gt-wrapper">
-                <!--//= templates/2_main_page/code.html-->
-                <div class="gt-top main-page-top">
-                    <div class="container">
-                        <div class="gt-top-inner">
-                            <div>
-                                <h1 class="gt-top-inner-lg">Истинное назначение
-                                    путешествия – это не
-                                    место на карте, а новый
-                                    взгляд на жизнь
-                                </h1>
-                                <div class="white-line"></div>
-                                <p  class="gt-top-inner-sm">Генри Миллер</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container action-menu-wrapper">
-                    <div class="action-menu">
-                            <div class="action-menu-inner gt-events" id="gt-events">
-                                <div class="icon-holder">
-                                    <span>1</span>
-                                </div>
-                                <div class="text-holder">
-                                    <p>События</p>
-                                    <p class="text-inner">Советуем узнать больше и увидеть </p>
-                                </div>
-                            </div>
-                            <div class="action-menu-inner gt-publications" id="gt-publications">
-                                <div class="icon-holder">
-                                    <span>3</span>
-                                </div>
-                                <div class="text-holder">
-                                    <p>Мои публикации</p>
-                                    <p  class="text-inner">По Вашим публикациям есть новые комментарии</p>
-                                </div>
-                            </div>
-                            <div class="action-menu-inner gt-routes" id="gt-routes">
-                                <div class="icon-holder">
-                                    <span>99</span>
-                                </div>
-                                <div class="text-holder">
-                                    <p>Мои маршруты</p>
-                                    <p  class="text-inner">У Вас пока нет созданных маршрутов</p>
-                                </div>
-                            </div>
-                
-                    </div>
-                
-                </div>
-                
-                <div class="gt-slider container">
-                    <p class="gt-blue">ПОДБОРКИ</p>
-                    <div class="gt-slider-container">
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_1.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                   2_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_2.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    3_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_3.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    4_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_4.png')"></div>
-                        </div> <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    5_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_5.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    6_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_1.png')"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container gt-news">
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-big ">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_1.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-bottom">
-                                    <div class="gt-news-text-link-header">
-                                        <a href=".#">Публикации</a>
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>215</span>
-                                    </div>
-                                    <div class="gt-news-text-header">
-                                        <a href=".#">Заголовок статьи</a>
-                                    </div>
-                                </div>
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_2.png')">
-                
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">обрезаю на клиенте до 160 знаков, но лучше на беке резать. 0_Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_3.png')"></div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">1 Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-                
-                
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-small gt-sm-order-2">
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                
-                        </div>
-                        <div class="gt-news-big">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
-                
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-top">
-                                    <div class="gt-news-text-date-header">
-                                        <p>28.11.2017</p>
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>215</span>
-                                    </div>
-                                </div>
-                
-                
-                                <div class="gt-news-text-bottom">
-                                    <div class="gt-news-text-link-header">
-                                        <a class="gt-a-news" href=".#">Новости</a>
-                
-                                    </div>
-                                    <div class="gt-news-text-header">
-                                        <a href=".#">Заголовок статьи</a>
-                                    </div>
-                                </div>
-                
-                
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small gt-sm-order-2">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">2Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gt-video  gt-margin" data-youtube = "W0LHTWG-UmQ">
-                    <div class="gt-video-inner">
-                        <div class="gt-video-img">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/video_bg.png')"></div>
-                        </div>
-                    </div>
-                    <div class="gt-video-switch-wrapper">
-                        <div class="gt-video-text">
-                            <div class="container">
-                                <a href=".#" ><span class="gt-a-video">Видео</span></a>
-                                <p>Тестовое название видео</p>
-                            </div>
-                        </div>
-                        <span class="gt-video-switch"></span>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="gt-link-block">
-                        <div class="gt-link-block-text">
-                            <h2>
-                                Париж
-                            </h2>
-                            <p>
-                                Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй
-                            </p>
-                            <a class = "gt-a-news" href=".#">ЧИТАТЬ ДАЛЬШЕ</a>
-                
-                        </div>
-                
-                
-                
-                
-                
-                        <div class="gt-link-block-img">
-                
-                
-                            <div class = "gt-img-holder" style="background-image: url('../img/link_block_img.png')">
-                            </div>
-                
-                
-                        </div>
-                    </div>
-                </div>
-                <div class="container gt-news gt-margin">
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-small gt-news-small-image">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_1.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <a href=".#">Страна</a>
-                                <a href=".#">Заголовок</a>
-                            </div>
-                        </div>
-                        <div class="gt-news-small gt-news-small-image">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_2.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <a href=".#">Страна</a>
-                                <a href=".#">Второй заголовок</a>
-                            </div>
-                        </div>
-                        <div class="gt-news-small gt-news-small-image">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_3.png')"></div>
-                            <div class="gt-news-text">
-                                <a href=".#">Страна</a>
-                                <a href=".#">Третий очень длинный заголовок</a>
-                            </div>
-                        </div>
-                        <div class="gt-news-small gt-news-small-plane">
-                            <div class="gt-news-text gt-black">
-                                <div class="gt-news-text-inner">
-                                    <h2>Популярные места</h2>
-                                    <p>Nulla vitae dictum turpis. Cum sociis
-                                        natoque penatibus et magnis dis
-                                        parturient montes, nascetur ridiculus
-                                        mus. Ut dapibus turpis sed lorem
-                                        varius, id posuere.</p>
-                                    <a href=".#"><span>Подробнее</span></a>
-                                </div>
-                
-                            </div>
-                
-                        </div>
-                
-                
-                    </div>
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-small gt-sm-order-2">
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                
-                        </div>
-                
-                        <div class="gt-news-big">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
-                
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-top">
-                                    <div class="gt-news-text-date-header">
-                                        <p>28.11.2017</p>
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>215</span>
-                                    </div>
-                                </div>
-                
-                
-                                <div class="gt-news-text-bottom">
-                                    <div class="gt-news-text-link-header">
-                                        <a class="gt-a-news" href=".#">Новости</a>
-                
-                                    </div>
-                                    <div class="gt-news-text-header">
-                                        <a href=".#">Заголовок статьи</a>
-                                    </div>
-                                </div>
-                
-                
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small gt-sm-order-2">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">2Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="gt-video  gt-margin" data-youtube = "COwlqqErDbY">
-                    <div class="gt-video-inner">
-                        <div class="gt-video-img">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/video_bg.png')"></div>
-                        </div>
-                    </div>
-                    <div class="gt-video-switch-wrapper">
-                        <div class="gt-video-text">
-                            <div class="container">
-                                <a href=".#" ><span class="gt-a-video">Видео</span></a>
-                                <p>Тестовое название видео</p>
-                            </div>
-                        </div>
-                        <span class="gt-video-switch"></span>
-                    </div>
-                </div>
-
-                
-                <div class="gt-slider container">
-                    <p class="gt-blue">ПОДБОРКИ</p>
-                    <div class="gt-slider-container">
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_1.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                   2_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_2.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    3_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_3.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    4_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_4.png')"></div>
-                        </div> <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    5_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_5.png')"></div>
-                        </div>
-                        <div class="gt-slider-inner">
-                            <div class="gt-slider-text">
-                                <h2 class="gt-slider-header gt-black">
-                                    Шедевры Антонио Гауди
-                                </h2>
-                                <p>
-                                    6_Антонио Гауди является величайшим представителей модерна, его исключительное новаторство сделало Гауди гением, изобретателем уникального, собственного и несравненного архитектурного языка, который не поддается классификации.
-                                </p>
-                            </div>
-                            <div class="gt-slider-img-holder gt-img-holder gt-shadow-70" style="background-image: url('./img/slider/slider_1.png')"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container gt-news">
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-big ">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_1.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-bottom">
-                                    <div class="gt-news-text-link-header">
-                                        <a href=".#">Публикации</a>
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>215</span>
-                                    </div>
-                                    <div class="gt-news-text-header">
-                                        <a href=".#">Заголовок статьи</a>
-                                    </div>
-                                </div>
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_2.png')">
-                
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">обрезаю на клиенте до 160 знаков, но лучше на беке резать. 0_Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_3.png')"></div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">1 Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-                
-                
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-small gt-sm-order-2">
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                
-                        </div>
-                        <div class="gt-news-big">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
-                
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-top">
-                                    <div class="gt-news-text-date-header">
-                                        <p>28.11.2017</p>
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>215</span>
-                                    </div>
-                                </div>
-                
-                
-                                <div class="gt-news-text-bottom">
-                                    <div class="gt-news-text-link-header">
-                                        <a class="gt-a-news" href=".#">Новости</a>
-                
-                                    </div>
-                                    <div class="gt-news-text-header">
-                                        <a href=".#">Заголовок статьи</a>
-                                    </div>
-                                </div>
-                
-                
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small gt-sm-order-2">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">2Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--//= templates/main_page/4_video/code.html-->
-                <div style="height: 30px"></div>
-                
-                
-                
-                
-                <div class="container">
-                    <div class="gt-link-block">
-                        <div class="gt-link-block-text">
-                            <h2>
-                                Париж - второй такой же блок с длинным названием и длинным текстом
-                            </h2>
-                            <p>
-                                Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историйСтолица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй   Столица высокой моды располагает к романтике и
-                                может поведать миллионы любовных историй
-                            </p>
-                            <a class = "gt-a-news" href=".#">ЧИТАТЬ ДАЛЬШЕ</a>
-                
-                        </div>
-                
-                
-                
-                
-                
-                        <div class="gt-link-block-img">
-                
-                
-                            <div class = "gt-img-holder" style="background-image: url('../img/link_block_img.png')">
-                            </div>
-                
-                
-                        </div>
-                    </div>
-                </div>
-                <div class="container gt-news gt-margin">
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-small gt-news-small-image">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_1.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <a href=".#">Страна</a>
-                                <a href=".#">Заголовок</a>
-                            </div>
-                        </div>
-                        <div class="gt-news-small gt-news-small-image">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_2.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <a href=".#">Страна</a>
-                                <a href=".#">Второй заголовок</a>
-                            </div>
-                        </div>
-                        <div class="gt-news-small gt-news-small-image">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('./img/news/news_vert_3.png')"></div>
-                            <div class="gt-news-text">
-                                <a href=".#">Страна</a>
-                                <a href=".#">Третий очень длинный заголовок</a>
-                            </div>
-                        </div>
-                        <div class="gt-news-small gt-news-small-plane">
-                            <div class="gt-news-text gt-black">
-                                <div class="gt-news-text-inner">
-                                    <h2>Популярные места</h2>
-                                    <p>Nulla vitae dictum turpis. Cum sociis
-                                        natoque penatibus et magnis dis
-                                        parturient montes, nascetur ridiculus
-                                        mus. Ut dapibus turpis sed lorem
-                                        varius, id posuere.</p>
-                                    <a href=".#"><span>Подробнее</span></a>
-                                </div>
-                
-                            </div>
-                
-                        </div>
-                
-                
-                    </div>
-                    <div class="gt-news-inner gt-margin">
-                        <div class="gt-news-small gt-sm-order-2">
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_1.png')"></div>
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_2.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_3.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_4.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс датаЗаголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                            <a href=".#" class="gt-news-prew">
-                                <div class = "gt-img-holder" style="background-image: url('../img/news/prew_news_5.png')"></div>
-                
-                                <div class="gt-news-prew-text">
-                                    <p>Заголовок короткой статьи в три строки плюс дата</p>
-                                    <p>28.07.2007</p>
-                                </div>
-                            </a>
-                
-                        </div>
-                
-                        <div class="gt-news-big">
-                            <div class = "gt-img-holder gt-shadow-100" style="background-image: url('../img/news/news_4.png')">
-                
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-top">
-                                    <div class="gt-news-text-date-header">
-                                        <p>28.11.2017</p>
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                        <span>215</span>
-                                    </div>
-                                </div>
-                
-                
-                                <div class="gt-news-text-bottom">
-                                    <div class="gt-news-text-link-header">
-                                        <a class="gt-a-news" href=".#">Новости</a>
-                
-                                    </div>
-                                    <div class="gt-news-text-header">
-                                        <a href=".#">Заголовок статьи</a>
-                                    </div>
-                                </div>
-                
-                
-                            </div>
-                
-                        </div>
-                        <div class="gt-news-small gt-sm-order-2">
-                            <div class = "gt-img-holder" style="background-image: url('../img/news/news_5.png')">
-                            </div>
-                            <div class="gt-news-text">
-                                <div class="gt-news-text-link-header">
-                                    <a href=".#">Публикации</a>
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
-                                    <span>215</span>
-                                </div>
-                                <div class="gt-news-text-header">
-                                    <a class="header" href=".#">
-                                        Заголовок статьи
-                                    </a>
-                                    <a class="text" href=".#">2Краткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                                        Отлично подходит три строки но
-                                        лучше не рвать предложениеКраткое описание статьи. Пару строк.
-                
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="gt-read-more gt-margin">
-                        <input type="button" class="gt-but-white" id="gt-read-more-but">
-                        <label for="gt-read-more-but"  class="gt-but-white">Смотреть еще</label>
-                    </div>
-                
-                </div>
-                <div class="gt-button-block-wrapper">
-                    <div class="gt-button-block container">
-                        <a class="gt-button-block-avia" href=".#">Авиабилеты</a>
-                        <a class="gt-button-block-hotels" href=".#">Отели</a>
-                        <a class="gt-button-block-carrent" href=".#">Прокат авто</a>
-                        <a class="gt-button-block-bus" href=".#">Ж/д и автобусы</a>
-                        <a class="gt-button-block-ship" href=".#">Круизы</a>
-                        <a class="gt-button-block-hottour" href=".#">Горящие туры</a>
-                        <a class="gt-button-block-insurance" href=".#">Страхование</a>
-                        <a class="gt-button-block-visas" href=".#">Визы</a>
-                    </div>
-                </div>
-            </div>
-
-    <footer class="gt-footer" id="gt-footer">
-        <div class="container">
-            <div class="gt-footer-top">
-                <div class="gt-footer-text  gt-xs-order-2">
-                    <p>
-                        GoToTrip - это информационный сервис для
-                        путешественников, предоставляющий детальную
-                        информацию о достопримечательностях мира,
-                        а также позволяющий забронировать все
-                        необходимые сопутствующие услуги
-                    </p>
-                    <a href=".#">Условия и положения</a>
-                    <a href=".#">Политика конфиденциальности</a>
-        
-                </div>
-                <div class="gt-footer-menu">
-                    <ul>
-                        <li><a href=".#">Европа</a></li>
-                        <li><a href=".#">Азия</a> </li>
-                        <li><a href=".#">Африка</a> </li>
-                        <li><a href=".#">Северная Америка</a> </li>
-                        <li><a href=".#">Южная Америка</a> </li>
-                        <li><a href=".#">Австралия и Океания</a> </li>
-                    </ul>
-                </div>
-                <div class="gt-footer-menu">
-                    <ul>
-                        <li><a href=".#">Чудеса света</a></li>
-                        <li><a href=".#">ТОП 100</a></li>
-                        <li><a href=".#">Лучшие подборки</a></li>
-                        <li><a href=".#">Видео</a></li>
-                        <li><a href=".#">Новости</a></li>
-                        <li><a href=".#">Публикации</a></li>
-        
-                    </ul>
-                </div>
-                <div class="gt-footer-subscribe">
-                    <p>Подписаться на новости</p>
-                    <form action="">
-                        <input type="text" id = "gt-footer-subscribe" placeholder="Введите свой email">
-                        <input type="submit" id="gt-footer-submit">
-                        <label for="gt-footer-submit"></label>
-                    </form>
-                    <div class="gt-footer-social-link">
-                        <ul>
-                            <li><a href="https://www.facebook.com"  rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com" rel="nofollow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li ><a href="https://www.youtube.com"  rel="nofollow" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                        </ul>
-        
-                    </div>
-        
-        
-        
-                </div>
-        
-        
-            </div>
-            <div class="gt-footer-copyright">
-            <p>© 2015-2017 GoToTrip. Полное или частичное использование материалов разрешается только при условии наличия прямой гиперссылки на адрес сайта www.gototrip.com </p>
-            </div>
-        </div>
-    </footer>
-    <div id="gt-up" class="gt-up"> <span>Вверх</span></div>
-    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
-    </body>    <div class="gt-body-open"></div>
+        <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+    </body>
 
 </html>

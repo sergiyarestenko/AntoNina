@@ -8,18 +8,21 @@ body {
   color: @grey-light;
   font-family: @font-family-main;
   font-weight: 300;
-  //z-index: 1;
   position: relative;
   width: 100%;
-  min-width: 320px;
-
 
 }
-
 * {
   box-sizing: border-box;
   z-index: 1;
 }
+body{
+  width: 100%;
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
 a,
 a:hover,
 a:visited,
@@ -59,7 +62,6 @@ a{
 
 
 .gt-wrapper {
-
   background: @body-bg;
   z-index: 2;
 
@@ -134,7 +136,7 @@ footer {
   border-radius: 50%;
   background:  @body-bg url("../img/arrow_top_blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
-  z-index: 9999;
+  z-index: 99;
   opacity: 0;
   visibility: hidden;
   .gt-transition(background);
@@ -182,8 +184,10 @@ footer {
     flex-direction: column;
     align-items: center;
     >div{
+      width: 100%;
       flex-direction: column;
       margin: auto;
+      flex-wrap: wrap;
     }
     .white-line {
       width: 160px;
@@ -192,12 +196,12 @@ footer {
     &-lg {
       font-size: 42px;
       font-weight:700;
-      max-width: 430px;//for IE
+
     }
     &-sm {
       font-size: 24px;
       font-weight:500;
-      max-width: 430px;//for IE
+      //max-width: 430px;//for IE
     }
   }
 }

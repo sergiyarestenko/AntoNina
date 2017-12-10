@@ -7,11 +7,16 @@ body {
   font-weight: 300;
   position: relative;
   width: 100%;
-  min-width: 320px;
 }
 * {
   box-sizing: border-box;
   z-index: 1;
+}
+body {
+  width: 100%;
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
 }
 a,
 a:hover,
@@ -114,7 +119,7 @@ footer {
   border-radius: 50%;
   background: #fafafa url("../img/arrow_top_blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
-  z-index: 9999;
+  z-index: 99;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: background 0.5s ease-in-out;
@@ -166,8 +171,10 @@ footer {
   align-items: center;
 }
 .gt-top-inner > div {
+  width: 100%;
   flex-direction: column;
   margin: auto;
+  flex-wrap: wrap;
 }
 .gt-top-inner .white-line {
   width: 160px;
@@ -176,12 +183,10 @@ footer {
 .gt-top-inner-lg {
   font-size: 42px;
   font-weight: 700;
-  max-width: 430px;
 }
 .gt-top-inner-sm {
   font-size: 24px;
   font-weight: 500;
-  max-width: 430px;
 }
 .gt-a-news,
 .gt-a-video {

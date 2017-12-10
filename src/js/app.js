@@ -1,7 +1,3 @@
-
-
-
-
 var GoToTrip = function () {
 	var self = this,
 		gtHeader = $('header'),
@@ -37,6 +33,7 @@ var GoToTrip = function () {
 		if($('div').is('.gt-slider')){
 			$('.gt-slider').each(function () {
 				self.setSlidersWidth($(this));
+				self.slideClick($(this),0);
 			})
 		}
 	});
@@ -47,7 +44,8 @@ var GoToTrip = function () {
 			self.deskTopMenuScroll();
 		}
 	});
-	//open-close mobile menu
+//click
+//open-close mobile menu
 	mobilemenuSwitch.on('click',function () {
 		if($(this).hasClass('gt-open')){
 		self.mobileMenuClose();
@@ -55,10 +53,10 @@ var GoToTrip = function () {
 		self.mobileMenuOpen();
 		}
 	});
+//to_top_button
 	upButton.on('click',function () {
 		self.pageUp();
 	});
-
 
 
 //functions
@@ -144,14 +142,14 @@ var GoToTrip = function () {
 			if(currentDot>0 ){
 				self.slideClick(el,currentDot-1)
 			}else{
-			console.log('end Of Line')
+			console.log('end Of Line');// delete
 			}
 		}else{
 		if(currentDot<dots-1){
 			self.slideClick(el,currentDot+1)
 
 			}else{
-			console.log('end Of Line')
+			console.log('end Of Line')// delete
 			}
 		}
 	}
@@ -189,11 +187,6 @@ var GoToTrip = function () {
 				upButton.css('position','');
 				gtWrapper.css('margin-bottom',gtFooter.outerHeight()+'px');
 			}
-
-
-
-		console.log($(window).height());
-
 	}
 	this.upPageButton = function () {
 		if ( $(document).scrollTop() > 30 ) {

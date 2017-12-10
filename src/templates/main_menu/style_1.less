@@ -9,13 +9,13 @@
   top:0;
   left:0;
   width: 100%;
-  z-index: 100;
-  padding-bottom: 6px;
+  z-index: 99;
   .gt-transition();
   &.gt-header-scrolled{
-    background: @menu-bg;
+    .gt-header-top{
+      background: @menu-bg;
+    }
   }
-
   &.gt-open{
     height: 100%;
     .gt-header-mobile-menu {
@@ -25,7 +25,6 @@
       background: @black;
     }
   }
-
   ul {
     width: 100%;
   }
@@ -40,7 +39,10 @@
   &-top{
     position: relative;
     width: 100%;
-    height: 70px;
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 80px;
+    padding-bottom: 10px;
     .gt-transition();
 
   }
@@ -48,10 +50,6 @@
     align-items: center;
     width: 185px;
     min-width: 150px;
-    a{
-      width: 100%;
-      height: 100%;
-    }
     img{
       width: 100%;
       height: auto;
