@@ -2,16 +2,19 @@
 @import "../../../stylesheets/variables";
 @import "../../../stylesheets/mixin";
 
-
-.container.action-menu{
+.container.gt-action-menu{
   padding: 0;
 }
-.action-menu {
+.gt-action-menu {
   flex-direction: row;
   &-wrapper {
     height: 400px;
     background: url("../img/main_bg_1.png") no-repeat 0 0;
     background-size: contain;
+  }
+  &-two-columns{
+    background: none;
+    height: auto;
   }
   .gt-events {
     .icon-holder{
@@ -31,39 +34,42 @@
       background-size: 50% auto;
     }
   }
+  .gt-plane-round-world {
+    .icon-holder{
+      background: url("../img/plane_round_world_icon_blue.svg") no-repeat  45% 45%;
+      background-size: 55% auto;
+    }
+  }
+  .gt-castle {
+    .icon-holder{
+      background: url("../img/castle_icon_blue.svg") no-repeat  50% 50%;
+      background-size: 50% auto;
+    }
+  }
+  .gt-wine {
+    .icon-holder{
+      background: url("../img/wine_icon_blue.svg") no-repeat  50% 50%;
+      background-size: 75% auto;
+    }
+  }
+
+
+
   &-inner {
     width: 100%;
     flex-direction: row;
     position: relative;
     min-height: 90px;
     padding: 60px 0 60px 100px;
-    .icon-holder {
-      position: absolute;
-      left: 0;
-      top:60px;
-      height: 90px;
-      width: 90px;
-      border: 1px solid @grey-border;
-      border-radius: 50%;
-    }
-    .text-holder {
-      flex-direction: column;
-      padding:0 15px;
-      width: 100%;
-      p {
-        &:first-of-type{
-          color: @grey-dark;
-          font-size:16px;
-          font-weight:700;
-        }
-        &.text-inner {
-          font-size: 14px;
-          font-weight: 300;
-          line-height:1.5;
-          padding-top:30px;
-        }
-      }
-    }
+  }
+  .icon-holder {
+    position: absolute;
+    left: 0;
+    top:60px;
+    height: 90px;
+    width: 90px;
+    border: 1px solid @grey-border;
+    border-radius: 50%;
     span {
       position: absolute;
       top:.25em;
@@ -80,23 +86,73 @@
       padding-top: .35em;
     }
   }
+  .text-holder {
+    flex-direction: column;
+    padding:0 15px;
+    width: 100%;
+    p {
+      &:first-of-type{
+        color: @grey-dark;
+        font-size:16px;
+        font-weight:700;
+      }
+      &.text-inner {
+        font-size: 14px;
+        font-weight: 300;
+        line-height:1.5;
+        padding-top:30px;
+      }
+    }
+  }
+
+  &-column{
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    p{
+
+      line-height: 180%;
+      padding-right:20%;
+    }
+    &-inner{
+      width: 33%;
+      flex-direction: column;
+      .icon-holder{
+        position: static;
+        //align-self: center;
+      }
+      p{
+        padding-top: 20px;
+        color:@black;
+        padding-right: 15px;
+      }
+
+    }
+  }
+
+
+
 }
 
 @media screen and (max-width:1230px) {
-  .container.action-menu {
+  .container.gt-action-menu {
     padding-left:inherit;
     padding-right: inherit;
   }
-  .action-menu {
+  .gt-action-menu {
     &-wrapper {
       height: 350px;
     }
+    &-two-columns{
+      height: auto;
+    }
     &-inner {
       padding: 60px 60px 60px 70px;
-      .icon-holder {
-        height: 70px;
-        width: 70px;
-      }
+    }
+    .icon-holder {
+      height: 70px;
+      width: 70px;
       span {
         font-size: 13px;
         line-height: 12px;
@@ -115,31 +171,36 @@
 }
 
 @media screen and (max-width:1023px) {
-  .action-menu {
+  .gt-action-menu {
     &-wrapper {
       height: 290px;
       background-size: cover;
+    }
+    &-two-columns{
+      height: auto;
+      .gt-action-menu{
+        flex-wrap: wrap;
+      }
+
     }
     &-inner {
       height: auto;
       padding: 65px 0 0;
       justify-content: flex-start;
-      .icon-holder {
-       position: relative;
-        left: auto;
-        top:auto;
-        height: 140px;
-        width: 140px;
-      }
-      .text-holder {
-        display: none;
-      }
+
       &:nth-child(2){
         justify-content: center;
       }
       &:last-of-type{
         justify-content: flex-end;
       }
+    }
+    .icon-holder {
+      position: relative;
+      left: auto;
+      top:auto;
+      height: 140px;
+      width: 140px;
       span {
         font-size: 18px;
         width: 35px;
@@ -147,20 +208,40 @@
         line-height: 27px;
       }
     }
+    .text-holder {
+      display: none;
+    }
+    &-column{
+      p{
+        padding-right: 0;
+      }
+      &-inner{
+        .icon-holder{
+          align-self: center;
+        }
+        p{
+          text-align: center;
+        }
+      }
+
+    }
   }
 }
 
 @media screen and (max-width:666px) {
-  .action-menu {
+  .gt-action-menu {
     &-wrapper {
       height: 210px;
     }
+    &-two-columns{
+      height: auto;
+    }
     &-inner {
       padding-top:45px;
-      .icon-holder {
-        height: 110px;
-        width: 110px;
-      }
+    }
+    .icon-holder {
+      height: 110px;
+      width: 110px;
       span {
         font-size: 15px;
         width: 28px;
@@ -168,19 +249,25 @@
         line-height: 20px;
       }
     }
+    &-column{
+      align-items: flex-start;
+    }
   }
 }
 @media screen and (max-width:479px) {
-  .action-menu {
+  .gt-action-menu {
     &-wrapper {
       height: 160px;
     }
+    &-two-columns{
+      height: auto;
+    }
     &-inner {
       padding-top:30px;
-      .icon-holder {
-        height: 90px;
-        width: 90px;
-      }
+    }
+    .icon-holder {
+      height: 90px;
+      width: 90px;
       span {
         font-size: 14px;
         width: 25px;
@@ -188,21 +275,26 @@
         line-height: 18px;
       }
     }
+    &-column{
+      font-size: 15px;
+      &-inner{
+        font-size: 13px;
+      }
+    }
   }
 }
 @media screen and (max-width:359px) {
-  .action-menu {
-    &-inner {
+  .gt-action-menu {
       .icon-holder {
         height: 65px;
         width: 65px;
+        span {
+          font-size: 12px;
+          width: 20px;
+          height: 20px;
+          line-height: 15px;
+        }
       }
-      span {
-        font-size: 12px;
-        width: 20px;
-        height: 20px;
-        line-height: 15px;
-      }
-    }
+
   }
 }

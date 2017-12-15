@@ -1,0 +1,118 @@
+@import "../../../stylesheets/palette";
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixin";
+
+.gt-must{
+  position: relative;
+  height: 500px;
+  &-left{
+    width:65%;
+    height: 100%;
+    background: #e3e3e3;
+    overflow: hidden;
+  }
+  .gt-video{
+    height: 100%;
+  }
+  &-right{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 45%;
+    height: 100%;
+    z-index: 5;
+    //padding: 25px;
+    flex-direction: column;
+    &-inner{
+      background: @white;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      .gt-inner-scroll-text{
+        padding: 45px 35px 35px 50px;
+      }
+      h2{
+        font-size: 18px;
+        margin-bottom: 25px;
+      }
+      ul{
+        flex-direction: column;
+        min-height: 100%;
+        //font-size: 14px;
+        li{
+
+          position: relative;
+          height: auto;
+          margin: 35px 0;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left:0px;
+            top:-.3em;
+            font-size: 64px;
+            font-weight: bold;
+            color: @grey-lightest;
+          }
+          &:nth-of-type(1){
+              &:after{
+                content: '1';
+              }
+            }
+          &:nth-of-type(2){
+              &:after{
+                content: '2';
+              }
+            }
+          &:nth-of-type(3){
+              &:after{
+                content: '3';
+              }
+            }
+          &:nth-of-type(4){
+              &:after{
+                content: '4';
+              }
+            }
+          &:nth-of-type(5){
+              &:after{
+                content: '5';
+              }
+            }
+          &:nth-of-type(6){
+              &:after{
+                content: '6';
+              }
+            }
+          &:nth-of-type(7){
+              &:after{
+                content: '7';
+              }
+            }
+          &:nth-of-type(8){
+              &:after{
+                content: '8';
+              }
+            }
+          &:nth-of-type(9){
+              &:after{
+                content: '9';
+              }
+            }
+          &:nth-of-type(10){
+              &:after{
+                content: '10';
+              }
+            }
+          p{
+            text-indent: 20px;
+            line-height: 1.5;
+          }
+        }
+      }
+
+    }
+  }
+
+}

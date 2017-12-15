@@ -1,84 +1,41 @@
-.main-page {
+@import "../../../stylesheets/palette";
+@import "../../../stylesheets/variables";
+@import "../../../stylesheets/mixin";
+
+.country-page {
   &-top {
-    background: url("../img/main_top_bg.png") no-repeat 50% 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
     background-size: cover;
-    height: 900px;
+    height: 600px;
     .gt-top {
       &-inner {
-        margin-top: 280px;
-        .white-line {
-          width: 160px;
-        }
+        margin-top: 180px;
+
       }
     }
   }
 }
 
-@media screen and (max-width:1230px) {
-  .main-page {
-    &-top {
-      height: 480px;
-      .gt-top {
-        &-inner {
-          margin-top: 150px;
-        }
-      }
-    }
-  }
+  @media screen and (max-width:1230px) {
 
-}
+  }
 
   @media screen and (max-width:1023px) {
-    .main-page {
-      &-top {
-        height: 1006px;
-        .gt-top {
-          &-inner {
-            margin-top: 325px;
-
-          }
-        }
-      }
-    }
 
   }
 
   @media screen and (max-width:767px) {
-    .main-page {
-      &-top {
-        height: 870px;
-        .gt-top {
-          &-inner {
-            margin-top: 270px;
-          }
-        }
-      }
-    }
+
 
   }
 
   @media screen and (max-width:666px) {
-    .main-page {
-      &-top {
-        height: 630px;
-        .gt-top {
-          &-inner {
-            margin-top: 200px;
-          }
-        }
-      }
-    }
+
 
   }
 
   @media screen and (max-width:479px) {
-    .main-page {
-      &-top {
-        height: 560px;
-        .gt-top {
-        }
-      }
-    }
 
   }
 

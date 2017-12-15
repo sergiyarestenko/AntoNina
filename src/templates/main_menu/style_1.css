@@ -47,7 +47,15 @@
 .gt-header-logo {
   align-items: center;
   width: 185px;
+  height: 100%;
   min-width: 150px;
+}
+.gt-header-logo a {
+  display: inline-block;
+  min-width: 100%;
+  min-height: 100%;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 .gt-header-logo img {
   width: 100%;
@@ -212,6 +220,10 @@
     width: 185px;
     align-items: center;
     justify-content: center;
+  }
+  .gt-header-logo a {
+    padding-top: 10px;
+    text-align: center;
   }
   .gt-header-logo img {
     width: 150px;

@@ -20,8 +20,13 @@ var GoToTrip = function () {
 			self.cutNews()
 		}
 		if ($('div').is('.gt-video')){
-
 			self.setPlayers()
+		}
+		if ($('div').is('.gt-inner-scroll')){
+			self.innerScroll()
+		}
+		if($('div').is('.gt-tabs')){
+			self.tabSlider()
 		}
 
 	});
@@ -156,18 +161,11 @@ var GoToTrip = function () {
 	this.cutNews = function () {
 		var newsContainers = $('.gt-news');
 		newsContainers.each(function () {
-		var cuttingNews = $(this).find('.gt-news-small .gt-news-text-header .text');
-		cuttingNews.each(function () {
-
-		self.cutting($(this),160);
-
-
-
+			var cuttingNews = $(this).find('.gt-news-small .gt-news-text-header .text');
+				cuttingNews.each(function () {
+					self.cutting($(this),160);
+				})
 		})
-
-		})
-
-
 	}
 	this.cutting = function (el,num) {
 		var newsText = el.text()
@@ -201,9 +199,10 @@ var GoToTrip = function () {
 	}
 	this.setPlayers = function () {
 		var tag = document.createElement('script');
+			tag.type = 'text/javascript';
 			tag.src = 'https://www.youtube.com/player_api';
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		var lastScriptTag = document.getElementsByTagName('script')[ document.getElementsByTagName('script').length-1];
+			lastScriptTag.parentNode.insertBefore(tag, lastScriptTag);
 		var gtVideos = $('.gt-video');
 			gtVideos.each(function () {
 				var currentPlayer = $(this);
@@ -258,6 +257,44 @@ var GoToTrip = function () {
 			}
 		});
 	}
+	this.innerScroll = function () {
+		$('.gt-inner-scroll').each(function () {
+			if($(this).find('.overview').height()>$(this).height()){
+				$(this).addClass('isScrolled');
+				$(this).tinyscrollbar({ thumbSize: 40,wheelSpeed:10  });
+			}
+		})
+	}
+	this.tabSlider = function () {
+		var tabSliders = $('.gt-tabs');
+		tabSliders.each(function () {
+			var currTabs = $(this);
+			currTabs.find('.gt-tabs-button').each(function () {
+				$(this).on('click',function () {
+					self.tabSliderAction(currTabs, $(this).index())
+				})
+			})
+		self.tacSliderActivation(currTabs);
+		})
+	}
+	this.tacSliderActivation = function (el) {
+		$(el.find('.gt-tabs-button')).removeClass('active');
+		$(el.find('.gt-tabs-main')).removeClass('active');
+		$(el.find('.gt-tabs-main')).hide();
+		$(el.find('.gt-tabs-button')[0]).addClass('active');
+		$(el.find('.gt-tabs-main')[0]).show();
+		$(el.find('.gt-tabs-main')[0]).addClass('active');
+	}
+	this.tabSliderAction = function (el,num) {
+		$(el.find('.gt-tabs-button')).removeClass('active');
+		$(el.find('.gt-tabs-main')).removeClass('active');
+		$(el.find('.gt-tabs-main')).hide();
+		$(el.find('.gt-tabs-button')[num]).addClass('active');
+		$(el.find('.gt-tabs-main')[num]).show();
+		$(el.find('.gt-tabs-main')[num]).addClass('active');
+	}
+
+
 };
 
 

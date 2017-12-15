@@ -1,8 +1,8 @@
 .gt-breadcrumbs {
   font-size: 20px;
-  height: 115px;
-  padding-top: 15px;
+  padding-top: 95px;
   align-items: flex-start;
+  color: #fff;
 }
 .gt-breadcrumbs ul {
   flex-direction: row;

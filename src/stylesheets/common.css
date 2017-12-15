@@ -69,7 +69,7 @@ footer {
   padding: 0 15px;
 }
 .white-line {
-  height: 1px;
+  height: 2px;
   background: #fff;
 }
 .gt-blue {
@@ -100,12 +100,22 @@ footer {
   bottom: 0;
   left: 0;
 }
+.gt-box-shadow {
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+}
 .gt-shadow-70:after {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 100%);
   z-index: 10;
 }
+.gt-shadow-70-reverse-100px:after {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0) 100px);
+  z-index: 10;
+  bottom: auto;
+  height: 100px;
+  width: auto;
+}
 .gt-shadow-100:after {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0.35) 25%, rgba(0, 0, 0, 0) 100%);
   z-index: 10;
 }
 .gt-up {
@@ -159,11 +169,11 @@ footer {
 }
 .gt-top {
   flex-direction: column;
-  color: #fff;
   width: 100%;
   flex-wrap: wrap;
 }
 .gt-top-inner {
+  color: #fff;
   padding: 100px 85px 70px 85px;
   background: url("../img/grid_pattern.png") repeat;
   width: 600px;
@@ -175,6 +185,7 @@ footer {
   flex-direction: column;
   margin: auto;
   flex-wrap: wrap;
+  z-index: 5;
 }
 .gt-top-inner .white-line {
   width: 160px;
