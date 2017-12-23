@@ -18,6 +18,7 @@
 }
 .gt-inner-scroll .overview,
 .gt-inner-scroll-tabs .overview {
+  width: 100%;
   list-style: none;
   position: absolute;
   left: 0;

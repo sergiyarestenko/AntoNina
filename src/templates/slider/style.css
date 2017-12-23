@@ -78,11 +78,11 @@
 .gt-slider-nav span.gt-active {
   background: #0057FF;
 }
-.action-menu-wrapper + .gt-slider {
+.gt-action-menu-wrapper + .gt-slider {
   z-index: 5;
   margin-top: -100px;
 }
-.action-menu-wrapper + .gt-slider .gt-slider-text:after {
+.gt-action-menu-wrapper + .gt-slider .gt-slider-text:after {
   height: calc(100% - 100px);
 }
 @media screen and (max-width: 1230px) {
@@ -91,7 +91,7 @@
   }
 }
 @media screen and (max-width: 1023px) {
-  .action-menu-wrapper + .gt-slider {
+  .gt-action-menu-wrapper + .gt-slider {
     margin-top: -40px;
   }
   .gt-slider-text {
@@ -107,7 +107,7 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .action-menu-wrapper + .gt-slider {
+  .gt-action-menu-wrapper + .gt-slider {
     margin-top: -60px;
   }
   .gt-slider {
@@ -136,7 +136,7 @@
   }
 }
 @media screen and (max-width: 666px) {
-  .action-menu-wrapper + .gt-slider {
+  .gt-action-menu-wrapper + .gt-slider {
     margin-top: -70px;
   }
   .gt-slider {
@@ -155,7 +155,7 @@
   }
 }
 @media screen and (max-width: 479px) {
-  .action-menu-wrapper + .gt-slider {
+  .gt-action-menu-wrapper + .gt-slider {
     margin-top: -20px;
   }
   .gt-slider {

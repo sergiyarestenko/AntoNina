@@ -1,11 +1,21 @@
 var GoToTrip = function () {
 	var self = this,
+		body = $(document.body),
+		bodyPosition = {
+			top:false,
+			left:false
+		},
+		token360 = $('#gt-is-360'),
+		token480 = $('#gt-is-480'),
+		token667 = $('#gt-is-667'),
+		token768 = $('#gt-is-768'),
+		token1024 = $('#gt-is-1024'),
+		token1231 = $('#gt-is-1231'),
 		gtHeader = $('header'),
 		gtFooter = $('footer'),
 		gtWrapper = $('#gt-wrapper'),
 		upButton = $('#gt-up'),
 		mobilemenuSwitch = $('#gt-mobile-menu-switch');
-
 
 
 	//listeners
@@ -28,6 +38,9 @@ var GoToTrip = function () {
 		if($('div').is('.gt-tabs')){
 			self.tabSlider()
 		}
+		if($('div').is($('.gt-slider-horizontal'))){
+			self.horizontalSliderCreate();
+		}
 
 	});
 	$(window).resize(function(){
@@ -40,6 +53,9 @@ var GoToTrip = function () {
 				self.setSlidersWidth($(this));
 				self.slideClick($(this),0);
 			})
+		}
+		if($('div').is($('.gt-slider-horizontal'))){
+			self.horizontalSliderCreate();
 		}
 	});
 // scroll
@@ -65,6 +81,22 @@ var GoToTrip = function () {
 
 
 //functions
+	this.fixBody = function () {
+		if(bodyPosition.top||bodyPosition.left)
+			return;
+		bodyPosition.top = $(document).scrollTop();
+		bodyPosition.left = body.offset().left;
+		console.log('top',bodyPosition.top,'left',bodyPosition.left);
+		body.css({'position':'fixed','left':bodyPosition.left+'px','top':-1*bodyPosition.top+'px' })
+	}
+	this.unfixBody = function () {
+
+		body.css({'position':'','left':'','top':'' })
+		$(document).scrollTop(bodyPosition.top);
+		bodyPosition.top = false;
+		bodyPosition.left = false;
+	}
+
 	this.deskTopMenuScroll = function () {
 		if ($(window).scrollTop() > gtHeader.outerHeight()) {
 			gtHeader.addClass('gt-header-scrolled');
@@ -84,7 +116,7 @@ var GoToTrip = function () {
 		var gtSliders = $('.gt-slider');
 		gtSliders.each(function () {
 			var currentSlider = $(this),
-				sliderContainer = $(currentSlider).find('.gt-slider-container'),
+				// sliderContainer = $(currentSlider).find('.gt-slider-container'),
 				sliderInner = $(currentSlider).find('.gt-slider-inner'),
 				initialPoint = 0,
 				finalPoint = 0;
@@ -274,10 +306,10 @@ var GoToTrip = function () {
 					self.tabSliderAction(currTabs, $(this).index())
 				})
 			})
-		self.tacSliderActivation(currTabs);
+		self.tabSliderActivation(currTabs);
 		})
 	}
-	this.tacSliderActivation = function (el) {
+	this.tabSliderActivation = function (el) {
 		$(el.find('.gt-tabs-button')).removeClass('active');
 		$(el.find('.gt-tabs-main')).removeClass('active');
 		$(el.find('.gt-tabs-main')).hide();
@@ -293,6 +325,87 @@ var GoToTrip = function () {
 		$(el.find('.gt-tabs-main')[num]).show();
 		$(el.find('.gt-tabs-main')[num]).addClass('active');
 	}
+	this.horizontalSliderCreate = function () {
+		$('.gt-slider-horizontal').each(function () {
+			var baseWidth,
+				screenConst = 4,
+				inner = $(this).find($('.gt-slider-horizontal-inner')),
+				innerCount = inner.length,
+				arrowToken = false;
+			if($(token768).is(':visible'))
+				screenConst = 3;
+			if($(token667).is(':visible'))
+				screenConst = 2;
+			if($(token360).is(':visible'))
+				screenConst = 1;
+			if(innerCount < screenConst)
+				screenConst = innerCount;
+			baseWidth = $(this).outerWidth()/screenConst;
+			$(this).find('.gt-slider-horizontal-container').outerWidth((innerCount+1)*baseWidth)
+				inner.each(function () {
+				$(this).outerWidth(baseWidth);
+				// $(this).append('<div class = "gt-slider-horizontal-inner-cover"></div>')
+			})
+			if(innerCount > screenConst){
+				$(this).append('<span class = "gt-slider-horizontal-arrow left"></span><span class = "gt-slider-horizontal-arrow right"></span>');
+				self.horizontalSliderClick($(this),innerCount,screenConst,baseWidth);
+			}
+		})
+	}
+	this.horizontalSliderClick = function (el,innerCount,screenConst,baseWidth) {
+		var container = el.find('.gt-slider-horizontal-container'),
+			currPosition = 0,
+			left = el.find('.left'),
+			right = el.find('.right');
+			checkPosition();
+		left.on('click',function () {
+			if(currPosition >= innerCount-screenConst)
+				return;
+			currPosition +=1;
+			self.holizontalSliderMove(container,baseWidth*-1*currPosition)
+			checkPosition();
+		})
+		right.on('click',function () {
+			if(currPosition <= 0)
+				return;
+			currPosition -=1;
+			self.holizontalSliderMove(container,baseWidth*-1*currPosition);
+			checkPosition();
+		})
+		el.find('.gt-slider-horizontal-inner-cover').on('click',function () {
+			self.createAllScreenSlider(el,$(this).parent().index())
+		})
+		function checkPosition() {
+			left.removeClass('not-active');
+			right.removeClass('not-active');
+			if(currPosition == 0){
+				right.addClass('not-active');
+			}
+			if (currPosition == innerCount-screenConst){
+				left.addClass('not-active');
+			}
+		}
+	}
+	this.holizontalSliderMove  = function (el, num) {
+		el.css('margin-left',num+'px');
+	}
+	this.createAllScreenSlider = function (el,num) {
+		self.fixBody();
+		$('#gt-body-wrapper').show().append('<div id = "gt-clone" class="gt-clone"><div class="container"><div id = "gt-clone-close" class = "gt-clone-close"><i class="fa fa-times fa-2x"></i></div></div></div>');
+		$('#gt-clone .container').append(el.clone());
+		$('#gt-clone-close').on('click',function () {
+			self.destroyAllScreenSlider();
+		})
+	}
+	this.destroyAllScreenSlider = function () {
+		$('#gt-clone-close').off();
+		$('#gt-clone').remove();
+		$('#gt-body-wrapper').hide();
+		self.unfixBody();
+	}
+
+
+
 
 
 };

@@ -28,6 +28,7 @@
   overflow: hidden;
 }
 .gt-must-right-inner .gt-inner-scroll-text {
+  width: 100%;
   padding: 45px 35px 35px 50px;
 }
 .gt-must-right-inner h2 {
@@ -37,8 +38,10 @@
 .gt-must-right-inner ul {
   flex-direction: column;
   min-height: 100%;
+  width: 100%;
 }
 .gt-must-right-inner ul li {
+  width: 100%;
   position: relative;
   height: auto;
   margin: 35px 0;
