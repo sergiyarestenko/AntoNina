@@ -1,44 +1,14 @@
-<!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>GoToTrip</title>
-        <link rel="stylesheet" href="stylesheets/main.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-    <span id="gt-is-360"></span>
-    <span id="gt-is-480"></span>
-    <span id="gt-is-667"></span>
-    <span id="gt-is-768"></span>
-    <span id="gt-is-1024"></span>
-    <span id="gt-is-1231"></span>
-        //= templates/main_menu/code.html
-        <div class="gt-wrapper" id = "gt-wrapper">
+//= templates/all_page/start
 
-            //= templates/0_top_block/country-page/code.html
-            //= templates/country_page/1_action_menu/code.html
-            //= templates/country_page/2_must_10/code.html
-            //= templates/country_page/3_news_big/code.html
-            //= templates/country_page/5_tab_slyder/country_top.html
-            //= templates/link_block_city/code.html
-            //= templates/country_page/5_tab_slyder/country_bottom.html
-            //= templates/slider-horizontal/country_horizontal.html
-            <div style="height: 500px"></div>
-            //= templates/button-block/code.html
-        </div>
+            //= templates/top_block/country_page/country_page
+            //= templates/action_menu/country_page
+            //= templates/must_10/country_page
+            //= templates/news_block/country_page
+            //= templates/tab_slider/country_top
+            //= templates/link_block_city/code
+            //= templates/tab_slider/country_bottom
+            //= templates/slider/country_horizontal
+            //= templates/country_info/country_page
+            //= templates/500
 
-        <footer class="gt-footer" id="gt-footer">
-            //= templates/footer/code.html
-        </footer>
-    <div id="gt-body-wrapper" class="gt-body-wrapper"></div>
-
-    <div id="gt-up" class="gt-up">
-            <span>Вверх</span>
-        </div>
-        <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
-        <script src="./js/jquery.tinyscrollbar.min.js"></script>
-        <script type="text/javascript" src="./js/app.js"></script>
-    </body>
-
-</html>
+//= templates/all_page/end

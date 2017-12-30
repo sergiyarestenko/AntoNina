@@ -145,7 +145,7 @@ footer {
   width: 40px;
   border: 1px solid #4d4d4d;
   border-radius: 50%;
-  background: #fafafa url("../img/arrow_top_blue.svg") no-repeat 50% 50%;
+  background: #fafafa url("../img/icons/arrow_top_blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
   z-index: 99;
   opacity: 0;
@@ -168,7 +168,7 @@ footer {
   left: -40px;
   top: -5px;
   content: '';
-  background: #fff url("../img/arrow_top_blue.svg") no-repeat 50% 45%;
+  background: #fff url("../img/icons/arrow_top_blue.svg") no-repeat 50% 45%;
   background-size: 50% auto;
   width: 30px;
   height: 30px;
@@ -180,7 +180,7 @@ footer {
   visibility: visible;
 }
 .gt-up.gt-visible:hover {
-  background: #0057FF url("../img/arrow_top_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/arrow_top_white.svg") no-repeat 50% 50%;
   background-size: 50% auto;
   border-color: #0057FF;
   opacity: 1;
@@ -198,6 +198,9 @@ footer {
   height: 2px;
   width: 100%;
   background: #0057FF;
+}
+.gt-aling-items-flex-end {
+  align-items: flex-end;
 }
 .gt-margin {
   margin-top: 30px;

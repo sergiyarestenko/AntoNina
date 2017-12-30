@@ -81,7 +81,7 @@ gulp.task('serve', ['server'], function() {
 
 //watchers
 gulp.task('watch', function(){
-    gulp.watch(config.paths.img, ['img']);
+    // gulp.watch(config.paths.img, ['img']);
     gulp.watch(config.paths.templateLess, [/*'lessLint',*/'css']);
     gulp.watch(config.paths.less, [/*'lessLint',*/'css']);
     gulp.watch(config.paths.html, ['html']);
@@ -91,3 +91,4 @@ gulp.task('watch', function(){
 
 
 gulp.task('default', ['img',/*'lessLint',*/'css', 'js', 'html', 'serve', 'watch']);
+

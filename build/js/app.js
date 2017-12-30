@@ -24,7 +24,7 @@ var GoToTrip = function () {
 		self.deskTopMenuScroll();
 		self.footerHeight();
 		if($('div').is('.gt-slider')){
-			self.createSlider()
+			self.createSliders()
 		}
 		if ($('div').is('.gt-news')){
 			self.cutNews()
@@ -38,25 +38,20 @@ var GoToTrip = function () {
 		if($('div').is('.gt-tabs')){
 			self.tabSlider()
 		}
-		if($('div').is($('.gt-slider-horizontal'))){
-			self.horizontalSliderCreate();
-		}
+
+		// if($('div').is('.gt-curr-time')||$('div').is('.gt-curr-date')){
+		// 	self.setCurrTime()
+		// }
 
 	});
 	$(window).resize(function(){
 		self.deskTopMenuScroll();
-		self.mobileMenuClose();
 		self.footerHeight();
+		if(gtHeader.hasClass('gt-open'))
+			self.mobileMenuClose();
 
-		if($('div').is('.gt-slider')){
-			$('.gt-slider').each(function () {
-				self.setSlidersWidth($(this));
-				self.slideClick($(this),0);
-			})
-		}
-		if($('div').is($('.gt-slider-horizontal'))){
-			self.horizontalSliderCreate();
-		}
+
+
 	});
 // scroll
 	$( window ).scroll(function() {
@@ -86,17 +81,14 @@ var GoToTrip = function () {
 			return;
 		bodyPosition.top = $(document).scrollTop();
 		bodyPosition.left = body.offset().left;
-		console.log('top',bodyPosition.top,'left',bodyPosition.left);
 		body.css({'position':'fixed','left':bodyPosition.left+'px','top':-1*bodyPosition.top+'px' })
 	}
 	this.unfixBody = function () {
-
 		body.css({'position':'','left':'','top':'' })
 		$(document).scrollTop(bodyPosition.top);
 		bodyPosition.top = false;
 		bodyPosition.left = false;
 	}
-
 	this.deskTopMenuScroll = function () {
 		if ($(window).scrollTop() > gtHeader.outerHeight()) {
 			gtHeader.addClass('gt-header-scrolled');
@@ -105,90 +97,14 @@ var GoToTrip = function () {
 		}
 	}
 	this.mobileMenuOpen = function(){
+		self.fixBody();
 		gtHeader.addClass('gt-open');
 		mobilemenuSwitch.addClass('gt-open');
 	}
 	this.mobileMenuClose = function () {
+		self.unfixBody();
 		mobilemenuSwitch.removeClass('gt-open');
 		gtHeader.removeClass('gt-open');
-	}
-	this.createSlider = function () {
-		var gtSliders = $('.gt-slider');
-		gtSliders.each(function () {
-			var currentSlider = $(this),
-				// sliderContainer = $(currentSlider).find('.gt-slider-container'),
-				sliderInner = $(currentSlider).find('.gt-slider-inner'),
-				initialPoint = 0,
-				finalPoint = 0;
-			if( sliderInner.length > 1){
-				self.createSladerNav(currentSlider,sliderInner.length);
-			//touchListeners
-				currentSlider.on('touchstart', function(event) {
-				var e = event.originalEvent;
-					initialPoint =  Math.abs(e.touches[0].pageX);
-				});
-				currentSlider.on('touchend', function(event) {
-					var e = event.originalEvent;
-					finalPoint =  Math.abs(e.changedTouches[0].pageX);
-
-					if(Math.abs(initialPoint-finalPoint) > 50){
-						if(initialPoint > finalPoint){
-							self.slideTouch(currentSlider,false)
-						}else {
-							self.slideTouch(currentSlider,true)
-						}
-					}
-			});
-			self.createClickListeners(currentSlider);
-			self.setSlidersWidth(currentSlider,sliderInner.length);
-			}
-		})
-	}
-	this.setSlidersWidth = function (el,num) {
-	var sliderWidth = el.outerWidth();
-		el.find('.gt-slider-container').outerWidth(sliderWidth*(num+1));
-		el.find('.gt-slider-inner').outerWidth(sliderWidth);
-	}
-	this.createSladerNav = function (el,num) {
-		el.append("<div class='gt-slider-nav'></div>");
-		var nav = el.find('.gt-slider-nav');
-			for (var i = 0; i < num; i++) {
-			nav.append('<span data-num = '+i+'></span>');
-			}
-		nav.find('span').first().addClass('gt-active')
-	}
-	this.createClickListeners = function (el) {
-		el.find('.gt-slider-nav span').off().on('click',function () {
-			self.slideClick(el,+$(this).attr('data-num'));
-		})
-	}
-	this.slideClick = function (el, num) {
-		el.find('.gt-slider-container').css('margin-left', (el.outerWidth()*-1*num-num/.25)+'px');
-		var dots = el.find('.gt-slider-nav span');
-		dots.removeClass('gt-active');
-			dots.each(function () {
-				if($(this).attr('data-num') == num){
-				$(this).addClass('gt-active');
-				}
-			})
-	}
-	this.slideTouch = function (el,bul) {
-		var dots = el.find('.gt-slider-nav span').length,
-			currentDot = +el.find('.gt-slider-nav span.gt-active').attr('data-num');
-		if(bul){
-			if(currentDot>0 ){
-				self.slideClick(el,currentDot-1)
-			}else{
-			console.log('end Of Line');// delete
-			}
-		}else{
-		if(currentDot<dots-1){
-			self.slideClick(el,currentDot+1)
-
-			}else{
-			console.log('end Of Line')// delete
-			}
-		}
 	}
 	this.cutNews = function () {
 		var newsContainers = $('.gt-news');
@@ -325,84 +241,315 @@ var GoToTrip = function () {
 		$(el.find('.gt-tabs-main')[num]).show();
 		$(el.find('.gt-tabs-main')[num]).addClass('active');
 	}
-	this.horizontalSliderCreate = function () {
-		$('.gt-slider-horizontal').each(function () {
-			var baseWidth,
-				screenConst = 4,
-				inner = $(this).find($('.gt-slider-horizontal-inner')),
+
+
+/*
+*all sliders create funs
+* params
+* count (num)  from 1 to 4 - how mach img on slider screen
+* arrow (bull) arrow left and right
+* dots (bull) dots link
+* */
+	this.createSliders = function () {
+		var gtSliders = $('.gt-slider');
+		gtSliders.each(function () {
+		var currSlider = $(this),
+				currPosition = 0,
+				arrow = false,
+				dots = false,
+				screenConst,
+				inner = currSlider.find('.gt-slider-inner'),
 				innerCount = inner.length,
-				arrowToken = false;
-			if($(token768).is(':visible'))
-				screenConst = 3;
-			if($(token667).is(':visible'))
-				screenConst = 2;
-			if($(token360).is(':visible'))
-				screenConst = 1;
-			if(innerCount < screenConst)
-				screenConst = innerCount;
-			baseWidth = $(this).outerWidth()/screenConst;
-			$(this).find('.gt-slider-horizontal-container').outerWidth((innerCount+1)*baseWidth)
-				inner.each(function () {
-				$(this).outerWidth(baseWidth);
-				// $(this).append('<div class = "gt-slider-horizontal-inner-cover"></div>')
-			})
-			if(innerCount > screenConst){
-				$(this).append('<span class = "gt-slider-horizontal-arrow left"></span><span class = "gt-slider-horizontal-arrow right"></span>');
-				self.horizontalSliderClick($(this),innerCount,screenConst,baseWidth);
+				baseWidth;
+			if(currSlider.hasClass('gt-slider-has-arrow')){
+				arrow = true;
+				currSlider.append('<div class="gt-slider-arrow-holder"></div>')
 			}
+			if(currSlider.hasClass('gt-slider-has-dots')){
+				dots = true;
+				currSlider.append('<div class="gt-slider-nav"></div>')
+
+			}
+		     function findScreenConst() {
+		        screenConst = 1;
+				if(currSlider.attr('data-count')){
+					screenConst = parseInt(currSlider.attr('data-count'));
+				if($(token768).is(':visible'))
+					screenConst = 3;
+				if($(token667).is(':visible'))
+					screenConst = 2;
+				if($(token360).is(':visible'))
+					screenConst = 1;
+				}
+			}
+			function setBaseWidth() {
+				baseWidth = currSlider.outerWidth()/screenConst;
+				currSlider.find('.gt-slider-container').outerWidth((innerCount+1)*baseWidth)
+				inner.each(function () {
+					$(this).outerWidth(baseWidth)
+				})
+				if(innerCount > screenConst){
+					if(arrow)
+						createArrows();
+					if(dots)
+						createDots();
+				}
+			}
+			findScreenConst();
+			setBaseWidth();
+			createTouch();
+			function createArrows() {
+				currSlider.find('.gt-slider-arrow-holder').html(
+					'<span class = "gt-slider-arrow left">' +
+					'<i class="fa fa-angle-left fa-2x"></i>' +
+					'</span>' +'<span class = "gt-slider-arrow right">' +
+					'<i class="fa fa-angle-right fa-2x"></i>' +
+					'</span>');
+				currSlider.find('.left').off().on('click',function () {
+					oneMoveFunction(true)
+				})
+				currSlider.find('.right').off().on('click',function () {
+					oneMoveFunction(false)
+				})
+				checkPosition()
+			}
+			function createDots() {
+				var nav = currSlider.find('.gt-slider-nav'),
+					spans = '';
+					for (var i = 0; i < innerCount; i++) {
+						spans +='<span data-num = '+i+'></span>';
+					}
+					nav.html(spans);
+
+				nav.find('span').first().addClass('gt-active')
+				currSlider.find('.gt-slider-nav span').off().on('click',function () {
+					oneMoveFunction(true,+$(this).attr('data-num'));
+					})
+			}
+			function createTouch() {
+				var initialPoint = 0,
+					finalPoint = 0;
+				currSlider.on('touchstart', function(event) {
+					var e = event.originalEvent;
+					initialPoint =  Math.abs(e.touches[0].pageX);
+				});
+				currSlider.on('touchend', function(event) {
+					var e = event.originalEvent;
+					finalPoint =  Math.abs(e.changedTouches[0].pageX);
+					if(Math.abs(initialPoint-finalPoint) > 50){
+						if(initialPoint > finalPoint){
+							oneMoveFunction(true)
+						}else {
+							oneMoveFunction(false)
+						}
+					}
+				});
+			}
+			if(currSlider.find('.gt-slider-open-clone'))
+				createCloneListeners();
+			function createCloneListeners() {
+				var cloneListeners = currSlider.find('.gt-slider-open-clone');
+					cloneListeners.each(function () {
+						$(this).on('click',function () {
+							// console.log('cloneListeners', $(this).parent().index())
+						self.createCloneSlider(currSlider,$(this).parent().index())
+						})
+					})
+			}
+
+			function checkPosition() {
+				var left = currSlider.find('.left'),
+					right = currSlider.find('.right');
+					left.removeClass('not-active');
+					right.removeClass('not-active');
+				if(currPosition == 0)
+					right.addClass('not-active');
+				if (currPosition == innerCount-1)
+					left.addClass('not-active');
+			}
+			function oneMoveFunction(bul,num) {
+				if(num||num===0) {
+					currPosition = num;
+
+				}else if(bul){
+					currPosition +=1
+					}else{
+						currPosition -=1
+				}
+				if(currPosition > innerCount-screenConst){
+					currPosition = innerCount-screenConst;
+					self.sliderEndLeft(currSlider);
+					return;
+				}
+				if(currPosition <0){
+					currPosition = 0;
+					self.sliderEndRight(currSlider);
+					return;
+				}
+				self.sliderMove(currSlider,baseWidth,currPosition);
+
+				if(currSlider.find('.gt-slider-arrow'))
+					checkPosition();
+			}
+			$(window).resize(function(){
+				findScreenConst();
+				setBaseWidth();
+				self.sliderMove(currSlider,baseWidth,currPosition);
+			})
+
 		})
 	}
-	this.horizontalSliderClick = function (el,innerCount,screenConst,baseWidth) {
-		var container = el.find('.gt-slider-horizontal-container'),
-			currPosition = 0,
-			left = el.find('.left'),
-			right = el.find('.right');
-			checkPosition();
-		left.on('click',function () {
-			if(currPosition >= innerCount-screenConst)
-				return;
+
+	this.createCloneSlider = function (el,num) {
+		if($('div').is('#gt-clone-close'))
+			return;
+		self.fixBody();
+		var currPosition = num;
+		$('#gt-body-wrapper').show().append('' +
+			'<div id = "gt-clone" class="gt-slider-clone">' +
+			'<div id = "gt-clone-close" class = "gt-slider-clone-close">' +
+			'<i class="fa fa-times fa-2x"></i>' +
+			'</div>' +
+			'<div class="container">' +
+			'<div id = "gt-clone-inner" class = "gt-slider-clone-inner">'+
+			'<div id = "gt-clone-container" class = "gt-slider-container gt-slider-clone-container"></div>' +
+			'</div>'+
+			'</div>' +
+			'</div>'
+		);
+		var currSlider = $('#gt-clone-inner'),
+			inners = el.find('.gt-slider-inner').clone(true),
+			innersLenght = inners.length;
+			inners.each(function () {
+				$(this).removeClass('gt-slider-inner').addClass('gt-clone-slider-inner');
+				$(this).find('.gt-slider-inner-cover').remove();
+				$('#gt-clone-container').append($(this));
+			})
+		if(innersLenght > 1){
+			$('#gt-clone .container').append(
+				'<span class = "gt-slider-arrow left" id = "gt-clone-arrow-left">' +
+				'<i class="fa fa-angle-left fa-2x"></i>' +
+				'</span>' +
+				'<span class = "gt-slider-arrow right" id = "gt-clone-arrow-right">' +
+				'<i class="fa fa-angle-right fa-2x"></i>' +
+				'</span>')
+			$('#gt-clone-arrow-left').on('click',moveCloneSliderLeft);
+			$('#gt-clone-arrow-right').on('click',moveCloneSliderRight);
+
+		}
+
+		var container = currSlider.find('#gt-clone-container'),
+			inners = container.find('.gt-clone-slider-inner'),
+			innerLength = inners.length,
+			baseWidth = currSlider.outerWidth();
+
+		inners.each(function () {
+			$(this).outerWidth(baseWidth);
+		})
+		container.outerWidth(baseWidth*(innerLength+1))
+		container.css('margin-left', (baseWidth*-1*currPosition)+'px');
+		setTimeout(addAnimation);
+		function addAnimation() {
+			container.addClass('gt-animated')
+		}
+		checkPosition();
+
+	var initialPoint = 0,
+			finalPoint = 0;
+		currSlider.on('touchstart', function(event) {
+		var e = event.originalEvent;
+		initialPoint =  Math.abs(e.touches[0].pageX);
+		});
+		currSlider.on('touchend', function(event) {
+		var e = event.originalEvent;
+		finalPoint =  Math.abs(e.changedTouches[0].pageX);
+		if(Math.abs(initialPoint-finalPoint) > 50){
+			if(initialPoint > finalPoint){
+				moveCloneSliderLeft()
+			}else {
+				moveCloneSliderRight()
+				}
+			}
+		});
+
+
+		$('#gt-clone-close').on('click',function () {
+			self.destroyCloneSlider();
+		})
+
+		function moveCloneSliderLeft() {
 			currPosition +=1;
-			self.holizontalSliderMove(container,baseWidth*-1*currPosition)
+			if(currPosition>innerLength-1){
+				currPosition=innerLength-1;
+				self.sliderEndLeft(currSlider);
+			return
+				}
+			self.sliderMove(currSlider,baseWidth,currPosition);
 			checkPosition();
-		})
-		right.on('click',function () {
-			if(currPosition <= 0)
-				return;
-			currPosition -=1;
-			self.holizontalSliderMove(container,baseWidth*-1*currPosition);
+		}
+		function moveCloneSliderRight() {
+			currPosition-=1;
+				if(currPosition <0){
+				currPosition = 0;
+				self.sliderEndRight(currSlider);
+			return;
+			}
+			self.sliderMove(currSlider,baseWidth,currPosition);
 			checkPosition();
-		})
-		el.find('.gt-slider-horizontal-inner-cover').on('click',function () {
-			self.createAllScreenSlider(el,$(this).parent().index())
-		})
+
+		}
 		function checkPosition() {
+			if(!$('#gt-clone-arrow-left'))
+				return
+			var left = $('#gt-clone-arrow-left'),
+				right =  $('#gt-clone-arrow-right');
 			left.removeClass('not-active');
 			right.removeClass('not-active');
-			if(currPosition == 0){
+			if(currPosition == 0)
 				right.addClass('not-active');
-			}
-			if (currPosition == innerCount-screenConst){
+			if (currPosition == innerLength-1)
 				left.addClass('not-active');
 			}
 		}
-	}
-	this.holizontalSliderMove  = function (el, num) {
-		el.css('margin-left',num+'px');
-	}
-	this.createAllScreenSlider = function (el,num) {
-		self.fixBody();
-		$('#gt-body-wrapper').show().append('<div id = "gt-clone" class="gt-clone"><div class="container"><div id = "gt-clone-close" class = "gt-clone-close"><i class="fa fa-times fa-2x"></i></div></div></div>');
-		$('#gt-clone .container').append(el.clone());
-		$('#gt-clone-close').on('click',function () {
-			self.destroyAllScreenSlider();
-		})
-	}
-	this.destroyAllScreenSlider = function () {
+
+
+
+
+	this.destroyCloneSlider = function () {
+		$('#gt-clone-arrow-right').off();
+		$('#gt-clone-arrow-left').off();
 		$('#gt-clone-close').off();
+		$('#gt-clone-inner').off();
 		$('#gt-clone').remove();
 		$('#gt-body-wrapper').hide();
 		self.unfixBody();
 	}
+
+
+
+
+	this.sliderEndLeft = function (el) {
+		console.log('left_end')
+	}
+	this.sliderEndRight = function (el) {
+		console.log('right_end')
+	}
+	this.sliderMove = function(el,width,position){
+		if(el.find('.gt-slider-nav')){
+			var dots = el.find('.gt-slider-nav span');
+			dots.removeClass('gt-active');
+			$(dots[position]).addClass('gt-active');
+		}
+		el.find('.gt-slider-container').css('margin-left', (width*-1*position)+'px');
+	}
+
+
+
+
+
+
+
+
 
 
 
