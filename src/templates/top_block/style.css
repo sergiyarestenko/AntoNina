@@ -9,7 +9,7 @@
 .gt-top-inner {
   color: #fff;
   padding: 100px 85px 70px 85px;
-  background: url("../img/grid_pattern.png") repeat;
+  background: url("../img/grid-pattern.png") repeat;
   width: 600px;
   align-items: center;
 }
@@ -33,7 +33,7 @@
   font-weight: 500;
 }
 .main-page-top {
-  background: url("../img/main_top_bg.png") no-repeat 50% 100%;
+  background: url("../img/main-top-bg.png") no-repeat 50% 100%;
   background-size: cover;
   height: 900px;
 }

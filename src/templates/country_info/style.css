@@ -1,0 +1,92 @@
+.gt-country-info iframe {
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+}
+.gt-country-info-inner {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 150px;
+}
+.gt-country-info-inner:first-of-type {
+  height: 300px;
+}
+.gt-country-info-inner:first-of-type > div {
+  width: 50%;
+  height: 100%;
+  padding: 0 15px;
+}
+.gt-country-info-inner:first-of-type > div:first-of-type {
+  padding-left: 0;
+}
+.gt-country-info-inner:first-of-type > div:last-of-type {
+  padding-right: 0;
+}
+.gt-country-info-weather {
+  border: 1px solid red;
+  flex-direction: row;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.gt-country-info-weather.cloudy {
+  background-image: url("../img/weather/bg/cloudy.png");
+}
+.gt-country-info-globe {
+  width: 33%;
+  position: relative;
+  overflow: visible;
+}
+.gt-country-info-globe img {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  max-width: 200px;
+  left: 30px;
+  top: 50%;
+  margin-top: -100px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.gt-country-info-globe:hover img {
+  height: 300px;
+  width: 300px;
+  max-width: 300px;
+  left: 0;
+  margin-top: -200px;
+}
+.gt-country-info-forecast {
+  border: 1px solid red;
+  width: 67%;
+  color: #fff;
+  flex-direction: column;
+  align-items: stretch;
+}
+.gt-country-info-forecast div {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.gt-country-info-forecast div.gt-country-info-forecast-icon {
+  flex-direction: column;
+  justify-content: center;
+}
+.gt-country-info-forecast-deg:after {
+  content: '\00B0';
+}
+.gt-country-info-forecast-big {
+  font-size: 30px;
+  font-weight: 500;
+}
+.gt-country-info-forecast-icon {
+  width: 55px;
+  justify-content: space-between;
+  text-align: center;
+}
+.gt-country-info-forecast-icon svg {
+  fill: #fff;
+}
+.gt-country-info-forecast-icon * {
+  text-align: center;
+  justify-content: center;
+}

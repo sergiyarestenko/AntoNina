@@ -143,24 +143,6 @@
 .gt-news-small-plane p {
   margin: 30px 0;
 }
-.gt-news-small-plane a span {
-  display: inline-flex;
-  color: #fff;
-  background: #0057FF;
-  width: auto;
-  padding: 12px 15px;
-  font-size: 16px;
-  border: 1px solid #0057FF;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-.gt-news-small-plane a span:hover {
-  border: 1px solid #0057FF;
-  color: #0057FF;
-  background: transparent;
-}
 .gt-news-prew {
   font-size: 14px;
   display: flex;

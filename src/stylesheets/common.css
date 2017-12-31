@@ -145,7 +145,7 @@ footer {
   width: 40px;
   border: 1px solid #4d4d4d;
   border-radius: 50%;
-  background: #fafafa url("../img/icons/arrow_top_blue.svg") no-repeat 50% 50%;
+  background: #fafafa url("../img/icons/arrow-top-blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
   z-index: 99;
   opacity: 0;
@@ -168,7 +168,7 @@ footer {
   left: -40px;
   top: -5px;
   content: '';
-  background: #fff url("../img/icons/arrow_top_blue.svg") no-repeat 50% 45%;
+  background: #fff url("../img/icons/arrow-top-blue.svg") no-repeat 50% 45%;
   background-size: 50% auto;
   width: 30px;
   height: 30px;
@@ -180,7 +180,7 @@ footer {
   visibility: visible;
 }
 .gt-up.gt-visible:hover {
-  background: #0057FF url("../img/icons/arrow_top_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/arrow-top-white.svg") no-repeat 50% 50%;
   background-size: 50% auto;
   border-color: #0057FF;
   opacity: 1;
@@ -214,26 +214,4 @@ footer {
 }
 .gt-margin > .gt-margin:last-child {
   margin-bottom: 0;
-}
-input.gt-but-white {
-  display: none;
-}
-label.gt-but-white {
-  cursor: pointer;
-  height: 45px;
-  line-height: 45px;
-  display: flex;
-  color: #0057FF;
-  padding: 0 15px;
-  border: 1px solid #0057FF;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  margin: auto;
-}
-label.gt-but-white:hover {
-  background: #0057FF;
-  color: #fff;
-  border: 1px solid #0057FF;
 }

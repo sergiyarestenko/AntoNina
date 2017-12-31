@@ -1,5 +1,5 @@
 .gt-footer {
-  background: url("../img/footer_bg.png") no-repeat center center;
+  background: url("../img/footer-bg.png") no-repeat center center;
   background-size: cover;
   color: #fff;
   font-size: 15px;
@@ -86,21 +86,23 @@
 }
 .gt-footer-subscribe form label {
   position: absolute;
-  display: block;
-  width: 38px;
-  height: 38px;
-  background: #0057FF url("../img/icons/arrow_right_white.svg") no-repeat 50% 50%;
-  background-size: 18px 18px;
   right: 1px;
   top: 1px;
+  background: #0057FF;
+  height: 38px;
+  width: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 18px 18px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 .gt-footer-subscribe form label:hover {
-  background: #fff url("../img/icons/arrow_right_blue.svg") no-repeat 50% 50%;
-  background-size: 18px 18px;
+  background: #fff;
+  color: #0057FF;
 }
 .gt-footer-social-link {
   font-size: 30px;

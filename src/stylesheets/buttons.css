@@ -1,0 +1,51 @@
+input.gt-btn {
+  display: none;
+}
+.gt-btn {
+  cursor: pointer;
+  display: flex;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  padding: 0 15px;
+  align-items: center;
+  font-size: 16px;
+  font-style: normal;
+  justify-content: center;
+}
+.gt-btn-white {
+  color: #0057FF;
+  background: transparent;
+  border: 1px solid #0057FF;
+}
+.gt-btn-white:hover {
+  background: #0057FF;
+  color: #fff;
+}
+.gt-btn-blue {
+  color: #fff;
+  background: #0057FF;
+  border: 1px solid #0057FF;
+}
+.gt-btn-blue:hover {
+  color: #0057FF;
+  background: transparent;
+}
+.gt-btn-plane {
+  color: #363636;
+  background: transparent;
+  border: none;
+}
+.gt-btn-plane:hover {
+  background: #0057FF;
+  color: #fff;
+}
+.gt-btn-45 {
+  height: 45px;
+  line-height: 45px;
+}
+.gt-btn-30 {
+  height: 30px;
+  line-height: 30px;
+}

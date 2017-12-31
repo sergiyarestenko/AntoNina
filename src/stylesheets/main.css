@@ -2869,7 +2869,7 @@ footer {
   width: 40px;
   border: 1px solid #4d4d4d;
   border-radius: 50%;
-  background: #fafafa url("../img/icons/arrow_top_blue.svg") no-repeat 50% 50%;
+  background: #fafafa url("../img/icons/arrow-top-blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
   z-index: 99;
   opacity: 0;
@@ -2892,7 +2892,7 @@ footer {
   left: -40px;
   top: -5px;
   content: '';
-  background: #fff url("../img/icons/arrow_top_blue.svg") no-repeat 50% 45%;
+  background: #fff url("../img/icons/arrow-top-blue.svg") no-repeat 50% 45%;
   background-size: 50% auto;
   width: 30px;
   height: 30px;
@@ -2904,7 +2904,7 @@ footer {
   visibility: visible;
 }
 .gt-up.gt-visible:hover {
-  background: #0057FF url("../img/icons/arrow_top_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/arrow-top-white.svg") no-repeat 50% 50%;
   background-size: 50% auto;
   border-color: #0057FF;
   opacity: 1;
@@ -2939,27 +2939,56 @@ footer {
 .gt-margin > .gt-margin:last-child {
   margin-bottom: 0;
 }
-input.gt-but-white {
+input.gt-btn {
   display: none;
 }
-label.gt-but-white {
+.gt-btn {
   cursor: pointer;
-  height: 45px;
-  line-height: 45px;
   display: flex;
-  color: #0057FF;
-  padding: 0 15px;
-  border: 1px solid #0057FF;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  margin: auto;
+  padding: 0 15px;
+  align-items: center;
+  font-size: 16px;
+  font-style: normal;
+  justify-content: center;
 }
-label.gt-but-white:hover {
+.gt-btn-white {
+  color: #0057FF;
+  background: transparent;
+  border: 1px solid #0057FF;
+}
+.gt-btn-white:hover {
   background: #0057FF;
   color: #fff;
+}
+.gt-btn-blue {
+  color: #fff;
+  background: #0057FF;
   border: 1px solid #0057FF;
+}
+.gt-btn-blue:hover {
+  color: #0057FF;
+  background: transparent;
+}
+.gt-btn-plane {
+  color: #363636;
+  background: transparent;
+  border: none;
+}
+.gt-btn-plane:hover {
+  background: #0057FF;
+  color: #fff;
+}
+.gt-btn-45 {
+  height: 45px;
+  line-height: 45px;
+}
+.gt-btn-30 {
+  height: 30px;
+  line-height: 30px;
 }
 @media screen and (max-width: 1230px) {
   #gt-is-1231 {
@@ -3128,7 +3157,7 @@ label.gt-but-white:hover {
 .gt-header .gt-search {
   width: 1.2em;
   height: 1.2em;
-  background: url("../img/icons/search_icon.svg") no-repeat 100% 0;
+  background: url("../img/icons/search-icon.svg") no-repeat 100% 0;
   background-size: 1.1em 1.1em;
 }
 .gt-header .gt-search-holder {
@@ -3273,7 +3302,7 @@ label.gt-but-white:hover {
   }
 }
 .gt-footer {
-  background: url("../img/footer_bg.png") no-repeat center center;
+  background: url("../img/footer-bg.png") no-repeat center center;
   background-size: cover;
   color: #fff;
   font-size: 15px;
@@ -3360,21 +3389,23 @@ label.gt-but-white:hover {
 }
 .gt-footer-subscribe form label {
   position: absolute;
-  display: block;
-  width: 38px;
-  height: 38px;
-  background: #0057FF url("../img/icons/arrow_right_white.svg") no-repeat 50% 50%;
-  background-size: 18px 18px;
   right: 1px;
   top: 1px;
+  background: #0057FF;
+  height: 38px;
+  width: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 18px 18px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 .gt-footer-subscribe form label:hover {
-  background: #fff url("../img/icons/arrow_right_blue.svg") no-repeat 50% 50%;
-  background-size: 18px 18px;
+  background: #fff;
+  color: #0057FF;
 }
 .gt-footer-social-link {
   font-size: 30px;
@@ -3457,7 +3488,7 @@ label.gt-but-white:hover {
   height: .65em;
   display: flex;
   width: .65em;
-  background: url("../img/icons/arrow_right_white.svg") no-repeat 50% 50%;
+  background: url("../img/icons/arrow-right-white.svg") no-repeat 50% 50%;
 }
 .gt-breadcrumbs ul li:last-child a:after {
   display: none;
@@ -3497,67 +3528,67 @@ label.gt-but-white:hover {
   transition: all 0.5s ease-in-out;
 }
 .gt-button-block a.gt-button-block-avia:before {
-  background: transparent url("../img/icons/avia_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/avia-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-avia:hover:before {
-  background: #0057FF url("../img/icons/avia_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/avia-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hotels:before {
-  background: transparent url("../img/icons/hotels_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/hotels-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hotels:hover:before {
-  background: #0057FF url("../img/icons/hotels_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/hotels-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-carrent:before {
-  background: transparent url("../img/icons/carrent_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/car-rent-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-carrent:hover:before {
-  background: #0057FF url("../img/icons/carrent_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/car-rent-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-bus:before {
-  background: transparent url("../img/icons/bus_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/bus-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-bus:hover:before {
-  background: #0057FF url("../img/icons/bus_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/bus-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-ship:before {
-  background: transparent url("../img/icons/ship_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/ship-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-ship:hover:before {
-  background: #0057FF url("../img/icons/ship_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/ship-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-insurance:before {
-  background: transparent url("../img/icons/insurance_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/insurance-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-insurance:hover:before {
-  background: #0057FF url("../img/icons/insurance_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/insurance-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hottour:before {
-  background: transparent url("../img/icons/hottour_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/hottour-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hottour:hover:before {
-  background: #0057FF url("../img/icons/hottour_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/hottour-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-visas:before {
-  background: transparent url("../img/icons/visas_icon_blue.svg") no-repeat 50% 50%;
+  background: transparent url("../img/icons/visas-icon-blue.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-visas:hover:before {
-  background: #0057FF url("../img/icons/visas_icon_white.svg") no-repeat 50% 50%;
+  background: #0057FF url("../img/icons/visas-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 @media screen and (max-width: 1230px) {
@@ -3637,7 +3668,7 @@ label.gt-but-white:hover {
 .gt-top-inner {
   color: #fff;
   padding: 100px 85px 70px 85px;
-  background: url("../img/grid_pattern.png") repeat;
+  background: url("../img/grid-pattern.png") repeat;
   width: 600px;
   align-items: center;
 }
@@ -3661,7 +3692,7 @@ label.gt-but-white:hover {
   font-weight: 500;
 }
 .main-page-top {
-  background: url("../img/main_top_bg.png") no-repeat 50% 100%;
+  background: url("../img/main-top-bg.png") no-repeat 50% 100%;
   background-size: cover;
   height: 900px;
 }
@@ -3775,6 +3806,14 @@ label.gt-but-white:hover {
     padding: 80px 50px 60px 50px;
   }
 }
+.gt-read-more {
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+.gt-read-more .gt-btn {
+  margin: auto;
+}
 .container.gt-action-menu {
   padding: 0;
 }
@@ -3783,7 +3822,7 @@ label.gt-but-white:hover {
 }
 .gt-action-menu-wrapper {
   height: 400px;
-  background: url("../img/main_bg_1.png") no-repeat 0 0;
+  background: url("../img/main-bg-1.png") no-repeat 0 0;
   background-size: contain;
 }
 .gt-action-menu-two-columns {
@@ -3791,27 +3830,27 @@ label.gt-but-white:hover {
   height: auto;
 }
 .gt-action-menu .gt-events .icon-holder {
-  background: url("../img/icons/events_icon_blue.svg") no-repeat 50% 50%;
+  background: url("../img/icons/events-icon-blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
 }
 .gt-action-menu .gt-publications .icon-holder {
-  background: url("../img/icons/publications_icon_blue.svg") no-repeat 50% 50%;
+  background: url("../img/icons/publications-icon-blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
 }
 .gt-action-menu .gt-routes .icon-holder {
-  background: url("../img/icons/routes_icon_blue.svg") no-repeat 50% 50%;
+  background: url("../img/icons/routes-icon-blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
 }
 .gt-action-menu .gt-plane-round-world .icon-holder {
-  background: url("../img/icons/plane_round_world_icon_blue.svg") no-repeat 45% 45%;
+  background: url("../img/icons/plane-round-world-icon-blue.svg") no-repeat 45% 45%;
   background-size: 55% auto;
 }
 .gt-action-menu .gt-castle .icon-holder {
-  background: url("../img/icons/castle_icon_blue.svg") no-repeat 50% 50%;
+  background: url("../img/icons/castle-icon-blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
 }
 .gt-action-menu .gt-wine .icon-holder {
-  background: url("../img/icons/wine_icon_blue.svg") no-repeat 50% 50%;
+  background: url("../img/icons/wine-icon-blue.svg") no-repeat 50% 50%;
   background-size: 75% auto;
 }
 .gt-action-menu-inner {
@@ -4052,7 +4091,7 @@ label.gt-but-white:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.35) url("../img/icons/loupe_icon.svg") no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.35) url("../img/icons/loupe-icon.svg") no-repeat 50% 50%;
   background-size: auto 60px;
   cursor: pointer;
   opacity: 0;
@@ -4236,6 +4275,82 @@ label.gt-but-white:hover {
 .gt-slider-horizontal {
   height: 390px;
   padding: 0;
+}
+.gt-read-more-slider {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 55px 0;
+  font-size: 15px;
+}
+.gt-read-more-slider .container {
+  padding: 0;
+}
+.gt-read-more-slider h2 {
+  font-size: 18px;
+}
+.gt-read-more-slider-text {
+  flex-direction: column;
+  padding: 0 15px;
+}
+.gt-read-more-slider-text p {
+  padding: 20px 0 30px 0;
+  line-height: 1.6;
+}
+.gt-read-more-slider .gt-slider {
+  height: 490px;
+}
+.gt-read-more-slider .gt-slider-inner {
+  padding: 0 15px;
+}
+.gt-read-more-slider .gt-slider-inner-outer {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  background: #e3e3e3;
+  position: relative;
+}
+.gt-read-more-slider .gt-slider-inner-img {
+  height: 50%;
+  width: 100%;
+  display: block;
+}
+.gt-read-more-slider .gt-slider-inner-text {
+  position: relative;
+  flex-direction: column;
+  padding: 15px;
+}
+.gt-read-more-slider .gt-slider-inner-text-header {
+  position: relative;
+  width: 100%;
+}
+.gt-read-more-slider .gt-slider-inner-text h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 80px;
+  color: #363636;
+  background: #fff;
+  text-align: center;
+  justify-content: center;
+  padding: 1em .5em;
+  align-items: center;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+.gt-read-more-slider .gt-slider-inner-text p {
+  display: block;
+  padding: 30px 15px;
+  text-align: center;
+  line-height: 1.8;
+}
+.gt-read-more-slider .gt-slider-inner-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
+  justify-content: flex-end;
 }
 @media screen and (max-width: 1230px) {
   .gt-shadow-slider-text {
@@ -4446,24 +4561,6 @@ label.gt-but-white:hover {
 .gt-news-small-plane p {
   margin: 30px 0;
 }
-.gt-news-small-plane a span {
-  display: inline-flex;
-  color: #fff;
-  background: #0057FF;
-  width: auto;
-  padding: 12px 15px;
-  font-size: 16px;
-  border: 1px solid #0057FF;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-.gt-news-small-plane a span:hover {
-  border: 1px solid #0057FF;
-  color: #0057FF;
-  background: transparent;
-}
 .gt-news-prew {
   font-size: 14px;
   display: flex;
@@ -4637,7 +4734,7 @@ label.gt-but-white:hover {
   position: absolute;
   height: 74px;
   width: 74px;
-  background: url("../img/icons/video_play.svg") no-repeat 50% 50%;
+  background: url("../img/icons/video-play.svg") no-repeat 50% 50%;
   background-size: contain;
   cursor: pointer;
   bottom: calc(50% - 37px);
@@ -4655,7 +4752,7 @@ label.gt-but-white:hover {
   left: 0;
 }
 .gt-video-switch.gt-video-on {
-  background: url("../img/icons/video_pause.png") no-repeat 50% 50%;
+  background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
   background-size: contain;
   height: 50px;
   width: 50px;
@@ -4738,7 +4835,7 @@ label.gt-but-white:hover {
   color: #000;
   padding-top: 130px;
   position: relative;
-  background: url("../img/icons/logo_link_icon.svg") no-repeat 0 90%;
+  background: url("../img/icons/logo-link-icon.svg") no-repeat 0 90%;
   background-size: auto 3em;
 }
 .gt-one-new-text h2:after {

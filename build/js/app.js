@@ -29,6 +29,9 @@ var GoToTrip = function () {
 		if ($('div').is('.gt-news')){
 			self.cutNews()
 		}
+		if ($('p').is('.gt-read-more-slider-text-inner')){
+			self.cutReadMoreSlider()
+		}
 		if ($('div').is('.gt-video')){
 			self.setPlayers()
 		}
@@ -113,6 +116,12 @@ var GoToTrip = function () {
 				cuttingNews.each(function () {
 					self.cutting($(this),160);
 				})
+		})
+	}
+	this.cutReadMoreSlider = function(){
+		var cuttings = $('.gt-read-more-slider-text-inner');
+			cuttings.each(function () {
+			self.cutting($(this),160);
 		})
 	}
 	this.cutting = function (el,num) {
@@ -281,8 +290,12 @@ var GoToTrip = function () {
 				if($(token360).is(':visible'))
 					screenConst = 1;
 				}
+		        if(innerCount<screenConst)
+		            screenConst = innerCount;
 			}
 			function setBaseWidth() {
+				if(arrow)
+					destroyArrow();
 				baseWidth = currSlider.outerWidth()/screenConst;
 				currSlider.find('.gt-slider-container').outerWidth((innerCount+1)*baseWidth)
 				inner.each(function () {
@@ -313,6 +326,9 @@ var GoToTrip = function () {
 				})
 				checkPosition()
 			}
+			function destroyArrow() {
+				currSlider.find('.gt-slider-arrow-holder').html('')
+			}
 			function createDots() {
 				var nav = currSlider.find('.gt-slider-nav'),
 					spans = '';
@@ -321,9 +337,9 @@ var GoToTrip = function () {
 					}
 					nav.html(spans);
 
-				nav.find('span').first().addClass('gt-active')
-				currSlider.find('.gt-slider-nav span').off().on('click',function () {
-					oneMoveFunction(true,+$(this).attr('data-num'));
+					nav.find('span').first().addClass('gt-active')
+					currSlider.find('.gt-slider-nav span').off().on('click',function () {
+						oneMoveFunction(true,+$(this).attr('data-num'));
 					})
 			}
 			function createTouch() {
@@ -394,6 +410,9 @@ var GoToTrip = function () {
 			$(window).resize(function(){
 				findScreenConst();
 				setBaseWidth();
+				if(currPosition > innerCount-screenConst)
+					currPosition = innerCount-screenConst;
+
 				self.sliderMove(currSlider,baseWidth,currPosition);
 			})
 
