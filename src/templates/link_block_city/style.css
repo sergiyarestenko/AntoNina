@@ -12,19 +12,18 @@
   padding-bottom: 10px;
 }
 .gt-link-block-city-links {
-  padding: 0;
   flex-direction: row;
 }
 .gt-link-block-city-links-item {
-  width: 100%;
-  margin: 0 15px;
+  width: 33.33333%;
+  padding: 0 15px;
   flex-direction: column;
 }
 .gt-link-block-city-links-item:first-of-type {
-  margin-left: 0;
+  padding-left: 0;
 }
 .gt-link-block-city-links-item:last-of-type {
-  margin-right: 0;
+  padding-right: 0;
 }
 .gt-link-block-city-links-item-img {
   width: 100%;

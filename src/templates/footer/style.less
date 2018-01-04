@@ -3,7 +3,7 @@
 @import "../../stylesheets/mixin";
 
 .gt-footer {
-  background: url("../img/footer-bg.png") no-repeat center center;
+  background: url("../img/backgrounds/desktop/footer-bg.png") no-repeat center center;
   background-size: cover;
   color:@white;
   font-size: 15px;
@@ -120,6 +120,10 @@
 
 @media screen and (max-width:1023px){
   .gt-footer {
+    background: url("../img/tablet/desktop/footer-bg.png") no-repeat center center;
+    background-size: cover;
+
+
     font-size: 14px;
     padding-bottom: 80px;
     &-copyright {
@@ -144,6 +148,8 @@
 
 @media screen and (max-width:666px){
   .gt-footer {
+    background: url("../img/phone/desktop/footer-bg.png") no-repeat center center;
+    background-size: cover;
     &-top{
       flex-wrap: wrap;
       >div {

@@ -34,6 +34,7 @@ a:hover,
 a:visited,
 a:active,
 a:focus {
+  display: inline-flex;
   text-decoration: none;
   color: inherit;
 }
@@ -52,9 +53,10 @@ p,
 ol,
 ul,
 li,
-form,
-a {
+form {
   display: flex;
+  flex-shrink: 0;
+  max-width: 100%;
 }
 #gt-is-360,
 #gt-is-480,
@@ -87,6 +89,9 @@ footer {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container.container-no-padd {
+  padding: 0;
+}
 .white-line {
   height: 2px;
   background: #fff;
@@ -118,10 +123,26 @@ footer {
   bottom: 0;
   left: 0;
 }
+.gt-text-block {
+  flex-direction: column;
+}
+.gt-text-block h2 {
+  font-size: 18px;
+}
+.gt-text-block p {
+  padding: 25px 0;
+  line-height: 1.6;
+}
 .gt-box-shadow {
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
 }
 .gt-shadow-70:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 100%);
   z-index: 10;
 }
@@ -133,6 +154,12 @@ footer {
   width: auto;
 }
 .gt-shadow-100:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0.35) 25%, rgba(0, 0, 0, 0) 100%);
   z-index: 10;
 }
@@ -208,6 +235,12 @@ footer {
 }
 .gt-margin + .gt-margin {
   margin-top: 0;
+}
+.gt-margin + .gt-button-block-wrapper {
+  margin-top: -30px;
+}
+.gt-margin-bottom-not {
+  margin-bottom: 0;
 }
 .gt-margin > .gt-margin:first-child {
   margin-top: 0;

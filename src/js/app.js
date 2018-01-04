@@ -41,28 +41,45 @@ var GoToTrip = function () {
 		if($('div').is('.gt-tabs')){
 			self.tabSlider()
 		}
+		if($('div').is('.gt-img-holder')){
+			self.setBackground()
+		}
+		if($('*').is('.gt-view-cards-icons-bookmarks')){
+			self.createBookmarksLink()
+		}
+		if($('*').is('.gt-view-cards-icons-item')){
+			self.createIconsItemsClick()
+		}
 
-		// if($('div').is('.gt-curr-time')||$('div').is('.gt-curr-date')){
-		// 	self.setCurrTime()
-		// }
+		if($('div').is('.gt-curr-time')){
+			self.setCurrTime();
 
+		}
 	});
+
 	$(window).resize(function(){
 		self.deskTopMenuScroll();
 		self.footerHeight();
 		if(gtHeader.hasClass('gt-open'))
 			self.mobileMenuClose();
 
-
-
 	});
 // scroll
 	$( window ).scroll(function() {
+
 		self.upPageButton();
 		if($('.gt-header-menu').is(':visible')){
 			self.deskTopMenuScroll();
 		}
 	});
+	$(window).on('wheel',function (e) {
+	// console.log(e)
+		e = e || window.event;
+		self.softScroll(e)
+	})
+
+
+
 //click
 //open-close mobile menu
 	mobilemenuSwitch.on('click',function () {
@@ -149,6 +166,10 @@ var GoToTrip = function () {
 			} else {
 			upButton.removeClass('gt-visible');
 		}
+	}
+	this.softScroll = function (e) {
+		var delta = e.originalEvent.deltaY || e.detail || e.wheelDelta;
+
 	}
 	this.pageUp = function () {
 		$('body,html').animate({scrollTop:0},800);
@@ -250,16 +271,112 @@ var GoToTrip = function () {
 		$(el.find('.gt-tabs-main')[num]).show();
 		$(el.find('.gt-tabs-main')[num]).addClass('active');
 	}
-
-
-/*
-*all sliders create funs
-* params
-* count (num)  from 1 to 4 - how mach img on slider screen
-* arrow (bull) arrow left and right
-* dots (bull) dots link
-* */
+	this.setBackground = function () {
+		var imgHolders = $('.gt-img-holder');
+		imgHolders.each(function () {
+			if(!$(this).attr('data-bg'))
+				return;
+			var path = $(this).attr('data-bg');
+			if(token667.is(':visible')){
+				$(this).css('background-image','url("./img/backgrounds/phone/'+path+'")')
+				return
+			}
+			if(token1024.is(':visible')){
+			$(this).css('background-image','url("./img/backgrounds/tablet/'+path+'")')
+				return
+			}
+			$(this).css('background-image','url("./img/backgrounds/desktop/'+path+'")')
+		})
+	}
+	this.createIconsItemsClick = function () {
+		$('.gt-view-cards-icons-item').each(function () {
+			if($(this).hasClass('gt-view-cards-icons-visit')){
+				self.createVisitLink($(this))
+				return
+			}
+			if($(this).hasClass('gt-view-cards-icons-bookmarks')){
+				self.createBookmarksLink($(this))
+				return
+			}
+			if($(this).hasClass('gt-view-cards-icons-pin')|| $(this).hasClass('gt-view-cards-icons-share')){
+				self.toggleGtActive($(this))
+				return
+			}
+			if($(this).hasClass('gt-view-cards-icons-share')){
+				self.createShareLink($(this))
+				return
+			}
+		})
+	}
+	this.createShareLink = function (el) {
+		el.removeClass('gt-active');
+		el.on('click',function () {
+			el.toggleClass('gt-active')
+		})
+	}
+	this.toggleGtActive = function (el) {
+		var el = $(el);
+		el.removeClass('gt-active');
+		el.on('click',function () {
+			el.toggleClass('gt-active')
+		})
+	}
+	this.createBookmarksLink = function (el) {
+			var el = $(el);
+			var parent = el.closest('.gt-view-cards-inner');
+				parent = $(parent);
+			if(!parent.attr('data-href'))
+				parent.attr('data-href',window.location.href);
+			if(!parent.attr('data-bookmark'))
+				parent.attr('data-bookmark','GoToTrip');
+			el.attr('href',parent.attr('data-href'));
+			el.attr('rel','sidebar')
+			el.on('click',function (e) {
+				e.preventDefault();
+				self.addBookmark(el,parent.attr('data-href'),parent.attr('data-bookmark'))
+			})
+	}
+	this.addBookmark = function (a,url,title) {
+		try {
+			window.external.AddFavorite(url, title);
+		}
+		catch (e) {
+			try {
+				window.sidebar.addPanel(title, url, "");
+			}
+			catch (e) {
+				if (typeof(opera)=="object") {
+					a.title=title;
+					a.url=url;
+					return true;
+				} else {
+					alert('Нажмите Ctrl-D чтобы добавить страницу в закладки');
+				}
+			}
+		}
+		return false;
+	}
+	this.createVisitLink = function (el) {
+		if(!el.closest('.gt-view-cards-inner').attr('data-href'))
+			return;
+		el.on('click',function () {
+			self.addVisitedLink(el)
+		})
+	}
+	this.addVisitedLink = function (el) {
+		alert('послали данные на бек',el.closest('.gt-view-cards-inner').attr('data-href'))
+		el.toggleClass('gt-active')
+	}
 	this.createSliders = function () {
+	/*
+	*all sliders create funs
+	* params
+	* count (num)  from 1 to 4 - how mach img on slider screen
+	* arrow (bull) arrow left and right
+	* dots (bull) dots link
+	* */
+
+
 		var gtSliders = $('.gt-slider');
 		gtSliders.each(function () {
 		var currSlider = $(this),
@@ -290,8 +407,6 @@ var GoToTrip = function () {
 				if($(token360).is(':visible'))
 					screenConst = 1;
 				}
-		        if(innerCount<screenConst)
-		            screenConst = innerCount;
 			}
 			function setBaseWidth() {
 				if(arrow)
@@ -380,7 +495,7 @@ var GoToTrip = function () {
 					right.removeClass('not-active');
 				if(currPosition == 0)
 					right.addClass('not-active');
-				if (currPosition == innerCount-1)
+				if (currPosition == innerCount-1||currPosition == innerCount-screenConst)
 					left.addClass('not-active');
 			}
 			function oneMoveFunction(bul,num) {
@@ -412,13 +527,13 @@ var GoToTrip = function () {
 				setBaseWidth();
 				if(currPosition > innerCount-screenConst)
 					currPosition = innerCount-screenConst;
-
+				if(innerCount<=screenConst)
+					currPosition = 0
 				self.sliderMove(currSlider,baseWidth,currPosition);
 			})
 
 		})
 	}
-
 	this.createCloneSlider = function (el,num) {
 		if($('div').is('#gt-clone-close'))
 			return;
@@ -530,10 +645,6 @@ var GoToTrip = function () {
 				left.addClass('not-active');
 			}
 		}
-
-
-
-
 	this.destroyCloneSlider = function () {
 		$('#gt-clone-arrow-right').off();
 		$('#gt-clone-arrow-left').off();
@@ -543,10 +654,6 @@ var GoToTrip = function () {
 		$('#gt-body-wrapper').hide();
 		self.unfixBody();
 	}
-
-
-
-
 	this.sliderEndLeft = function (el) {
 		console.log('left_end')
 	}
@@ -561,26 +668,36 @@ var GoToTrip = function () {
 		}
 		el.find('.gt-slider-container').css('margin-left', (width*-1*position)+'px');
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
+	this.setCurrTime = function () {
+		self.currTime()
+		var t = setInterval(self.currTime, 30000);
+	}
+	this.currTime = function () {
+		$('.gt-curr-time').each(function () {
+			var date = new Date();
+			if($(this).attr('data-gmt'))
+				date.setUTCHours(+$(this).attr('data-gmt'))
+			var	hours = date.getHours(),
+				minutes = date.getMinutes(),
+				weekday = date.getDay(),
+				day = date.getDate(),
+				month = date.getMonth(),
+				year = date.getFullYear(),
+				weekdays = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
+				monthes = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря']
+			if (hours < 10) hours = "0" + hours;
+			if (minutes < 10) minutes = "0" + minutes;
+			weekday = weekdays[weekday];
+			month = monthes[month];
+			if($('.gt-curr-time-time'))
+				$('.gt-curr-time-time').html(hours+':'+minutes);
+			if($('.gt-curr-time-date'))
+				$('.gt-curr-time-date').html(weekday+', '+day+' '+ month+' '+year);
+		})
+	}
 };
 
-
-
-
-
-
-
-
 var goToTrip = new GoToTrip();
+
+
+

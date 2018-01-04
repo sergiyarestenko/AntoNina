@@ -12,10 +12,7 @@
     background: url("../img/main-bg-1.png") no-repeat 0 0;
     background-size: contain;
   }
-  &-two-columns{
-    background: none;
-    height: auto;
-  }
+
   .gt-events {
     .icon-holder{
       background: url("../img/icons/events-icon-blue.svg") no-repeat  50% 50%;
@@ -52,11 +49,8 @@
       background-size: 75% auto;
     }
   }
-
-
-
   &-inner {
-    width: 100%;
+    width: 33.3%;
     flex-direction: row;
     position: relative;
     min-height: 90px;
@@ -104,16 +98,19 @@
       }
     }
   }
-
+  &-two-columns{
+    background: none;
+    height: auto;
+  }
   &-column{
-    width: 100%;
+    width: 50%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     p{
-
-      line-height: 180%;
+      line-height: 1.8;
       padding-right:20%;
+      flex-shrink: 1;
     }
     &-inner{
       width: 33%;

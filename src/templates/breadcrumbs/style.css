@@ -1,8 +1,11 @@
 .gt-breadcrumbs {
-  font-size: 20px;
-  padding-top: 95px;
+  position: absolute;
+  left: 0;
+  top: 80px;
+  padding: 15px;
   align-items: flex-start;
   color: #fff;
+  width: auto;
 }
 .gt-breadcrumbs ul {
   flex-direction: row;
@@ -23,7 +26,4 @@
   display: flex;
   width: .65em;
   background: url("../img/icons/arrow-right-white.svg") no-repeat 50% 50%;
-}
-.gt-breadcrumbs ul li:last-child a:after {
-  display: none;
 }

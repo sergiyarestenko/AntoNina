@@ -8,10 +8,11 @@
   left:0;
   width: 100%;
   z-index: 99;
+  font-size: 20px;
   .gt-transition();
   &.gt-header-scrolled{
     .gt-header-top{
-      background: @menu-bg;
+      background: @black-70;
     }
   }
   &.gt-open{
@@ -32,14 +33,14 @@
   .container{
     flex-direction: row;
     height: 100%;
-
+    justify-content: space-between;
   }
   &-top{
     position: relative;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    height: 80px;
+    height: 85px;
     padding-bottom: 10px;
     .gt-transition();
 
@@ -50,11 +51,12 @@
     height: 100%;
     min-width: 150px;
     a{
-      display: inline-block;
-      min-width: 100%;
-      min-height: 100%;
+      display: block;
+      width: 100%;
+      height: 100%;
       padding-top: 20px;
       box-sizing: border-box;
+      margin: auto;
     }
     img{
       width: 100%;
@@ -62,10 +64,11 @@
     }
   }
   &-menu{
-    width: 100%;
+    width: auto;
     ul{
       justify-content: flex-end;
       align-items: flex-end;
+      padding-bottom: 3px;
       li {
         padding: 0 15px;
         a {
@@ -73,7 +76,7 @@
           position: relative;
           &:after {
             position: absolute;
-            bottom: -5px;
+            bottom: -3px;
             left: 0;
             content: '';
             height: 1px;
@@ -111,7 +114,7 @@
   }
   &-mobile-menu {
     display: none;
-    background: @menu-bg;
+    background: @black-70;
     position: absolute;
     top:-500px;
     width: 100%;
@@ -158,6 +161,7 @@
 
   &-switch {
     &-holder{
+      width: auto;
       display: none;
       align-items: center;
       justify-content: flex-end;
@@ -211,10 +215,10 @@
 @media screen and (max-width:1023px) {
   .gt-header {
       &-top{
-        background: @menu-bg;
+        background: @black-70;
         .container{
           >div{
-            width: 100%;
+            width: 50px;
             height: 100%;
           }
         }

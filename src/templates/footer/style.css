@@ -1,5 +1,5 @@
 .gt-footer {
-  background: url("../img/footer-bg.png") no-repeat center center;
+  background: url("../img/backgrounds/desktop/footer-bg.png") no-repeat center center;
   background-size: cover;
   color: #fff;
   font-size: 15px;
@@ -127,6 +127,8 @@
 }
 @media screen and (max-width: 1023px) {
   .gt-footer {
+    background: url("../img/tablet/desktop/footer-bg.png") no-repeat center center;
+    background-size: cover;
     font-size: 14px;
     padding-bottom: 80px;
   }
@@ -141,6 +143,10 @@
   }
 }
 @media screen and (max-width: 666px) {
+  .gt-footer {
+    background: url("../img/phone/desktop/footer-bg.png") no-repeat center center;
+    background-size: cover;
+  }
   .gt-footer-top {
     flex-wrap: wrap;
   }

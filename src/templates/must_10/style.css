@@ -18,14 +18,18 @@
   width: 45%;
   height: 100%;
   z-index: 5;
+  padding-top: 25px;
+  padding-bottom: 35px;
   flex-direction: column;
 }
 .gt-must-right-inner {
+  margin: 0;
   background: #fff;
   width: 100%;
   height: 100%;
   flex-direction: column;
   overflow: hidden;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
 }
 .gt-must-right-inner .gt-inner-scroll-text {
   width: 100%;

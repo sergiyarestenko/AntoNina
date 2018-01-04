@@ -9,10 +9,6 @@
   background: url("../img/main-bg-1.png") no-repeat 0 0;
   background-size: contain;
 }
-.gt-action-menu-two-columns {
-  background: none;
-  height: auto;
-}
 .gt-action-menu .gt-events .icon-holder {
   background: url("../img/icons/events-icon-blue.svg") no-repeat 50% 50%;
   background-size: 50% auto;
@@ -38,7 +34,7 @@
   background-size: 75% auto;
 }
 .gt-action-menu-inner {
-  width: 100%;
+  width: 33.3%;
   flex-direction: row;
   position: relative;
   min-height: 90px;
@@ -84,15 +80,20 @@
   line-height: 1.5;
   padding-top: 30px;
 }
+.gt-action-menu-two-columns {
+  background: none;
+  height: auto;
+}
 .gt-action-menu-column {
-  width: 100%;
+  width: 50%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 .gt-action-menu-column p {
-  line-height: 180%;
+  line-height: 1.8;
   padding-right: 20%;
+  flex-shrink: 1;
 }
 .gt-action-menu-column-inner {
   width: 33%;

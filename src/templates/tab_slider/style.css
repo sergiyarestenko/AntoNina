@@ -1,6 +1,5 @@
 .gt-tabs {
   position: relative;
-  padding: 0;
   flex-direction: column;
   height: 350px;
   width: 100%;
@@ -88,6 +87,9 @@
 }
 .gt-tabs-main-text .gt-inner-scroll-text {
   padding-right: 10px;
+}
+.gt-tabs-broad {
+  height: 300px;
 }
 .gt-tabs-broad .gt-tabs-button {
   background: #fafafa;
