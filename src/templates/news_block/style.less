@@ -5,6 +5,9 @@
 .gt-news {
   padding: 0;
   color:@grey-dark;
+  .fa-eye{
+    color: @grey-light;
+  }
   &-inner {
     flex-wrap:wrap;
     div {
@@ -60,6 +63,7 @@
       }
       &-link-header{
         font-size: 14px;
+
       }
       &-header {
         font-weight: bold;
@@ -208,6 +212,31 @@
           bottom: -.3em;
           color: @grey-light;
         }
+      }
+    }
+  }
+}
+
+
+.gt-news-big,.gt-news-small{
+   &:hover{
+     .gt-img-holder{
+       animation-name: pulse;
+       animation-duration: .75s;
+       animation-fill-mode: both;
+     }
+     .gt-news-prew{
+       .gt-img-holder{
+         animation:none;
+       }
+     }
+   }
+  .gt-news-prew{
+    &:hover{
+      .gt-img-holder{
+        animation-name: pulse;
+        animation-duration: .75s;
+        animation-fill-mode: both;
       }
     }
   }

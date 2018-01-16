@@ -1,3 +1,14 @@
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
 .gt-header {
   color: white;
   position: fixed;
@@ -5,7 +16,7 @@
   left: 0;
   width: 100%;
   z-index: 99;
-  font-size: 20px;
+  font-size: 18px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
@@ -39,7 +50,7 @@
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  height: 85px;
+  height: 80px;
   padding-bottom: 10px;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -47,7 +58,6 @@
   transition: all 0.5s ease-in-out;
 }
 .gt-header-logo {
-  align-items: center;
   width: 185px;
   height: 100%;
   min-width: 150px;
@@ -63,6 +73,8 @@
 .gt-header-logo img {
   width: 100%;
   height: auto;
+  position: relative;
+  top: -6PX;
 }
 .gt-header-menu {
   width: auto;

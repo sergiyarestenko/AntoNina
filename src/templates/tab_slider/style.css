@@ -1,3 +1,14 @@
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
 .gt-tabs {
   position: relative;
   flex-direction: column;
@@ -25,20 +36,23 @@
   left: 0;
   top: 25px;
 }
-.gt-tabs-button:after {
+.gt-tabs-button span {
+  position: relative;
+}
+.gt-tabs-button span:after {
   content: '';
   width: 0;
-  height: 1px;
+  height: 2px;
   background: #0057FF;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 }
 .gt-tabs-button.active {
   background: #fff;
   cursor: default;
 }
-.gt-tabs-button.active:after {
+.gt-tabs-button.active span:after {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;

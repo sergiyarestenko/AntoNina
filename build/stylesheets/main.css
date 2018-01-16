@@ -2352,6 +2352,34 @@
   overflow: visible;
   clip: auto;
 }
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+            transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
 .gt-inner-scroll,
 .gt-inner-scroll-tabs {
   display: block;
@@ -2846,6 +2874,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  transition: 0.15s 0.5s ease-in-out;
 }
 .gt-img-holder img {
   height: 100%;
@@ -3121,7 +3150,7 @@ input.gt-btn {
   left: 0;
   width: 100%;
   z-index: 99;
-  font-size: 20px;
+  font-size: 18px;
   transition: all 0.5s ease-in-out;
 }
 .gt-header.gt-header-scrolled .gt-header-top {
@@ -3157,14 +3186,11 @@ input.gt-btn {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  height: 85px;
+  height: 80px;
   padding-bottom: 10px;
   transition: all 0.5s ease-in-out;
 }
 .gt-header-logo {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 185px;
   height: 100%;
   min-width: 150px;
@@ -3180,6 +3206,8 @@ input.gt-btn {
 .gt-header-logo img {
   width: 100%;
   height: auto;
+  position: relative;
+  top: -6PX;
 }
 .gt-header-menu {
   width: auto;
@@ -3531,7 +3559,7 @@ input.gt-btn {
 }
 @media screen and (max-width: 1023px) {
   .gt-footer {
-    background: url("../img/tablet/desktop/footer-bg.png") no-repeat center center;
+    background: url("../img/backgrounds/tablet/footer-bg.png") no-repeat center center;
     background-size: cover;
     font-size: 14px;
     padding-bottom: 80px;
@@ -3548,7 +3576,7 @@ input.gt-btn {
 }
 @media screen and (max-width: 666px) {
   .gt-footer {
-    background: url("../img/phone/desktop/footer-bg.png") no-repeat center center;
+    background: url("../img/backgrounds/phone/footer-bg.png") no-repeat center center;
     background-size: cover;
   }
   .gt-footer-top {
@@ -3646,7 +3674,7 @@ input.gt-btn {
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  border: 1px solid #4d4d4d;
+  border: 0.05em solid #0057FF;
   position: absolute;
   top: -115px;
   left: calc(50% - 40px);
@@ -3784,6 +3812,10 @@ input.gt-btn {
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: cover;
+  min-height: 600px;
 }
 .gt-top .container {
   -webkit-box-orient: vertical;
@@ -3800,6 +3832,7 @@ input.gt-btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 180px;
 }
 .gt-top-inner > div {
   width: 100%;
@@ -3825,25 +3858,10 @@ input.gt-btn {
   font-weight: 500;
 }
 .main-page-top {
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
-  background-size: cover;
-  height: 900px;
-}
-.main-page-top .gt-top-inner {
-  margin-top: 280px;
+  height: 800px;
 }
 .main-page-top .gt-top-inner .white-line {
   margin-top: 30px;
-}
-.country-page-top {
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
-  background-size: cover;
-  height: 600px;
-}
-.country-page-top .gt-top-inner {
-  margin-top: 180px;
 }
 @media screen and (max-width: 1230px) {
   .gt-top-inner {
@@ -4339,7 +4357,7 @@ input.gt-btn {
   z-index: 50;
 }
 .gt-slider-arrow-holder {
-  height: 100%;
+  height: 0;
   width: 100%;
 }
 .gt-slider-arrow i {
@@ -4401,13 +4419,32 @@ input.gt-btn {
   overflow-x: hidden;
 }
 .gt-slider-clone-close {
-  color: #fff;
   position: absolute;
   top: 50px;
   right: 50px;
   cursor: pointer;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   z-index: 102;
+  height: 30px;
+  width: 30px;
+}
+.gt-slider-clone-close:after,
+.gt-slider-clone-close:before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 125%;
+  background: #fff;
+  box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.75);
+  top: 50%;
+  left: -12%;
+}
+.gt-slider-clone-close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.gt-slider-clone-close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 .gt-slider-clone .gt-slider-inner-cover {
   display: none;
@@ -4505,7 +4542,7 @@ input.gt-btn {
   padding: 0 15px;
 }
 .gt-read-more-slider .gt-slider-inner-outer {
-  background: #e3e3e3;
+  background: #fff;
 }
 .gt-read-more-slider .gt-slider-inner-img {
   height: 50%;
@@ -4662,6 +4699,9 @@ input.gt-btn {
 .gt-news {
   padding: 0;
   color: #363636;
+}
+.gt-news .fa-eye {
+  color: #6D6D6D;
 }
 .gt-news-inner {
   -ms-flex-wrap: wrap;
@@ -4880,6 +4920,29 @@ input.gt-btn {
   bottom: -0.3em;
   color: #6D6D6D;
 }
+.gt-news-big:hover .gt-img-holder,
+.gt-news-small:hover .gt-img-holder {
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.gt-news-big:hover .gt-news-prew .gt-img-holder,
+.gt-news-small:hover .gt-news-prew .gt-img-holder {
+  -webkit-animation: none;
+          animation: none;
+}
+.gt-news-big .gt-news-prew:hover .gt-img-holder,
+.gt-news-small .gt-news-prew:hover .gt-img-holder {
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
 @media screen and (max-width: 1023px) {
   .gt-news-inner:first-of-type {
     margin-bottom: 0;
@@ -4989,7 +5052,7 @@ input.gt-btn {
   }
 }
 .gt-video {
-  height: 500px;
+  height: 400px;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -5001,13 +5064,21 @@ input.gt-btn {
   width: 100%;
 }
 .gt-video-text {
-  padding: 30px 25px;
   color: #fff;
   width: 100%;
+  max-width: 1200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 15px;
   height: auto;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0px;
+  bottom: 15px;
+  transition: all 0.5s ease-in-out;
 }
 .gt-video-text a {
   max-width: 5em;
@@ -5017,8 +5088,16 @@ input.gt-btn {
   font-weight: 700;
   padding-top: 10px;
 }
+.gt-video-text.gt-video-on {
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  -webkit-transform: scale(0.75, 0.75);
+          transform: scale(0.75, 0.75);
+}
 .gt-video-switch {
   position: absolute;
+  border: 1px solid red;
   height: 74px;
   width: 74px;
   background: url("../img/icons/video-play.svg") no-repeat 50% 50%;
@@ -5034,6 +5113,7 @@ input.gt-btn {
   right: 0;
   bottom: 0;
   left: 0;
+  border: 1px dodgerblue dotted;
 }
 .gt-video-switch.gt-video-on {
   background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
@@ -5357,20 +5437,23 @@ input.gt-btn {
   left: 0;
   top: 25px;
 }
-.gt-tabs-button:after {
+.gt-tabs-button span {
+  position: relative;
+}
+.gt-tabs-button span:after {
   content: '';
   width: 0;
-  height: 1px;
+  height: 2px;
   background: #0057FF;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 }
 .gt-tabs-button.active {
   background: #fff;
   cursor: default;
 }
-.gt-tabs-button.active:after {
+.gt-tabs-button.active span:after {
   transition: all 0.5s ease-in-out;
   width: 100%;
 }
@@ -5871,11 +5954,12 @@ input.gt-btn {
   color: #fff;
 }
 .gt-view-cards-icons > div,
-.gt-view-cards-icons > a {
+.gt-view-cards-icons > i {
   background-color: rgba(0, 0, 0, 0.7);
   background-position: center center;
   background-repeat: no-repeat;
   color: #fff;
+  font-style: normal;
   cursor: pointer;
   height: 25px;
   width: 25px;
@@ -5883,6 +5967,81 @@ input.gt-btn {
   margin: 5px;
   position: relative;
   transition: all 0.5s ease-in-out;
+}
+.gt-view-cards-icons > div.gt-active,
+.gt-view-cards-icons > i.gt-active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.gt-view-cards-icons-visit {
+  background-image: url("../img/view_cards_icons/visited-icon-white.svg");
+  background-size: 60% auto;
+}
+.gt-view-cards-icons-visit.gt-title:after {
+  content: 'Посетил';
+}
+.gt-view-cards-icons-visit.gt-active {
+  background-image: url("../img/view_cards_icons/visited-icon-blue.svg");
+  background-size: 60% auto;
+}
+.gt-view-cards-icons-visit.gt-active.gt-title:after {
+  content: 'Хочу посетить';
+}
+.gt-view-cards-icons-pin-plus {
+  background-image: url("../img/view_cards_icons/pin-plus-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-pin-plus.gt-active {
+  background-image: url("../img/view_cards_icons/pin-plus-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-pin {
+  background-image: url("../img/view_cards_icons/pin-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-pin.gt-active {
+  background-image: url("../img/view_cards_icons/pin-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-star {
+  background-image: url("../img/view_cards_icons/star-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-star.gt-active {
+  background-image: url("../img/view_cards_icons/star-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-seen {
+  background-image: url("../img/view_cards_icons/seen-icon-white.svg");
+  background-size: auto 50%;
+}
+.gt-view-cards-icons-seen.gt-active {
+  background-image: url("../img/view_cards_icons/seen-icon-blue.svg");
+  background-size: auto 50%;
+}
+.gt-view-cards-icons-share {
+  background-image: url("../img/view_cards_icons/share-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-share.gt-title:after {
+  content: 'Поделиться';
+}
+.gt-view-cards-icons-share.gt-active {
+  background-image: url("../img/view_cards_icons/share-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-share.gt-active:after {
+  display: none;
+}
+.gt-view-cards-icons-bookmarks {
+  background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
+  background-size: auto 60% ;
+}
+.gt-view-cards-icons-bookmarks.gt-title:after {
+  content: 'Добавить в закладки';
+}
+.gt-view-cards-icons-bookmarks.gt-active {
+  background-image: url("../img/view_cards_icons/boocmarks-icon-blue.svg");
+  background-size: auto 60% ;
 }
 .gt-view-cards-icons-item:after {
   display: -webkit-box;
@@ -5953,6 +6112,57 @@ input.gt-btn {
   left: 0;
   top: -20px;
 }
+.gt-view-cards-icons-item-inner-column {
+  width: 110px;
+  min-width: 110px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.gt-view-cards-icons-item-inner-column > * {
+  padding: 2px 5px;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.gt-view-cards-icons-item-inner-column > *:first-child {
+  padding-top: 5px;
+}
+.gt-view-cards-icons-item-inner-column > *:last-child {
+  padding-bottom: 5px;
+}
+.gt-view-cards-icons-item-inner-line {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 75px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+}
+.gt-view-cards-icons-item-inner-line > * {
+  padding: 3px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: auto;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.gt-view-cards-icons-item-inner-line > *:first-child {
+  padding-left: 5px;
+}
+.gt-view-cards-icons-item-inner-line > *:last-child {
+  padding-right: 5px;
+}
 .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner {
   left: auto;
   right: 0;
@@ -5976,113 +6186,6 @@ input.gt-btn {
 .gt-view-cards-icons-item:hover .gt-view-cards-icons-item-inner:before {
   min-height: 20px;
   min-width: 20px;
-}
-.gt-view-cards-icons-visit {
-  background-image: url("../img/view_cards_icons/visited-icon-white.svg");
-  background-size: 60% auto;
-}
-.gt-view-cards-icons-visit:after {
-  content: 'Посетил';
-}
-.gt-view-cards-icons-visit.gt-active {
-  background-image: url("../img/view_cards_icons/visited-icon-blue.svg");
-  background-size: 60% auto;
-}
-.gt-view-cards-icons-visit.gt-active:after {
-  content: 'Хочу посетить';
-}
-.gt-view-cards-icons-visit.gt-active {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-.gt-view-cards-icons-pin {
-  background-image: url("../img/view_cards_icons/pin-plus-icon-white.svg");
-  background-size: 50% auto;
-}
-.gt-view-cards-icons-pin:after {
-  display: none;
-}
-.gt-view-cards-icons-pin-inner {
-  width: 110px;
-  min-width: 110px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-.gt-view-cards-icons-pin-inner > * {
-  padding: 2px 5px;
-  display: block;
-  height: auto;
-  width: 100%;
-}
-.gt-view-cards-icons-pin-inner > *:first-child {
-  padding-top: 5px;
-}
-.gt-view-cards-icons-pin-inner > *:last-child {
-  padding-bottom: 5px;
-}
-.gt-view-cards-icons-pin.gt-active {
-  background-color: rgba(255, 255, 255, 0.8);
-  background-image: url("../img/view_cards_icons/pin-plus-icon-blue.svg");
-  background-size: 50% auto;
-}
-.gt-view-cards-icons-share {
-  background-image: url("../img/view_cards_icons/share-icon-white.svg");
-  background-size: 50% auto;
-}
-.gt-view-cards-icons-share:after {
-  content: 'Поделиться';
-}
-.gt-view-cards-icons-share.gt-active {
-  background-image: url("../img/view_cards_icons/share-icon-blue.svg");
-  background-color: rgba(255, 255, 255, 0.8);
-}
-.gt-view-cards-icons-share.gt-active:after {
-  display: none;
-}
-.gt-view-cards-icons-share-inner {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: 75px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: absolute;
-}
-.gt-view-cards-icons-share-inner > * {
-  padding: 3px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: auto;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.gt-view-cards-icons-share-inner > *:first-child {
-  padding-left: 5px;
-}
-.gt-view-cards-icons-share-inner > *:last-child {
-  padding-right: 5px;
-}
-.gt-view-cards-icons-share:hover .gt-view-cards-icons-item-inner {
-  display: none;
-}
-.gt-view-cards-icons-share.gt-active:hover .gt-view-cards-icons-item-inner {
-  display: inherit;
-}
-.gt-view-cards-icons-bookmarks {
-  background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
-  background-size: auto 60% ;
-}
-.gt-view-cards-icons-bookmarks:after {
-  content: 'Добавить в закладки';
 }
 .gt-view-cards-icons-column {
   -webkit-box-orient: vertical;
@@ -6128,6 +6231,15 @@ input.gt-btn {
   right: -20px;
   top: 0;
 }
+.gt-view-cards-icons-column .gt-view-cards-icons-item-inner-line {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.gt-view-cards-icons-column .gt-view-cards-icons-item-inner-line:after {
+  top: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
 .gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner {
   left: auto;
   right: 38px;
@@ -6144,23 +6256,33 @@ input.gt-btn {
   -webkit-transform: translateY(-20%);
           transform: translateY(-20%);
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-share-inner {
+.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner-line {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-share-inner:after {
+.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner-line:after {
   top: 0;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-share-inner {
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+.gt-view-cards-icons-header {
+  position: static;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: #fff;
+  padding: 5px 0;
+  margin-top: 35px;
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-share-inner:after {
-  top: 0;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+.gt-view-cards-icons-header > div,
+.gt-view-cards-icons-header > i {
+  height: 40px;
+  min-width: 40px;
+  border-radius: 20px;
+}
+.gt-view-cards-icons-header > div.gt-active,
+.gt-view-cards-icons-header > i.gt-active {
+  border: 3px solid red;
 }
 .test {
   border: 1px solid red;

@@ -3,12 +3,15 @@
 @import "../../stylesheets/mixin";
 
 
-
-
 .gt-top {
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
+  background-repeat:no-repeat;
+  background-position:50% 100%;
+  background-size: cover;
+  min-height: 600px;
+
   .container{
     flex-direction: column;
     position: relative;
@@ -18,8 +21,9 @@
     padding:100px 85px 70px 85px;
     background: url("../img/grid-pattern.png") repeat;
     width: 600px;
-    //flex-direction: column;
     align-items: center;
+    margin-top: 180px;
+
 
     >div{
       width: 100%;
@@ -41,7 +45,6 @@
     &-sm {
       font-size: 24px;
       font-weight:500;
-      //max-width: 430px;//for IE
     }
   }
 }
@@ -49,35 +52,18 @@
 
 .main-page {
   &-top {
-    background-repeat:no-repeat;
-    background-position:50% 100%;
-    background-size: cover;
-    height: 900px;
+    height: 800px;
     .gt-top {
       &-inner {
-        margin-top: 280px;
+        //margin-top: 280px;
         .white-line {
           margin-top:30px;
-
         }
       }
     }
   }
 }
-.country-page {
-  &-top {
-    background-repeat: no-repeat;
-    background-position: 50% 100%;
-    background-size: cover;
-    height: 600px;
-    .gt-top {
-      &-inner {
-        margin-top: 180px;
 
-      }
-    }
-  }
-}
 
 @media screen and (max-width:1230px) {
   .gt-top {
@@ -105,7 +91,6 @@
       }
     }
   }
-
 }
 
   @media screen and (max-width:1023px) {
@@ -119,8 +104,6 @@
         &-lg {
           display: inline-flex;
           font-size: 42px;
-          //max-width: none;
-
         }
         &-sm {
           font-size: 24px;
@@ -203,10 +186,5 @@
         }
       }
     }
-
-  }
-
-  @media screen and (max-width:359px) {
-
   }
 

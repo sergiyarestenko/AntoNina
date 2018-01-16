@@ -1,3 +1,14 @@
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
 .gt-view-cards {
   flex-direction: column;
 }
@@ -81,11 +92,12 @@
   color: #fff;
 }
 .gt-view-cards-icons > div,
-.gt-view-cards-icons > a {
+.gt-view-cards-icons > i {
   background-color: rgba(0, 0, 0, 0.7);
   background-position: center center;
   background-repeat: no-repeat;
   color: #fff;
+  font-style: normal;
   cursor: pointer;
   height: 25px;
   width: 25px;
@@ -96,6 +108,81 @@
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+.gt-view-cards-icons > div.gt-active,
+.gt-view-cards-icons > i.gt-active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.gt-view-cards-icons-visit {
+  background-image: url("../img/view_cards_icons/visited-icon-white.svg");
+  background-size: 60% auto;
+}
+.gt-view-cards-icons-visit.gt-title:after {
+  content: 'Посетил';
+}
+.gt-view-cards-icons-visit.gt-active {
+  background-image: url("../img/view_cards_icons/visited-icon-blue.svg");
+  background-size: 60% auto;
+}
+.gt-view-cards-icons-visit.gt-active.gt-title:after {
+  content: 'Хочу посетить';
+}
+.gt-view-cards-icons-pin-plus {
+  background-image: url("../img/view_cards_icons/pin-plus-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-pin-plus.gt-active {
+  background-image: url("../img/view_cards_icons/pin-plus-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-pin {
+  background-image: url("../img/view_cards_icons/pin-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-pin.gt-active {
+  background-image: url("../img/view_cards_icons/pin-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-star {
+  background-image: url("../img/view_cards_icons/star-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-star.gt-active {
+  background-image: url("../img/view_cards_icons/star-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-seen {
+  background-image: url("../img/view_cards_icons/seen-icon-white.svg");
+  background-size: auto 50%;
+}
+.gt-view-cards-icons-seen.gt-active {
+  background-image: url("../img/view_cards_icons/seen-icon-blue.svg");
+  background-size: auto 50%;
+}
+.gt-view-cards-icons-share {
+  background-image: url("../img/view_cards_icons/share-icon-white.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-share.gt-title:after {
+  content: 'Поделиться';
+}
+.gt-view-cards-icons-share.gt-active {
+  background-image: url("../img/view_cards_icons/share-icon-blue.svg");
+  background-size: 50% auto;
+}
+.gt-view-cards-icons-share.gt-active:after {
+  display: none;
+}
+.gt-view-cards-icons-bookmarks {
+  background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
+  background-size: auto 60% ;
+}
+.gt-view-cards-icons-bookmarks.gt-title:after {
+  content: 'Добавить в закладки';
+}
+.gt-view-cards-icons-bookmarks.gt-active {
+  background-image: url("../img/view_cards_icons/boocmarks-icon-blue.svg");
+  background-size: auto 60% ;
 }
 .gt-view-cards-icons-item:after {
   display: flex;
@@ -163,6 +250,43 @@
   left: 0;
   top: -20px;
 }
+.gt-view-cards-icons-item-inner-column {
+  width: 110px;
+  min-width: 110px;
+  flex-direction: column;
+}
+.gt-view-cards-icons-item-inner-column > * {
+  padding: 2px 5px;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.gt-view-cards-icons-item-inner-column > *:first-child {
+  padding-top: 5px;
+}
+.gt-view-cards-icons-item-inner-column > *:last-child {
+  padding-bottom: 5px;
+}
+.gt-view-cards-icons-item-inner-line {
+  align-items: center;
+  min-width: 75px;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+}
+.gt-view-cards-icons-item-inner-line > * {
+  padding: 3px;
+  display: inline-flex;
+  height: auto;
+  width: 100%;
+  justify-content: center;
+}
+.gt-view-cards-icons-item-inner-line > *:first-child {
+  padding-left: 5px;
+}
+.gt-view-cards-icons-item-inner-line > *:last-child {
+  padding-right: 5px;
+}
 .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner {
   left: auto;
   right: 0;
@@ -187,99 +311,6 @@
 .gt-view-cards-icons-item:hover .gt-view-cards-icons-item-inner:before {
   min-height: 20px;
   min-width: 20px;
-}
-.gt-view-cards-icons-visit {
-  background-image: url("../img/view_cards_icons/visited-icon-white.svg");
-  background-size: 60% auto;
-}
-.gt-view-cards-icons-visit:after {
-  content: 'Посетил';
-}
-.gt-view-cards-icons-visit.gt-active {
-  background-image: url("../img/view_cards_icons/visited-icon-blue.svg");
-  background-size: 60% auto;
-}
-.gt-view-cards-icons-visit.gt-active:after {
-  content: 'Хочу посетить';
-}
-.gt-view-cards-icons-visit.gt-active {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-.gt-view-cards-icons-pin {
-  background-image: url("../img/view_cards_icons/pin-plus-icon-white.svg");
-  background-size: 50% auto;
-}
-.gt-view-cards-icons-pin:after {
-  display: none;
-}
-.gt-view-cards-icons-pin-inner {
-  width: 110px;
-  min-width: 110px;
-  flex-direction: column;
-}
-.gt-view-cards-icons-pin-inner > * {
-  padding: 2px 5px;
-  display: block;
-  height: auto;
-  width: 100%;
-}
-.gt-view-cards-icons-pin-inner > *:first-child {
-  padding-top: 5px;
-}
-.gt-view-cards-icons-pin-inner > *:last-child {
-  padding-bottom: 5px;
-}
-.gt-view-cards-icons-pin.gt-active {
-  background-color: rgba(255, 255, 255, 0.8);
-  background-image: url("../img/view_cards_icons/pin-plus-icon-blue.svg");
-  background-size: 50% auto;
-}
-.gt-view-cards-icons-share {
-  background-image: url("../img/view_cards_icons/share-icon-white.svg");
-  background-size: 50% auto;
-}
-.gt-view-cards-icons-share:after {
-  content: 'Поделиться';
-}
-.gt-view-cards-icons-share.gt-active {
-  background-image: url("../img/view_cards_icons/share-icon-blue.svg");
-  background-color: rgba(255, 255, 255, 0.8);
-}
-.gt-view-cards-icons-share.gt-active:after {
-  display: none;
-}
-.gt-view-cards-icons-share-inner {
-  align-items: center;
-  min-width: 75px;
-  flex-direction: row;
-  justify-content: space-between;
-  position: absolute;
-}
-.gt-view-cards-icons-share-inner > * {
-  padding: 3px;
-  display: inline-flex;
-  height: auto;
-  width: 100%;
-  justify-content: center;
-}
-.gt-view-cards-icons-share-inner > *:first-child {
-  padding-left: 5px;
-}
-.gt-view-cards-icons-share-inner > *:last-child {
-  padding-right: 5px;
-}
-.gt-view-cards-icons-share:hover .gt-view-cards-icons-item-inner {
-  display: none;
-}
-.gt-view-cards-icons-share.gt-active:hover .gt-view-cards-icons-item-inner {
-  display: inherit;
-}
-.gt-view-cards-icons-bookmarks {
-  background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
-  background-size: auto 60% ;
-}
-.gt-view-cards-icons-bookmarks:after {
-  content: 'Добавить в закладки';
 }
 .gt-view-cards-icons-column {
   flex-direction: column;
@@ -315,6 +346,13 @@
   right: -20px;
   top: 0;
 }
+.gt-view-cards-icons-column .gt-view-cards-icons-item-inner-line {
+  transform: translateY(-50%);
+}
+.gt-view-cards-icons-column .gt-view-cards-icons-item-inner-line:after {
+  top: 0;
+  transform: translateY(0);
+}
 .gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner {
   left: auto;
   right: 38px;
@@ -328,17 +366,27 @@
   right: -12px;
   transform: translateY(-20%);
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-share-inner {
+.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner-line {
   transform: translateY(-50%);
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-share-inner:after {
+.gt-view-cards-icons-column .gt-view-cards-icons-item.gt-view-cards-icons-item:last-child .gt-view-cards-icons-item-inner-line:after {
   top: 0;
   transform: translateY(0);
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-share-inner {
-  transform: translateY(-50%);
+.gt-view-cards-icons-header {
+  position: static;
+  justify-content: flex-start;
+  color: #fff;
+  padding: 5px 0;
+  margin-top: 35px;
 }
-.gt-view-cards-icons-column .gt-view-cards-icons-share-inner:after {
-  top: 0;
-  transform: translateY(0);
+.gt-view-cards-icons-header > div,
+.gt-view-cards-icons-header > i {
+  height: 40px;
+  min-width: 40px;
+  border-radius: 20px;
+}
+.gt-view-cards-icons-header > div.gt-active,
+.gt-view-cards-icons-header > i.gt-active {
+  border: 3px solid red;
 }

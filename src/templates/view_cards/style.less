@@ -87,11 +87,12 @@
     flex-direction: row;
     justify-content: flex-end;
     color: @white;
-    >div,>a{
+    >div,>i{
       background-color: @black-70;
       background-position: center center;
       background-repeat: no-repeat;
       color: @white;
+      font-style: normal;
       cursor: pointer;
       height: 25px;
       width: 25px;
@@ -99,7 +100,99 @@
       margin:5px;
       position: relative;
       .gt-transition();
+      &.gt-active{
+        background-color: @white-80;
+      }
+    }
+    &-visit{
+      background-image: url("../img/view_cards_icons/visited-icon-white.svg");
+      background-size: 60% auto;
+      &.gt-title{
+        &:after{
+          content: 'Посетил';
+        }
+      }
+      &.gt-active{
+        background-image: url("../img/view_cards_icons/visited-icon-blue.svg");
+        background-size: 60% auto;
+        &.gt-title{
+          &:after{
+            content: 'Хочу посетить';
+          }
+        }
+      }
+    }
+    &-pin-plus{
+      background-image: url("../img/view_cards_icons/pin-plus-icon-white.svg");
+      background-size: 50% auto;
+      &.gt-active{
+        background-image: url("../img/view_cards_icons/pin-plus-icon-blue.svg");
+        background-size: 50% auto;
+      }
+    }
+    &-pin{
+      background-image: url("../img/view_cards_icons/pin-icon-white.svg");
+      background-size: 50% auto;
+      &.gt-active{
+        background-image: url("../img/view_cards_icons/pin-icon-blue.svg");
+        background-size: 50% auto;
+      }
+    }
+    &-star{
+      background-image: url("../img/view_cards_icons/star-icon-white.svg");
+      background-size: 50% auto;
+      &.gt-active{
+        background-image: url("../img/view_cards_icons/star-icon-blue.svg");
+        background-size: 50% auto;
+      }
+    }
+    &-seen{
+      background-image: url("../img/view_cards_icons/seen-icon-white.svg");
+      background-size: auto 50%;
+      &.gt-active{
+        background-image: url("../img/view_cards_icons/seen-icon-blue.svg");
+        background-size: auto 50%;
 
+      }
+    }
+    &-share{
+      background-image: url("../img/view_cards_icons/share-icon-white.svg");
+      background-size: 50% auto;
+      &.gt-title{
+        &:after{
+          content: 'Поделиться';
+        }
+      }
+      &.gt-active{
+        background-image: url("../img/view_cards_icons/share-icon-blue.svg");
+        background-size: 50% auto;
+        &:after{
+          display: none;
+        }
+      }
+      //&:hover{
+      //  .gt-view-cards-icons-item-inner{
+      //    display: none;
+      //  }
+      //}
+      //&.gt-active:hover{
+      //  .gt-view-cards-icons-item-inner{
+      //    display: inherit;
+      //  }
+      //}
+    }
+    &-bookmarks{
+      background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
+      background-size: auto 60% ;
+      &.gt-title{
+        &:after{
+          content: 'Добавить в закладки';
+        }
+      }
+      &.gt-active{
+        background-image: url("../img/view_cards_icons/boocmarks-icon-blue.svg");
+        background-size: auto 60% ;
+    }
     }
     &-item{
       &:after{
@@ -163,7 +256,43 @@
           left: 0;
           top:-20px;
         }
-
+        &-column{
+          width: 110px;
+          min-width: 110px;
+          flex-direction: column;
+          >*{
+            padding: 2px 5px;
+            display: block;
+            height: auto;
+            width: 100%;
+            &:first-child{
+              padding-top: 5px;
+            }
+            &:last-child{
+              padding-bottom: 5px;
+            }
+          }
+        }
+        &-line{
+          align-items: center;
+          min-width: 75px;
+          flex-direction: row;
+          justify-content: space-between;
+          position: absolute;
+          >*{
+            padding: 3px;
+            display: inline-flex;
+            height: auto;
+            width: 100%;
+            justify-content: center;
+            &:first-child{
+              padding-left: 5px;
+            }
+            &:last-child{
+              padding-right: 5px;
+            }
+          }
+        }
       }
       &.gt-view-cards-icons-item:last-child{
         .gt-view-cards-icons-item-inner{
@@ -189,102 +318,8 @@
           }
         }
       }
-    }
-    &-visit{
-      background-image: url("../img/view_cards_icons/visited-icon-white.svg");
-      background-size: 60% auto;
-      &:after{
-        content: 'Посетил';
-      }
-      &.gt-active{
-        background-image: url("../img/view_cards_icons/visited-icon-blue.svg");
-        background-size: 60% auto;
-        &:after{
-          content: 'Хочу посетить';
-        }
-      }
-      &.gt-active{
-        background-color: @white-80;
-      }
-    }
-    &-pin{
-      background-image: url("../img/view_cards_icons/pin-plus-icon-white.svg");
-      background-size: 50% auto;
-      &:after{
-      display: none
-      }
-      &-inner{
-        width: 110px;
-        min-width: 110px;
-        flex-direction: column;
-        >*{
-          padding: 2px 5px;
-          display: block;
-          height: auto;
-          width: 100%;
-          &:first-child{
-            padding-top: 5px;
-          }
-          &:last-child{
-            padding-bottom: 5px;
-          }
-        }
-      }
-      &.gt-active{
-        background-color: @white-80;
-        background-image: url("../img/view_cards_icons/pin-plus-icon-blue.svg");
-        background-size: 50% auto;
-      }
-    }
-    &-share{
-      background-image: url("../img/view_cards_icons/share-icon-white.svg");
-      background-size: 50% auto;
-      &:after{
-        content: 'Поделиться';
-      }
-      &.gt-active{
-        background-image: url("../img/view_cards_icons/share-icon-blue.svg");
-        background-color: @white-80;
-        &:after{
-          display: none;
-        }
-      }
-      &-inner{
-        align-items: center;
-        min-width: 75px;
-        flex-direction: row;
-        justify-content: space-between;
-        position: absolute;
-        >*{
-          padding: 3px;
-          display: inline-flex;
-          height: auto;
-          width: 100%;
-          justify-content: center;
-          &:first-child{
-            padding-left: 5px;
-          }
-          &:last-child{
-            padding-right: 5px;
-          }
-        }
-      }
-      &:hover{
-        .gt-view-cards-icons-item-inner{
-          display: none;
-        }
-      }
-      &.gt-active:hover{
-        .gt-view-cards-icons-item-inner{
-          display: inherit;
-        }
-      }
-    }
-    &-bookmarks{
-      background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
-      background-size: auto 60% ;
-      &:after{
-        content: 'Добавить в закладки';
+      &-after{
+
       }
     }
     &-column{
@@ -323,6 +358,13 @@
             top:0;
 
           }
+          &-line{
+            transform: translateY(-50%);
+            &:after{
+              top:0;
+              transform: translateY(0);
+            }
+          }
         }
         &.gt-view-cards-icons-item:last-child{
           .gt-view-cards-icons-item-inner{
@@ -338,7 +380,7 @@
               transform: translateY(-20%);
             }
           }
-          .gt-view-cards-icons-share-inner{
+          .gt-view-cards-icons-item-inner-line{
             transform: translateY(-50%);
             &:after{
               top:0;
@@ -349,13 +391,25 @@
 
         }
       }
-      .gt-view-cards-icons-share-inner{
-        transform: translateY(-50%);
-        &:after{
-          top:0;
-          transform: translateY(0);
+
+      }
+    &-header{
+      position: static;
+      justify-content: flex-start;
+      color: @white;
+      padding: 5px 0;
+      margin-top: 35px;
+      >div,>i{
+        height: 40px;
+        min-width: 40px;
+        border-radius: 20px;
+        &.gt-active{
+          border: 3px solid red;
+          //padding-left: 50px;
+
         }
       }
-      }
+    }
   }
+
 }

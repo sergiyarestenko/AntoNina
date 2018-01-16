@@ -200,37 +200,40 @@ var GoToTrip = function () {
 			elId = 'gt-video-'+el.index(),
 			switcher = el.find('.gt-video-switch');
 			switcher.addClass('gt-video-on');
-			el.find('.gt-video-text').hide();
+
 			el.find('.gt-video-inner').attr('id',elId).addClass('gt-video-foreground');
 		function onYouTubeIframeAPIReady() {
 			player = new YT.Player(elId, {
-			width: 600,
-			height: 400,
-			videoId: el.attr('data-youtube'),
-			playerVars: {
-			playlist: el.attr('data-youtube'),
-			color:'white',
-			loop: 1,
-			// autoplay:1,
-			disablekb:0,
-			controls:0
-			},
-			events: {
-			onReady: initialize
-			}
-		});
-	}
-	onYouTubeIframeAPIReady();
-	function initialize() {
-		player.mute();
-	player.playVideo();
-	};
-	switcher.on('click', function () {
-		if($(this).hasClass('gt-video-on')){
-			player.pauseVideo();
-			$(this).removeClass('gt-video-on');
+				width: 600,
+				height: 400,
+				videoId: el.attr('data-youtube'),
+				playerVars: {
+				playlist: el.attr('data-youtube'),
+				color:'white',
+				loop: 1,
+				// autoplay:1,
+				disablekb:0,
+				controls:0
+				},
+				events: {
+				onReady: initialize
+				}
+			});
+		}
+		onYouTubeIframeAPIReady();
+		function initialize() {
+			player.mute();
+			player.playVideo();
+			el.find('.gt-video-text').addClass('gt-video-on');
+		};
+		switcher.on('click', function () {
+			if($(this).hasClass('gt-video-on')){
+				player.pauseVideo();
+				el.find('.gt-video-text').removeClass('gt-video-on');
+				$(this).removeClass('gt-video-on');
 			}else{
 				player.playVideo();
+				el.find('.gt-video-text').addClass('gt-video-on');
 				$(this).addClass('gt-video-on');
 			}
 		});
@@ -434,10 +437,10 @@ var GoToTrip = function () {
 					'<i class="fa fa-angle-right fa-2x"></i>' +
 					'</span>');
 				currSlider.find('.left').off().on('click',function () {
-					oneMoveFunction(true)
+					oneMoveFunction(false)
 				})
 				currSlider.find('.right').off().on('click',function () {
-					oneMoveFunction(false)
+					oneMoveFunction(true)
 				})
 				checkPosition()
 			}
@@ -469,9 +472,9 @@ var GoToTrip = function () {
 					finalPoint =  Math.abs(e.changedTouches[0].pageX);
 					if(Math.abs(initialPoint-finalPoint) > 50){
 						if(initialPoint > finalPoint){
-							oneMoveFunction(true)
-						}else {
 							oneMoveFunction(false)
+						}else {
+							oneMoveFunction(true)
 						}
 					}
 				});
@@ -491,12 +494,12 @@ var GoToTrip = function () {
 			function checkPosition() {
 				var left = currSlider.find('.left'),
 					right = currSlider.find('.right');
-					left.removeClass('not-active');
 					right.removeClass('not-active');
+					left.removeClass('not-active');
 				if(currPosition == 0)
-					right.addClass('not-active');
-				if (currPosition == innerCount-1||currPosition == innerCount-screenConst)
 					left.addClass('not-active');
+				if (currPosition == innerCount-1||currPosition == innerCount-screenConst)
+					right.addClass('not-active');
 			}
 			function oneMoveFunction(bul,num) {
 				if(num||num===0) {
@@ -542,7 +545,6 @@ var GoToTrip = function () {
 		$('#gt-body-wrapper').show().append('' +
 			'<div id = "gt-clone" class="gt-slider-clone">' +
 			'<div id = "gt-clone-close" class = "gt-slider-clone-close">' +
-			'<i class="fa fa-times fa-2x"></i>' +
 			'</div>' +
 			'<div class="container">' +
 			'<div id = "gt-clone-inner" class = "gt-slider-clone-inner">'+
@@ -611,21 +613,21 @@ var GoToTrip = function () {
 			self.destroyCloneSlider();
 		})
 
-		function moveCloneSliderLeft() {
+		function moveCloneSliderRight() {
 			currPosition +=1;
 			if(currPosition>innerLength-1){
 				currPosition=innerLength-1;
-				self.sliderEndLeft(currSlider);
+				self.sliderEndRight(currSlider);
 			return
 				}
 			self.sliderMove(currSlider,baseWidth,currPosition);
 			checkPosition();
 		}
-		function moveCloneSliderRight() {
+		function moveCloneSliderLeft() {
 			currPosition-=1;
 				if(currPosition <0){
 				currPosition = 0;
-				self.sliderEndRight(currSlider);
+				self.sliderEndLeft(currSlider);
 			return;
 			}
 			self.sliderMove(currSlider,baseWidth,currPosition);
@@ -637,12 +639,12 @@ var GoToTrip = function () {
 				return
 			var left = $('#gt-clone-arrow-left'),
 				right =  $('#gt-clone-arrow-right');
-			left.removeClass('not-active');
 			right.removeClass('not-active');
+			left.removeClass('not-active');
 			if(currPosition == 0)
-				right.addClass('not-active');
-			if (currPosition == innerLength-1)
 				left.addClass('not-active');
+			if (currPosition == innerLength-1)
+				right.addClass('not-active');
 			}
 		}
 	this.destroyCloneSlider = function () {

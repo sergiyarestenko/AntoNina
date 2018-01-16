@@ -1,7 +1,22 @@
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
 .gt-top {
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: cover;
+  min-height: 600px;
 }
 .gt-top .container {
   flex-direction: column;
@@ -13,6 +28,7 @@
   background: url("../img/grid-pattern.png") repeat;
   width: 600px;
   align-items: center;
+  margin-top: 180px;
 }
 .gt-top-inner > div {
   width: 100%;
@@ -34,25 +50,10 @@
   font-weight: 500;
 }
 .main-page-top {
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
-  background-size: cover;
-  height: 900px;
-}
-.main-page-top .gt-top-inner {
-  margin-top: 280px;
+  height: 800px;
 }
 .main-page-top .gt-top-inner .white-line {
   margin-top: 30px;
-}
-.country-page-top {
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
-  background-size: cover;
-  height: 600px;
-}
-.country-page-top .gt-top-inner {
-  margin-top: 180px;
 }
 @media screen and (max-width: 1230px) {
   .gt-top-inner {

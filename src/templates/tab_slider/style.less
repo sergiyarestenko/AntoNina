@@ -25,23 +25,30 @@
       left: 0;
       top:25px;
     }
-    &:after{
-      content: '';
-      width: 0;
-      height: 1px;
-      background: @blue;
-      position: absolute;
-      bottom: 0;
-      left: 0;
+    span{
+      position:relative;
+      &:after{
+        content: '';
+        width: 0;
+        height: 2px;
+        background: @blue;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
 
+      }
     }
+
     &.active {
       background: @white;
       cursor: default;
-      &:after{
-        .gt-transition();
-        width: 100%;
+      span{
+        &:after{
+          .gt-transition();
+          width: 100%;
+        }
       }
+
     }
   }
   &-main{
