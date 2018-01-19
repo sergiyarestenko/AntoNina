@@ -4913,6 +4913,7 @@ input.gt-btn {
 }
 .gt-news-prew .gt-img-holder {
   max-width: 25%;
+  width: 25%;
 }
 .gt-news-prew-text {
   width: 75%;
@@ -6415,6 +6416,10 @@ input.gt-btn {
 .gt-article-table-wrapper {
   width: 25%;
   padding-left: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .gt-article-table a {
   padding: 10px 0;
@@ -6429,6 +6434,12 @@ input.gt-btn {
   padding-right: 0.15em;
   -webkit-transform: scaleX(0.5);
           transform: scaleX(0.5);
+}
+.gt-article-news {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .gt-article-scroll {
   width: 100%;
@@ -6464,6 +6475,35 @@ input.gt-btn {
 }
 .gt-article + .gt-article {
   margin-top: 30px;
+}
+.gt-article-three-column-inner {
+  display: block;
+  width: 100%;
+  text-align: justify;
+  column-count: 2;
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-gap: 30px;
+  -moz-column-gap: 30px;
+  -webkit-column-gap: 30px;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.gt-article-three-column .container {
+  position: relative;
+  overflow: visible;
+}
+.gt-article-three-column-bg {
+  height: 120%;
+  width: 120% ;
+  max-width: 120%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .test {
   border: 1px solid red;

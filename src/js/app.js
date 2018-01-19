@@ -764,6 +764,7 @@ var GoToTrip = function() {
 
     (function() {
       $(window).scroll(scrollThrottler);
+      $(window).resize(scrollThrottler);
 
       var scrollTimeout;
 
@@ -777,6 +778,11 @@ var GoToTrip = function() {
         }
       }
     })();
+
+
+
+
+
   };
 
   this.fixArticleScrollTablePosition = function() {
