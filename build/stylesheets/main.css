@@ -2543,7 +2543,6 @@ summary {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
 }
@@ -2756,6 +2755,7 @@ body {
   box-sizing: border-box;
   color: #6D6D6D;
   font-family: 'Lato', sans-serif;
+  font-size: 18px;
   font-weight: 300;
   position: relative;
   width: 100%;
@@ -2887,6 +2887,14 @@ footer {
   bottom: 0;
   left: 0;
 }
+.gt-img-left {
+  float: left;
+  margin: 15px 30px 15px 0;
+}
+.gt-img-right {
+  float: right;
+  margin: 15px 0 15px 30px;
+}
 .gt-text-block {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -2899,6 +2907,22 @@ footer {
 .gt-text-block p {
   padding: 25px 0;
   line-height: 1.6;
+}
+.gt-text-block .gt-a-news {
+  font-size: 14px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+.gt-space-between {
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 25px;
 }
 .gt-box-shadow {
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
@@ -5056,6 +5080,7 @@ input.gt-btn {
   position: relative;
   width: 100%;
   overflow: hidden;
+  z-index: 15;
 }
 .gt-video-inner {
   width: 100%;
@@ -5075,8 +5100,8 @@ input.gt-btn {
   height: auto;
   margin: 0 auto;
   position: absolute;
-  left: 0;
-  right: 0px;
+  left: 75px;
+  right: 75px;
   bottom: 15px;
   transition: all 0.5s ease-in-out;
 }
@@ -5089,15 +5114,12 @@ input.gt-btn {
   padding-top: 10px;
 }
 .gt-video-text.gt-video-on {
-  left: 0;
+  left: 75px;
   right: 100%;
   bottom: 0;
-  -webkit-transform: scale(0.75, 0.75);
-          transform: scale(0.75, 0.75);
 }
 .gt-video-switch {
   position: absolute;
-  border: 1px solid red;
   height: 74px;
   width: 74px;
   background: url("../img/icons/video-play.svg") no-repeat 50% 50%;
@@ -5113,7 +5135,6 @@ input.gt-btn {
   right: 0;
   bottom: 0;
   left: 0;
-  border: 1px dodgerblue dotted;
 }
 .gt-video-switch.gt-video-on {
   background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
@@ -5155,6 +5176,13 @@ input.gt-btn {
 @media screen and (max-width: 767px) {
   .gt-video {
     height: 213px;
+  }
+  .gt-video-text {
+    left: 50px;
+    right: 50px;
+  }
+  .gt-video-text.gt-video-on {
+    left: 50px;
   }
   .gt-video-switch {
     height: 50px;
@@ -6283,6 +6311,162 @@ input.gt-btn {
 .gt-view-cards-icons-header > div.gt-active,
 .gt-view-cards-icons-header > i.gt-active {
   border: 3px solid red;
+}
+.gt-currency-card {
+  width: 33.3333%;
+  height: 170px;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.gt-currency-card-wrapper .container {
+  margin-top: -15px;
+  margin-bottom: -15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.gt-currency-card-inner {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  width: 75%;
+  height: 100%;
+  padding: 20px;
+  padding-left: 45px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+}
+.gt-currency-card-inner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+  background: #fff url("../img/icons/plane-round-world-icon-blue.svg") no-repeat 50% 50%;
+  background-size: 45px auto;
+}
+.gt-currency-card-inner p {
+  line-height: 1.8;
+}
+.gt-currency-card-inner p:first-of-type {
+  color: #000;
+}
+.gt-currency-card-inner p + p {
+  margin-top: 1em;
+  font-size: 14px;
+}
+.gt-article {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 14px;
+}
+.gt-article h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  border-bottom: 2px solid #E3E3E3;
+  margin-bottom: 15px;
+}
+.gt-article p {
+  display: block;
+  padding: .5em 0;
+}
+.gt-article p:first-of-type {
+  padding-top: 0;
+}
+.gt-article p:first-of-type > img.gt-img-left,
+.gt-article p:first-of-type > img.gt-img-right {
+  margin-top: 0;
+}
+.gt-article-wrapper .container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.gt-article-outer {
+  padding-right: 15px;
+  width: 75%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.gt-article-table {
+  font-size: 16px;
+  color: #000;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: auto;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 30px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+}
+.gt-article-table-wrapper {
+  width: 25%;
+  padding-left: 15px;
+}
+.gt-article-table a {
+  padding: 10px 0;
+}
+.gt-article-table a.gt-active span {
+  border-bottom: 2px solid #0057FF;
+}
+.gt-article-table-back-link:before {
+  content: '<';
+  font-size: 2em;
+  line-height: .65em;
+  padding-right: .15em;
+  -webkit-transform: scaleX(0.5);
+          transform: scaleX(0.5);
+}
+.gt-article-scroll {
+  width: 100%;
+  border: 1px solid #E3E3E3;
+  color: #000;
+  font-size: 14px;
+  padding: 1.1em .8em .8em;
+  line-height: 1.2;
+  margin: .5em 0;
+  position: relative;
+}
+.gt-article-scroll-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  background-color: #E3E3E3;
+}
+.gt-article-scroll-table {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+.gt-article + .gt-article {
+  margin-top: 30px;
 }
 .test {
   border: 1px solid red;

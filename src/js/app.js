@@ -16,8 +16,6 @@ var GoToTrip = function () {
 		gtWrapper = $('#gt-wrapper'),
 		upButton = $('#gt-up'),
 		mobilemenuSwitch = $('#gt-mobile-menu-switch');
-
-
 	//listeners
 
 	$(document).ready( function(){
@@ -50,11 +48,15 @@ var GoToTrip = function () {
 		if($('*').is('.gt-view-cards-icons-item')){
 			self.createIconsItemsClick()
 		}
-
 		if($('div').is('.gt-curr-time')){
 			self.setCurrTime();
-
 		}
+		if($('div').is('.gt-article-scroll-table')){
+			self.createArticteScrollTable();
+		}
+
+
+
 	});
 
 	$(window).resize(function(){
@@ -370,7 +372,6 @@ var GoToTrip = function () {
 		alert('послали данные на бек',el.closest('.gt-view-cards-inner').attr('data-href'))
 		el.toggleClass('gt-active')
 	}
-	this.createSliders = function () {
 	/*
 	*all sliders create funs
 	* params
@@ -378,8 +379,7 @@ var GoToTrip = function () {
 	* arrow (bull) arrow left and right
 	* dots (bull) dots link
 	* */
-
-
+	this.createSliders = function () {
 		var gtSliders = $('.gt-slider');
 		gtSliders.each(function () {
 		var currSlider = $(this),
@@ -571,7 +571,6 @@ var GoToTrip = function () {
 				'</span>')
 			$('#gt-clone-arrow-left').on('click',moveCloneSliderLeft);
 			$('#gt-clone-arrow-right').on('click',moveCloneSliderRight);
-
 		}
 
 		var container = currSlider.find('#gt-clone-container'),
@@ -589,7 +588,6 @@ var GoToTrip = function () {
 			container.addClass('gt-animated')
 		}
 		checkPosition();
-
 	var initialPoint = 0,
 			finalPoint = 0;
 		currSlider.on('touchstart', function(event) {
@@ -697,9 +695,68 @@ var GoToTrip = function () {
 				$('.gt-curr-time-date').html(weekday+', '+day+' '+ month+' '+year);
 		})
 	}
+	this.createArticteScrollTable = function(){
+		if(!$('div').is('.gt-article'))
+			return;
+		var articles = $('.gt-article'),
+				html = '';
+				articles.each(function(){
+					html +='<div class = "gt-article-scroll"><div class = "gt-article-scroll-shadow"></div><p>'+$(this).find('h2').text()+'</p></div>';
+				})
+		$('#gt-article-scroll-table').html(html);
+
+
+		(function(){
+			$( window ).scroll(scrollThrottler);
+
+				var scrollTimeout;
+				function scrollThrottler() {
+			    if ( !scrollTimeout ) {
+			      scrollTimeout = setTimeout(function() {
+			        scrollTimeout = null;
+							self.fixArticleScrollTablePosition();
+				 			self.showArtidleShadow();
+						}, 66);
+			    }
+				}
+
+
+})();
+
+
+
+
+
+
+	}
+	this.fixArticleScrollTablePosition = function(){
+		console.log('fixArticleScrollTablePosition');
+
+
+
+	}
+	this.showArtidleShadow = function(){
+			$('.gt-article').each(function(){
+
+				var currPosition = $(this).position().top,
+						elHeight =  $(this).outerHeight(),
+						windowPosition = $(document).scrollTop();
+				if(currPosition > windowPosition)
+					return;
+
+var x = (windowPosition-currPosition)/elHeight;
+if (x > 1)
+ x = 1;
+console.log($(this).index());
+console.log(x)
+
+
+
+			})
+	}
+
+
+
 };
 
 var goToTrip = new GoToTrip();
-
-
-
