@@ -2,30 +2,35 @@
 @import "./variables";
 @import "./mixin";
 
-
-.gt-inner-scroll, .gt-inner-scroll-tabs {
+.gt-inner-scroll,
+.gt-inner-scroll-tabs {
   display: block;
   width: 100%;
   margin: 20px 0 10px;
   padding: 15px 0;
-  &-text{
+
+  &-text {
     flex-direction: column;
   }
+
   .viewport {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
   }
+
   .overview {
     width: 100%;
     list-style: none;
     position: absolute;
-    left: 0; top: 0;
+    left: 0;
+    top: 0;
     padding: 0;
     margin: 0;
   }
-  .scrollbar{
+
+  .scrollbar {
     display: none;
     background: transparent url("../img/scrollbar/bg-scrollbar-track-y-1.png") no-repeat 0 0;
     position: relative;
@@ -34,38 +39,48 @@
     width: 15px;
     margin-right: 10px;
   }
+
   .track {
     background: transparent url("../img/scrollbar/bg-scrollbar-trackend-y-1.png") no-repeat 0 100%;
     height: 100%;
-    width:13px;
+    width: 13px;
     position: relative;
     padding: 0 1px;
   }
+
   .thumb {
     background: @grey-lightest no-repeat 50% 100%;
     border-radius: 3px;
     background-size: 30% 100%;
     height: 50px;
-    width:8px;
+    width: 8px;
     //max-height: 50px;
     cursor: pointer;
     overflow: hidden;
     position: absolute;
-    top: 0; left: 4px;
+    top: 0;
+    left: 4px;
   }
-   &.isScrolled{
-     .viewport{
-       width: ~"calc(100% - 25px)";
-     }
-     .scrollbar{
-       display: block;
-     }
 
-   }
-  .disable { display: none; }
+  &.isScrolled {
+    .viewport {
+      width: ~"calc(100% - 25px)";
+    }
 
+    .scrollbar {
+      display: block;
+    }
+  }
+
+  .disable {
+    display: none;
+  }
 }
-.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
 
-
-
+.noSelect {
+  user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}

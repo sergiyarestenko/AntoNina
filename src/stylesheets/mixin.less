@@ -4,7 +4,6 @@
   -o-transition: @arguments;
   transition: @arguments;
 }
-
 @keyframes pulse {
   from {
     transform: scale3d(1, 1, 1);
@@ -19,26 +18,27 @@
   }
 }
 
-
-
-.gt-placeholder(@color){
-
+.gt-placeholder(@color) {
   &::-webkit-input-placeholder {
     color: @color;
     opacity: 1;
   }
+
   &::-moz-placeholder {
     color: @color;
     opacity: 1;
   }
+
   &:-ms-input-placeholder {
     color: @color;
     opacity: 1;
   }
+
   &:-moz-placeholder {
     color: @color;
     opacity: 1;
   }
+
   &::placeholder {
     color: @color;
     opacity: 1;

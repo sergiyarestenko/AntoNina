@@ -1,40 +1,46 @@
 @import "../../stylesheets/palette";
 @import "../../stylesheets/variables";
 @import "../../stylesheets/mixin";
-.gt-article{
+
+.gt-article {
   flex-direction: column;
   font-size: @font-size-smaller;
-  h2{
+
+  h2 {
     font-size: @font-size-option;
     font-weight: 400;
     color: @black;
     border-bottom: 2px solid @grey-article-border;
     margin-bottom: 15px;
   }
-  p{
+
+  p {
     display: block;
-    padding: .5em 0;
-    &:first-of-type{
+    padding: 0.5em 0;
+
+    &:first-of-type {
       padding-top: 0;
-      >img.gt-img-left,
-      >img.gt-img-right{
+
+      > img.gt-img-left,
+      > img.gt-img-right {
         margin-top: 0;
       }
     }
   }
-  &-wrapper{
-    .container{
-      flex-direction: row;
 
+  &-wrapper {
+    .container {
+      flex-direction: row;
     }
   }
-  &-outer{
+
+  &-outer {
     padding-right: 15px;
     width: 75%;
     flex-direction: column;
   }
 
-  &-table{
+  &-table {
     font-size: @font-size-option;
     color: @black;
     flex-direction: column;
@@ -43,52 +49,67 @@
     align-self: flex-start;
     padding: 30px;
     .gt-box-shadow();
-    &-wrapper{
+
+    &-wrapper {
       width: 25%;
       padding-left: 15px;
     }
-    a{
+
+    a {
       padding: 10px 0;
-      &.gt-active{
-        span{
-        border-bottom: 2px solid @blue;
+
+      &.gt-active {
+        span {
+          border-bottom: 2px solid @blue;
         }
       }
     }
-    &-back-link{
-      &:before{
+
+    &-back-link {
+      &:before {
         content: '<';
         font-size: 2em;
-        line-height: .65em;
-        padding-right: .15em;
+        line-height: 0.65em;
+        padding-right: 0.15em;
         transform: scaleX(.5);
       }
     }
   }
-  &-scroll{
+
+  &-scroll {
     width: 100%;
     border: 1px solid @grey-article-border;
-    color:@black;
+    color: @black;
     font-size: @font-size-smaller;
-    padding: 1.1em .8em .8em;
+    padding: 1.1em 0.8em 0.8em;
     line-height: 1.2;
-    margin: .5em 0;
-    position:relative;
+    margin: 0.5em 0;
+    position: relative;
 
-    &-shadow{
+    &-shadow {
       position: absolute;
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
       height: 100%;
       width: 20%;
-      background-color:  @grey-article-border;
+      background-color: @grey-article-border;
     }
-    &-table{
+
+    &-table {
       flex-direction: column;
-      width: 100%
+      width: 100%;
+
+      &.gt-fixed {
+        position: fixed;
+        background-color: @body-bg;
+        box-shadow: 0 0 0 0.5em @body-bg;
+        z-index: 1000;
+        top: 90px;
+      }
     }
   }
-  &+.gt-article{
+
+  &+.gt-article {
     margin-top: 30px;
   }
 }
