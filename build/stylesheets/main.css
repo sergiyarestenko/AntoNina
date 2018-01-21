@@ -2421,7 +2421,7 @@
 }
 .gt-inner-scroll .thumb,
 .gt-inner-scroll-tabs .thumb {
-  background: #EDEDED no-repeat 50% 100%;
+  background: #ededed no-repeat 50% 100%;
   border-radius: 3px;
   background-size: 30% 100%;
   height: 50px;
@@ -2743,7 +2743,7 @@ body,
 html {
   background: #fafafa;
   box-sizing: border-box;
-  color: #6D6D6D;
+  color: #6d6d6d;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -2850,7 +2850,7 @@ footer {
   background: #fff;
 }
 .gt-blue {
-  color: #0057FF;
+  color: #0057ff;
 }
 .gt-black {
   color: #000;
@@ -2893,9 +2893,9 @@ footer {
 }
 .gt-text-block h2 {
   font-size: 18px;
+  padding-bottom: 25px;
 }
 .gt-text-block p {
-  padding: 25px 0;
   line-height: 1.6;
 }
 .gt-text-block .gt-a-news {
@@ -2989,9 +2989,9 @@ footer {
   visibility: visible;
 }
 .gt-up.gt-visible:hover {
-  background: #0057FF url("../img/icons/arrow-top-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/arrow-top-white.svg") no-repeat 50% 50%;
   background-size: 50% auto;
-  border-color: #0057FF;
+  border-color: #0057ff;
   opacity: 1;
 }
 .gt-a-news,
@@ -3006,7 +3006,7 @@ footer {
   bottom: -2px;
   height: 2px;
   width: 100%;
-  background: #0057FF;
+  background: #0057ff;
 }
 .gt-aling-items-flex-end {
   -webkit-box-align: end;
@@ -3022,6 +3022,9 @@ footer {
 }
 .gt-margin + .gt-button-block-wrapper {
   margin-top: -30px;
+}
+.gt-margin.gt-view-cards + .gt-button-block-wrapper {
+  margin-top: 0;
 }
 .gt-margin-bottom-not {
   margin-bottom: 0;
@@ -3052,21 +3055,21 @@ input.gt-btn {
           justify-content: center;
 }
 .gt-btn-white {
-  color: #0057FF;
+  color: #0057ff;
   background: transparent;
-  border: 1px solid #0057FF;
+  border: 1px solid #0057ff;
 }
 .gt-btn-white:hover {
-  background: #0057FF;
+  background: #0057ff;
   color: #fff;
 }
 .gt-btn-blue {
   color: #fff;
-  background: #0057FF;
-  border: 1px solid #0057FF;
+  background: #0057ff;
+  border: 1px solid #0057ff;
 }
 .gt-btn-blue:hover {
-  color: #0057FF;
+  color: #0057ff;
   background: transparent;
 }
 .gt-btn-plane {
@@ -3075,7 +3078,7 @@ input.gt-btn {
   border: none;
 }
 .gt-btn-plane:hover {
-  background: #0057FF;
+  background: #0057ff;
   color: #fff;
 }
 .gt-btn-45 {
@@ -3108,7 +3111,7 @@ input.gt-btn {
     left: 0;
     width: 100%;
     height: 50px;
-    background: #0057FF;
+    background: #0057ff;
     border: none;
     border-radius: 0;
     cursor: pointer;
@@ -3123,7 +3126,7 @@ input.gt-btn {
     opacity: 1;
   }
   .gt-up.gt-visible:hover {
-    background: #0057FF;
+    background: #0057ff;
   }
 }
 @media screen and (max-width: 767px) {
@@ -3527,7 +3530,7 @@ input.gt-btn {
   position: absolute;
   right: 1px;
   top: 1px;
-  background: #0057FF;
+  background: #0057ff;
   height: 38px;
   width: 39px;
   display: -webkit-box;
@@ -3544,7 +3547,7 @@ input.gt-btn {
 }
 .gt-footer-subscribe form label:hover {
   background: #fff;
-  color: #0057FF;
+  color: #0057ff;
 }
 .gt-footer-social-link {
   font-size: 30px;
@@ -3688,7 +3691,7 @@ input.gt-btn {
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  border: 0.05em solid #0057FF;
+  border: 0.05em solid #0057ff;
   position: absolute;
   top: -115px;
   left: calc(50% - 40px);
@@ -3699,7 +3702,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-avia:hover:before {
-  background: #0057FF url("../img/icons/avia-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/avia-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hotels:before {
@@ -3707,7 +3710,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hotels:hover:before {
-  background: #0057FF url("../img/icons/hotels-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/hotels-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-carrent:before {
@@ -3715,7 +3718,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-carrent:hover:before {
-  background: #0057FF url("../img/icons/car-rent-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/car-rent-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-bus:before {
@@ -3723,7 +3726,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-bus:hover:before {
-  background: #0057FF url("../img/icons/bus-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/bus-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-ship:before {
@@ -3731,7 +3734,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-ship:hover:before {
-  background: #0057FF url("../img/icons/ship-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/ship-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-insurance:before {
@@ -3739,7 +3742,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-insurance:hover:before {
-  background: #0057FF url("../img/icons/insurance-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/insurance-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hottour:before {
@@ -3747,7 +3750,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-hottour:hover:before {
-  background: #0057FF url("../img/icons/hottour-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/hottour-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-visas:before {
@@ -3755,7 +3758,7 @@ input.gt-btn {
   background-size: auto 40%;
 }
 .gt-button-block a.gt-button-block-visas:hover:before {
-  background: #0057FF url("../img/icons/visas-icon-white.svg") no-repeat 50% 50%;
+  background: #0057ff url("../img/icons/visas-icon-white.svg") no-repeat 50% 50%;
   background-size: auto 40%;
 }
 @media screen and (max-width: 1230px) {
@@ -3807,7 +3810,7 @@ input.gt-btn {
     margin-top: 30px;
     font-size: 1px;
   }
-  .gt-button-block a:nth-child(n+5) {
+  .gt-button-block a:nth-child(n + 5) {
     margin-top: 90px;
   }
   .gt-button-block a:before {
@@ -4054,7 +4057,7 @@ input.gt-btn {
   width: 25px;
   height: 25px;
   line-height: 18px;
-  background: #0057FF;
+  background: #0057ff;
   border-radius: 50%;
   text-align: center;
   padding-top: .35em;
@@ -4345,7 +4348,7 @@ input.gt-btn {
   margin: 15px 11px;
 }
 .gt-slider-nav span.gt-active {
-  background: #0057FF;
+  background: #0057ff;
 }
 .gt-slider-arrow {
   width: 40px;
@@ -4366,7 +4369,7 @@ input.gt-btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  opacity: .65 ;
+  opacity: .65;
   transition: all 0.5s ease-in-out;
   z-index: 50;
 }
@@ -4390,7 +4393,7 @@ input.gt-btn {
   left: 25px;
 }
 .gt-slider-arrow.left i {
-  padding-right: .1em ;
+  padding-right: .1em;
 }
 .gt-slider-arrow.right {
   right: 25px;
@@ -4625,7 +4628,7 @@ input.gt-btn {
   background: #4d4d4d;
 }
 .gt-slider-text-link .gt-slider-nav span.gt-active {
-  background: #0057FF;
+  background: #0057ff;
 }
 .gt-slider-text-link .gt-slider-inner-text {
   position: absolute;
@@ -4715,7 +4718,7 @@ input.gt-btn {
   color: #363636;
 }
 .gt-news .fa-eye {
-  color: #6D6D6D;
+  color: #6d6d6d;
 }
 .gt-news-inner {
   -ms-flex-wrap: wrap;
@@ -4827,7 +4830,7 @@ input.gt-btn {
 }
 .gt-news-small .gt-news-text-header .text {
   line-height: 1.5;
-  color: #6D6D6D;
+  color: #6d6d6d;
 }
 .gt-news-small .gt-img-holder {
   height: 50%;
@@ -4835,12 +4838,17 @@ input.gt-btn {
 .gt-news-small .gt-news-prew .gt-img-holder {
   height: 100% !important;
 }
-.gt-news-small-plane,
-.gt-news-small-image {
+.gt-news-plane,
+.gt-news-image {
+  height: 100%;
   position: relative;
 }
-.gt-news-small-plane .gt-news-text,
-.gt-news-small-image .gt-news-text {
+.gt-news-plane .gt-img-holder,
+.gt-news-image .gt-img-holder {
+  height: 100% !important;
+}
+.gt-news-plane .gt-news-text,
+.gt-news-image .gt-news-text {
   height: 100%;
   position: absolute;
   top: 0;
@@ -4848,13 +4856,21 @@ input.gt-btn {
   bottom: 0;
   left: 0;
 }
-.gt-news-small-image {
-  position: relative;
+.gt-news-plane .gt-news-text-inner {
+  margin: auto;
+  padding: 0 15px;
 }
-.gt-news-small-image .gt-news-text {
+.gt-news-plane h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+.gt-news-plane p {
+  margin: 30px 0;
+}
+.gt-news-image .gt-news-text {
   color: #fff;
 }
-.gt-news-small-image .gt-news-text a {
+.gt-news-image .gt-news-text a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -4866,30 +4882,16 @@ input.gt-btn {
       -ms-flex-align: center;
           align-items: center;
 }
-.gt-news-small-image .gt-news-text a:first-of-type {
+.gt-news-image .gt-news-text a:first-of-type {
   font-size: 14px;
   font-weight: 300;
   bottom: 100px;
 }
-.gt-news-small-image .gt-news-text a:last-of-type {
+.gt-news-image .gt-news-text a:last-of-type {
   font-size: 30px;
   font-weight: bold;
   height: 100px;
   bottom: 0;
-}
-.gt-news-small.gt-news-small-image .gt-img-holder {
-  height: 100%;
-}
-.gt-news-small-plane .gt-news-text-inner {
-  margin: auto;
-  padding: 0 15px;
-}
-.gt-news-small-plane h2 {
-  font-size: 32px;
-  font-weight: bold;
-}
-.gt-news-small-plane p {
-  margin: 30px 0;
 }
 .gt-news-prew {
   font-size: 14px;
@@ -4933,7 +4935,7 @@ input.gt-btn {
   font-size: 13px;
   position: relative;
   bottom: -0.3em;
-  color: #6D6D6D;
+  color: #6d6d6d;
 }
 .gt-news-big:hover .gt-img-holder,
 .gt-news-small:hover .gt-img-holder {
@@ -4976,20 +4978,16 @@ input.gt-btn {
     width: 50%;
     height: auto;
   }
-  .gt-news-small-plane,
-  .gt-news-small-image {
-    height: 500px;
-  }
-  .gt-news-small-plane .gt-img-holder,
-  .gt-news-small-image .gt-img-holder {
-    height: 100%;
-  }
   .gt-news-small .gt-img-holder {
     width: 100%;
     height: 230px;
   }
   .gt-news-small .gt-news-text {
     height: auto;
+  }
+  .gt-news-plane,
+  .gt-news-image {
+    height: 500px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -4999,8 +4997,8 @@ input.gt-btn {
   .gt-news-small .gt-img-holder {
     height: 210px;
   }
-  .gt-news-small-plane,
-  .gt-news-small-image {
+  .gt-news-plane,
+  .gt-news-image {
     height: 450px;
   }
 }
@@ -5017,18 +5015,15 @@ input.gt-btn {
   .gt-news-small .gt-img-holder {
     height: 180px;
   }
-  .gt-news-small-plane,
-  .gt-news-small-image {
+  .gt-news-plane,
+  .gt-news-image {
     height: 320px;
   }
-  .gt-news-small-image .gt-news-text a:last-of-type {
+  .gt-news-image .gt-news-text a:last-of-type {
     font-size: 22px;
   }
-  .gt-news-small-plane h2 {
+  .gt-news-plane h2 {
     font-size: 24px;
-  }
-  .gt-news-small-plane a span {
-    padding: 6px 15px;
   }
 }
 @media screen and (max-width: 479px) {
@@ -5047,22 +5042,11 @@ input.gt-btn {
   .gt-news-small .gt-img-holder {
     height: 220px;
   }
-  .gt-news-small.gt-news-small-image,
-  .gt-news-small.gt-news-small-plane {
-    width: 50%;
-  }
-  .gt-news-small-plane h2 {
+  .gt-news-plane h2 {
     font-size: 22px;
   }
-  .gt-news-small-plane p {
+  .gt-news-plane p {
     margin: 20px 0;
-    font-size: 14px;
-  }
-  .gt-news-small-plane a span {
-    font-size: 14px;
-  }
-  .gt-news-small-prew {
-    height: 90px;
     font-size: 14px;
   }
 }
@@ -5238,7 +5222,7 @@ input.gt-btn {
   bottom: -0.2em;
   height: 2px;
   width: 1.5em;
-  background: #0057FF;
+  background: #0057ff;
 }
 .gt-one-new-text p {
   margin-top: 2em;
@@ -5386,7 +5370,7 @@ input.gt-btn {
   top: -0.3em;
   font-size: 64px;
   font-weight: bold;
-  color: #EDEDED;
+  color: #ededed;
 }
 .gt-must-right-inner ul li:nth-of-type(1):after {
   content: '1';
@@ -5432,7 +5416,7 @@ input.gt-btn {
   width: 100%;
 }
 .gt-tabs-button {
-  background: #F6F6F8;
+  background: #f6f6f8;
   color: #000;
   padding: 15px;
   height: 40px;
@@ -5463,7 +5447,7 @@ input.gt-btn {
   content: '';
   width: 0;
   height: 2px;
-  background: #0057FF;
+  background: #0057ff;
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -5533,7 +5517,7 @@ input.gt-btn {
   content: '';
   width: 0;
   height: 2px;
-  background: #0057FF;
+  background: #0057ff;
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -6053,14 +6037,14 @@ input.gt-btn {
 }
 .gt-view-cards-icons-bookmarks {
   background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
-  background-size: auto 60% ;
+  background-size: auto 60%;
 }
 .gt-view-cards-icons-bookmarks.gt-title:after {
   content: 'Добавить в закладки';
 }
 .gt-view-cards-icons-bookmarks.gt-active {
   background-image: url("../img/view_cards_icons/boocmarks-icon-blue.svg");
-  background-size: auto 60% ;
+  background-size: auto 60%;
 }
 .gt-view-cards-icons-item:after {
   display: -webkit-box;
@@ -6303,6 +6287,27 @@ input.gt-btn {
 .gt-view-cards-icons-header > i.gt-active {
   border: 3px solid red;
 }
+.gt-view-cards-rating {
+  position: absolute;
+  left: 0;
+  top: -35px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 14px;
+  width: 35px;
+  height: 35px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.gt-view-cards-rating span {
+  padding-top: .1em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
 .gt-currency-card {
   width: 33.3333%;
   height: 170px;
@@ -6370,7 +6375,7 @@ input.gt-btn {
   font-size: 16px;
   font-weight: 400;
   color: #000;
-  border-bottom: 2px solid #E3E3E3;
+  border-bottom: 2px solid #e3e3e3;
   margin-bottom: 15px;
 }
 .gt-article p {
@@ -6425,7 +6430,7 @@ input.gt-btn {
   padding: 10px 0;
 }
 .gt-article-table a.gt-active span {
-  border-bottom: 2px solid #0057FF;
+  border-bottom: 2px solid #0057ff;
 }
 .gt-article-table-back-link:before {
   content: '<';
@@ -6443,7 +6448,7 @@ input.gt-btn {
 }
 .gt-article-scroll {
   width: 100%;
-  border: 1px solid #E3E3E3;
+  border: 1px solid #e3e3e3;
   color: #000;
   font-size: 14px;
   padding: 1.1em 0.8em 0.8em;
@@ -6456,8 +6461,8 @@ input.gt-btn {
   top: 0;
   left: 0;
   height: 100%;
-  width: 20%;
-  background-color: #E3E3E3;
+  width: 0;
+  background-color: #e3e3e3;
 }
 .gt-article-scroll-table {
   -webkit-box-orient: vertical;
@@ -6496,7 +6501,7 @@ input.gt-btn {
 }
 .gt-article-three-column-bg {
   height: 120%;
-  width: 120% ;
+  width: 120%;
   max-width: 120%;
   position: absolute;
   top: 0;
