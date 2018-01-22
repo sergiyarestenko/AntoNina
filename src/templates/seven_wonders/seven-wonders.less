@@ -1,0 +1,30 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+.gt-seven-wonders {
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-image: url('../img/icons/logo-link-icon.svg');
+	background-repeat: no-repeat;
+	background-position: 2em 2em;
+	background-size: auto 275px;
+	&-wrapper {
+		.gt-text-block {
+			color: @black;
+			font-size: @font-size-smaller;
+			h2 {
+				font-size: @font-size-prime;
+				padding-bottom: .5em;
+			}
+		}
+	}
+	.gt-view-cards-inner {
+		height: 245px;
+		width: 25%;
+		margin-top: 30px;
+		&:first-of-type {
+			margin-left: 25%;
+		}
+	}
+}

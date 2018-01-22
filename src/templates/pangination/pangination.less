@@ -1,0 +1,27 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+.gt-pangination {
+	ul {
+		flex-direction: row;
+		justify-content: center;
+		margin: 0 auto;
+		font-size: @font-size-smaller;
+		li {
+			margin: 0 .1em;
+			height: 2em;
+			width: 2em;
+			border-radius: 1em;
+			align-items: center;
+			justify-content: center;
+			&.gt-active {
+				color: @white;
+				background-color: @blue;
+			}
+			a {
+				text-align: center;
+			}
+		}
+	}
+}

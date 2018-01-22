@@ -88,6 +88,18 @@ var GoToTrip = function() {
 		self.pageUp();
 	});
 
+	//////////////////////////////?????????????????
+	$('.gt-hundret-menu').on('click', function(event) {
+		event.preventDefault();
+		self.manageGtActiveUlMenu(event.target);
+	});
+	$('.gt-button-menu').on('click', function(event) {
+		event.preventDefault();
+		self.manageGtActiveUlMenu(event.target);
+	});
+
+	//////////////////////////////?????????????????
+
 	//functions
 	this.fixBody = function() {
 		if (bodyPosition.top || bodyPosition.left) return;
@@ -813,6 +825,12 @@ var GoToTrip = function() {
 			var currShadow = $('.gt-article-scroll')[$(this).index()];
 			$(currShadow).find('.gt-article-scroll-shadow').css('width', x * 100 + '%');
 		});
+	};
+
+	this.manageGtActiveUlMenu = function(el) {
+		///////////////????????????????
+		$(el).closest($('ul')).find('li').removeClass('gt-active');
+		$(el).closest('li').addClass('gt-active');
 	};
 };
 

@@ -1,0 +1,33 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+.gt-button-menu{
+    flex-direction: row;
+    font-size: @font-size-smalest;
+    color: @grey-link;
+    justify-content: flex-start;
+    li{
+
+        justify-content: center;
+        align-items: center;
+        height: 2em;
+        line-height: 2em;
+        padding: 0 1.5em;
+        margin: 0 1em;
+        background:@white;
+        border-radius: 1em;
+        .gt-box-shadow(3px,3px, 3px , .25);
+        .gt-transition();
+        &:first-of-type{
+            margin-left: 0;
+        }
+        &:last-of-type{
+            margin-right: 0;
+        }
+        &.gt-active{
+            color: @white;
+            background:@blue;
+        }
+    }
+}
