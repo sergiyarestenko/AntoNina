@@ -1,0 +1,41 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+
+.gt-menu-news{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    color:@black;
+    font-size: @font-size-option;
+    li{
+        a{
+            position: relative;
+            
+        &:after{
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color:@blue;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            .gt-transition(); 
+            }
+        }
+       
+
+
+        &.gt-active{
+            a{
+                  
+            &:after{
+                width: 100%;
+            }
+
+        }
+    }
+
+}
+}

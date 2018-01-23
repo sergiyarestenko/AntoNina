@@ -97,6 +97,10 @@ var GoToTrip = function() {
 		event.preventDefault();
 		self.manageGtActiveUlMenu(event.target);
 	});
+	$('.gt-menu-news').on('click', function(event) {
+		event.preventDefault();
+		self.manageGtActiveUlMenu(event.target);
+	});
 
 	//////////////////////////////?????????????????
 

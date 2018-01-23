@@ -1,6 +1,21 @@
 @import "../../stylesheets/palette";
 @import "../../stylesheets/variables";
 @import "../../stylesheets/mixin";
+.gt-video-label {
+	position: relative;
+	&:after {
+		content: '+ВИДЕО';
+		text-transform: uppercase;
+		color: @white;
+		padding: .5em 1.5em .2em;
+		display: flex;
+		background-color: @red;
+		position: absolute;
+		font-size: @font-size-smalest;
+		left: 0;
+		z-index: 5;
+	}
+}
 
 .gt-news {
 	padding: 0;
@@ -30,6 +45,7 @@
 		}
 	}
 	&-big {
+		flex-direction: column;
 		height: 380px;
 		padding: 0 15px;
 		width: 50%;
@@ -66,6 +82,16 @@
 			}
 			&-header {
 				font-weight: bold;
+			}
+		}
+		&.gt-video-label{
+			.gt-news-text-bottom{
+				bottom: 80px;
+				
+			}
+			&::after {
+				bottom: 60px;
+				left: 55px;
 			}
 		}
 	}
@@ -110,7 +136,21 @@
 				height: 100% !important;
 			}
 		}
+		&-half {
+			height: 270px;
+			overflow: hidden;
+			.gt-img-holder {
+				height: 190px;
+			}
+			&.gt-video-label {
+				&::after {
+					bottom: 80px;
+					left: 15px;
+				}
+			}
+		}
 	}
+
 	&-plane,
 	&-image {
 		height: 100%;
@@ -204,6 +244,53 @@
 			}
 		}
 	}
+	&-prew-wide {
+		color: @grey-light;
+		height: 32%;
+		margin: 1.5% 0;
+
+		font-size: @font-size-smaller;
+		flex-direction: row !important;
+
+		&:first-of-type {
+			margin: 0;
+		}
+		&:last-of-type {
+			margin: 0;
+		}
+		.gt-img-holder {
+			width: 30% !important;
+		}
+		&-inner {
+			flex-direction: column;
+			padding: 0 15px;
+			width: 70%;
+		}
+		&-header {
+			color: @grey-dark;
+			font-size: @font-size-option;
+			font-weight: @font-weight-bold;
+		}
+		&-link-header {
+			display: block;
+			font-size: @font-size-smalest;
+			flex-direction: row;
+			justify-content: space-between;
+			margin: .5em 0 1em;
+			* {
+				display: inline;
+				width: auto;
+			}
+		}
+		&-text {
+			line-height: 1.5;
+		}
+		&.gt-video-label {
+			&::after {
+				bottom: 0;
+			}
+		}
+	}
 }
 
 .gt-news-big,
@@ -214,13 +301,15 @@
 			animation-duration: .75s;
 			animation-fill-mode: both;
 		}
-		.gt-news-prew {
+		.gt-news-prew,
+		.gt-news-prew-wide {
 			.gt-img-holder {
 				animation: none;
 			}
 		}
 	}
-	.gt-news-prew {
+	.gt-news-prew,
+	.gt-news-prew-wide {
 		&:hover {
 			.gt-img-holder {
 				animation-name: pulse;
