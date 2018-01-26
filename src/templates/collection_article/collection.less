@@ -1,0 +1,185 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+.gt-collection {
+  &-link {
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+    font-size: @font-size-smaller;
+    position: relative;
+    &-img {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      z-index: 2;
+    }
+
+    &-text {
+      position: relative;
+      flex-direction: column;
+      padding: 30px 35px 15px;
+      z-index: 1;
+
+      > a {
+        font-size: @font-size-option;
+        color: @black;
+        margin-bottom: 25px;
+        margin-left: 5em;
+      }
+      p {
+        line-height: 1.5;
+      }
+    }
+    &-slider {
+      padding-bottom: 40px;
+      &-wrapper {
+        position: absolute;
+        right: -35px;
+        bottom: -50px;
+        flex-direction: column;
+        z-index: 10;
+
+        width: 300px;
+        background: @black-70;
+        color: @white;
+        padding: 20px 20px 0;
+        p {
+          font-size: @font-size-large;
+          justify-content: center;
+          margin-bottom: 0.75em;
+        }
+      }
+      p {
+        text-align: center;
+        font-size: @font-size-smaller;
+        line-height: 1.42;
+      }
+      .gt-slider-inner {
+        height: 90px;
+        overflow: hidden;
+      }
+      .gt-slider-nav {
+        span {
+          background-color: transparent;
+          border: 1px solid @white;
+          &.gt-active {
+            background-color: @white;
+          }
+        }
+      }
+      .gt-slider-nav {
+        span {
+          margin-left: 8px;
+          margin-right: 8px;
+        }
+      }
+    }
+    &-number {
+      @size: 90px;
+      background: @black-70;
+      color: @white;
+      height: @size;
+      width: @size;
+      position: absolute;
+      left: 0;
+      bottom: -50px;
+      justify-content: center;
+      align-items: center;
+      font-size: @font-size-huge;
+      font-weight: @f-w-bold;
+    }
+    &-read-more {
+      padding-top: 0.5em;
+      justify-content: flex-end;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    top: 20px;
+    width: 33%;
+    height: ~"calc(100% - 50px)";
+    flex-direction: column;
+    padding: 50px 40px;
+    line-height: 1.5;
+    font-weight: normal;
+    flex-wrap: wrap;
+    font-size: @font-size-smaller;
+  }
+  &-header {
+    font-weight: @f-w-bold;
+    font-size: @font-size-prime;
+    padding-right: 33%;
+    padding-bottom: 20px;
+    min-height: 120px;
+  }
+  &-read-more {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+  }
+  &-grey {
+    position: relative;
+    .gt-img-holder-abs {
+      margin-top: 50px;
+      height: 550px;
+    }
+
+    &-text {
+      left: 0;
+      background-color: @black-70;
+      color: @white;
+    }
+    &:before{
+      content: url('../img/icons/logo-link-icon.svg');
+      position: absolute;
+      top:-150px;
+      right: 25px;
+      width: 250px;
+      height: auto;
+      opacity: .5;
+
+    }
+  }
+  &-white {
+    position: relative;
+    .gt-img-holder-abs {
+      margin-top: 50px;
+      height: 550px;
+      width: 67%;
+    }
+
+    &-text {
+      right: 0;
+      background-color: @white;
+      color: @grey-dark;
+    }
+    &:before{
+      content: 'GOtoTRIP';
+      color:@grey-lightest;
+      font-size: 200px;
+      font-weight: @f-w-bold;
+      position: absolute;
+      top:-100px;
+      left: 25px;
+      //width: 250px;
+      //height: auto;
+      opacity: .5;
+
+    }
+  }
+
+
+  &-before-logo{
+    position: relative;
+
+
+  } &-before-text{
+     }
+}

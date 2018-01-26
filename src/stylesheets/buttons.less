@@ -16,25 +16,39 @@ input.gt-btn {
 	font-style: normal;
 	justify-content: center;
 }
+.gt-btn-wide{
+	padding: 0 30px;
+}
 
 .gt-btn-white {
-	color: @blue;
+	color: @blue !important;
 	background: transparent;
 	border: 1px solid @blue;
 
 	&:hover {
 		background: @blue;
-		color: @white;
+		color: @white !important;
+	}
+}
+.gt-btn-whitest {
+	color: @white !important;
+	background: transparent;
+	border: 1px solid @white;
+
+	&:hover {
+		background: @blue;
+		color: @white !important;
+		border: 1px solid @blue;
 	}
 }
 
 .gt-btn-blue {
-	color: @white;
+	color: @white !important;
 	background: @blue;
 	border: 1px solid @blue;
 
 	&:hover {
-		color: @blue;
+		color: @blue !important;
 		background: transparent;
 	}
 }
