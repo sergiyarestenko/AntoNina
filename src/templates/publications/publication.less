@@ -1,0 +1,52 @@
+@import "../../stylesheets/palette";
+@import "../../stylesheets/variables";
+@import "../../stylesheets/mixin";
+
+.gt-publication {
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px;
+  &:nth-child(even) {
+    padding-right: 0;
+  }
+  &:nth-child(odd) {
+    padding-left: 0;
+  }
+  &:nth-child(1),
+  &:nth-child(2){
+    margin-top: 0;
+  }
+  &-wrapper {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  &-inner{
+    height: 300px;
+    width: 100%;
+    .gt-box-shadow();
+    >div{
+      height: 100%;
+      &:first-child{
+        width: 40%;
+      }
+      &:last-child{
+        width: 60%;
+      }
+    }
+  }
+  &-preview{
+    flex-direction: column;
+    position: relative;
+    font-size: @font-size-smaller;
+    padding: 30px 30px 50px;
+    line-height: 1.5;
+    &-header{
+      color:@black;
+      font-size: @font-size-prime;
+      font-weight: @f-w-bold;
+      margin-bottom: 1.5em;
+    }
+  }
+
+}

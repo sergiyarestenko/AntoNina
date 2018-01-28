@@ -6840,6 +6840,7 @@ input.gt-btn {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  position: relative;
 }
 .gt-button-menu li {
   -webkit-box-pack: center;
@@ -6864,6 +6865,12 @@ input.gt-btn {
   margin-right: 0;
 }
 .gt-button-menu li.gt-active {
+  color: #fff;
+  background: #0057ff;
+}
+.gt-button-menu li.gt-button-menu-right {
+  position: absolute;
+  right: 0;
   color: #fff;
   background: #0057ff;
 }
@@ -7215,6 +7222,61 @@ input.gt-btn {
 }
 .gt-collection-before-logo {
   position: relative;
+}
+.gt-publication {
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 30px;
+}
+.gt-publication:nth-child(even) {
+  padding-right: 0;
+}
+.gt-publication:nth-child(odd) {
+  padding-left: 0;
+}
+.gt-publication:nth-child(1),
+.gt-publication:nth-child(2) {
+  margin-top: 0;
+}
+.gt-publication-wrapper {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.gt-publication-inner {
+  height: 300px;
+  width: 100%;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.1);
+}
+.gt-publication-inner > div {
+  height: 100%;
+}
+.gt-publication-inner > div:first-child {
+  width: 40%;
+}
+.gt-publication-inner > div:last-child {
+  width: 60%;
+}
+.gt-publication-preview {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  font-size: 14px;
+  padding: 30px 30px 50px;
+  line-height: 1.5;
+}
+.gt-publication-preview-header {
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 1.5em;
 }
 .test {
   border: 1px solid red;

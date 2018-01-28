@@ -7,6 +7,7 @@
     font-size: @font-size-smalest;
     color: @grey-link;
     justify-content: flex-start;
+    position: relative;
     li{
 
         justify-content: center;
@@ -26,6 +27,12 @@
             margin-right: 0;
         }
         &.gt-active{
+            color: @white;
+            background:@blue;
+        }
+        &.gt-button-menu-right{
+            position: absolute;
+            right: 0;
             color: @white;
             background:@blue;
         }
