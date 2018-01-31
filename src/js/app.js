@@ -68,11 +68,7 @@ GoToTrip = function () {
             self.createArticteScrollTable();
         }
 
-        if ($("div").is(".gt-img-holder-abs")) {
-            $(".gt-img-holder-abs").each(function () {
-                self.imgHolderFunc($(this));
-            });
-        }
+
 
         if ($("div").is(".gt-collection-wrapper-num")) {
             $(".gt-collection-wrapper-num").each(function () {
@@ -81,6 +77,13 @@ GoToTrip = function () {
         }
 
 
+    });
+    $(window).on('load',function () {
+        if ($("div").is(".gt-img-holder-abs")) {
+            $(".gt-img-holder-abs").each(function () {
+                self.imgHolderFunc($(this));
+            });
+        }
     });
 
     $(window).resize(function () {

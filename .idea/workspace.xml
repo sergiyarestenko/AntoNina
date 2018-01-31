@@ -7,44 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="814fa813-1531-4928-8e8d-76d11cb1bdc5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jquery.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/templateLanguages.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/publication-article.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/build/publications.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/AntoNina.iml" afterPath="$PROJECT_DIR$/.idea/AntoNina.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/city-article.html" afterPath="$PROJECT_DIR$/build/city-article.html" />
-      <change beforePath="$PROJECT_DIR$/build/country.html" afterPath="$PROJECT_DIR$/build/country.html" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change beforePath="$PROJECT_DIR$/build/js/app.js" afterPath="$PROJECT_DIR$/build/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/build/new-single-page.html" afterPath="$PROJECT_DIR$/build/new-single-page.html" />
-      <change beforePath="$PROJECT_DIR$/build/news-page.html" afterPath="$PROJECT_DIR$/build/news-page.html" />
-      <change beforePath="$PROJECT_DIR$/build/stylesheets/main.css" afterPath="$PROJECT_DIR$/build/stylesheets/main.css" />
       <change beforePath="$PROJECT_DIR$/src/js/app.js" afterPath="$PROJECT_DIR$/src/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/buttons.less" afterPath="$PROJECT_DIR$/src/stylesheets/buttons.less" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/common.less" afterPath="$PROJECT_DIR$/src/stylesheets/common.less" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/palette.less" afterPath="$PROJECT_DIR$/src/stylesheets/palette.less" />
-      <change beforePath="$PROJECT_DIR$/src/templates/button-block/style.less" afterPath="$PROJECT_DIR$/src/templates/button-block/style.less" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_new-big-date.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_new-big-date.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_new-big.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_new-big.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_new-img.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_new-img.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_new-plane.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_new-plane.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_new-prew.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_new-prew.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_new-small-half.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_new-small-half.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_new-small.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_new-small.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/_publish-small.html" afterPath="$PROJECT_DIR$/src/templates/news_block/_publish-small.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/news_block/style.less" afterPath="$PROJECT_DIR$/src/templates/news_block/style.less" />
-      <change beforePath="$PROJECT_DIR$/src/templates/one_new_block/main-page-large.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/templates/one_new_block/main-page-small.html" afterPath="$PROJECT_DIR$/src/templates/one_new_block/main-page-small.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/one_new_block/style.less" afterPath="$PROJECT_DIR$/src/templates/one_new_block/style.less" />
-      <change beforePath="$PROJECT_DIR$/src/templates/slider/main-bottom.html" afterPath="$PROJECT_DIR$/src/templates/slider/main-bottom.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/slider/main-top.html" afterPath="$PROJECT_DIR$/src/templates/slider/main-top.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/slider/style.less" afterPath="$PROJECT_DIR$/src/templates/slider/style.less" />
-      <change beforePath="$PROJECT_DIR$/src/templates/top_block/main-page.html" afterPath="$PROJECT_DIR$/src/templates/top_block/main-page.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/top_block/style.less" afterPath="$PROJECT_DIR$/src/templates/top_block/style.less" />
-      <change beforePath="$PROJECT_DIR$/src/templates/video_block/main-page-top.html" afterPath="$PROJECT_DIR$/src/templates/video_block/main-page-top.html" />
-      <change beforePath="$PROJECT_DIR$/src/templates/video_block/style.less" afterPath="$PROJECT_DIR$/src/templates/video_block/style.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,74 +22,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6185792">
-      <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.5234306">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/js/app.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="340">
-                      <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="main-page-top.html" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/templates/video_block/main-page-top.html">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="style.less" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="0">
-                      <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file leaf-file-name="style.less" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="408">
-                      <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/js/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="633" column="0" lean-forward="false" selection-start-line="633" selection-start-column="0" selection-end-line="633" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -136,7 +45,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setCurrTime</find>
       <find>test</find>
       <find>-header</find>
       <find>upPageButton</find>
@@ -166,6 +74,7 @@
       <find>hover</find>
       <find>setPlayers</find>
       <find>imgHolderFunc</find>
+      <find>deskTopMenuScroll</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -459,7 +368,7 @@
       <workItem from="1517159957069" duration="1081000" />
       <workItem from="1517194177769" duration="13242000" />
       <workItem from="1517281668185" duration="11848000" />
-      <workItem from="1517367329174" duration="263000" />
+      <workItem from="1517367329174" duration="3251000" />
     </task>
     <task id="LOCAL-00001" summary="main_page - almost ready">
       <created>1512631069132</created>
@@ -545,11 +454,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517160400853</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="update slider">
+      <created>1517367653506</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1517367653506</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="553710000" />
+    <option name="totallyTimeSpent" value="556698000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -970,6 +886,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/video_block/main-page-top.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -980,16 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
           <folding />
         </state>
       </provider>
