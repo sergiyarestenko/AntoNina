@@ -5290,9 +5290,6 @@ input.gt-btn {
   overflow: hidden;
   z-index: 15;
 }
-.gt-video.gt-open {
-  height: 120vh;
-}
 .gt-video-high {
   height: 500px;
 }
@@ -5327,11 +5324,6 @@ input.gt-btn {
   font-weight: 700;
   padding-top: 10px;
 }
-.gt-video-text.gt-video-on {
-  left: 75px;
-  right: 100%;
-  bottom: 0;
-}
 .gt-video-switch {
   position: absolute;
   height: 74px;
@@ -5350,6 +5342,10 @@ input.gt-btn {
   bottom: 0;
   left: 0;
 }
+.gt-video-switch-wrapper.gt-video-on {
+  top: auto;
+  height: 10%;
+}
 .gt-video-switch.gt-video-on {
   background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
   background-size: contain;
@@ -5363,7 +5359,17 @@ input.gt-btn {
 }
 .gt-video iframe,
 .gt-video-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+}
+.gt-video-width.gt-video-foreground {
+  height: 300%;
+  top: -100%;
+}
+.gt-video-height.gt-video-foreground {
   height: 100%;
 }
 @media screen and (max-width: 1230px) {

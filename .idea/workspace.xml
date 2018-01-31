@@ -8,8 +8,13 @@
   <component name="ChangeListManager">
     <list default="true" id="814fa813-1531-4928-8e8d-76d11cb1bdc5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change beforePath="$PROJECT_DIR$/build/js/app.js" afterPath="$PROJECT_DIR$/build/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/build/stylesheets/main.css" afterPath="$PROJECT_DIR$/build/stylesheets/main.css" />
       <change beforePath="$PROJECT_DIR$/src/js/app.js" afterPath="$PROJECT_DIR$/src/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/src/templates/video_block/main-page-bottom.html" afterPath="$PROJECT_DIR$/src/templates/video_block/main-page-bottom.html" />
+      <change beforePath="$PROJECT_DIR$/src/templates/video_block/main-page-top.html" afterPath="$PROJECT_DIR$/src/templates/video_block/main-page-top.html" />
+      <change beforePath="$PROJECT_DIR$/src/templates/video_block/style.less" afterPath="$PROJECT_DIR$/src/templates/video_block/style.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,18 +27,65 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.46538725">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/js/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="512">
+                  <caret line="332" column="0" lean-forward="true" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main-page-top.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/templates/video_block/main-page-top.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-170">
+                  <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#220#241#0" expanded="false" />
+                    <element signature="e#252#271#0" expanded="false" />
+                    <element signature="e#280#299#0" expanded="false" />
+                    <element signature="e#309#638#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="style.less" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="697">
+                  <caret line="80" column="5" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#220#241#0" expanded="false" />
+                    <element signature="e#252#271#0" expanded="false" />
+                    <element signature="e#280#299#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,7 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>test</find>
       <find>-header</find>
       <find>upPageButton</find>
       <find>chro</find>
@@ -75,6 +126,7 @@
       <find>setPlayers</find>
       <find>imgHolderFunc</find>
       <find>deskTopMenuScroll</find>
+      <find>test</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -91,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/templates/currency_card/city.html" />
         <option value="$PROJECT_DIR$/src/templates/main_menu/code.html" />
         <option value="$PROJECT_DIR$/src/templates/all_page/end.html" />
         <option value="$PROJECT_DIR$/src/index.html" />
@@ -139,8 +190,9 @@
         <option value="$PROJECT_DIR$/src/templates/slider/main-bottom.html" />
         <option value="$PROJECT_DIR$/src/templates/slider/style.less" />
         <option value="$PROJECT_DIR$/src/templates/button-block/style.less" />
-        <option value="$PROJECT_DIR$/src/templates/video_block/style.less" />
+        <option value="$PROJECT_DIR$/src/templates/video_block/main-page-bottom.html" />
         <option value="$PROJECT_DIR$/src/templates/video_block/main-page-top.html" />
+        <option value="$PROJECT_DIR$/src/templates/video_block/style.less" />
         <option value="$PROJECT_DIR$/src/js/app.js" />
       </list>
     </option>
@@ -248,19 +300,19 @@
     <property name="node.js.selected.package.stylelint" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\OpenServer\domains\AntoNina\src\templates\breadcrumbs" />
-      <recent name="D:\OpenServer\domains\AntoNina\src\img\view_cards_icons" />
-      <recent name="D:\OpenServer\domains\AntoNina\src\templates\slider" />
-      <recent name="D:\OpenServer\domains\AntoNina\build" />
-      <recent name="D:\OpenServer\domains\AntoNina\build\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OpenServer\domains\AntoNina\src\templates\view_cards_header" />
       <recent name="D:\OpenServer\domains\AntoNina\src\img\view_cards_icons" />
       <recent name="D:\OpenServer\domains\AntoNina\src\templates\top_block\showplase_page" />
       <recent name="D:\OpenServer\domains\AntoNina\src\img\backgrounds\tablet\country" />
       <recent name="D:\OpenServer\domains\AntoNina\src\img\backgrounds\phone\country" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpenServer\domains\AntoNina\src\templates\breadcrumbs" />
+      <recent name="D:\OpenServer\domains\AntoNina\src\img\view_cards_icons" />
+      <recent name="D:\OpenServer\domains\AntoNina\src\templates\slider" />
+      <recent name="D:\OpenServer\domains\AntoNina\build" />
+      <recent name="D:\OpenServer\domains\AntoNina\build\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -368,7 +420,7 @@
       <workItem from="1517159957069" duration="1081000" />
       <workItem from="1517194177769" duration="13242000" />
       <workItem from="1517281668185" duration="11848000" />
-      <workItem from="1517367329174" duration="3251000" />
+      <workItem from="1517367329174" duration="9565000" />
     </task>
     <task id="LOCAL-00001" summary="main_page - almost ready">
       <created>1512631069132</created>
@@ -461,11 +513,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517367653506</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix img load bug">
+      <created>1517373576744</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1517373576744</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="556698000" />
+    <option name="totallyTimeSpent" value="563012000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -520,7 +579,8 @@
     <MESSAGE value="collections pages ready" />
     <MESSAGE value="sunday after meeting" />
     <MESSAGE value="update slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="update slider" />
+    <MESSAGE value="fix img load bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix img load bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -529,13 +589,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/templates/collection_article/_collection-white.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/img/icons/logo-link-icon.svg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -783,6 +836,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="12" column="45" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -886,26 +940,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
+    <entry file="file://$PROJECT_DIR$/src/templates/video_block/main-page-top.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/video_block/main-page-top.html">
+    <entry file="file://$PROJECT_DIR$/src/templates/video_block/main-page-bottom.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/video_block/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="e#220#241#0" expanded="false" />
+            <element signature="e#252#271#0" expanded="false" />
+            <element signature="e#280#299#0" expanded="false" />
+            <element signature="e#309#638#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="88" column="34" lean-forward="true" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
+        <state relative-caret-position="512">
+          <caret line="332" column="0" lean-forward="true" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
           <folding />
         </state>
       </provider>

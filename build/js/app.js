@@ -69,7 +69,6 @@ GoToTrip = function () {
         }
 
 
-
         if ($("div").is(".gt-collection-wrapper-num")) {
             $(".gt-collection-wrapper-num").each(function () {
                 self.numberCollectionArticle($(this));
@@ -78,7 +77,7 @@ GoToTrip = function () {
 
 
     });
-    $(window).on('load',function () {
+    $(window).on('load', function () {
         if ($("div").is(".gt-img-holder-abs")) {
             $(".gt-img-holder-abs").each(function () {
                 self.imgHolderFunc($(this));
@@ -259,6 +258,7 @@ GoToTrip = function () {
         return false;
     };
 
+
     this.setPlayers = function () {
         var tag = document.createElement("script");
         tag.type = "text/javascript";
@@ -271,19 +271,13 @@ GoToTrip = function () {
         gtVideos.each(function () {
             var currentPlayer = $(this);
             currentPlayer.find(".gt-video-switch").on("click", function () {
-                self.controlPlayer(currentPlayer, $(this));
+                $(this).addClass("gt-open");
+                currentPlayer.addClass("gt-open");
+                self.addYouTube(currentPlayer);
             });
         });
     };
 
-    this.controlPlayer = function (el, switcher) {
-        if(el.hasClass('gt-video-opened'))
-        el.addClass("gt-open");
-        if (!switcher.hasClass("gt-open")) {
-            switcher.addClass("gt-open");
-            self.addYouTube(el);
-        }
-    };
 
     this.addYouTube = function (el) {
         var player,
@@ -305,9 +299,9 @@ GoToTrip = function () {
                     playlist: el.attr("data-youtube"),
                     color: "white",
                     loop: 1,
-                    // autoplay:1,
-                    disablekb: 0,
-                    controls: 0
+                    autoplay: 1
+                    // disablekb: 0,
+                    // controls: 0
                 },
                 events: {
                     onReady: initialize
@@ -320,21 +314,37 @@ GoToTrip = function () {
         function initialize() {
             player.mute();
             player.playVideo();
-            el.find(".gt-video-text").addClass("gt-video-on");
+            el.find(".gt-video-switch-wrapper").addClass("gt-video-on");
+            el.find(".gt-video-uncover").on('click', playFullScreen);
+
         }
 
-        switcher.on("click", function () {
+        function playFullScreen() {
+            var iframe = el.find('iframe')[0];
+            var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
+            console.log(requestFullScreen)
+
+            if (requestFullScreen) {
+                requestFullScreen.bind(iframe)();
+            }
+
+
+        }
+
+
+        switcher.off().on("click", function () {
             if ($(this).hasClass("gt-video-on")) {
                 player.pauseVideo();
-                el.find(".gt-video-text").removeClass("gt-video-on");
+                el.find(".gt-video-switch-wrapper").removeClass("gt-video-on");
                 $(this).removeClass("gt-video-on");
             } else {
                 player.playVideo();
-                el.find(".gt-video-text").addClass("gt-video-on");
+                el.find(".gt-video-switch-wrapper").addClass("gt-video-on");
                 $(this).addClass("gt-video-on");
             }
         });
     };
+
 
     this.innerScroll = function () {
         $(".gt-inner-scroll").each(function () {
@@ -602,7 +612,7 @@ GoToTrip = function () {
                         oneMoveFunction(true);
                     });
                 checkPosition();
-                if(numPanel)showNum()
+                if (numPanel) showNum()
             }
 
             function destroyArrow() {
@@ -701,13 +711,12 @@ GoToTrip = function () {
                 self.sliderMove(currSlider, baseWidth, currPosition);
 
 
-
                 if (arrow) checkPosition();
-                if(numPanel) showNum();
+                if (numPanel) showNum();
             }
 
             function showNum() {
-                currSlider.find('.gt-slider-num-curr').text(currPosition+1);
+                currSlider.find('.gt-slider-num-curr').text(currPosition + 1);
                 currSlider.find('.gt-slider-num-max').text(innerCount);
             }
 
