@@ -3,11 +3,14 @@
 @import "../../stylesheets/mixin";
 
 .gt-video {
-	height: 400px;
+	min-height: 400px;
 	position: relative;
 	width: 100%;
 	overflow: hidden;
 	z-index: 15;
+	&.gt-open{
+		height: 120vh;
+	}
 	&-high{
 		height: 500px;
 	}
@@ -86,21 +89,21 @@
 
 .gt-video iframe,
 .gt-video-foreground {
-	position: absolute;
-	top: 0;
-	left: 0;
+	//position: absolute;
+	//top: 0;
+	//left: 0;
 	width: 100%;
 	height: 100%;
-	pointer-events: none;
+	//pointer-events: none;
 }
 
 .gt-video-width.gt-video-foreground {
-	height: 300%;
-	top: -100%;
+	//height: 300%;
+	//top: -100%;
 }
 
 .gt-video-height.gt-video-foreground {
-	height: 100%;
+	//height: 100%;
 }
 @media screen and (max-width: 1230px) {
 	.gt-video {

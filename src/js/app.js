@@ -1,4 +1,4 @@
-var GoToTrip = function () {
+GoToTrip = function () {
     var self = this,
         body = $(document.body),
         bodyPosition = {
@@ -26,8 +26,10 @@ var GoToTrip = function () {
             self.createSliders();
         }
 
-        if ($("div").is(".gt-news")) {
-            self.cutNews();
+        if ($("div").is(".gt-news-cut")) {
+            $(".gt-news-cut").each(function () {
+                self.cutNews($(this));
+            })
         }
 
         if ($("p").is(".gt-read-more-slider-text-inner")) {
@@ -186,16 +188,22 @@ var GoToTrip = function () {
         gtHeader.removeClass("gt-open");
     };
 
-    this.cutNews = function () {
-        var newsContainers = $(".gt-news");
-        newsContainers.each(function () {
-            var cuttingNews = $(this).find(
-                ".gt-news-small .gt-news-text-header .text"
-            );
-            cuttingNews.each(function () {
-                self.cutting($(this), 160);
-            });
-        });
+    this.cutNews = function (el) {
+        var maxHeight = el.height(),
+            links = el.find('a');
+
+
+        for (var i = 0; i < links.length; i++) {
+            if ($(links[i]).outerHeight(true) < maxHeight) {
+                $(links[i]).addClass('gt-ready');
+                maxHeight -= $(links[i]).outerHeight(true);
+            } else {
+                var cuttingLength = Math.floor(($(links[i]).text().length - 30) * maxHeight / $(links[i]).height());
+                var cuttning = $(links[i]).text().substring(0, cuttingLength - 5);
+                $(links[i]).text(cuttning + '...');
+                $(links[i]).addClass('gt-ready');
+            }
+        }
     };
 
     this.cutReadMoreSlider = function () {
@@ -266,6 +274,8 @@ var GoToTrip = function () {
     };
 
     this.controlPlayer = function (el, switcher) {
+        if(el.hasClass('gt-video-opened'))
+        el.addClass("gt-open");
         if (!switcher.hasClass("gt-open")) {
             switcher.addClass("gt-open");
             self.addYouTube(el);
@@ -502,18 +512,24 @@ var GoToTrip = function () {
                 currPosition = 0,
                 arrow = false,
                 dots = false,
+                numPanel = false,
                 screenConst,
                 inner = currSlider.find(".gt-slider-inner"),
                 innerCount = inner.length,
-                baseWidth;
+                baseWidth,
+                baseHeight;
             if (currSlider.hasClass("gt-slider-has-arrow")) {
                 arrow = true;
+                if (currSlider.hasClass("gt-slider-num")) {
+                    numPanel = true;
+                }
                 currSlider.append('<div class="gt-slider-arrow-holder"></div>');
             }
             if (currSlider.hasClass("gt-slider-has-dots")) {
                 dots = true;
                 currSlider.append('<div class="gt-slider-nav"></div>');
             }
+
 
             function findScreenConst() {
                 screenConst = 1;
@@ -539,6 +555,14 @@ var GoToTrip = function () {
                     if (arrow) createArrows();
                     if (dots) createDots();
                 }
+                setBaseHeigth();
+            }
+
+            function setBaseHeigth() {
+                baseHeight = currSlider.outerHeight();
+                currSlider.find('.gt-img-holder').outerHeight(baseHeight);
+                currSlider.find('.gt-img-holder-abs').outerHeight(baseHeight);
+
             }
 
             findScreenConst();
@@ -546,12 +570,18 @@ var GoToTrip = function () {
             createTouch();
 
             function createArrows() {
+                var numInner = '';
+                if (numPanel) {
+                    numInner = '<div class="gt-slider-arrow-num"><i class="gt-slider-num-curr">1</i> <i>из</i> <i class="gt-slider-num-max">10</i> </div>'
+                }
+
                 currSlider
                     .find(".gt-slider-arrow-holder")
                     .html(
                         '<span class = "gt-slider-arrow left">' +
                         '<i class="fa fa-angle-left fa-2x"></i>' +
                         "</span>" +
+                        numInner +
                         '<span class = "gt-slider-arrow right">' +
                         '<i class="fa fa-angle-right fa-2x"></i>' +
                         "</span>"
@@ -569,6 +599,7 @@ var GoToTrip = function () {
                         oneMoveFunction(true);
                     });
                 checkPosition();
+                if(numPanel)showNum()
             }
 
             function destroyArrow() {
@@ -646,6 +677,7 @@ var GoToTrip = function () {
             }
 
             function oneMoveFunction(bul, num) {
+                // console.log(arrow);
                 if (num || num === 0) {
                     currPosition = num;
                 } else if (bul) {
@@ -665,8 +697,17 @@ var GoToTrip = function () {
                 }
                 self.sliderMove(currSlider, baseWidth, currPosition);
 
-                if (currSlider.find(".gt-slider-arrow")) checkPosition();
+
+
+                if (arrow) checkPosition();
+                if(numPanel) showNum();
             }
+
+            function showNum() {
+                currSlider.find('.gt-slider-num-curr').text(currPosition+1);
+                currSlider.find('.gt-slider-num-max').text(innerCount);
+            }
+
 
             $(window).resize(function () {
                 findScreenConst();
@@ -932,19 +973,17 @@ var GoToTrip = function () {
     };
 
     this.imgHolderFunc = function (el) {
-        if (
-            $(el)
-                .find("img")
-                .outerHeight() /
-            $(el)
-                .find("img")
-                .outerWidth() <
-            1
-        ) {
-            $(el).addClass("gt-height");
-        } else {
+        var holderConst = el.outerHeight() / el.outerWidth(),
+            img = el.find('img'),
+            imgConst = img.outerHeight() / img.outerWidth();
+
+        if (imgConst > holderConst) {
             $(el).addClass("gt-width");
         }
+        else {
+            $(el).addClass("gt-height");
+        }
+        $(el).addClass("gt-visible");
     };
 
     this.numberCollectionArticle = function (el) {

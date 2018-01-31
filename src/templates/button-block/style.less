@@ -7,7 +7,7 @@
 	justify-content: space-around;
 	flex-wrap: wrap;
 	&-wrapper {
-		background: @bg-grey;
+		background:@white;
 	}
 	a {
 		width: 11%;
@@ -25,13 +25,18 @@
 			height: 80px;
 			width: 80px;
 			border-radius: 50%;
-			border: .05em solid @blue;
+			border: .05em solid @btn-border;
 			position: absolute;
 			top: -115px;
 			left: ~"calc(50% - 40px)";
 			.gt-transition();
 		}
 
+		&:hover{
+			&:before{
+				border-color: @blue;
+			}
+		}
 		&.gt-button-block-avia {
 			&:before {
 				background: transparent url("../img/icons/avia-icon-blue.svg") no-repeat 50% 50%;
