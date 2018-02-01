@@ -5299,30 +5299,44 @@ input.gt-btn {
 .gt-video-img {
   width: 100%;
 }
-.gt-video-text {
-  color: #fff;
+.gt-video .gt-img-holder {
   width: 100%;
-  max-width: 1200px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0 15px;
-  height: auto;
-  margin: 0 auto;
+}
+.gt-video-pause {
   position: absolute;
-  left: 75px;
-  right: 75px;
-  bottom: 15px;
+  background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
+  background-size: auto 95%;
+  height: 0;
+  width: 0;
+  bottom: 35px;
+  left: 45px;
+  cursor: pointer;
+  opacity: 0;
   transition: all 0.5s ease-in-out;
 }
-.gt-video-text a {
-  max-width: 5em;
+.gt-video-play {
+  position: absolute;
+  background: url("../img/icons/video-play.svg") no-repeat 50% 50%;
+  background-size: auto 90%;
+  height: 0;
+  width: 0;
+  bottom: 35px;
+  left: 85px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
-.gt-video-text p {
-  font-size: 20px;
-  font-weight: 700;
-  padding-top: 10px;
+.gt-video-uncover {
+  position: absolute;
+  background: url("../img/icons/increase-icon-white.png") no-repeat 50% 45%;
+  background-size: auto 75%;
+  height: 0;
+  width: 0;
+  bottom: 35px;
+  left: 125px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 .gt-video-switch {
   position: absolute;
@@ -5333,29 +5347,49 @@ input.gt-btn {
   cursor: pointer;
   bottom: calc(50% - 37px);
   left: calc(50% - 37px);
+}
+.gt-video-text {
+  position: absolute;
+  width: 100%;
+  bottom: .5em;
+  left: 0;
+  color: #fff;
+}
+.gt-video-text p {
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: .25em;
   transition: all 0.5s ease-in-out;
 }
-.gt-video-switch-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.gt-video-text p span {
+  font-weight: 300;
+  font-size: 16px;
+  transition: all 0.5s ease-in-out;
 }
-.gt-video-switch-wrapper.gt-video-on {
-  top: auto;
-  height: 10%;
-}
-.gt-video-switch.gt-video-on {
-  background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
-  background-size: contain;
-  height: 50px;
-  width: 50px;
+.gt-video.gt-video-on .gt-video-pause {
+  height: 30px;
+  width: 30px;
   bottom: 20px;
-  left: 20px;
+  left: 30px;
+  opacity: 1;
 }
-.gt-video .gt-img-holder {
-  width: 100%;
+.gt-video.gt-video-on .gt-video-play {
+  height: 30px;
+  width: 30px;
+  bottom: 20px;
+  left: 70px;
+  opacity: 1;
+}
+.gt-video.gt-video-on .gt-video-uncover {
+  height: 30px;
+  width: 30px;
+  bottom: 20px;
+  left: 110px;
+  opacity: 1;
+}
+.gt-video.gt-video-on .gt-video-text span,
+.gt-video.gt-video-on .gt-video-text p {
+  font-size: 12px;
 }
 .gt-video iframe,
 .gt-video-foreground {

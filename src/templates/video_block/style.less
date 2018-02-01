@@ -3,154 +3,203 @@
 @import "../../stylesheets/mixin";
 
 .gt-video {
-	min-height: 400px;
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-	z-index: 15;
+  min-height: 400px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 15;
 
-	&-high{
-		height: 500px;
-	}
+  &-high {
+    height: 500px;
+  }
 
-	&-inner {
-		width: 100%;
-	}
+  &-inner {
+    width: 100%;
+  }
 
-	&-img {
-		width: 100%;
-	}
+  &-img {
+    width: 100%;
+  }
+  .gt-img-holder {
+    width: 100%;
+  }
 
-	&-text {
-		color: @white;
-		width: 100%;
-		max-width: 1200px;
-		flex-direction: column;
-		padding: 0 15px;
-		height: auto;
-		margin: 0 auto;
-		position: absolute;
-		left: 75px;
-		right: 75px;
-		bottom: 15px;
-		.gt-transition();
+  //buttons
+  &-pause {
+    position: absolute;
+    background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
+    background-size: auto 95%;
+    height: 0;
+    width: 0;
+    bottom: 35px;
+    left: 45px;
+    cursor: pointer;
+    opacity: 0;
+    .gt-transition();
+  }
+  &-play {
+    position: absolute;
+    background: url("../img/icons/video-play.svg") no-repeat 50% 50%;
+    background-size: auto 90%;
+    height: 0;
+    width: 0;
+    bottom: 35px;
+    left: 85px;
+    cursor: pointer;
+    opacity: 0;
+    .gt-transition();
 
-		a {
-			max-width: 5em;
-		}
+  }
+  &-uncover {
+    position: absolute;
+    background: url("../img/icons/increase-icon-white.png") no-repeat 50% 45%;
+    background-size: auto 75%;
+    height: 0;
+    width: 0;
+    bottom: 35px;
+    left: 125px;
+    cursor: pointer;
+    opacity: 0;
+    .gt-transition();
 
-		p {
-			font-size: 20px;
-			font-weight: 700;
-			padding-top: 10px;
-		}
+  }
+  &-switch {
+    position: absolute;
+    height: 74px;
+    width: 74px;
+    background: url("../img/icons/video-play.svg") no-repeat 50% 50%;
+    background-size: contain;
+    cursor: pointer;
+    bottom: ~"calc(50% - 37px)";
+    left: ~"calc(50% - 37px)";
 
+  }
+  &-text {
 
-	}
+    position: absolute;
+    width: 100%;
+    bottom: .5em;
+    left: 0;
+    color: @white;
 
-	&-switch {
-		&-wrapper {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			&.gt-video-on {
-				top:auto;
-				height: 10%;
-			}
-		}
-		position: absolute;
-		height: 74px;
-		width: 74px;
-		background: url("../img/icons/video-play.svg") no-repeat 50% 50%;
-		background-size: contain;
-		cursor: pointer;
-		bottom: ~"calc(50% - 37px)";
-		left: ~"calc(50% - 37px)";
-		.gt-transition();
+    p {
+      font-size: 20px;
+      font-weight: 700;
+      padding-top: .25em;
+      .gt-transition();
+      span{
+        font-weight: @f-w-light;
+        font-size: @font-size-option;
+        .gt-transition();
+      }
 
-		&.gt-video-on {
-			background: url("../img/icons/video-pause.png") no-repeat 50% 50%;
-			background-size: contain;
-			height: 50px;
-			width: 50px;
-			bottom: 20px;
-			left: 20px;
-		}
-	}
+    }
 
-	.gt-img-holder {
-		width: 100%;
-	}
-	.gt-open{
+  }
 
-	}
+  //frame open
+
+  &.gt-video-on {
+    .gt-video-pause {
+      height: 30px;
+      width: 30px;
+      bottom: 20px;
+      left: 30px;
+      opacity: 1;
+    }
+    .gt-video-play {
+      height: 30px;
+      width: 30px;
+      bottom: 20px;
+      left: 70px;
+      opacity: 1;
+    }
+    .gt-video-uncover {
+      height: 30px;
+      width: 30px;
+      bottom: 20px;
+      left: 110px;
+      opacity: 1;
+    }
+    .gt-video-text {
+
+      span,p{
+        font-size: 12px;
+      }
+
+    }
+
+  }
 }
 
 .gt-video iframe,
 .gt-video-foreground {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	//pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //pointer-events: none;
 }
 
 .gt-video-width.gt-video-foreground {
-	height: 300%;
-	top: -100%;
+  height: 300%;
+  top: -100%;
 }
 
 .gt-video-height.gt-video-foreground {
-	height: 100%;
+  height: 100%;
 }
+
 @media screen and (max-width: 1230px) {
-	.gt-video {
-		height: 330px;
-	}
+  .gt-video {
+    height: 330px;
+  }
 }
+
 @media screen and (max-width: 1023px) {
-	.gt-video {
-		height: 250px;
-	}
+  .gt-video {
+    height: 250px;
+  }
 }
+
 @media screen and (max-width: 767px) {
-	.gt-video {
-		height: 213px;
+  .gt-video {
+    height: 213px;
 
-		&-text {
-			left: 50px;
-			right: 50px;
+    &-text {
+      left: 50px;
+      right: 50px;
 
-			&.gt-video-on {
-				left: 50px;
-			}
-		}
+      &.gt-video-on {
+        left: 50px;
+      }
+    }
 
-		&-switch {
-			height: 50px;
-			width: 50px;
-			bottom: ~"calc(50% - 25px)";
-			left: ~"calc(50% - 25px)";
+    &-switch {
+      height: 50px;
+      width: 50px;
+      bottom: ~"calc(50% - 25px)";
+      left: ~"calc(50% - 25px)";
 
-			&.gt-video-on {
-				height: 35px;
-				width: 35px;
-				bottom: 10px;
-				left: 10px;
-			}
-		}
-	}
+      &.gt-video-on {
+        height: 35px;
+        width: 35px;
+        bottom: 10px;
+        left: 10px;
+      }
+    }
+  }
 }
+
 @media screen and (max-width: 666px) {
-	.gt-video {
-		height: 150px;
-	}
+  .gt-video {
+    height: 150px;
+  }
 }
+
 @media screen and (max-width: 479px) {
-	.gt-video {
-		height: 120px;
-	}
+  .gt-video {
+    height: 120px;
+  }
 }

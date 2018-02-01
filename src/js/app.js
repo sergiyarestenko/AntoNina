@@ -281,9 +281,9 @@ GoToTrip = function () {
 
     this.addYouTube = function (el) {
         var player,
-            elId = "gt-video-" + el.index(),
-            switcher = el.find(".gt-video-switch");
-        switcher.addClass("gt-video-on");
+            elId = "gt-video-" + el.index();
+
+            el.find(".gt-video-switch").hide('slow');
 
         el
             .find(".gt-video-inner")
@@ -314,9 +314,14 @@ GoToTrip = function () {
         function initialize() {
             player.mute();
             player.playVideo();
-            el.find(".gt-video-switch-wrapper").addClass("gt-video-on");
+            el.addClass("gt-video-on");
             el.find(".gt-video-uncover").on('click', playFullScreen);
-
+            el.find(".gt-video-pause").on('click', function () {
+                player.pauseVideo();
+            });
+            el.find(".gt-video-play").on("click", function () {
+                player.playVideo();
+            });
         }
 
         function playFullScreen() {
@@ -332,17 +337,17 @@ GoToTrip = function () {
         }
 
 
-        switcher.off().on("click", function () {
-            if ($(this).hasClass("gt-video-on")) {
-                player.pauseVideo();
-                el.find(".gt-video-switch-wrapper").removeClass("gt-video-on");
-                $(this).removeClass("gt-video-on");
-            } else {
-                player.playVideo();
-                el.find(".gt-video-switch-wrapper").addClass("gt-video-on");
-                $(this).addClass("gt-video-on");
-            }
-        });
+        // switcher.off().on("click", function () {
+        //     if ($(this).hasClass("gt-video-on")) {
+        //         player.pauseVideo();
+        //         el.find(".gt-video-switch-wrapper").removeClass("gt-video-on");
+        //         $(this).removeClass("gt-video-on");
+        //     } else {
+        //         player.playVideo();
+        //         el.find(".gt-video-switch-wrapper").addClass("gt-video-on");
+        //         $(this).addClass("gt-video-on");
+        //     }
+        // });
     };
 
 
