@@ -22,6 +22,13 @@ GoToTrip = function () {
         self.deskTopMenuScroll();
         self.footerHeight();
 
+
+        body.on('click',function (event) {
+          console.log(event.target);
+
+        });
+
+
         if ($("div").is(".gt-slider")) {
             self.createSliders();
         }
@@ -194,7 +201,6 @@ GoToTrip = function () {
         var maxHeight = el.height(),
             links = el.find('a');
 
-
         for (var i = 0; i < links.length; i++) {
             if ($(links[i]).outerHeight(true) < maxHeight) {
                 $(links[i]).addClass('gt-ready');
@@ -263,9 +269,7 @@ GoToTrip = function () {
         var tag = document.createElement("script");
         tag.type = "text/javascript";
         tag.src = "https://www.youtube.com/player_api";
-        var lastScriptTag = document.getElementsByTagName("script")[
-        document.getElementsByTagName("script").length - 1
-            ];
+        var lastScriptTag = $("script")[$("script").length - 1];
         lastScriptTag.parentNode.insertBefore(tag, lastScriptTag);
         var gtVideos = $(".gt-video");
         gtVideos.each(function () {
@@ -283,7 +287,7 @@ GoToTrip = function () {
         var player,
             elId = "gt-video-" + el.index();
 
-            el.find(".gt-video-switch").hide('slow');
+        el.find(".gt-video-switch").hide('slow');
 
         el
             .find(".gt-video-inner")
@@ -318,36 +322,23 @@ GoToTrip = function () {
             el.find(".gt-video-uncover").on('click', playFullScreen);
             el.find(".gt-video-pause").on('click', function () {
                 player.pauseVideo();
+                console.log('pause',player.getPlayerState())
             });
             el.find(".gt-video-play").on("click", function () {
                 player.playVideo();
+                console.log('play',player.getPlayerState())
             });
+            el.find('iframe').on('click', console.log('click',player.getPlayerState()));
         }
 
         function playFullScreen() {
             var iframe = el.find('iframe')[0];
             var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
-            console.log(requestFullScreen)
-
             if (requestFullScreen) {
                 requestFullScreen.bind(iframe)();
             }
-
-
         }
 
-
-        // switcher.off().on("click", function () {
-        //     if ($(this).hasClass("gt-video-on")) {
-        //         player.pauseVideo();
-        //         el.find(".gt-video-switch-wrapper").removeClass("gt-video-on");
-        //         $(this).removeClass("gt-video-on");
-        //     } else {
-        //         player.playVideo();
-        //         el.find(".gt-video-switch-wrapper").addClass("gt-video-on");
-        //         $(this).addClass("gt-video-on");
-        //     }
-        // });
     };
 
 
