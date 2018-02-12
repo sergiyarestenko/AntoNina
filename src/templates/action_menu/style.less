@@ -15,46 +15,100 @@
 
 	.gt-events {
 		.icon-holder {
-			background: url("../img/icons/events-icon-blue.svg") no-repeat 50% 50%;
+			background-image: url("../img/icons/events-icon-blue.svg");
+			background-position:  50% 50%;
 			background-size: 50% auto;
+		}
+		&:hover{
+			.icon-holder {
+				background-image: url("../img/icons/events-icon-white.svg");
+				background-position:  50% 50%;
+				background-size: 50% auto;
+			}
 		}
 	}
 	.gt-publications {
 		.icon-holder {
-			background: url("../img/icons/publications-icon-blue.svg") no-repeat 50% 50%;
+			background-image: url("../img/icons/publications-icon-blue.svg");
+			background-position:  50% 50%;
 			background-size: 50% auto;
 		}
+		&:hover{
+			.icon-holder {
+				background-image: url("../img/icons/publications-icon-white.svg");
+				background-position:  50% 50%;
+				background-size: 50% auto;
+			}
+		}
 	}
+
 	.gt-routes {
 		.icon-holder {
-			background: url("../img/icons/routes-icon-blue.svg") no-repeat 50% 50%;
+			background-image: url("../img/icons/routes-icon-blue.svg");
+			background-position:  50% 50%;
 			background-size: 50% auto;
 		}
+		&:hover{
+			.icon-holder {
+				background-image: url("../img/icons/routes-icon-white.svg");
+				background-position:  50% 50%;
+				background-size: 50% auto;
+			}
+		}
 	}
+
 	.gt-plane-round-world {
 		.icon-holder {
-			background: url("../img/icons/plane-round-world-icon-blue.svg") no-repeat 45% 45%;
+			background-image: url("../img/icons/plane-round-world-icon-blue.svg");
+			background-position: 45% 45%;
 			background-size: 55% auto;
 		}
+		&:hover{
+			.icon-holder {
+				background-image: url("../img/icons/plane-round-world-icon-white.svg");
+				background-position: 45% 45%;
+				background-size: 55% auto;
+			}
+		}
 	}
+
 	.gt-castle {
 		.icon-holder {
-			background: url("../img/icons/castle-icon-blue.svg") no-repeat 50% 50%;
+			background-image: url("../img/icons/castle-icon-blue.svg");
+			background-position:  50% 50%;
 			background-size: 50% auto;
 		}
-	}
-	.gt-wine {
-		.icon-holder {
-			background: url("../img/icons/wine-icon-blue.svg") no-repeat 50% 50%;
-			background-size: 75% auto;
+		&:hover{
+			.icon-holder {
+				background-image: url("../img/icons/castle-icon-white.svg");
+				background-position:  50% 50%;
+				background-size: 50% auto;
+			}
 		}
 	}
+
+	.gt-wine {
+		.icon-holder {
+			background-image: url("../img/icons/wine-icon-blue.svg");
+			background-position:  50% 50%;
+			background-size: 75% auto;
+		}
+		&:hover{
+			.icon-holder {
+				background-image: url("../img/icons/wine-icon-white.svg");
+				background-position:  50% 50%;
+				background-size: 75% auto;
+			}
+		}
+	}
+
 	&-inner {
 		width: 33.3%;
 		flex-direction: row;
 		position: relative;
 		min-height: 90px;
 		padding: 60px 0 60px 100px;
+
 	}
 	.icon-holder {
 		position: absolute;
@@ -62,13 +116,16 @@
 		top: 60px;
 		height: 90px;
 		width: 90px;
-		border: 1px solid @grey-border;
+		border: 1px solid @btn-border;
+		background-color: @white;
+		background-repeat: no-repeat;
 		border-radius: 50%;
+		.gt-transition();
 		span {
 			position: absolute;
 			top: .25em;
 			right: -.5em;
-			font-weight: 500;
+			font-weight: @normal;
 			color: @white;
 			font-size: 14px;
 			width: 25px;
@@ -78,7 +135,16 @@
 			border-radius: 50%;
 			text-align: center;
 			padding-top: .35em;
+          .gt-transition();
 		}
+      &:hover {
+		  border-color: @blue;
+		  background-color: @blue;
+        span {
+          color: @blue;
+          background: @white;
+        }
+      }
 	}
 	.text-holder {
 		flex-direction: column;
@@ -88,11 +154,11 @@
 			&:first-of-type {
 				color: @grey-dark;
 				font-size: 16px;
-				font-weight: 700;
+				font-weight: @bold;
 			}
 			&.text-inner {
 				font-size: 14px;
-				font-weight: 300;
+				font-weight: @light;
 				line-height: 1.5;
 				padding-top: 30px;
 			}
@@ -107,6 +173,7 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+
 		p {
 			line-height: 1.8;
 			padding-right: 20%;
@@ -115,9 +182,12 @@
 		&-inner {
 			width: 33%;
 			flex-direction: column;
+          font-size: 14px;
+
 			.icon-holder {
 				position: static;
 				//align-self: center;
+              flex-shrink: 0;
 			}
 			p {
 				padding-top: 20px;

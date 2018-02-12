@@ -54,8 +54,7 @@
     position: relative;
     color: @white;
 
-
-    .gt-news-img{
+    .gt-news-img {
       width: 100%;
       height: 100%;
     }
@@ -96,7 +95,7 @@
         font-size: 14px;
       }
       &-header {
-        font-weight: bold;
+        font-weight: @bold;
       }
     }
     &.gt-video-label {
@@ -134,7 +133,7 @@
         position: relative;
 
         .header {
-          font-weight: bold;
+          font-weight: @bold;
           margin-bottom: .5em;
         }
         .text {
@@ -150,12 +149,12 @@
         font-size: 14px;
         margin-bottom: .5em;
         height: 15%;
-        &+.gt-news-text-header{
+        & + .gt-news-text-header {
           height: 70%;
         }
       }
     }
-    .gt-news-img{
+    .gt-news-img {
       width: 100%;
       height: 50%;
     }
@@ -217,6 +216,7 @@
   }
   &-plane {
     .gt-news-text {
+      color: @grey-light;
       &-inner {
         margin: auto;
         padding: 0 15px;
@@ -224,7 +224,7 @@
     }
     h2 {
       font-size: 32px;
-      font-weight: bold;
+      font-weight: @bold;
     }
     p {
       margin: 30px 0;
@@ -247,12 +247,12 @@
         align-items: center;
         &:first-of-type {
           font-size: 14px;
-          font-weight: 300;
+          font-weight: @light;
           bottom: 100px;
         }
         &:last-of-type {
           font-size: 30px;
-          font-weight: bold;
+          font-weight: @bold;
           height: 100px;
           bottom: 0;
         }
@@ -325,7 +325,7 @@
     &-header {
       color: @grey-dark;
       font-size: @font-size-option;
-      font-weight: @f-w-bold;
+      font-weight: @bold;
     }
     &-link-header {
       display: block;
@@ -351,10 +351,19 @@
 
 .gt-news-big,
 .gt-news-small {
+  .gt-img-holder-abs {
+
+    transition:1.5s  linear;
+  }
+
+
+}
+.gt-news-big,
+.gt-news-small {
   &:hover {
     .gt-img-holder-abs {
-
-      transform: scale3d(1.2, 1.2,1);
+      transform: scale3d(1.2, 1.2, 1);
+      transition: 5s  linear;
     }
     .gt-news-prew,
     .gt-news-prew-wide {

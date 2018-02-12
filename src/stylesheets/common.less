@@ -9,7 +9,7 @@ html {
   color: @grey-light;
   font-family: @font-family-main;
   font-size: @font-size-prime;
-  font-weight: 300;
+  font-weight: @light;
   position: relative;
   width: 100%;
 }
@@ -302,7 +302,7 @@ footer {
     display: none;
     position: relative;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: @normal;
 
     &:before {
       position: absolute;
@@ -382,5 +382,52 @@ footer {
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+
+.gt-switch{
+  position: relative;
+  align-content: center;
+  justify-content: right;
+  height: 16px;
+  width: 30px;
+  cursor: pointer;
+  .line {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: @white;
+    .gt-transition();
+    &.line-1 {
+      top: 0;
+    }
+    &.line-2 {
+      top: 50%;
+    }
+    &.line-3 {
+      top: 100%;
+    }
+  }
+  &:hover, &:focus {
+    .line-1 {
+      transform: translateY(1px);
+    }
+    .line-3 {
+      transform: translateY(-1px);
+    }
+  }
+  &.gt-open {
+    .line-1 {
+      transform: translateY(7px) translateX(-2px) rotate(45deg);
+    }
+    .line-2 {
+      opacity: 0;
+    }
+    .line-3 {
+      transform: translateY(-9px) translateX(-2px) rotate(-45deg);
+    }
   }
 }

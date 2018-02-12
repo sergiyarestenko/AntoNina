@@ -1,3 +1,8 @@
+//функция, определяющая зарегиствированный пользователь или нет
+
+// предусмотреть выход из аккаунта
+
+
 GoToTrip = function () {
     var self = this,
         body = $(document.body),
@@ -15,19 +20,25 @@ GoToTrip = function () {
         gtFooter = $("footer"),
         gtWrapper = $("#gt-wrapper"),
         upButton = $("#gt-up"),
-        mobilemenuSwitch = $("#gt-mobile-menu-switch");
+        mobileMenuSwitch = $("#gt-mobile-menu-switch"),
+        enterButton = $('.gt-enter'),
+        enterWrapper = $('#gt-header-enter-wrapper'),
+        enterForm = $('#gt-header-enter'),
+        enterChose = $('#gt-header-enter-chose'),
+        enterClose = $('#gt-header-enter-close');
     //listeners
 
     $(document).ready(function () {
         self.deskTopMenuScroll();
         self.footerHeight();
+        self.createMainListeners();
 
-
-        body.on('click',function (event) {
-          console.log(event.target);
+///////////////////////////////////
+        body.on('click', function (event) {
+            // console.log(event.target);
 
         });
-
+//////////////////////////////
 
         if ($("div").is(".gt-slider")) {
             self.createSliders();
@@ -122,19 +133,6 @@ GoToTrip = function () {
         self.softScroll(e);
     });
 
-    //click
-    //open-close mobile menu
-    mobilemenuSwitch.on("click", function () {
-        if ($(this).hasClass("gt-open")) {
-            self.mobileMenuClose();
-        } else {
-            self.mobileMenuOpen();
-        }
-    });
-    //to_top_button
-    upButton.on("click", function () {
-        self.pageUp();
-    });
 
     //////////////////////////////?????????????????
     $(".gt-hundret-menu").on("click", function (event) {
@@ -155,6 +153,29 @@ GoToTrip = function () {
     //////////////////////////////?????????????????
 
     //functions
+    this.createMainListeners = function () {
+        mobileMenuSwitch.on("click", function () {
+            if ($(this).hasClass("gt-open")) {
+                self.mobileMenuClose();
+            } else {
+                self.mobileMenuOpen();
+            }
+        });
+
+        upButton.on("click", self.pageUp);
+
+        enterButton.each(function () {
+            $(this).on('click', self.openEnterForm)
+        });
+
+        enterClose.on('click', self.closeEnterForm);
+
+        enterChose.on('click', function (event) {
+            self.changeEnterRegistration(event);
+        })
+    };
+
+
     this.fixBody = function () {
         if (bodyPosition.top || bodyPosition.left) return;
         bodyPosition.top = $(document).scrollTop();
@@ -188,14 +209,41 @@ GoToTrip = function () {
     this.mobileMenuOpen = function () {
         self.fixBody();
         gtHeader.addClass("gt-open");
-        mobilemenuSwitch.addClass("gt-open");
+        mobileMenuSwitch.addClass("gt-open");
     };
 
     this.mobileMenuClose = function () {
         self.unfixBody();
-        mobilemenuSwitch.removeClass("gt-open");
+        mobileMenuSwitch.removeClass("gt-open");
         gtHeader.removeClass("gt-open");
     };
+
+    this.openEnterForm = function () {
+        enterWrapper.addClass('gt-open');
+        setTimeout(show);
+
+        function show() {
+            enterForm.addClass('gt-open');
+            enterClose.addClass('gt-open');
+        }
+    };
+
+    this.closeEnterForm = function () {
+        enterClose.removeClass('gt-open');
+        enterForm.removeClass('gt-open');
+        setTimeout(hide, 750);
+
+        function hide() {
+            enterWrapper.removeClass('gt-open');
+        }
+    };
+
+    this.changeEnterRegistration = function (event) {
+        if (enterForm.hasClass($(event.target).attr("class")))
+            return;
+        enterForm.removeClass("gt-chosen-enter").removeClass("gt-chosen-registration").addClass($(event.target).attr("class"));
+    };
+
 
     this.cutNews = function (el) {
         var maxHeight = el.height(),
@@ -264,7 +312,6 @@ GoToTrip = function () {
         return false;
     };
 
-
     this.setPlayers = function () {
         var tag = document.createElement("script");
         tag.type = "text/javascript";
@@ -281,7 +328,6 @@ GoToTrip = function () {
             });
         });
     };
-
 
     this.addYouTube = function (el) {
         var player,
@@ -322,16 +368,14 @@ GoToTrip = function () {
             el.find(".gt-video-uncover").on('click', playFullScreen);
             el.find(".gt-video-pause").on('click', function () {
                 player.pauseVideo();
-                console.log('pause',player.getPlayerState())
             });
             el.find(".gt-video-play").on("click", function () {
                 player.playVideo();
-                console.log('play',player.getPlayerState())
             });
-            el.find('iframe').on('click', console.log('click',player.getPlayerState()));
         }
 
         function playFullScreen() {
+            console.log('playFullScreen');
             var iframe = el.find('iframe')[0];
             var requestFullScreen = iframe.requestFullScreen || iframe.mozRequestFullScreen || iframe.webkitRequestFullScreen;
             if (requestFullScreen) {
@@ -340,7 +384,6 @@ GoToTrip = function () {
         }
 
     };
-
 
     this.innerScroll = function () {
         $(".gt-inner-scroll").each(function () {
@@ -570,7 +613,7 @@ GoToTrip = function () {
             function setBaseHeigth() {
                 baseHeight = currSlider.outerHeight();
                 currSlider.find('.gt-img-holder').outerHeight(baseHeight);
-                currSlider.find('.gt-img-holder-abs').outerHeight(baseHeight);
+                // currSlider.find('.gt-img-holder-abs').outerHeight(baseHeight);??????????????????????????
 
             }
 
@@ -1033,6 +1076,8 @@ GoToTrip = function () {
             .closest("li")
             .addClass("gt-active");
     };
+
+
 };
 
 var goToTrip = new GoToTrip();
