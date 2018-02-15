@@ -1,53 +1,66 @@
 .gt-transition(@property: all, @duration: 0.5s, @function: ease-in-out) {
-	-webkit-transition: @arguments;
-	-moz-transition: @arguments;
-	-o-transition: @arguments;
-	transition: @arguments;
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
 }
+
 @keyframes pulse {
-	from {
-		transform: scale3d(1, 1, 1);
-	}
+  from {
+    transform: scale3d(1, 1, 1);
+  }
 
-	50% {
-		transform: scale3d(1.05, 1.05, 1.05);
-	}
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
 
-	to {
-		transform: scale3d(1, 1, 1);
-	}
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .gt-placeholder(@color) {
-	&::-webkit-input-placeholder {
-		color: @color;
-		opacity: 1;
-	}
+  &::-webkit-input-placeholder {
+    color: @color;
+    opacity: 1;
+  }
 
-	&::-moz-placeholder {
-		color: @color;
-		opacity: 1;
-	}
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1;
+  }
 
-	&:-ms-input-placeholder {
-		color: @color;
-		opacity: 1;
-	}
+  &:-ms-input-placeholder {
+    color: @color;
+    opacity: 1;
+  }
 
-	&:-moz-placeholder {
-		color: @color;
-		opacity: 1;
-	}
+  &:-moz-placeholder {
+    color: @color;
+    opacity: 1;
+  }
 
-	&::placeholder {
-		color: @color;
-		opacity: 1;
-	}
+  &::placeholder {
+    color: @color;
+    opacity: 1;
+  }
 }
-
 
 .gt-box-shadow (@x: 3px, @y: 3px, @blur: 10px, @alpha: .25) {
-	box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
 }
 
+.gt-scrollbar(@width:.5em) {
+  &::-webkit-scrollbar {
+    width: @width;
+  }
 
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}

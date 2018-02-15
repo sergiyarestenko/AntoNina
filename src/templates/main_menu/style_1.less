@@ -258,12 +258,16 @@
       &-wrapper {
         position: relative;
         width: 100%;
-        height: 200px;
+        height: 240px;
       }
       > div {
         width: 100%;
         margin: .5em 0;
         height: 30px;
+        &.gt-header-enter-form-submit{
+          height: 35px;
+          margin-top: 1em;
+        }
       }
       .gt-input-wrapper {
 
@@ -283,9 +287,25 @@
         }
       }
       &-submit {
+
         justify-content: center;
+
+        label{
+          font-size: 12px;
+        }
       }
 
+      &-social{
+        flex-direction: row;
+        justify-content: center;
+        font-size: large;
+        i{
+          display: inline-flex;
+          margin:  0 .5em;
+          cursor: pointer;
+        }
+
+      }
     }
     #gt-reg-form {
       opacity: 1;
@@ -313,6 +333,7 @@
     &-close {
       //justify-content: space-between;
       height: 30px;
+      padding-top: 0;
       justify-content: flex-end;
       font-size: smaller;
       span {
