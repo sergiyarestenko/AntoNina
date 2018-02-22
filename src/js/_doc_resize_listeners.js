@@ -1,4 +1,4 @@
-$(window).resize(function () {
+docWindow.resize(function () {
     self.deskTopMenuScroll();
     self.footerHeight();
 
