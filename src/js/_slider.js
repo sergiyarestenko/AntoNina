@@ -13,35 +13,27 @@ this.createSlider = function (currSlider, position) {
         tram = currSlider.hasClass("gt-slider-tram"),
         fade = currSlider.hasClass("gt-slider-fade"),
         hasClone = currSlider.hasClass("gt-slider-has-clone");
-
-
     if (fade) {
         fadeSliderMove(position);
     }
-
     if (tram) {
         findScreenConst();
         setBaseWidth();
         tramSliderMove();
     }
-
     if (arrow) {
         currSlider.append('<div class="gt-slider-arrow-holder"></div>');
         createArrows();
     }
-
     if (dots) {
         createDots();
     }
-
     if (innerCount > screenConst) {
         createTouch();
     }
-
     if (hasClone) {
         createCloneListeners();
     }
-
 
     function createCloneListeners() {
         currSlider.find('.gt-slider-inner-cover').each(function () {
@@ -53,9 +45,7 @@ this.createSlider = function (currSlider, position) {
     }
 
     function createArrows() {
-        if (innerCount < screenConst) {
-            return;
-        }
+        if (innerCount > screenConst) {
         var numInner = '';
         if (numPanel) {
             numInner = '<div class="gt-slider-arrow-num"><i class="gt-slider-num-curr"></i><i>из</i><i class="gt-slider-num-max"></i></div>'
@@ -68,15 +58,17 @@ this.createSlider = function (currSlider, position) {
             '<i class="fa fa-angle-right fa-2x"></i>' +
             "</span>"
         );
-        arrowsReady = true;
         createArrowsListeners();
         showNum();
+        }
+        arrowsReady = true;
     }
 
-    function destroyArrows() {
-        currSlider.find(".left").off();
-        currSlider.find(".right").off();
-        currSlider.find(".gt-slider-arrow-holder").html("");
+    function destroyArrows(clone) {
+        var el = clone || currSlider
+        el.find(".left").off();
+        el.find(".right").off();
+        el.find(".gt-slider-arrow-holder").html("");
         arrowsReady = false;
     }
 
@@ -124,14 +116,11 @@ this.createSlider = function (currSlider, position) {
             // self.sliderEndRight(currSlider);
             return;
         }
-
         if (tram) {
             tramSliderMove();
         } else {
             fadeSliderMove();
         }
-
-
         if (arrow) checkPosition();
         if (numPanel) showNum();
     }
@@ -190,10 +179,10 @@ this.createSlider = function (currSlider, position) {
         });
     }
 
-    function destroyTouch() {
-        currSlider.off();
+    function destroyTouch(clone) {
+        var el = clone || currSlider;
+        el.off();
     }
-
 
     function findScreenConst() {
         if (currSlider.attr("data-count")) {
@@ -205,46 +194,39 @@ this.createSlider = function (currSlider, position) {
     }
 
     function setBaseWidth() {
-        console.log(baseWidth);
-
         baseWidth = currSlider.outerWidth() / screenConst;
-
         currSlider.find(".gt-slider-container").outerWidth((innerCount + 1) * baseWidth);
         inner.each(function () {
             $(this).outerWidth(baseWidth);
         });
-
     }
-
 
     function createCloneSlider(clickPosition) {
-        if ($("div").is("#gt-clone-close")) return;
-
+        if ($("div").is("#gt-clone")) return;
         self.fixBody();
-
-        $("#gt-body-wrapper").show().append(
-            '<div   class="container">' +
-            '<div id = "gt-clone-close" class = "gt-slider-clone-close"></div>' +
-            '<div id = "gt-clone" class="gt-slider gt-slider-clone gt-slider-fade gt-slider-has-arrow">' +
-            '<div  id = "gt-clone-container" class="gt-slider-container"></div>' +
-            '</div>' +
-            '</div>'
-        );
-
-        var inners = currSlider.find(".gt-slider-inner").clone(true);
-
+        var bodyWrapper = $("#gt-body-wrapper")
+        bodyWrapper.append('<div id = "gt-clone-wrapper"   class="container"><div id = "gt-clone-close" class = "gt-slider-clone-close"></div><div id = "gt-clone" class="gt-slider gt-slider-clone gt-slider-fade gt-slider-has-arrow"><div  id = "gt-clone-container" class="gt-slider-container"></div></div></div>');
+        bodyWrapper.show();
+        var cloneSlider = $('#gt-clone'),
+            inners = currSlider.find(".gt-slider-inner").clone(true);
         inners.each(function () {
+            $(this).outerWidth('');
             $('#gt-clone-container').append($(this));
         });
-
-
-        self.createSlider($('#gt-clone'), clickPosition);
-
+        self.createSlider(cloneSlider, clickPosition);
+        $("#gt-clone-close").on("click", function () {
+            destroyCloneSlider(cloneSlider);
+        });
     }
-
-
+    function destroyCloneSlider(cloneSlider) {
+        destroyArrows(cloneSlider);
+        destroyTouch(cloneSlider);
+        $("#gt-clone-close").off();
+        $("#gt-clone-wrapper").remove();
+        $("#gt-body-wrapper").hide();
+        self.unfixBody();
+    }
     //////////resizeSlider
-
     function resizeSlider() {
         if (!sliderTimeOut) {
             sliderTimeOut = setTimeout(function () {
@@ -256,14 +238,13 @@ this.createSlider = function (currSlider, position) {
 
     docWindow.resize(resizeSlider);
 
-
     function resizeFunc() {
         destroyTouch();
         if (tram) {
             findScreenConst();
             setBaseWidth();
+            resizeMove();
             tramSliderMove();
-
         }
         if (arrowsReady) {
             destroyArrows();
@@ -274,11 +255,21 @@ this.createSlider = function (currSlider, position) {
         }
 
 
-        console.log(currPosition, arrow, dots, numPanel, tram);
+
+
+
+
     }
+
+   function resizeMove() {
+       if (currPosition > innerCount - screenConst)
+           currPosition = innerCount - screenConst;
+       if (innerCount <= screenConst) currPosition = 0;
+
+
+   }
+
 };
-
-
 if ($("div").is(".gt-slider")) {
     $(".gt-slider").each(function () {
         self.createSlider($(this));
