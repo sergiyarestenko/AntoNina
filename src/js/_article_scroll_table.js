@@ -1,6 +1,4 @@
 this.fixArticleScrollTablePosition = function () {
-
-
     var table = $(".gt-article-table-wrapper"),
         tableParent = table.parent(),
         tableParentTop = tableParent.position().top,
@@ -8,12 +6,15 @@ this.fixArticleScrollTablePosition = function () {
         tableWidth = table.outerWidth(),
         windowTop = doc.scrollTop(),
         widowHeight = docWindow.outerHeight();
+    // tableParent.addClass('test');
+
+    console.log(tableParentTop);
+    console.log(windowTop);
 
 
-    if (tableParentTop > windowTop) {
+    if (tableParentTop+90 > windowTop) {
         if (table.hasClass("gt-fixed")) {
             table.removeClass("gt-fixed");
-
             table.css({
                 left: "",
                 width: ""
@@ -50,7 +51,6 @@ this.fixArticleScrollTablePosition = function () {
         }
     })();
 };
-
 
 
 this.createArticteScrollTable = function () {
@@ -109,7 +109,7 @@ if ($('div').is('.gt-article-table-wrapper')) {
                     self.showArtidleShadow();
                 }
 
-            }, 66);
+            });
         }
     }
 

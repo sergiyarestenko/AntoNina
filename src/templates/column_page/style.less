@@ -58,7 +58,7 @@
   }
 
   &-outer {
-    padding-right: 15px;
+    padding: 0 30px 0 15px;
     width: 75%;
     flex-direction: column;
   }
@@ -71,16 +71,19 @@
     height: auto;
     align-self: flex-start;
     padding: 30px;
-    .gt-box-shadow();
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .06);
+    //.gt-box-shadow();
     &-wrapper {
+      //border:1px solid red;
       width: 25%;
-      padding-left: 15px;
+      padding: 0 15px;
       flex-direction: column;
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: visible;
       .gt-scrollbar(.25em);
-      .gt-transition(top);
+      //.gt-transition(top);
       position: absolute;
-      top:0;
+      top: 0;
       right: 15px;
 
       &.gt-fixed {
@@ -96,7 +99,6 @@
           top: auto;
           right: 15px;
           bottom: 30px;
-
           left: auto !important;
         }
       }
@@ -107,17 +109,14 @@
         font-size: @font-size-option;
       }
     }
-
     a {
       padding: 10px 0;
-
       &.gt-active {
         span {
           border-bottom: 2px solid @blue;
         }
       }
     }
-
     &-back-link {
       &:before {
         content: '<';
@@ -132,7 +131,6 @@
     flex-direction: column;
     &-half {
       flex-direction: column;
-      // height: 270px;
       .gt-img-holder {
         height: 190px;
       }
@@ -165,7 +163,6 @@
           }
         }
       }
-
     }
   }
   &-scroll {
@@ -177,7 +174,6 @@
     line-height: 1.2;
     margin: 0.5em 0;
     position: relative;
-
     &-shadow {
       position: absolute;
       top: 0;
@@ -186,32 +182,15 @@
       width: 0;
       background-color: @grey-article-border;
     }
-
     &-table {
       flex-direction: column;
       width: 100%;
-
     }
   }
-
   & + .gt-article {
     margin-top: 30px;
   }
-
-  &-three-column, &-two-column {
-    &-inner {
-      display: block;
-      width: 100%;
-      text-align: justify;
-
-      column-gap: 30px;
-      -moz-column-gap: 30px;
-      -webkit-column-gap: 30px;
-      color: @black;
-      font-size: @font-size-smaller;
-      line-height: 1.5;
-    }
-
+  &-few-column {
     .container {
       position: relative;
       overflow: visible;
@@ -228,23 +207,32 @@
       background-size: cover;
     }
   }
+  &-three-column, &-two-column {
+    &-inner {
+      display: block;
+      width: 100%;
+      text-align: justify;
+      column-gap: 30px;
+      -moz-column-gap: 30px;
+      -webkit-column-gap: 30px;
+      color: @black;
+      font-size: @font-size-smaller;
+      line-height: 1.5;
+    }
+  }
   &-three-column {
     &-inner {
-
       -moz-column-count: 3;
       -webkit-column-count: 3;
       column-count: 3;
     }
-
   }
   &-two-column {
     &-inner {
-
       -moz-column-count: 2;
       -webkit-column-count: 2;
-      column-count: 1;
+      column-count: 2;
     }
-
   }
 
 }
