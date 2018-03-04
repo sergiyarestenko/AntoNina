@@ -38,8 +38,8 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
     return gulp.src(config.paths.js)
-        .pipe(rigger())
         .pipe(sourcemaps.init())
+        .pipe(rigger())
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.paths.build + '/js'))
@@ -84,4 +84,5 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['img', 'css', 'js', 'html', 'serve', 'watch']);
+// gulp.task('default', ['img', 'css', 'js', 'html', 'serve', 'watch']);
+gulp.task('default', [ 'css', 'js', 'html', 'serve', 'watch']);

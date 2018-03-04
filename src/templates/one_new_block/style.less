@@ -44,14 +44,30 @@
       font-size: 12px;
       font-weight: @bold;
       text-transform: uppercase;
+
+      &:hover {
+        &:after {
+          -webkit-animation-name: gt-link-move;
+          animation-name: gt-link-move;
+          -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+        }
+
+      }
     }
   }
   &-img {
     height: auto;
     width: 67%;
     text-align: center;
+    .gt-transition();
     div {
       height: 100%;
+    }
+    &:hover {
+      box-shadow: 5px 5px 25px rgba(0, 0, 0, .35);
     }
   }
 }

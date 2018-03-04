@@ -1,19 +1,63 @@
 this.cutNews = function (el) {
-    var maxHeight = el.height(),
-        links = el.find('a');
+    var parent = el.parent(),
+        maxHeight = parent.height(),
+        cuttingEl = el.find('p'),
+        currHeight,
+        cuttingLenght,
+        newText;
+    parent.children().each(function () {
+        maxHeight -= $(this).outerHeight(true);
+    });
 
-    for (var i = 0; i < links.length; i++) {
-        if ($(links[i]).outerHeight(true) < maxHeight) {
-            $(links[i]).addClass('gt-ready');
-            maxHeight -= $(links[i]).outerHeight(true);
-        } else {
-            var cuttingLength = Math.floor(($(links[i]).text().length - 30) * maxHeight / $(links[i]).height());
-            var cuttning = $(links[i]).text().substring(0, cuttingLength - 5);
-            $(links[i]).text(cuttning + '...');
-            $(links[i]).addClass('gt-ready');
+    maxHeight = maxHeight + el.height() -20;
+
+
+
+    cuttingEl.each(function () {
+        currHeight = $(this).outerHeight(true);
+
+        if( currHeight < maxHeight){
+            maxHeight -=currHeight
+        }else {
+            if(!maxHeight){
+                $(this).css('display','none');
+            }else{
+                cuttingLenght =  Math.floor($(this).text().length * maxHeight / currHeight);
+                newText = $(this).text().substring(0, cuttingLenght);
+                // cutLastSymbol();
+                $(this).text((newText) + '...');
+                maxHeight = 0;
+            }
         }
-    }
+    });
+    //
+    // function cutLastSymbol() {
+    //     var strLength = newText.length;
+    //     if(newText.charAt(strLength - 1) == ' '){
+    //         newText= newText.substring(0, strLength - 1);
+    //     }else{
+    //         newText = newText.substring(0, strLength - 1);
+    //         setTimeout(cutLastSymbol)
+    //     }
+    // }
+
 };
+
+
+
+if ($("div").is(".js-news-cut")) {
+    $(".js-news-cut").each(function () {
+        self.cutNews($(this));
+    });
+
+
+    docWindow.resize(function () {
+        $(".js-news-cut").each(function () {
+            self.cutNews($(this));
+        });
+    });
+}
+
 
 
 this.cutReadMoreSlider = function () {
@@ -31,11 +75,7 @@ this.cutting = function (el, num) {
     }
 };
 
-if ($("div").is(".gt-news-cut")) {
-    $(".gt-news-cut").each(function () {
-        self.cutNews($(this));
-    })
-}
+
 
 if ($("p").is(".gt-read-more-slider-text-inner")) {
     self.cutReadMoreSlider();

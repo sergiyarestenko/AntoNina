@@ -4,7 +4,6 @@
 
 .gt-tabs {
   position: relative;
-  //padding: 0;
   flex-direction: column;
   height: 350px;
   width: 100%;
@@ -51,10 +50,11 @@
   }
   &-main {
     opacity: 0;
-
+    z-index: 1;
     .gt-transition();
     &.active {
       opacity: 1;
+      z-index: 2;
     }
     &-holder {
       height: 100%;
@@ -84,16 +84,30 @@
       height: 245px;
       font-size: 14px;
       line-height: 1.8;
-      padding: 50px 10px 40px 40px;
+      padding: 40px 10px 40px 40px;
 
       .gt-inner-scroll-text {
         padding-right: 10px;
+      }
+      &-inner{
+
+        p{
+          padding-top: 10px;
+
+          &:first-of-type{
+            padding-top: 0;
+          }
+        }
+        a{
+          display: inline-flex;
+            width: auto;
+          align-self: flex-end;
+        }
       }
     }
   }
   &-broad {
     height: 300px;
-
     .gt-tabs {
       &-button {
         background: @body-bg;
@@ -127,7 +141,6 @@
           cursor: default;
           span {
             &:before {
-
               width: 100%;
             }
           }

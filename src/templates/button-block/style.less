@@ -3,206 +3,209 @@
 @import "../../stylesheets/mixin";
 
 .gt-button-block {
-	flex-direction: row;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	&-wrapper {
-		background:@white;
-	}
-	a {
-		width: 11%;
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		margin-top: 165px;
-		margin-bottom: 35px;
-		position: relative;
-		color: @black;
-		font-weight: @normal;
-		&:before {
-			content: '';
-			display: block;
-			height: 80px;
-			width: 80px;
-			border-radius: 50%;
-			border: .05em solid @btn-border;
-			position: absolute;
-			top: -115px;
-			left: ~"calc(50% - 40px)";
-			.gt-transition();
-		}
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  &-wrapper {
+    background: @white;
+  }
+  a {
+    width: 11%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 165px;
+    margin-bottom: 35px;
+    position: relative;
+    color: @black;
+    font-weight: @normal;
+    &:before {
+      content: '';
+      display: block;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      border: .05em solid @btn-border;
+      position: absolute;
+      top: -115px;
+      left: ~"calc(50% - 40px)";
+      .gt-transition();
+    }
 
-		&:hover{
-			&:before{
-				border-color: @blue;
-			}
-		}
-		&.gt-button-block-avia {
-			&:before {
-				background: transparent url("../img/icons/avia-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/avia-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
+    &:hover {
+      &:before {
+        border-color: @blue;
+      }
+    }
+    &.gt-button-block-avia {
+      &:before {
+        background: transparent url("../img/icons/avia-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/avia-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
 
-		&.gt-button-block-hotels {
-			&:before {
-				background: transparent url("../img/icons/hotels-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/hotels-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
+    &.gt-button-block-hotels {
+      &:before {
+        background: transparent url("../img/icons/hotels-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/hotels-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
 
-		&.gt-button-block-carrent {
-			&:before {
-				background: transparent url("../img/icons/car-rent-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/car-rent-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
+    &.gt-button-block-carrent {
+      &:before {
+        background: transparent url("../img/icons/car-rent-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/car-rent-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
 
-		&.gt-button-block-bus {
-			&:before {
-				background: transparent url("../img/icons/bus-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/bus-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
+    &.gt-button-block-bus {
+      &:before {
+        background: transparent url("../img/icons/bus-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/bus-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
 
-		&.gt-button-block-ship {
-			&:before {
-				background: transparent url("../img/icons/ship-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/ship-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
+    &.gt-button-block-ship {
+      &:before {
+        background: transparent url("../img/icons/ship-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/ship-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
 
-		&.gt-button-block-insurance {
-			&:before {
-				background: transparent url("../img/icons/insurance-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/insurance-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
+    &.gt-button-block-insurance {
+      &:before {
+        background: transparent url("../img/icons/insurance-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/insurance-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
 
-		&.gt-button-block-hottour {
-			&:before {
-				background: transparent url("../img/icons/hottour-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/hottour-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
+    &.gt-button-block-hottour {
+      &:before {
+        background: transparent url("../img/icons/hottour-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/hottour-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
 
-		&.gt-button-block-visas {
-			&:before {
-				background: transparent url("../img/icons/visas-icon-blue.svg") no-repeat 50% 50%;
-				background-size: auto 40%;
-			}
-			&:hover {
-				&:before {
-					background: @blue url("../img/icons/visas-icon-white.svg") no-repeat 50% 50%;
-					background-size: auto 40%;
-				}
-			}
-		}
-	}
+    &.gt-button-block-visas {
+      &:before {
+        background: transparent url("../img/icons/visas-icon-blue.svg") no-repeat 50% 50%;
+        background-size: auto 40%;
+      }
+      &:hover {
+        &:before {
+          background: @blue url("../img/icons/visas-icon-white.svg") no-repeat 50% 50%;
+          background-size: auto 40%;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1230px) {
-	.gt-button-block {
-		a {
-			margin-top: 155px;
-		}
-	}
+  .gt-button-block {
+    a {
+      margin-top: 155px;
+    }
+  }
 }
+
 @media screen and (max-width: 1023px) {
-	.gt-button-block {
-		padding-top: 30px;
-		padding-bottom: 60px;
-		a {
-			width: 25%;
-			margin-top: 145px;
-			margin-bottom: 0;
-		}
-	}
+  .gt-button-block {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    a {
+      width: 25%;
+      margin-top: 145px;
+      margin-bottom: 0;
+    }
+  }
 }
+
 @media screen and (max-width: 767px) {
-	.gt-button-block {
-		padding-top: 20px;
-		padding-bottom: 45px;
-	}
+  .gt-button-block {
+    padding-top: 20px;
+    padding-bottom: 45px;
+  }
 }
+
 @media screen and (max-width: 666px) {
-	.gt-button-block {
-		padding-top: 0;
-		padding-bottom: 40px;
-		a {
-			margin-top: 120px;
-			font-size: 14px;
-			&:before {
-				height: 64px;
-				width: 64px;
-				top: -85px;
-				left: ~"calc(50% - 32px)";
-				.gt-transition();
-			}
-		}
-	}
+  .gt-button-block {
+    padding-top: 0;
+    padding-bottom: 40px;
+    a {
+      margin-top: 120px;
+      font-size: 14px;
+      &:before {
+        height: 64px;
+        width: 64px;
+        top: -85px;
+        left: ~"calc(50% - 32px)";
+        .gt-transition();
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 479px) {
-	.gt-button-block {
-		padding-top: 0;
-		padding-bottom: 100px;
-		a {
-			color: transparent;
-			margin-top: 30px;
-			font-size: 1px;
-			&:nth-child(n + 5) {
-				margin-top: 90px;
-			}
-			&:before {
-				height: 64px;
-				width: 64px;
-				top: -0px;
-				left: ~"calc(50% - 32px)";
-				.gt-transition();
-			}
-		}
-	}
+  .gt-button-block {
+    padding-top: 0;
+    padding-bottom: 100px;
+    a {
+      color: transparent;
+      margin-top: 30px;
+      font-size: 1px;
+      &:nth-child(n + 5) {
+        margin-top: 90px;
+      }
+      &:before {
+        height: 64px;
+        width: 64px;
+        top: -0px;
+        left: ~"calc(50% - 32px)";
+        .gt-transition();
+      }
+    }
+  }
 }

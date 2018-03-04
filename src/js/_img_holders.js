@@ -26,6 +26,9 @@ this.setBackground = function () {
 
 
 this.imgHolderFunc = function (el) {
+    $(el).removeClass("gt-width");
+    $(el).removeClass("gt-height");
+    $(el).removeClass("gt-visible");
     var holderConst = el.outerHeight() / el.outerWidth(),
         img = el.find('img'),
         imgConst = img.outerHeight() / img.outerWidth();
