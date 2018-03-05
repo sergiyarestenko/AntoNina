@@ -74,7 +74,7 @@
       padding-bottom: 3px;
       li {
         padding: 0 15px;
-        a {
+        a,span {
           display: flex;
           position: relative;
           &:after {
@@ -121,8 +121,6 @@
     top: -500px;
     width: 100%;
     min-height: ~"calc(100% - 70px)";
-    //height: ~"calc(100% - 70px)";
-    //height: ~"calc(100% - 70px)";
     overflow-y: auto;
     overflow-x: hidden;
     padding-top: 10px;
@@ -180,29 +178,55 @@
     font-size: 14px;
     color: @white;
     overflow: hidden;
-
+    align-self: flex-end;
+    flex-shrink: 0;
     .gt-transition();
     &.gt-open {
       max-height: 700px;
-      //padding: 20px;
+
     }
     > div {
       padding: .5em 1.5em;
-      //height: auto;
+
       margin-top: 0;
       margin-bottom: 0;
 
-      &:first-of-type {
-        margin-top: .5em;
+
+    }
+    ul{
+      flex-direction: column;
+      font-size: 14px;
+      padding: 0 1em 0.5em;
+      li{
+        padding-top: .25em;
+        padding-bottom: .25em;
+        a {
+          display: flex;
+          position: relative;
+          &:after {
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            content: '';
+            height: 1px;
+            width: 0;
+            background: @white;
+            .gt-transition();
+          }
+          &:hover {
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+
       }
-      //&:last-of-type {
-      //  margin-bottom: .5em;
-      //}
     }
     &-wrapper.container {
-      flex-direction: row;
+      flex-direction: column;
       justify-content: flex-end;
       display: none;
+      height: auto;
       &.gt-open {
         display: flex;
       }
@@ -212,16 +236,23 @@
       &-holder {
         width: 100%;
         justify-content: flex-end;
-        margin-bottom: 20px;
+        padding: .5em 0 !important;
+        .gt-switch {
+          width: 28px;
+        }
+        .line {
+          width: 18px;
+        }
 
       }
+
     }
     &-chose {
       ul {
         flex-direction: row;
         position: relative;
         width: 100%;
-        //height: 30px;
+
         border-bottom: 2px solid @white-50;
         li {
           display: inline-flex;
@@ -254,54 +285,93 @@
       flex-direction: column;
       width: 100%;
       color: @white;
+
       .gt-transition();
       &-wrapper {
         position: relative;
         width: 100%;
-        height: 240px;
+        min-height: 275px;
+
       }
       > div {
         width: 100%;
         margin: .5em 0;
         height: 30px;
-        &.gt-header-enter-form-submit{
+        &.gt-header-enter-form-submit {
           height: 35px;
           margin-top: 1em;
+          label {
+            width: 80%;
+          }
         }
       }
       .gt-input-wrapper {
-
         border: 1px solid @white-50;
         input {
-          .gt-placeholder(@white);
+          .gt-placeholder(@white-50);
+          font-size: 12px;
         }
       }
+      &-inner {
+        flex-direction: column;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
 
+        div {
+          margin: 0 auto;
+          width: 80%;
+          height: 30px;
+          font-size: 12px;
+          justify-content: flex-start;
+
+          label {
+            width: 100%;
+
+          }
+          .gt-enter-form-remember-me {
+            display: none;
+            & + label {
+              margin: auto 0;
+              padding-left: 20px;
+              background: url("../img/icons/checkbox-icon-white.png") no-repeat 0 50%;
+              background-size: auto 90%;
+              .gt-transition();
+            }
+            &:checked + label {
+              background-image: url("../img/icons/checkbox-selected-icon-white.png");
+            }
+          }
+          &.gt-header-enter-form-submit {
+            height: 35px;
+            margin-top: .5em;
+            margin-bottom: .5em;
+          }
+        }
+        .gt-enter-form-remember-pass {
+          border-bottom: 1px @white dashed;
+        }
+      }
       &-text {
         justify-content: center;
         span {
-
           text-align: center;
           cursor: pointer;
           align-self: center;
         }
       }
       &-submit {
-
         justify-content: center;
-
-        label{
+        label {
           font-size: 12px;
         }
       }
-
-      &-social{
+      &-social {
         flex-direction: row;
         justify-content: center;
         font-size: large;
-        i{
+        i {
           display: inline-flex;
-          margin:  0 .5em;
+          margin: 0 .5em;
           cursor: pointer;
         }
 
@@ -340,6 +410,36 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+.gt-enter-pass-restore-wrapper {
+  margin-top: 2em;
+  .gt-header-enter-form-wrapper {
+    min-height: 180px;
+  }
+  .gt-header-enter-form {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  &.gt-open {
+    .gt-header-enter-form {
+      opacity: 1;
+    }
+  }
+}
+.gt-header-registered{
+
+}
+.gt-registered {
+  .gt-not-registered {
+    display: none;
+  }
+
+}
+.gt-not-registered{
+  .gt-registered {
+    display: none;
   }
 }
 

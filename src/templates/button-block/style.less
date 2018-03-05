@@ -5,30 +5,32 @@
 .gt-button-block {
   flex-direction: row;
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   &-wrapper {
     background: @white;
   }
   a {
-    width: 11%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 165px;
-    margin-bottom: 35px;
+    margin-top: 180px;
+    margin-bottom: 50px;
     position: relative;
-    color: @black;
-    font-weight: @normal;
+    color: @grey-light;
+    font-weight: @semibold;
+    font-size: 14px;
     &:before {
       content: '';
       display: block;
-      height: 80px;
-      width: 80px;
+      height: 110px;
+      width: 110px;
       border-radius: 50%;
-      border: .05em solid @btn-border;
+      border: 1px solid @btn-border;
       position: absolute;
-      top: -115px;
-      left: ~"calc(50% - 40px)";
+      top: -130px;
+      left:50%;
+      transform: translateX(-50%);
       .gt-transition();
     }
 
