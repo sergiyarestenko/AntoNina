@@ -15,7 +15,7 @@
       width: 100%;
       height: 550px;
       z-index: 2;
-      &-slider{
+      &-slider {
         height: 100%;
         width: 100%;
       }
@@ -38,6 +38,7 @@
     }
     &-slider {
       padding-bottom: 40px;
+
       &-wrapper {
         position: absolute;
         right: -35px;
@@ -45,41 +46,50 @@
         flex-direction: column;
         z-index: 10;
         width: 300px;
+        height: 190px;
         background: @black-70;
         color: @white;
-        padding: 20px 20px 0;
-        height: 190px;
+
         p {
-          font-size: @font-size-large;
+          font-size: 20px;
           justify-content: center;
-          margin-bottom: 0.75em;
+          margin-top: .75em;
+          margin-bottom: 0.5em;
+
         }
       }
       p {
         text-align: center;
-        font-size: @font-size-smaller;
+        font-size: 13px;
         line-height: 1.42;
+        align-content: center;
+       height: auto;
+        margin: auto 0;
       }
-      .gt-slider-inner {
-        height: 90px;
-        overflow: hidden;
-        .test();
-      }
-      .gt-slider-nav {
-        span {
+      .gt-slider {
+        &-container {
+          height: 130px;
+
+        }
+        &-inner {
+          height: 100%;
+          overflow: hidden;
+          padding-left: 2em;
+          padding-right: 2em;
+
+        }
+        &-arrow {
           background-color: transparent;
-          border: 1px solid @white;
-          &.gt-active {
-            background-color: @white;
+          top: 40px;
+          &.left {
+            left: -5px;
+          }
+          &.right{
+            right: 0px;
           }
         }
       }
-      .gt-slider-nav {
-        span {
-          margin-left: 8px;
-          margin-right: 8px;
-        }
-      }
+
     }
     &-number {
       @size: 90px;
@@ -141,10 +151,10 @@
       background-color: @black-70;
       color: @white;
     }
-    &:before{
+    &:before {
       content: url('../img/icons/logo-link-icon.svg');
       position: absolute;
-      top:-150px;
+      top: -150px;
       right: 25px;
       width: 250px;
       height: auto;
@@ -165,13 +175,13 @@
       background-color: @white;
       color: @grey-dark;
     }
-    &:before{
+    &:before {
       content: 'GOtoTRIP';
-      color:@grey-lightest;
+      color: @grey-lightest;
       font-size: 200px;
       font-weight: @bold;
       position: absolute;
-      top:-100px;
+      top: -100px;
       left: 25px;
       //width: 250px;
       //height: auto;
@@ -180,11 +190,10 @@
     }
   }
 
-
-  &-before-logo{
+  &-before-logo {
     position: relative;
 
-
-  } &-before-text{
-     }
+  }
+  &-before-text {
+  }
 }
