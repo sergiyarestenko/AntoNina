@@ -132,6 +132,10 @@ footer {
   color: @white;
 }
 
+.gt-column{
+  flex-direction: column;
+}
+
 .gt-img-holder {
   position: relative;
   background-position: center center;
@@ -341,7 +345,8 @@ footer {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px;
+    //bottom: -2px;
+    top: ~"calc(100% + 0px)";
     height: 2px;
     width: 100%;
     background: @blue;

@@ -171,7 +171,7 @@
   background: @black-80;
   width: ~"calc( 90% - 120px )";
   max-width: 1920px;
-  height: 70%;
+  height: 80%;
   max-height: 1080px;
   margin: 3em auto auto;
   .gt-slider-arrow {
@@ -311,10 +311,10 @@
     }
   }
   &:hover {
-    .gt-slider {
-      box-shadow: 5px 5px 25px rgba(0, 0, 0, .35);
-    }
-  }
+       .gt-slider {
+         box-shadow: 5px 5px 25px rgba(0, 0, 0, .35);
+       }
+     }
 }
 
 .gt-action-menu-wrapper + .gt-shadow-slider {
@@ -342,16 +342,26 @@
   flex-direction: column;
   h2 {
     font-size: 18px;
+    margin-bottom: .5em;
+  }
+  .gt-text-block{
+    margin-bottom: 1.5em;
   }
   .gt-slider {
     height: 490px;
     &-inner {
+
       padding: 0 15px;
       &-outer {
         background: @white;
+        box-shadow: 0 0 0 rgba(0, 0, 0, .35);
+        .gt-transition();
+        &:hover {
+          box-shadow: 0 0 15px rgba(0, 0, 0, .35);
+        }
       }
       &-img {
-        height: 50%;
+        height: 55%;
         width: 100%;
       }
       &-text {
@@ -394,6 +404,7 @@
       }
     }
   }
+
 }
 
 .gt-slider-text-link {
@@ -446,6 +457,24 @@
     }
   }
 }
+
+.gt-view-cards-slider{
+  .gt-slider-arrow{
+    opacity: 0;
+
+  }
+  &:hover{
+    .gt-slider-arrow{
+      opacity: .35;
+      &:hover{
+        opacity: 1;
+      }
+
+    }
+  }
+}
+
+
 
 @media screen and (max-width: 1230px) {
   .gt-shadow-slider {

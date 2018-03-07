@@ -4,6 +4,27 @@
 
 .gt-view-cards {
   flex-direction: column;
+  width: 100%;
+  &-header{
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 1.6;
+    &-top{
+      flex-direction: row;
+      justify-content: space-between;
+
+      &+p{
+        margin-top: 1em;
+      }
+    }
+    h2{
+      font-size: 18px;
+    }
+    a,span{
+      align-self: flex-end
+    }
+
+  }
   &-slider {
     height: 240px;
   }

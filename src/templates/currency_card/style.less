@@ -2,59 +2,59 @@
 @import "../../stylesheets/variables";
 @import "../../stylesheets/mixin";
 
-.gt-currency-card{
+.gt-currency-card {
   width: 33.3333%;
   height: 170px;
   position: relative;
   margin-top: 15px;
   margin-bottom: 15px;
-  font-size: @font-size-option;
+  font-size: 18px;
+  line-height: 1.4;
 
 
-  &-wrapper{
-    .container{
+  &-wrapper {
+    .container {
       margin-top: -15px;
       margin-bottom: -15px;
       flex-direction: row;
       flex-wrap: wrap;
     }
   }
-  &-inner{
+  &-inner {
     flex-direction: column;
     position: absolute;
-    top:0;
+    top: 0;
     right: 15px;
     width: 75%;
-    height:100%;
-    padding: 20px;
-    padding-left: 45px;
-    .gt-box-shadow();
-    &:before{
+    height: 100%;
+    padding: 20px 20px 20px 45px;
+    .gt-box-shadow(4px, 4px, 6px, .09);
+    .gt-transition-fast();
+    &:before {
       content: "";
       position: absolute;
-      top:0;
-      left:-30px;
+      top: 0;
+      left: -30px;
       width: 65px;
       height: 65px;
       border-radius: 50%;
-      .gt-box-shadow();
+      .gt-box-shadow(4px, 4px, 6px, .09);
       background: @white url("../img/icons/plane-round-world-icon-blue.svg") no-repeat 50% 50%;
       background-size: 45px auto;
+      .gt-transition-fast();
     }
-    p{
-      line-height: 1.8;
-      &:first-of-type{
-        color:@black
-      }
 
-    }
-    p+p{
+    p + p {
       margin-top: 1em;
-      font-size: @font-size-smaller;
+      font-size:16px;
     }
 
-
-
-
+    &:hover {
+      .gt-box-shadow(4px, 4px, 18px, .27);
+      &:before {
+        .gt-box-shadow(4px, 4px, 12px, .18);
+      }
+    }
   }
+
 }

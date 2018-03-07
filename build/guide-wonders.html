@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>GoToTrip</title>
+        <link rel="stylesheet" href="stylesheets/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <span id="gt-is-360"></span>
+        <span id="gt-is-480"></span>
+        <span id="gt-is-667"></span>
+        <span id="gt-is-768"></span>
+        <span id="gt-is-1024"></span>
+        <span id="gt-is-1231"></span>
+        <header class="gt-header gt-not-registered">
+        <!--<header class="gt-header gt-registered">-->
+            <div class="gt-header-mobile-menu">
+                <ul class="container">
+                    <li><a href="/map-country.html">Страны мира</a></li>
+                    <li><a href="/guide.html">Путеводитель</a></li>
+                    <li><a href="/news-page.html">Новости</a></li>
+                    <li><a href="/collections.html">Подборки</a></li>
+                    <li><a href="/video.html">Видео</a></li>
+                    <li><a href="/publications.html">Публикации</a></li>
+                    <li class="gt-enter  gt-not-registered"><span>Вход</span></li>
+                    <li class="gt-enter gt-registered"><span>Длинноеимя</span></li>
+                </ul>
+                <div class="gt-header-social-link container">
+                    <a href="https://www.facebook.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.youtube.com" rel="nofollow" target="_blank">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="gt-header-top">
+                <div class="container">
+                    <div class="gt-search-holder">
+                        <span class="gt-search"></span>
+                    </div>
+                    <div class="gt-header-logo">
+                        <a class="gt-logo" href="/"><img src="./img/logo-white.svg" alt="GoToTrip"></a>
+                    </div>
+                    <div class="gt-header-switch-holder">
+                        <div id="gt-mobile-menu-switch" class="gt-switch">
+                            <span class="line line-1"></span>
+                            <span class="line line-2"></span>
+                            <span class="line line-3"></span>
+                        </div>
+                    </div>
+                    <!--<div class="gt-header-enter test"></div>-->
+                    <div class="gt-header-menu">
+                        <ul>
+                            <li><a href="/map-country.html">Страны мира</a></li>
+                            <li><a href="/guide.html">Путеводитель</a></li>
+                            <li><a href="/news-page.html">Новости</a></li>
+                            <li><a href="/collections.html">Подборки</a></li>
+                            <li><a href="/video.html">Видео</a></li>
+                            <li><a href="/publications.html">Публикации</a></li>
+                            <li class="gt-enter  gt-not-registered"><span>Вход</span></li>
+                            <li class="gt-enter gt-registered"><span>Длинноеимя</span></li>
+                            <li><span class="gt-search"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="gt-header-enter-wrapper" class="gt-header-enter-wrapper container">
+                <div id="gt-header-enter" class="gt-header-enter gt-chosen-registration">
+                    <div class="gt-header-enter-switch-holder">
+                        <div id="gt-header-enter-close" class="gt-switch">
+                            <span class="line line-1"></span>
+                            <!--<span class="line line-2"></span>-->
+                            <span class="line line-3"></span>
+                        </div>
+                    </div>
+                    <div class="gt-header-enter-chose gt-not-registered">
+                        <ul id="gt-header-enter-chose">
+                            <li class="gt-chosen-registration">
+                                Регистрация
+                            </li>
+                            <li class="gt-chosen-enter">
+                                Вход
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="gt-header-enter-form-wrapper gt-not-registered">
+                        <form id="gt-enter-form" name="gt-enter-form" class="gt-header-enter-form">
+                            <div class="gt-header-enter-form-social">
+                                <i id="gt-enter-form-facebook" class="fa fa-facebook" aria-hidden="true"></i>
+                                <i id="gt-enter-form-twitter" class="fa fa-twitter" aria-hidden="true"></i>
+                                <i id="gt-enter-form-google" class="fa fa-google-plus" aria-hidden="true"></i>
+                            </div>
+                            <div class="gt-input-wrapper">
+                                <input type="text" id="gt-enter-name" placeholder="Логин или E-mail">
+                            </div>
+                            <div class="gt-input-wrapper">
+                                <input type="password" id="gt-enter-pass" placeholder="Пароль">
+                            </div>
+                            <div class="gt-header-enter-form-inner">
+                                <div class="gt-header-enter-form-text">
+                                    <input type="checkbox" id="gt-enter-form-remember-me" class="gt-enter-form-remember-me">
+                                    <label for="gt-enter-form-remember-me">Запомнить меня</label>
+                                </div>
+                                <div class="gt-header-enter-form-submit">
+                                    <input type="text" class="gt-btn" id="gt-enter-form-submit">
+                                    <label for="gt-enter-form-submit" class="gt-btn gt-btn-whitest">Зарегистрироваться</label>
+                                </div>
+                                <div class="gt-header-enter-form-text">
+                                    <span class="gt-enter-form-remember-pass" id="gt-enter-form-restore-pass">
+                                        Наполнить пароль
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="gt-reg-form" name="gt-enter-form" class="gt-header-enter-form">
+                            <div class="gt-header-enter-form-social">
+                                <i id="gt-reg-form-facebook" class="fa fa-facebook" aria-hidden="true"></i>
+                                <i id="gt-reg-form-twitter" class="fa fa-twitter" aria-hidden="true"></i>
+                                <i id="gt-reg-form-google" class="fa fa-google-plus" aria-hidden="true"></i>
+        
+                            </div>
+                            <div class="gt-input-wrapper">
+                                <input type="text" id="gt-reg-name" placeholder="Логин" title="Не более 10 знаков">
+                            </div>
+                            <div class="gt-input-wrapper">
+                                <input type="text" id="gt-reg-email" placeholder="E-mail">
+                            </div>
+                            <div class="gt-input-wrapper">
+                                <input type="password" id="gt-reg-pass" placeholder="Пароль">
+                            </div>
+                            <div class="gt-header-enter-form-submit">
+                                <input type="text" class="gt-btn" id="gt-reg-form-submit">
+                                <label for="gt-reg-form-submit" class="gt-btn gt-btn-whitest">Зарегистрироваться</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id='gt-enter-pass-restore-wrapper'
+                     class="gt-header-enter  gt-not-registered gt-enter-pass-restore-wrapper">
+                    <div class="gt-header-enter-form-wrapper ">
+                        <form id="gt-enter-pass-restore" name="gt-enter-pass-restore" class="gt-header-enter-form">
+                            <div class="gt-header-enter-form-text">
+                                <p>Восстановить пароль</p>
+                            </div>
+                            <div class="gt-input-wrapper">
+                                <input type="text" id="gt-enter-pass-restore-name" placeholder="E-mail">
+                            </div>
+        
+                            <div class="gt-header-enter-form-submit">
+                                <input type="text" class="gt-btn" id="gt-enter-pass-restore-submit">
+                                <label for="gt-enter-pass-restore-submit" class="gt-btn gt-btn-whitest">Отправить</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id = "gt-header-registered" class="gt-header-enter gt-registered">
+                    <ul>
+                        <li><a href=".#">Лента</a></li>
+                        <li><a href=".#">Сообщения</a></li>
+                        <li><a href=".#">Оповещения</a></li>
+                        <li><a href=".#">Был, видел</a></li>
+                        <li><a href=".#">Хочу посетить</a></li>
+                        <li><a href=".#">Публикации</a></li>
+                        <li><a href=".#">Закладки</a></li>
+                        <li><a href=".#">События</a></li>
+                        <li><a href=".#">Настройки</a></li>
+                        <li><a href=".#">Выйти</a></li>
+                    </ul>
+        
+                </div>
+            </div>
+        </header>
+        <div class="gt-wrapper" id = "gt-wrapper">
+<!-- ** -->
+<div class="gt-top gt-img-holder gt-shadow-70-reverse-100px" data-bg="country_page/france.png">
+  <div class="container">
+    
+        <div class="gt-breadcrumbs">
+            <ul>
+                <li><a href=".#">Европа</a></li>
+                <li><a href=".#">Европа</a></li>
+                <li><span>Европа</span></li>
+            </ul>
+        </div>
+    <div class="gt-top-inner">
+      <div>
+        <h1 class="gt-top-inner-lg">Франция</h1>
+        <div class="white-line"></div>
+        <p class="gt-top-inner-sm">Страна изысканного вкуса и роскоши, покорившая миллионы сердец</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ** -->
+<div class="gt-hundret-menu-wrapper">
+    <div class="container">
+        <ul class="gt-hundret-menu">
+            <li class="gt-hundret-menu-all">
+                <a href = "/guide.html">Все</a></li>
+            <li class="gt-hundret-menu-top">
+                <a href = "/guide-top.html">Топ 100</a></li>
+            <li class="gt-hundret-menu-culture">
+                <a href = "/guide-culture-object.html">Культурные обьекты</a></li>
+            <li class="gt-hundret-menu-nature">
+                <a href = "/guide-nature-and-animals.html">Природа и животные</a></li>
+            <li class="gt-hundret-menu-relax">
+                <a href = "/guide-entertainment.html">Отдых и развлечения</a></li>
+            <li class="gt-hundret-menu-wonders  gt-active">
+                <a href = "/guide-wonders.html">Чудеса света</a></li>
+        </ul>
+    </div>
+</div>
+<!-- ** -->
+<div class="gt-button-menu-wrapper gt-margin">
+    <div class="container">
+        <ul class="gt-button-menu">
+                <li><a href=".#">Древняя архитектура</a></li>
+                <li><a href=".#">Дворцы и музеи</a></li>
+                <li class="gt-active"><a href=".#">Храмы и монастыри</a></li>
+                <li><a href=".#">Сооружения и памятники</a></li>
+                <li><a href=".#">Площади и улицы </a></li>
+                <li><a href=".#">Трам-парам-парам</a></li>
+        </ul>
+    </div>
+</div>
+<!-- ** -->
+<div class="gt-view-cards gt-margin test">
+    <div class="container container-no-padd gt-margin">
+        <div class="gt-slider gt-view-cards-slider  gt-slider-tram gt-slider-has-arrow gt-slider-no-padding" data-count="4">
+            <div class="gt-slider-container">
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-no-padd gt-margin">
+        <div class="gt-slider gt-view-cards-slider  gt-slider-tram gt-slider-has-arrow gt-slider-no-padding" data-count="4">
+            <div class="gt-slider-container">
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-no-padd gt-margin">
+        <div class="gt-slider gt-view-cards-slider  gt-slider-tram gt-slider-has-arrow gt-slider-no-padding" data-count="4">
+            <div class="gt-slider-container">
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-no-padd gt-margin">
+        <div class="gt-slider gt-view-cards-slider  gt-slider-tram gt-slider-has-arrow gt-slider-no-padding" data-count="4">
+            <div class="gt-slider-container">
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container container-no-padd gt-margin">
+        <div class="gt-slider gt-view-cards-slider  gt-slider-tram gt-slider-has-arrow gt-slider-no-padding" data-count="4">
+            <div class="gt-slider-container">
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+                <div class="gt-slider-inner gt-view-cards-inner"
+                     data-bookmark='Как работает CSS Flexbox: наглядное введение в систему компоновки элементов на веб-странице'
+                     data-href='https://tproger.ru/translations/how-css-flexbox-works/'>
+                    <div class="gt-slider-inner-outer gt-view-cards-inner-outer">
+                        <div class="gt-slider-inner-img  gt-view-cards-inner-img">
+                            <div class="gt-img-holder-abs">
+                                <img src="./img/country/view-card.png" alt="">
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-text">
+                            <div class="gt-view-cards-text-left">
+                                <a href="/showplace.html">Эйфелева башня в две строки</a>
+                            </div>
+                            <div class="gt-view-cards-text-right">
+                                <p>Босния и Герцеговина</p>
+                                <p class="gt-view-cards-counter">Еще <span> +7</span>
+                                </p>
+                            </div>
+                            <div class="gt-view-cards-marks">
+                                <i class="gt-view-cards-marks-seven"></i>
+                                <i class="gt-view-cards-marks-top"></i>
+                                <i class="gt-view-cards-marks-unesco"></i>
+                                <i class="gt-view-cards-marks-guinness"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gt-view-cards-icons">
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-visit gt-title"></div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-pin-plus">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-column">
+                                <a href=".#"><span>Босния и Герцговина</span></a>
+                                <a href=".#"><span>Италия</span></a>
+                                <a href=".#"><span>Литва</span></a>
+                                <a href=".#"><span>Молдова</span></a>
+                            </div>
+                        </div>
+                        <div class="gt-view-cards-icons-item gt-view-cards-icons-share gt-title">
+                            <div class="gt-view-cards-icons-item-inner gt-view-cards-icons-item-inner-line">
+                                <a href=".#"><i class="fa fa-facebook"></i></a>
+                                <a href=".#"><i class="fa fa-twitter"></i></a>
+                                <a href=".#"><i class="fa fa-google-plus"></i></a>
+                                <a href=".#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                        </div>
+                        <i class="gt-view-cards-icons-item gt-view-cards-icons-bookmarks gt-title"></i>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--&lt;!&ndash; ** &ndash;&gt;-->
+<!--//= templates/pangination/pangination-->
+<!-- ** -->
+<div class="gt-button-block-wrapper">
+    <div class="gt-button-block container">
+        <a class="gt-button-block-avia" href=".#">Авиабилеты</a>
+        <a class="gt-button-block-hotels" href=".#">Отели</a>
+        <a class="gt-button-block-carrent" href=".#">Прокат авто</a>
+        <a class="gt-button-block-bus" href=".#">Ж/д и автобусы</a>
+        <a class="gt-button-block-ship" href=".#">Круизы</a>
+        <a class="gt-button-block-hottour" href=".#">Горящие туры</a>
+        <a class="gt-button-block-insurance" href=".#">Страхование</a>
+        <a class="gt-button-block-visas" href=".#">Визы</a>
+    </div>
+</div>
+<!-- ** -->
+
+        </div>
+        <footer class="gt-footer" id="gt-footer">
+            <div class="container">
+                <div class="gt-footer-top">
+                    <div class="gt-footer-text  gt-xs-order-2">
+                        <p>
+                            GoToTrip - это информационный сервис для
+                            путешественников, предоставляющий детальную
+                            информацию о достопримечательностях мира,
+                            а также позволяющий забронировать все
+                            необходимые сопутствующие услуги
+                        </p>
+                        <a href=".#">Условия и положения</a>
+                        <a href=".#">Политика конфиденциальности</a>
+            
+                    </div>
+                    <div class="gt-footer-menu">
+                        <ul>
+                            <li><a href=".#">Европа</a></li>
+                            <li><a href=".#">Азия</a> </li>
+                            <li><a href=".#">Африка</a> </li>
+                            <li><a href=".#">Северная Америка</a> </li>
+                            <li><a href=".#">Южная Америка</a> </li>
+                            <li><a href=".#">Австралия и Океания</a> </li>
+                        </ul>
+                    </div>
+                    <div class="gt-footer-menu">
+                        <ul>
+                            <li><a href=".#">Чудеса света</a></li>
+                            <li><a href=".#">ТОП 100</a></li>
+                            <li><a href=".#">Лучшие подборки</a></li>
+                            <li><a href=".#">Видео</a></li>
+                            <li><a href=".#">Новости</a></li>
+                            <li><a href=".#">Публикации</a></li>
+            
+                        </ul>
+                    </div>
+                    <div class="gt-footer-subscribe">
+                        <p>Подписаться на новости</p>
+                        <form action="">
+                            <input type="text" id = "gt-footer-subscribe" placeholder="Введите свой email">
+                            <input type="submit" id="gt-footer-submit">
+                            <label for="gt-footer-submit">
+                                <i class="fa fa-angle-right fa-2x"></i>
+                            </label>
+                        </form>
+                        <div class="gt-footer-social-link">
+                            <ul>
+                                <li><a href="https://www.facebook.com"  rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com" rel="nofollow" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li ><a href="https://www.youtube.com"  rel="nofollow" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+            
+            
+                </div>
+                <div class="gt-footer-copyright">
+                <p>© 2015-2017 GoToTrip. Полное или частичное использование материалов разрешается только при условии наличия прямой гиперссылки на адрес сайта www.gototrip.com </p>
+                </div>
+            </div>
+        </footer>
+        <div id="gt-body-wrapper" class="gt-body-wrapper"></div>
+        <div id="gt-up" class="gt-up">
+            <span>Вверх</span>
+        </div>
+        <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+        <script src="./js/jquery.tinyscrollbar.min.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+    </body>
+</html>
