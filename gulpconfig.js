@@ -14,6 +14,7 @@ module.exports = {
     less: "./src/stylesheets/**.less",
     mainLess: "./src/stylesheets/main.less",
     js: './src/js/**.js',
+    mainJs: './src/js/app.js',
     img: './src/img/**/*.*'
   },
   browserSync: {

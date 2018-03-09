@@ -37,7 +37,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(config.paths.js)
+    return gulp.src(config.paths.mainJs)
         .pipe(sourcemaps.init())
         .pipe(rigger())
         .pipe(uglify())
@@ -81,6 +81,7 @@ gulp.task('watch', function () {
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.mainHtml, ['html']);
     gulp.watch(config.paths.js, ['js']);
+    gulp.watch(config.paths.mainJs, ['js']);
 });
 
 
