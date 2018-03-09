@@ -213,7 +213,7 @@ this.createSlider = function (currSlider, position) {
     function createCloneSlider(clickPosition) {
         if ($("div").is("#gt-clone")) return;
         self.fixBody();
-        var bodyWrapper = $("#gt-body-wrapper")
+        var bodyWrapper = $("#gt-body-wrapper");
         bodyWrapper.append('<div id = "gt-clone-wrapper"   class="container"><div id = "gt-clone" class="gt-slider gt-slider-clone gt-slider-fade gt-slider-num  gt-slider-has-arrow"><div id = "gt-clone-close" class = "gt-slider-clone-close"></div><div  id = "gt-clone-container" class="gt-slider-container"></div></div></div>');
         bodyWrapper.show();
         var cloneSlider = $('#gt-clone'),
