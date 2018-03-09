@@ -23,7 +23,7 @@ this.cutNews = function (el) {
                 $(this).css('display','none');
             }else{
                 cuttingLenght =  Math.floor($(this).text().length * maxHeight / currHeight);
-                newText = $(this).text().substring(0, cuttingLenght);
+                newText = $(this).text().substring(0, cuttingLenght-5);
                 // cutLastSymbol();
                 $(this).text((newText) + '...');
                 maxHeight = 0;

@@ -42,11 +42,17 @@ a,
 a:active,
 a:focus,
 a:hover,
-a:visited {
+a:visited{
   display: inline-flex;
   text-decoration: none;
-  color: inherit;
   outline: none;
+}
+a:-webkit-any-link,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+  color: inherit;
 }
 
 div,
@@ -350,6 +356,21 @@ footer {
     height: 2px;
     width: 100%;
     background: @blue;
+  }
+  &-animation{
+
+    &:hover {
+      &:after {
+        -webkit-animation-name: gt-link-move;
+        animation-name: gt-link-move;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+
+    }
+
   }
 }
 
