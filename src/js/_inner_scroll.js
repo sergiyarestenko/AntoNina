@@ -1,22 +1,16 @@
-this.innerScroll = function (el) {
-    if (el.find(".overview").height() > el.height()
-    ) {
-        el.addClass("isScrolled");
-        el.tinyscrollbar({
-            thumbSize: 40,
-            wheelSpeed: 10
+if ($("div").is(".gt-inner-scroll")) {
+    $('.gt-inner-scroll').each(function () {
+
+        $(this).niceScroll({
+            cursoropacitymin: '1',
+            cursoropacitymax: '1',
+            cursorwidth: '2px',
+            cursorborder: 'none',
+            mousescrollstep: '60',
+            background: "#CECECE",
+            railoffset: 'left',
+            zindex: "auto",
+            cursorcolor: "#CECECE"
         });
-    }
-
-};
-
-
-
-    if ($("div").is(".gt-inner-scroll")) {
-
-        $('.gt-inner-scroll').each(function () {
-            self.innerScroll($(this));
-        })
-
-
-    }
+    })
+}

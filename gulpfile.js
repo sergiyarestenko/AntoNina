@@ -44,6 +44,11 @@ gulp.task('js', function () {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.paths.build + '/js'))
 });
+gulp.task('jsLibs', function () {
+    return gulp.src(config.paths.jsLibs)
+        .pipe(uglify())
+        .pipe(gulp.dest(config.paths.build + '/js'))
+});
 
 
 //html task
@@ -82,8 +87,9 @@ gulp.task('watch', function () {
     gulp.watch(config.paths.mainHtml, ['html']);
     gulp.watch(config.paths.js, ['js']);
     gulp.watch(config.paths.mainJs, ['js']);
+    gulp.watch(config.paths.jsLibs, ['jsLibs']);
 });
 
 
 // gulp.task('default', ['img', 'css', 'js', 'html', 'serve', 'watch']);
-gulp.task('default', [ 'css', 'js', 'html', 'serve', 'watch']);
+gulp.task('default', [ 'css', 'js', 'jsLibs','html', 'serve', 'watch']);

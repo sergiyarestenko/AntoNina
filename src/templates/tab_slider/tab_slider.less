@@ -1,6 +1,6 @@
-@import "../../stylesheets/palette";
-@import "../../stylesheets/variables";
-@import "../../stylesheets/mixin";
+@import "../../stylesheets/_palette";
+@import "../../stylesheets/_variables";
+@import "../../stylesheets/_mixin";
 
 .gt-tabs {
   position: relative;
@@ -22,18 +22,23 @@
       position: absolute;
       flex-direction: row;
       left: 0;
-      top: 25px;
+      top: 5px;
+      z-index: 5;
     }
     span {
       position: relative;
-      &:after {
+      &:after, &:before {
         content: '';
-        width: 0;
+
         height: 2px;
         background: @blue;
         position: absolute;
-        bottom: -1px;
+        bottom: -3px;
         left: 0;
+      }
+      &:after {
+        width: 0;
+        .gt-transition();
       }
     }
 
@@ -41,8 +46,15 @@
       background: @white;
       cursor: default;
       span {
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+    &:hover {
+      span {
         &:after {
-          .gt-transition();
+
           width: 100%;
         }
       }
@@ -84,23 +96,22 @@
       height: 245px;
       font-size: 14px;
       line-height: 1.8;
-      padding: 40px 10px 40px 40px;
-
+      padding: 40px 20px 40px 40px;
       .gt-inner-scroll-text {
         padding-right: 10px;
       }
-      &-inner{
+      &-inner {
 
-        p{
+        p {
           padding-top: 10px;
 
-          &:first-of-type{
+          &:first-of-type {
             padding-top: 0;
           }
         }
-        a{
+        a {
           display: inline-flex;
-            width: auto;
+          width: auto;
           align-self: flex-end;
         }
       }

@@ -1,0 +1,33 @@
+@import "_palette";
+@import "_variables";
+@import "_mixin";
+
+.gt-inner-scroll {
+
+  padding-right: 15px;
+
+}
+.gt-inner-scroll-text{
+  flex-direction: column;
+}
+
+.gt-scroll-cursor {
+  &:after, &:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    border-radius: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60%;
+    background: #CECECE;
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+
+}
+

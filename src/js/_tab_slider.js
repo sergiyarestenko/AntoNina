@@ -1,4 +1,3 @@
-
 this.tabSlider = function () {
     var tabSliders = $(".gt-tabs");
     tabSliders.each(function () {
@@ -8,31 +7,25 @@ this.tabSlider = function () {
                 self.tabSliderAction(currTabs, $(this).index());
             });
         });
-        self.tabSliderActivation(currTabs);
+        self.tabSliderAction(currTabs,0);
     });
 };
 
-this.tabSliderActivation = function (el) {
-    $(el.find(".gt-tabs-button")).removeClass("active");
-    $(el.find(".gt-tabs-main")).removeClass("active");
-    // $(el.find(".gt-tabs-main")).hide();
-    $(el.find(".gt-tabs-button")[0]).addClass("active");
-    // $(el.find(".gt-tabs-main")[0]).show();
-    $(el.find(".gt-tabs-main")[0]).addClass("active");
-};
-
 this.tabSliderAction = function (el, num) {
-    $(el.find(".gt-tabs-button")).removeClass("active");
-    $(el.find(".gt-tabs-main")).removeClass("active");
-    // $(el.find(".gt-tabs-main")).hide();
-    $(el.find(".gt-tabs-button")[num]).addClass("active");
-    // $(el.find(".gt-tabs-main")[num]).show();
-    $(el.find(".gt-tabs-main")[num]).addClass("active");
+    var buttons = $(el.find(".gt-tabs-button")),
+        main =  $(el.find(".gt-tabs-main"))
+    el.find('.gt-inner-scroll-tab').each(function () {
+        $('#' + $(this).attr('data-scroll')).hide();
+    });
+    buttons.removeClass("active");
+    main.removeClass("active");
+    $(buttons[num]).addClass("active");
+    $(main[num]).addClass("active");
+
+    if($('#' + $(main[num]).find('.gt-inner-scroll-tab').attr('data-scroll')).find('.gt-scroll-cursor').height() != 0){
+        $('#' + $(main[num]).find('.gt-inner-scroll-tab').attr('data-scroll')).show();
+    }
 };
-
-
-
-
 
 if ($("div").is(".gt-tabs")) {
     self.tabSlider();

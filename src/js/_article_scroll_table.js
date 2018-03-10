@@ -6,7 +6,6 @@ this.fixArticleScrollTablePosition = function () {
         tableWidth = table.outerWidth(),
         windowTop = doc.scrollTop(),
         widowHeight = docWindow.outerHeight();
-    // tableParent.addClass('test');
 
     console.log(tableParentTop);
     console.log(windowTop);
@@ -92,7 +91,6 @@ this.showArtidleShadow = function () {
 if ($('div').is('.gt-article-table-wrapper')) {
     var shadow = false,
         scrollTimeout;
-
     if ($('div').is(".gt-article-scroll-table")) {
         shadow = true;
         self.createArticteScrollTable();
@@ -113,9 +111,6 @@ if ($('div').is('.gt-article-table-wrapper')) {
         }
     }
 
-
     docWindow.scroll(scrollThrottler);
     docWindow.resize(scrollThrottler);
-
-
 }

@@ -6,6 +6,9 @@
 GoToTrip = function () {
 
     //= ./_vars
+    //= ./_scroll-body
+
+
     //= ./_fix_body
 
     //= ./_footer_height
@@ -19,12 +22,17 @@ GoToTrip = function () {
 
     //= ./_slider
     //= ./_hundred_menu
-    //= ./_tab_slider
+
     //= ./_video
     //= ./_article_scroll_table
     //= ./_curr_time
 
     //= ./_inner_scroll
+    // _inner_scroll  must be before _tab_slider - !important
+
+    //= ./_tab_slider
+
+
 
 /////////////////////does not work
 
@@ -41,6 +49,16 @@ GoToTrip = function () {
 
     //= ./_test
 
-};
 
-var goToTrip = new GoToTrip();
+
+
+
+
+
+};
+$(document).ready(
+
+    function () {
+        var goToTrip = new GoToTrip();
+    }
+);
