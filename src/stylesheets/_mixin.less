@@ -1,10 +1,11 @@
-.test(@color:red){
+.test(@color:red) {
   outline: 1px dotted red;
 }
 
 .gt-transition(@property: all, @duration: 0.5s, @function: ease-in-out) {
   transition: @arguments;
 }
+
 .gt-transition-fast(@property: all, @duration: 0.25s, @function: linear) {
   transition: @arguments;
 }
@@ -89,5 +90,45 @@
   50% {
     width: 0;
   }
+}
+
+@-webkit-keyframes gt-view-card-show {
+  from {
+    opacity: 1;
+    margin: 0 0;
+    max-width: 0;
+  }
+
+  50% {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+  to {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+
+}
+
+@keyframes gt-view-card-show {
+  from {
+    opacity: 1;
+    margin: 0 0;
+    max-width: 0;
+  }
+
+  50% {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+  to {
+    margin: 0 .2em;
+    max-width: 100%;
+    opacity: 1;
+  }
+
 }
 

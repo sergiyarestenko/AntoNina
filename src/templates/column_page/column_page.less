@@ -3,10 +3,8 @@
 @import "../../stylesheets/_mixin";
 
 .gt-article {
-
   flex-direction: column;
   font-size: @font-size-smaller;
-
   h2 {
     font-size: @font-size-option;
     font-weight: @normal;
@@ -74,27 +72,24 @@
     padding: 30px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, .06);
     .gt-box-shadow();
+    a{
+      color: @black;
+    }
     &-wrapper {
-      border:1px solid red;
       width: 25%;
       padding: 0 15px;
       flex-direction: column;
-      overflow-y: auto;
-      overflow-x: visible;
-      .gt-scrollbar(.25em);
-      //.gt-transition(top);
       position: absolute;
       top: 0;
       right: 15px;
 
       &.gt-fixed {
         position: fixed;
-        //background-color: @body-bg;
         box-shadow: 0 0 0 0.5em @body-bg;
         z-index: 1000;
         top: 90px;
         right: auto;
-        .gt-transition(bottom);
+        //.gt-transition(bottom);
         &-bottom {
           position: absolute;
           top: auto;
@@ -152,10 +147,11 @@
           .gt-a-news {
             font-size: 14px;
             margin-bottom: 5px;
+            color:@grey-dark;
           }
           .header {
             font-weight: @bold;
-            // height: 4em;
+           color: @black;
             padding: .5em 0;
           }
           .text {

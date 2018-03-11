@@ -119,7 +119,6 @@ this.createSlider = function (currSlider, position) {
         }
 
         if (tram) {
-            console.log('start', currPosition);
             if (currPosition > innerCount - screenConst) {
                 container.css('left', (-(currPosition - 2) * baseWidth) + 'px');
                 container.append(container.children().first().clone());

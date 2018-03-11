@@ -7,11 +7,11 @@ this.tabSlider = function () {
                 self.tabSliderAction(currTabs, $(this).index());
             });
         });
-        self.tabSliderAction(currTabs,0);
+        self.tabSliderAction(currTabs,0,true);
     });
 };
 
-this.tabSliderAction = function (el, num) {
+this.tabSliderAction = function (el, num ,init) {
     var buttons = $(el.find(".gt-tabs-button")),
         main =  $(el.find(".gt-tabs-main"))
     el.find('.gt-inner-scroll-tab').each(function () {
@@ -22,7 +22,7 @@ this.tabSliderAction = function (el, num) {
     $(buttons[num]).addClass("active");
     $(main[num]).addClass("active");
 
-    if($('#' + $(main[num]).find('.gt-inner-scroll-tab').attr('data-scroll')).find('.gt-scroll-cursor').height() != 0){
+    if($('#' + $(main[num]).find('.gt-inner-scroll-tab').attr('data-scroll')).find('.gt-scroll-cursor').height() != 0 || init){
         $('#' + $(main[num]).find('.gt-inner-scroll-tab').attr('data-scroll')).show();
     }
 };

@@ -1,15 +1,11 @@
 this.fixArticleScrollTablePosition = function () {
     var table = $(".gt-article-table-wrapper"),
         tableParent = table.parent(),
+        tableHeight = table.outerHeight(),
         tableParentTop = tableParent.position().top,
         tableParentBottom = tableParentTop + tableParent.outerHeight(),
         tableWidth = table.outerWidth(),
-        windowTop = doc.scrollTop(),
-        widowHeight = docWindow.outerHeight();
-
-    console.log(tableParentTop);
-    console.log(windowTop);
-
+        windowTop = doc.scrollTop();
 
     if (tableParentTop+90 > windowTop) {
         if (table.hasClass("gt-fixed")) {
@@ -28,27 +24,15 @@ this.fixArticleScrollTablePosition = function () {
                 width: tableWidth
             });
             table.addClass("gt-fixed");
-
-
         }
-        if (windowTop + widowHeight > tableParentBottom) {
+        if (windowTop- tableParentBottom+tableHeight+90 >=0) {
             table.addClass("gt-fixed-bottom");
         } else {
             table.removeClass("gt-fixed-bottom");
         }
     }
 
-    (function () {
-        if (table.hasClass("gt-fixed")) {
-            table.css({
-                height: (widowHeight - 120) + 'px'
-            });
-        } else {
-            table.css({
-                height: ''
-            });
-        }
-    })();
+
 };
 
 
@@ -86,6 +70,11 @@ this.showArtidleShadow = function () {
             .css("width", x * 100 + "%");
     });
 };
+
+
+
+
+
 
 
 if ($('div').is('.gt-article-table-wrapper')) {

@@ -1,111 +1,95 @@
-
-
-this.createIconsItemsClick = function () {
-    $(".gt-view-cards-icons-item").each(function () {
-        if ($(this).hasClass("gt-view-cards-icons-visit")) {
-            self.createVisitLink($(this));
-            return;
-        }
-        if ($(this).hasClass("gt-view-cards-icons-bookmarks")) {
-            self.createBookmarksLink($(this));
-            return;
-        }
-        if (
-            $(this).hasClass("gt-view-cards-icons-pin") ||
-            $(this).hasClass("gt-view-cards-icons-share")
-        ) {
-            self.toggleGtActive($(this));
-            return;
-        }
-        if ($(this).hasClass("gt-view-cards-icons-share")) {
-            self.createShareLink($(this));
-            return;
-        }
+this.createViewCardListeners = function (el) {
+    el.find('.gt-view-cards-icons-visit').on('click',function () {
+        self.clickVisitViewCard(el);
     });
-};
-
-this.createShareLink = function (el) {
-    el.removeClass("gt-active");
-    el.on("click", function () {
-        el.toggleClass("gt-active");
+    el.find('.gt-view-cards-icons-pin-plus').on('click',function () {
+        self.clickSeenViewCard(el);
     });
-};
-
-this.toggleGtActive = function (el) {
-    var el = $(el);
-    el.removeClass("gt-active");
-    el.on("click", function () {
-        el.toggleClass("gt-active");
+    el.find('.gt-view-cards-icons-bookmarks').on('click',function () {
+        self.clickMarkViewCard(el);
     });
-};
-
-
-this.createVisitLink = function (el) {
-    if (!el.closest(".gt-view-cards-inner").attr("data-href")) return;
-    el.on("click", function () {
-        self.addVisitedLink(el);
+    el.find('.gt-view-cards-icons-share').on('click',function () {
+        self.clickShareViewCard(el);
     });
+    el.find('.gt-view-cards-icons-share').find('a').on('click',function (event,el) {
+        event.preventDefault();
+
+        self.veiwCardSocial(el);
+    })
+};
+
+this.veiwCardSocial = function (el) {
+    console.log('click social');
+    self.closeShareViewCard(el);
 };
 
 
-this.addVisitedLink = function (el) {
-    alert(
-        "послали данные на бек",
-        el.closest(".gt-view-cards-inner").attr("data-href")
-    );
-    el.toggleClass("gt-active");
+
+this.openShareViewCard = function (el) {
+    $(el).addClass('gt-active');
+};
+this.closeShareViewCard = function (el) {
+    $(el).removeClass('gt-active');
+
 };
 
 
-this.addBookmark = function (a, url, title) {
-    try {
-        window.external.AddFavorite(url, title);
-    } catch (e) {
-        try {
-            window.sidebar.addPanel(title, url, "");
-        } catch (e) {
-            if (typeof opera == "object") {
-                a.title = title;
-                a.url = url;
-                return true;
-            } else {
-                alert("Нажмите Ctrl-D чтобы добавить страницу в закладки");
-            }
-        }
+this.clickShareViewCard = function (el) {
+
+    var button = el.find('.gt-view-cards-icons-share').parent();
+    if(button.hasClass('gt-active')){
+        button.removeClass('gt-active');
+        self.closeShareViewCard(el);
+
+    }else{
+        button.addClass('gt-active');
+        self.openShareViewCard(el);
     }
-    return false;
+};
+this.clickVisitViewCard = function (el) {
+    if(el.hasClass('gt-active')) return;
+    var button = el.find('.gt-view-cards-icons-visit').parent();
+    if(button.hasClass('gt-active')){
+        button.removeClass('gt-active');
+        console.log('click not visited now');
+    }else{
+        button.addClass('gt-active');
+        console.log('click visit');
+    }
+};
+
+this.clickSeenViewCard = function (el) {
+    if(el.hasClass('gt-active')) return;
+    var button = el.find('.gt-view-cards-icons-pin-plus').parent();
+    if(button.hasClass('gt-active')){
+        button.removeClass('gt-active');
+        console.log('click not seen now');
+    }else{
+        button.addClass('gt-active');
+        console.log('click seen');
+    }
+};
+this.clickMarkViewCard = function (el) {
+    if(el.hasClass('gt-active')) return;
+    var button = el.find('.gt-view-cards-icons-bookmarks').parent();
+    if(button.hasClass('gt-active')){
+        button.removeClass('gt-active');
+        console.log('click delete bookmark');
+    }else{
+        button.addClass('gt-active');
+        console.log('click add bookmark');
+    }
 };
 
 
 
-this.createBookmarksLink = function (el) {
-    var el = $(el);
-    var parent = el.closest(".gt-view-cards-inner");
-    parent = $(parent);
-    if (!parent.attr("data-href"))
-        parent.attr("data-href", window.location.href);
-    if (!parent.attr("data-bookmark")) parent.attr("data-bookmark", "GoToTrip");
-    el.attr("href", parent.attr("data-href"));
-    el.attr("rel", "sidebar");
-    el.on("click", function (e) {
-        e.preventDefault();
-        self.addBookmark(
-            el,
-            parent.attr("data-href"),
-            parent.attr("data-bookmark")
-        );
-    });
-};
+
+if ($("*").is(".gt-view-cards-inner")) {
+
+    $('.gt-view-cards-inner').each(function () {
+        self.createViewCardListeners($(this));
+    })
 
 
-
-
-
-if ($("*").is(".gt-view-cards-icons-bookmarks")) {
-    self.createBookmarksLink();
 }
 
-
-if ($("*").is(".gt-view-cards-icons-item")) {
-    self.createIconsItemsClick();
-}
