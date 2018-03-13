@@ -1,24 +1,49 @@
 this.createViewCardListeners = function (el) {
-    el.find('.gt-view-cards-icons-visit').on('click',function () {
+    el.find('.gt-view-cards-icons-visit').on('click',function (event) {
+        self.closeShareViewCard(el);
+        event.stopPropagation();
         self.clickVisitViewCard(el);
     });
-    el.find('.gt-view-cards-icons-pin-plus').on('click',function () {
+    el.find('.gt-view-cards-icons-pin-plus').on('click',function (event) {
+        self.closeShareViewCard(el);
+        event.stopPropagation();
         self.clickSeenViewCard(el);
+
     });
-    el.find('.gt-view-cards-icons-bookmarks').on('click',function () {
+    el.find('.gt-view-cards-icons-bookmarks').on('click',function (event) {
+        self.closeShareViewCard(el);
+        event.stopPropagation();
         self.clickMarkViewCard(el);
+
     });
-    el.find('.gt-view-cards-icons-share').on('click',function () {
+    el.find('.gt-view-cards-icons-share').on('click',function (eventg) {
+        event.stopPropagation();
         self.clickShareViewCard(el);
     });
     el.find('.gt-view-cards-icons-share').find('a').on('click',function (event,el) {
         event.preventDefault();
 
-        self.veiwCardSocial(el);
+        self.viewCardSocial(el);
+    });
+    el.on('click  mouseleave',function () {
+        $(el).find('.gt-view-cards-icons-share').parent().removeClass('gt-active');
+        self.closeShareViewCard(el);
+
     })
 };
 
-this.veiwCardSocial = function (el) {
+this.destroyViewCardListeners = function (el) {
+    el.find('.gt-view-cards-icons-visit').off();
+    el.find('.gt-view-cards-icons-pin-plus').off();
+    el.find('.gt-view-cards-icons-bookmarks').off();
+    el.find('.gt-view-cards-icons-share').off();
+    el.find('.gt-view-cards-icons-share').find('a').off();
+    el.off();
+
+};
+
+
+this.viewCardSocial = function (el) {
     console.log('click social');
     self.closeShareViewCard(el);
 };

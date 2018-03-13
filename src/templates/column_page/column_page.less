@@ -4,22 +4,22 @@
 
 .gt-article {
   flex-direction: column;
-  font-size: @font-size-smaller;
+  font-size: 14px;
+  color: @grey-light;
+  line-height: 1.5em;
+
   h2 {
-    font-size: @font-size-option;
+    font-size:  16px;
     font-weight: @normal;
     color: @black;
     border-bottom: 2px solid @grey-article-border;
     margin-bottom: 15px;
   }
-
   p {
     display: block;
     padding: 0.5em 0;
-
     &:first-of-type {
       padding-top: 0;
-
       > img.gt-img-left,
       > img.gt-img-right {
         margin-top: 0;
@@ -29,22 +29,26 @@
   > img {
     width: 100%;
     height: auto;
-    margin: 1em auto;
-  }
+    margin: .5em auto;
 
+  }
   &-header {
     flex-direction: column;
     h1 {
-      font-size: @font-size-header;
-      color: @black;
+      font-size: 21px;
+      color: @grey-dark;
+      border-bottom: 1px solid @bg-grey;
     }
-    div {
+    &-inner {
       flex-direction: row;
       justify-content: space-between;
-      font-size: @font-size-smaller;
+      font-size: 14px;
       margin: .5em 0;
       i {
         margin: 0 .5em 0 2em;
+      }
+      a{
+        color:@blue;
       }
     }
   }
@@ -60,10 +64,13 @@
     padding: 0 30px 0 15px;
     width: 75%;
     flex-direction: column;
+    &-option{
+      width: 66%;
+    }
   }
 
   &-table {
-    font-size: @font-size-option;
+    font-size:  16px;
     color: @black;
     flex-direction: column;
     width: 100%;
@@ -72,8 +79,17 @@
     padding: 30px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, .06);
     .gt-box-shadow();
-    a{
+    a {
       color: @black;
+    }
+    &-header {
+      text-transform: uppercase;
+      color: @grey-dark;
+      line-height: 1.5em;
+      padding: .1em 0 .1em 10px;
+      margin-bottom: 1em;
+      border-left: 10px solid @blue;
+
     }
     &-wrapper {
       width: 25%;
@@ -82,6 +98,9 @@
       position: absolute;
       top: 0;
       right: 15px;
+      &-option{
+        width: 34%;
+      }
 
       &.gt-fixed {
         position: fixed;
@@ -102,7 +121,7 @@
         flex-direction: column;
       }
       h2 {
-        font-size: @font-size-option;
+        font-size:  16px;
       }
     }
     a {
@@ -147,11 +166,11 @@
           .gt-a-news {
             font-size: 14px;
             margin-bottom: 5px;
-            color:@grey-dark;
+            color: @grey-dark;
           }
           .header {
             font-weight: @bold;
-           color: @black;
+            color: @black;
             padding: .5em 0;
           }
           .text {
@@ -166,7 +185,7 @@
     width: 100%;
     border: 1px solid @grey-article-border;
     color: @black;
-    font-size: @font-size-smaller;
+    font-size: 14px;
     padding: 1.1em 0.8em 0.8em;
     line-height: 1.2;
     margin: 0.5em 0;
@@ -213,7 +232,7 @@
       -moz-column-gap: 30px;
       -webkit-column-gap: 30px;
       color: @black;
-      font-size: @font-size-smaller;
+      font-size: 14px;
       line-height: 1.5;
     }
   }

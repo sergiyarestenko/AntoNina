@@ -9,21 +9,20 @@ this.cutNews = function (el) {
         maxHeight -= $(this).outerHeight(true);
     });
 
-    maxHeight = maxHeight + el.height() -20;
-
+    maxHeight = maxHeight + el.height() - 20;
 
 
     cuttingEl.each(function () {
         currHeight = $(this).outerHeight(true);
 
-        if( currHeight < maxHeight){
-            maxHeight -=currHeight
-        }else {
-            if(!maxHeight){
-                $(this).css('display','none');
-            }else{
-                cuttingLenght =  Math.floor($(this).text().length * maxHeight / currHeight);
-                newText = $(this).text().substring(0, cuttingLenght-5);
+        if (currHeight < maxHeight) {
+            maxHeight -= currHeight
+        } else {
+            if (!maxHeight) {
+                $(this).css('display', 'none');
+            } else {
+                cuttingLenght = Math.floor($(this).text().length * maxHeight / currHeight);
+                newText = $(this).text().substring(0, cuttingLenght - 5);
                 // cutLastSymbol();
                 $(this).text((newText) + '...');
                 maxHeight = 0;
@@ -44,7 +43,6 @@ this.cutNews = function (el) {
 };
 
 
-
 if ($("div").is(".js-news-cut")) {
     $(".js-news-cut").each(function () {
         self.cutNews($(this));
@@ -57,7 +55,6 @@ if ($("div").is(".js-news-cut")) {
         });
     });
 }
-
 
 
 this.cutReadMoreSlider = function () {
@@ -74,7 +71,6 @@ this.cutting = function (el, num) {
         el.text(newsText);
     }
 };
-
 
 
 if ($("p").is(".gt-read-more-slider-text-inner")) {

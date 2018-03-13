@@ -2,40 +2,39 @@
 @import "../../stylesheets/_variables";
 @import "../../stylesheets/_mixin";
 
-
-.gt-menu-news{
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    color:@black;
-    font-size: @font-size-option;
-    li{
-        a{
-            position: relative;
-            
-        &:after{
-            content: '';
-            width: 0;
-            height: 2px;
-            background-color:@blue;
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            .gt-transition(); 
-            }
+.gt-menu-news {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  color: @black;
+  font-size:  16px;
+  li {
+    a {
+      position: relative;
+      &:after, &:before {
+        content: '';
+        width: 0;
+        height: 2px;
+        background-color: @blue;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+      }
+      &:before {
+        .gt-transition();
+      }
+      &:hover {
+        &:before {
+          width: 100%;
         }
-       
-
-
-        &.gt-active{
-            a{
-                  
-            &:after{
-                width: 100%;
-            }
-
-        }
+      }
     }
-
-}
+    &.gt-active {
+      a {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

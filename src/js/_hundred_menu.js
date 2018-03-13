@@ -22,8 +22,8 @@ if ($("*").is(".gt-button-menu")) {
     });
 }
 
-if ($("*").is(".gt-menu-news")) {
-    $(".gt-menu-news").on("click", function (event) {
+if ($("*").is(".gt-menu-news_items")) {
+    $(".gt-menu-news_items").on("click", function (event) {
         event.preventDefault();
         self.manageGtActiveUlMenu(event.target);
     });

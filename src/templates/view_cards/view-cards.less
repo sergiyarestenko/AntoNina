@@ -3,6 +3,7 @@
 @import "../../stylesheets/_mixin";
 
 .gt-view-cards {
+
   flex-direction: column;
   width: 100%;
   &-header {
@@ -23,12 +24,21 @@
     a, span {
       align-self: flex-end
     }
+    p{
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 1em 0;
+      color:@grey-border;
+    }
+    p+p{
+      margin-top: 0;
+    }
   }
   &-slider {
     height: 240px;
   }
   &-inner {
-    padding: 0 15px;
+    padding: 0 15px 4px;
     &-img {
       .gt-img-holder {
         width: 100%;
@@ -36,16 +46,16 @@
       }
     }
     &-outer {
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, .06);
+
+
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, .15);
     }
     &:hover {
       .gt-view-cards-icons-item {
         max-width: 100px;
         > div {
           opacity: 1;
-          &:after, &:before {
-            display: none;
-          }
+
         }
       }
     }
@@ -54,6 +64,9 @@
         max-width: 100px;
         > div {
           opacity: 1;
+          &:after, &:before {
+            display: none;
+          }
         }
       }
       .gt-view-cards-icons-share {
@@ -137,7 +150,6 @@
     position: absolute;
     top: .5em;
     right: 15px;
-    //width: 100%;
     height: auto;
     flex-direction: row;
     justify-content: flex-end;
@@ -147,7 +159,7 @@
       background-image: url("../img/view_cards_icons/visited-icon-white.svg");
       background-size: 60% auto;
       &:after {
-        content: 'Посетил';
+        content: 'Был, видел';
       }
 
     }
@@ -156,7 +168,7 @@
       background-image: url("../img/view_cards_icons/pin-plus-icon-white.svg");
       background-size: 50% auto;
       &:after {
-        content: 'Был, видел';
+        content: 'Хочу посетить';
       }
     }
     &-share {
@@ -167,7 +179,6 @@
       }
 
       &-inner {
-
         flex-wrap: nowrap;
         position: absolute;
         width: auto;
@@ -189,7 +200,6 @@
           border-width: 0 10px 10px 10px;
           border-color: transparent transparent @black-70 transparent;
         }
-
         a {
           color: @white;
           background-color: @black-70;
@@ -200,13 +210,9 @@
           margin: 0;
           width: 2em;
           font-size: 14px;
-
         }
-
       }
-
     }
-
     &-bookmarks {
       background-image: url("../img/view_cards_icons/boocmarks-icon-white.svg");
       background-size: auto 60%;
@@ -215,7 +221,6 @@
         left: auto !important;
         right: 0;
         transform: translateX(0) !important;
-
       }
     }
     &-item {
@@ -308,7 +313,7 @@
     top: -35px;
     background: @black-80;
     color: @white;
-    font-size: @font-size-smaller;
+    font-size: 14px;
     width: 35px;
     height: 35px;
     justify-content: center;

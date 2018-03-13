@@ -1,3 +1,6 @@
+// todo если правый блок выше правого return
+
+
 this.fixArticleScrollTablePosition = function () {
     var table = $(".gt-article-table-wrapper"),
         tableParent = table.parent(),

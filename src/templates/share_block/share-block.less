@@ -1,25 +1,120 @@
 @import "../../stylesheets/_palette";
 @import "../../stylesheets/_variables";
 @import "../../stylesheets/_mixin";
-.gt-share {
-  height: 50px;
-  background-color: @bg-grey;
-  color: @black;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: @normal;
-  font-size: @font-size-large;
-  padding: 0 40px;
 
-  li {
-      color:@grey-dark;
-    margin: 0 .25em;
-    &:first-of-type {
-      margin-left: 0;
+.gt-share {
+  width: 100%;
+  flex-direction: column;
+  font-size: 18px;
+  &-header {
+
+    color: @grey-dark;
+    font-weight: @bold;
+    margin-bottom: 1em;
+  }
+  &-list {
+    flex-direction: row;
+    justify-content: space-between;
+    li {
+      font-size: 21px;
+      width: 31%;
+      color: @white;
+      justify-content: center;
+      cursor: pointer;
+      align-items: center;
+      height: 60px;
+      border: 1px solid transparent;
+      .gt-transition();
+      opacity: 1;
+
     }
-    &:last-of-type {
-      margin-right: 0;
+    span {
+      margin-left: 1em;
+    }
+    &-facebook {
+      background-color: @facebook-color;
+      &:hover {
+        color: @facebook-color;
+        background-color: transparent;
+        border-color: @facebook-color;
+      }
+    }
+    &-twitter {
+      background-color: @twitter-color;
+      &:hover {
+        color: @twitter-color;
+        background-color: transparent;
+        border-color: @twitter-color;
+      }
+    }
+    &-google {
+      background-color: @google-color;
+      &:hover {
+        color: @google-color;
+        background-color: transparent;
+        border-color: @google-color;
+      }
+    }
+    &-opt {
+      li {
+        height: 45px;
+        width: 45px;
+        border: 1px solid @grey-article-border;
+        align-items: center;
+        justify-content: center;
+        margin: 0 .25em;
+        font-size: 24px;
+        cursor: pointer;
+        background-color: transparent;
+        .gt-transition();
+        &:first-of-type {
+          margin-left: 0;
+        }
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+      &-facebook {
+        color: @facebook-color;
+        &:hover {
+          border-color: @facebook-color;
+          color: @white;
+          background-color: @facebook-color;
+        }
+      }
+      &-twitter {
+        color: @twitter-color;
+        &:hover {
+          border-color: @twitter-color;
+          color: @white;
+          background-color: @twitter-color;
+        }
+      }
+      &-google {
+        color: @google-color;
+        &:hover {
+          border-color: @google-color;
+          color: @white;
+          background-color: @google-color;
+        }
+      }
+      &-viber {
+        color: @viber-color;
+        &:hover {
+          border-color: @viber-color;
+          color: @white;
+          background-color: @viber-color;
+        }
+      }
+      &-telegram {
+        color: @telegram-color;
+        &:hover {
+          border-color:  @telegram-color;
+          color: @white;
+          background-color:  @telegram-color;
+        }
+      }
     }
   }
+
 }

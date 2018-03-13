@@ -95,6 +95,7 @@ this.createSlider = function (currSlider, position) {
     }
 
     function oneMoveFunction(bul, num) {
+        var clone,deleted;
         if (num || num === 0) {
             currPosition = num;
         }
@@ -120,21 +121,36 @@ this.createSlider = function (currSlider, position) {
 
         if (tram) {
             if (currPosition > innerCount - screenConst) {
+                clone =  container.children().first().clone();
+                deleted = container.children().first();
+                if(currSlider.hasClass('gt-view-cards-slider')){
+                    self.destroyViewCardListeners(deleted);
+                    self.createViewCardListeners(clone);
+                }
                 container.css('left', (-(currPosition - 2) * baseWidth) + 'px');
-                container.append(container.children().first().clone());
-                container.children().first().remove();
+                container.append(clone);
+                deleted.remove();
                 currPosition--;
+
             }
             if (currPosition < 0) {
+                clone = container.children().last();
+                deleted = container.children().last();
+                if(currSlider.hasClass('gt-view-cards-slider')){
+                    self.destroyViewCardListeners(deleted);
+                    self.createViewCardListeners(clone);
+                }
                 container.css('left', (-(currPosition + 2) * baseWidth) + 'px');
-                container.prepend(container.children().last().clone());
-                container.children().last().remove();
+                container.prepend(clone.clone());
+                deleted.remove();
                 currPosition++;
                 tramSliderMove();
 
             } else {
                 tramSliderMove();
             }
+
+
 
 
         }
@@ -146,6 +162,8 @@ this.createSlider = function (currSlider, position) {
             $(allDots[container.find('.gt-open').attr('data-count')]).addClass("gt-active");
         }
     }
+
+
 
     function tramSliderMove() {
         container.children().removeClass('gt-open');
