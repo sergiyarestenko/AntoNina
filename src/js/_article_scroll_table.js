@@ -10,7 +10,7 @@ this.fixArticleScrollTablePosition = function () {
         tableWidth = table.outerWidth(),
         windowTop = doc.scrollTop();
 
-    if (tableParentTop+90 > windowTop) {
+    if (tableParentTop + 90 > windowTop) {
         if (table.hasClass("gt-fixed")) {
             table.removeClass("gt-fixed");
             table.css({
@@ -28,7 +28,7 @@ this.fixArticleScrollTablePosition = function () {
             });
             table.addClass("gt-fixed");
         }
-        if (windowTop- tableParentBottom+tableHeight+90 >=0) {
+        if (windowTop - tableParentBottom + tableHeight + 90 >= 0) {
             table.addClass("gt-fixed-bottom");
         } else {
             table.removeClass("gt-fixed-bottom");
@@ -41,22 +41,35 @@ this.fixArticleScrollTablePosition = function () {
 
 this.createArticteScrollTable = function () {
     if (!$("div").is(".gt-article")) return;
+
     var articles = $(".gt-article"),
+        table = $("#gt-article-scroll-table"),
         html = "";
     articles.each(function () {
-        html +=
-            '<div class = "gt-article-scroll"><div class = "gt-article-scroll-shadow"></div><p>' +
-            $(this)
-                .find("h2")
-                .text() +
+        html += '<div class = "gt-article-scroll"   data-href= "' + $(this).attr("id") + '" ><div class = "gt-article-scroll-shadow"></div><p>' +
+            $(this).find("h2").text() +
             "</p></div>";
+
     });
-    $("#gt-article-scroll-table").html(html);
+    table.html(html);
+    table.find('.gt-article-scroll').each(function () {
+        $(this).on('click', function () {
+
+            self.scrollToArticle($(this).attr('data-href'));
+        });
+    });
+
+
 };
+
+this.scrollToArticle = function (attr) {
+    $('html').animate({scrollTop: $('#' + attr).offset().top -110}, 1100);
+
+};
+
 
 this.showArtidleShadow = function () {
     $(".gt-article").each(function () {
-        // console.log($(this));
         var currPosition = $(this).position().top,
             elHeight = $(this).outerHeight(),
             windowPosition = $(document).scrollTop(),
@@ -73,11 +86,6 @@ this.showArtidleShadow = function () {
             .css("width", x * 100 + "%");
     });
 };
-
-
-
-
-
 
 
 if ($('div').is('.gt-article-table-wrapper')) {

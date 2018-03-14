@@ -15,106 +15,78 @@
   &-list {
     flex-direction: row;
     justify-content: space-between;
+    color: @white;
     li {
-      font-size: 21px;
-      width: 31%;
-      color: @white;
+
+      width: 100%;
+
       justify-content: center;
       cursor: pointer;
       align-items: center;
       height: 60px;
-      border: 1px solid transparent;
-      .gt-transition();
-      opacity: 1;
+      flex: 1 1 auto;
+      margin: 0 15px;
 
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      .gt-transition();
+
+      &:hover {
+        border: 1px solid @grey-article-border;
+        background-color: transparent;
+      }
     }
     span {
-      margin-left: 1em;
+      margin-left: .5em;
+    }
+    i{
+      font-size: 21px;
     }
     &-facebook {
+
       background-color: @facebook-color;
+      border: 1px solid @facebook-color;
       &:hover {
         color: @facebook-color;
-        background-color: transparent;
-        border-color: @facebook-color;
       }
+
     }
     &-twitter {
       background-color: @twitter-color;
+      border: 1px solid @twitter-color;
       &:hover {
         color: @twitter-color;
-        background-color: transparent;
-        border-color: @twitter-color;
       }
     }
     &-google {
       background-color: @google-color;
+      border: 1px solid @google-color;
       &:hover {
         color: @google-color;
-        background-color: transparent;
-        border-color: @google-color;
       }
     }
-    &-opt {
-      li {
-        height: 45px;
-        width: 45px;
-        border: 1px solid @grey-article-border;
-        align-items: center;
-        justify-content: center;
-        margin: 0 .25em;
-        font-size: 24px;
-        cursor: pointer;
-        background-color: transparent;
-        .gt-transition();
-        &:first-of-type {
-          margin-left: 0;
-        }
-        &:last-of-type {
-          margin-right: 0;
-        }
-      }
-      &-facebook {
-        color: @facebook-color;
-        &:hover {
-          border-color: @facebook-color;
-          color: @white;
-          background-color: @facebook-color;
-        }
-      }
-      &-twitter {
-        color: @twitter-color;
-        &:hover {
-          border-color: @twitter-color;
-          color: @white;
-          background-color: @twitter-color;
-        }
-      }
-      &-google {
-        color: @google-color;
-        &:hover {
-          border-color: @google-color;
-          color: @white;
-          background-color: @google-color;
-        }
-      }
-      &-viber {
+    &-viber {
+      background-color: @viber-color;
+      border: 1px solid @viber-color;
+      &:hover {
         color: @viber-color;
-        &:hover {
-          border-color: @viber-color;
-          color: @white;
-          background-color: @viber-color;
-        }
-      }
-      &-telegram {
-        color: @telegram-color;
-        &:hover {
-          border-color:  @telegram-color;
-          color: @white;
-          background-color:  @telegram-color;
-        }
       }
     }
+    &-telegram {
+
+      background-color: @telegram-color;
+      border: 1px solid @telegram-color;
+      &:hover {
+        color: @telegram-color;
+      }
+
+    }
+
   }
 
 }

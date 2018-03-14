@@ -81,8 +81,8 @@ gulp.task('serve', ['server'], function () {
 
 //watchers
 gulp.task('watch', function () {
-    gulp.watch(config.paths.templateLess, [ 'css']);
-    gulp.watch(config.paths.less, [ 'css']);
+    gulp.watch(config.paths.templateLess, ['css']);
+    gulp.watch(config.paths.less, ['css']);
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.mainHtml, ['html']);
     gulp.watch(config.paths.js, ['js']);
@@ -91,5 +91,5 @@ gulp.task('watch', function () {
 });
 
 
-// gulp.task('default', ['img', 'css', 'js', 'html', 'serve', 'watch']);
+// gulp.task('default', ['img', 'css', 'js', 'jsLibs', 'html', 'serve', 'watch']);
 gulp.task('default', [ 'css', 'js', 'jsLibs','html', 'serve', 'watch']);
