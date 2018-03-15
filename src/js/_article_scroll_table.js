@@ -1,14 +1,13 @@
-// todo если правый блок выше правого return
-
-
-this.fixArticleScrollTablePosition = function () {
-    var table = $(".gt-article-table-wrapper"),
+this.fixArticleScrollTablePosition = function (currTable) {
+    var table =currTable,
         tableParent = table.parent(),
         tableHeight = table.outerHeight(),
         tableParentTop = tableParent.position().top,
         tableParentBottom = tableParentTop + tableParent.outerHeight(),
         tableWidth = table.outerWidth(),
         windowTop = doc.scrollTop();
+
+
 
     if (tableParentTop + 90 > windowTop) {
         if (table.hasClass("gt-fixed")) {
@@ -63,7 +62,7 @@ this.createArticteScrollTable = function () {
 };
 
 this.scrollToArticle = function (attr) {
-    $('html').animate({scrollTop: $('#' + attr).offset().top -110}, 1100);
+    $('html').animate({scrollTop: $('#' + attr).offset().top - 110}, 1100);
 
 };
 
@@ -89,28 +88,55 @@ this.showArtidleShadow = function () {
 
 
 if ($('div').is('.gt-article-table-wrapper')) {
-    var shadow = false,
-        scrollTimeout;
-    if ($('div').is(".gt-article-scroll-table")) {
-        shadow = true;
-        self.createArticteScrollTable();
-        self.showArtidleShadow();
-    }
+    $('.gt-article-table-wrapper').each(function () {
+        var currTable = $(this);
 
-
-    function scrollThrottler() {
-        if (!scrollTimeout) {
-            scrollTimeout = setTimeout(function () {
-                scrollTimeout = null;
-                self.fixArticleScrollTablePosition();
-                if (shadow) {
-                    self.showArtidleShadow();
-                }
-
-            });
+        var shadow = false,
+            scroll = true,
+            scrollTimeout;
+        if ($('div').is(".gt-article-scroll-table")) {
+            shadow = true;
+            self.createArticteScrollTable();
+            self.showArtidleShadow();
         }
-    }
 
-    docWindow.scroll(scrollThrottler);
-    docWindow.resize(scrollThrottler);
+
+        function scrollThrottler() {
+
+            if (!scroll) return;
+
+
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function () {
+                    scrollTimeout = null;
+                    self.fixArticleScrollTablePosition(currTable);
+                    if (shadow) {
+                        self.showArtidleShadow();
+                    }
+
+                });
+            }
+        }
+
+        checkTableHeight();
+        docWindow.scroll(scrollThrottler);
+        docWindow.resize(function () {
+            checkTableHeight();
+            scrollThrottler()
+        });
+
+        function checkTableHeight() {
+
+            if (currTable.outerHeight() > currTable.parent().outerHeight()) {
+                scroll = false;
+                currTable.css({'position': 'relative', 'right': '15px'});
+            } else {
+                scroll = true;
+                currTable.css({'position': '', 'right': ''});
+            }
+
+
+        }
+    })
+
 }

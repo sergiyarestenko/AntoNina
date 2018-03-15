@@ -32,6 +32,8 @@ GoToTrip = function () {
 
     //= ./_tab_slider
 
+    //= ./_partnership
+
 
 
 /////////////////////does not work
